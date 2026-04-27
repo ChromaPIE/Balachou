@@ -326,11 +326,10 @@ return {
             },
 
             j_artb_claymation = {
-                name = 'Claymation',
+                name = '泥人动画',
                 text = {{
-                    "Draw a {C:attention}Clay Card{}",
-                    "From your {C:attention}deck{}",
-                    "at the begining of round"
+                    "回合开始时，从{C:attention}牌组{}中",
+                    "抽取一张{C:attention}陶土牌"
                 }}
             },
 
@@ -559,12 +558,11 @@ return {
         },
         Planet={
             c_artb_vesta={
-                name="Vesta",
+                name="灶神星",
                 text={
-                    "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
-                    "{C:attention}Null",
-                    "{C:mult}+3{} Mult and",
-                    "{C:chips}+40{} chips",
+                    "{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
+                    "升级{C:attention}空",
+                    "{C:mult}+3{}倍率，{C:chips}+40{}筹码",
                 },
             },
         },
@@ -643,11 +641,11 @@ return {
                 },
             },
             v_artb_used_supplies = {
-                name = 'Used Supplies',
+                name = '秃笔残墨',
                 text = {
-                    "When a card is destroyed,",
-                    'get a {C:dark_edition}Negative{} collectable of its',
-                    '{C:attention}Edition{}, {C:attention}Seal{} and {C:attention}Enhancement{}',
+                    "扑克牌被摧毁后",
+                    '生成对应其{C:attention}版本{}、{C:attention}蜡封',
+                    '及{C:attention}增强{}的{C:dark_edition}负片{}收藏品',
                 },
             },
         },
