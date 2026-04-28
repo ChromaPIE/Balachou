@@ -1,0 +1,394 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 9999
+
+# Startup: prevent LÖVE from creating a desktop-sized window on launch.
+# conf.lua sets width/height=0 which LÖVE interprets as "use desktop size",
+# causing a brief fullscreen black window.  Set non-zero defaults instead.
+# Paired with the apply_window_changes fix below so Windowed mode uses the
+# correct screen_res rather than 80% of the current (arbitrary) window size.
+[[patches]]
+[patches.pattern]
+target = "conf.lua"
+match_indent = true
+pattern = "t.window.width = 0"
+position = "at"
+payload = "t.window.width = 1000"
+
+[[patches]]
+[patches.pattern]
+target = "conf.lua"
+match_indent = true
+pattern = "t.window.height = 0"
+position = "at"
+payload = "t.window.height = 650"
+
+[[patches]]
+[patches.pattern]
+target = "conf.lua"
+match_indent = true
+pattern = "t.window.minwidth = 100"
+position = "before"
+payload = "t.window.resizable = true"
+
+# apply_window_changes: for Windowed mode, use the calculated screen_res
+# instead of 0.8*current_width.  The old behaviour is doubly wrong:
+# 1) it ignores the user's explicit resolution choice from settings, and
+# 2) it makes the initial size depend on conf.lua's startup dimensions,
+#    producing a multiplicative shrink on every call.
+# screen_res (set just above) already handles the fallback chain:
+#   QUEUED_CHANGE.screenres → G.SETTINGS.screen_res → love.graphics.getWidth()
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+match_indent = true
+pattern = "(G.SETTINGS.QUEUED_CHANGE and G.SETTINGS.QUEUED_CHANGE.screenmode == 'Windowed') and love.graphics.getWidth()*0.8 or G.SETTINGS.WINDOW.DISPLAYS[G.SETTINGS.WINDOW.selected_display].screen_res.w,"
+position = "at"
+payload = "G.SETTINGS.WINDOW.DISPLAYS[G.SETTINGS.WINDOW.selected_display].screen_res.w,"
+
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+match_indent = true
+pattern = "(G.SETTINGS.QUEUED_CHANGE and G.SETTINGS.QUEUED_CHANGE.screenmode == 'Windowed') and love.graphics.getHeight()*0.8 or G.SETTINGS.WINDOW.DISPLAYS[G.SETTINGS.WINDOW.selected_display].screen_res.h,"
+position = "at"
+payload = "G.SETTINGS.WINDOW.DISPLAYS[G.SETTINGS.WINDOW.selected_display].screen_res.h,"
+
+# apply_window_changes: on initial startup for Windowed mode, skip the
+# updateMode call entirely when conf.lua already created the window at the
+# target size.  Even with identical parameters, updateMode resets the
+# OpenGL context through SDL, producing a white flash.
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+match_indent = true
+pattern = "love.window.updateMode("
+position = "before"
+payload = '''
+if _initial and G.SETTINGS.WINDOW.screenmode == 'Windowed' and love.graphics.getWidth() == G.SETTINGS.WINDOW.DISPLAYS[G.SETTINGS.WINDOW.selected_display].screen_res.w and love.graphics.getHeight() == G.SETTINGS.WINDOW.DISPLAYS[G.SETTINGS.WINDOW.selected_display].screen_res.h and love.system.getOS() ~= 'OS X' then
+    G.SETTINGS.QUEUED_CHANGE = {}
+    return
+end
+'''
+
+# BetterTags
+# Don't show 'x1'
+[[patches]]
+[patches.pattern]
+target = '=[SMODS bettertags "main.lua"]'
+pattern = '''
+{n = G.UIT.T, config = {text = 'x'..tag.count, scale = 0.4, colour = G.C.UI.TEXT_LIGHT}},
+'''
+position = "at"
+payload = '''
+tag.count > 1 and {n = G.UIT.T, config = {text = 'x'..tag.count, scale = 0.4, colour = G.C.UI.TEXT_LIGHT}} or nil,
+'''
+match_indent = true
+
+# All in Jest: unusual_doubled sticker — guard against nil ability on un-apply
+# SOE copy_card_but_not calls apply(nil) on cards whose ability was never set,
+# but the not-val path assumed card.ability[self.key] existed.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS allinjest "Items/Stickers/unusual_doubled.lua"]'
+match_indent = true
+pattern = 'if not val then'
+position = "at"
+payload = 'if not val and card.ability[self.key] then'
+
+# Cartomancer stackable deck: revert SUITS_SORTED rendering to vanilla
+# Cartomancer's population-loop patch (which sets up the card_string->copy
+# mapping) fails — its pattern matches neither the original SMODS loop nor
+# the SOE-rewritten variant.  Later Cartomancer patches nevertheless replace
+# SUITS with SUITS_SORTED in the card_limit and render loop, producing a
+# broken data-structure mismatch: the loop expects string-keyed copies but
+# gets integer-indexed originals.  Undo both replacements.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/overrides.lua"]'
+match_indent = true
+pattern = 'card_limit = #SUITS_SORTED[visible_suit[j]],'
+position = "at"
+payload = 'card_limit = #SUITS[visible_suit[j]],'
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/overrides.lua"]'
+match_indent = true
+pattern = '''
+-- -- -- -- -- -- -- -- -- --
+for i = 1, #SUITS_SORTED[visible_suit[j]] do
+  local card_string = SUITS_SORTED[visible_suit[j]][i]
+  local card = SUITS[visible_suit[j]][card_string]
+
+  card.T.x = view_deck.T.x + view_deck.T.w/2
+  card.T.y = view_deck.T.y
+  card:create_quantity_display()
+
+  card:hard_set_T()
+  view_deck:emplace(card)
+end
+-- -- -- -- -- -- -- -- -- --'''
+position = "at"
+payload = '''
+for i = 1, #SUITS[visible_suit[j]] do
+    if SUITS[visible_suit[j]][i] then
+        local greyed, _scale = nil, 0.7
+        if unplayed_only and not ((SUITS[visible_suit[j]][i].area and SUITS[visible_suit[j]][i].area == G.deck) or SUITS[visible_suit[j]][i].ability.wheel_flipped) then
+            greyed = true
+        end
+        local copy = copy_card(SUITS[visible_suit[j]][i], nil, _scale)
+        copy.greyed = greyed
+        copy.T.x = view_deck.T.x + view_deck.T.w / 2
+        copy.T.y = view_deck.T.y
+
+        copy:hard_set_T()
+        view_deck:emplace(copy)
+    end
+end'''
+
+# SMODS: nil-guard self.edition.key when edition is the empty table {}
+# Incantation's try_merge / MergeAvailable sets self.edition = {} on cards
+# without an actual edition, for unified edition.type comparison.  But {}
+# is truthy in Lua — `if self.edition then` passes, self.edition.key is nil,
+# G.P_CENTERS[nil] returns nil, and the subsequent .apply_to_float (card_draw)
+# or .calculate (utils) index crashes.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/card_draw.lua"]'
+match_indent = true
+pattern = '''            if self.edition then
+                local edition = G.P_CENTERS[self.edition.key]
+                if edition.apply_to_float and self.children.floating_sprite then'''
+position = "at"
+payload = '''            if self.edition then
+                local edition = self.edition.key and G.P_CENTERS[self.edition.key]
+                if edition and edition.apply_to_float and self.children.floating_sprite then'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/utils.lua"]'
+match_indent = true
+pattern = '''    if self.edition then
+        local edition = G.P_CENTERS[self.edition.key]
+        if edition.calculate and type(edition.calculate) == 'function' then'''
+position = "at"
+payload = '''    if self.edition then
+        local edition = self.edition.key and G.P_CENTERS[self.edition.key]
+        if edition and edition.calculate and type(edition.calculate) == 'function' then'''
+
+# SealsOnEverything: guard against nil SMODS.OPENED_BOOSTER.ability in emplace
+# When other mods (e.g. allinjest) hook emplace, the booster's ability table
+# may not be initialized yet, causing "attempt to index field 'soe_mergedcards'
+# (a nil value)" at the card-spawn line.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS SealsOnEverything "main.lua"]'
+match_indent = true
+pattern = '''
+            if self == G.pack_cards then
+                card.ability.soe_mergedcards = nil
+                local _card_to_spawn = G.P_CENTERS[SMODS.OPENED_BOOSTER.ability.soe_mergedcards[1].key]:create_card(SMODS.OPENED_BOOSTER, card.rank)
+                if is(_card_to_spawn, Card) then
+                    other_card = _card_to_spawn
+                else
+                    other_card = SMODS.create_card(_card_to_spawn)
+                end
+            else
+'''
+position = "at"
+payload = '''
+            if self == G.pack_cards then
+                card.ability.soe_mergedcards = nil
+                if SMODS.OPENED_BOOSTER.ability and SMODS.OPENED_BOOSTER.ability.soe_mergedcards and SMODS.OPENED_BOOSTER.ability.soe_mergedcards[1] then
+                    local _card_to_spawn = G.P_CENTERS[SMODS.OPENED_BOOSTER.ability.soe_mergedcards[1].key]:create_card(SMODS.OPENED_BOOSTER, card.rank)
+                    if is(_card_to_spawn, Card) then
+                        other_card = _card_to_spawn
+                    else
+                        other_card = SMODS.create_card(_card_to_spawn)
+                    end
+                end
+            else
+'''
+
+# SealsOnEverything: if pack_cards guard above skipped card creation,
+# other_card is nil — skip merge_cards to avoid passing {nil}.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS SealsOnEverything "main.lua"]'
+match_indent = true
+pattern = '''
+            G.soe_creatingmergedcard = nil
+            SEALS.merge_cards(card, {other_card}, true, true)
+'''
+position = "at"
+payload = '''
+            G.soe_creatingmergedcard = nil
+            if other_card then SEALS.merge_cards(card, {other_card}, true, true) end
+'''
+
+# SealsOnEverything: tag copies created during merged-card evaluation with
+# soe_owner so sub-card functions (like j_artb_random) can locate the real
+# owning card in G.jokers.cards even when called from a merged sub-copy.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS SealsOnEverything "main.lua"]'
+match_indent = true
+position = "at"
+pattern = '''
+    copy:update(G.real_dt or 0.016)
+    return copy
+end
+'''
+payload = '''
+    copy:update(G.real_dt or 0.016)
+    if G.soe_calculating_merged_cards then copy.soe_owner = G.soe_calculating_merged_cards end
+    return copy
+end
+'''
+
+# ArtBox j_artb_random: recognise self when evaluated as a merged sub-card
+# When j_artb_random is a merged sub-component, SOE calls eval_card on a
+# copy that is NOT in G.jokers.cards, so the loop never matches.  The copy
+# now carries soe_owner (set by the SealsOnEverything patch above), pointing
+# to the real main merged card in G.jokers.cards.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS artbox "jokers/random.lua"]'
+match_indent = true
+pattern = 'if v == card then'
+position = "at"
+payload = 'if v == card or (card.soe_owner and v == card.soe_owner) then'
+
+# ArtBox j_artb_random: reroll merged cards correctly
+# j_artb_random rerolls the joker to its right.  When the target is a
+# merged card, also reroll each Joker sub-component at its own rarity,
+# then merge them back via SEALS.merge_cards so the merged structure
+# is preserved.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS artbox "jokers/random.lua"]'
+match_indent = true
+position = "at"
+pattern = '''
+                    SMODS.add_card {
+                        set = 'Joker',
+                        rarity = rarity,
+                        edition = v.edition,
+                        stickers = stickers
+                    }
+                     G.jokers:remove_card(v)
+                     v:remove()
+'''
+payload = '''
+                    SMODS.add_card {
+                        set = 'Joker',
+                        rarity = rarity,
+                        edition = v.edition,
+                        stickers = stickers
+                    }
+                    if v.ability.soe_mergedcards and v.ability.soe_mergedcards[1] then
+                        local new_card = G.jokers.cards[#G.jokers.cards]
+                        local sub_cards = {}
+                        for _, mc in ipairs(v.ability.soe_mergedcards) do
+                            if mc.set == 'Joker' and mc.key then
+                                local sub_rarity = G.P_CENTERS[mc.key] and G.P_CENTERS[mc.key].rarity
+                                if type(sub_rarity) == "number" then
+                                    if sub_rarity==1 then sub_rarity="Common"
+                                    elseif sub_rarity==2 then sub_rarity="Uncommon"
+                                    elseif sub_rarity==3 then sub_rarity="Rare"
+                                    elseif sub_rarity==4 then sub_rarity="Legendary" end
+                                end
+                                local sub_card = SMODS.create_card({set = 'Joker', rarity = sub_rarity or 'Common', skip_materialize = true, stickers = mc.stickers})
+                                if type(sub_card) == 'table' and sub_card.config then
+                                    table.insert(sub_cards, sub_card)
+                                end
+                            end
+                        end
+                        if sub_cards[1] then
+                            SEALS.merge_cards(new_card, sub_cards, true, true)
+                        end
+                    end
+                     G.jokers:remove_card(v)
+                     v:remove()
+'''
+
+# All in Jest j_aij_yu_sze: recognise merged card editions
+# Yu Sze (j_aij_yu_sze) grants Xmult for each edition-less joker.
+# The original check `context.other_joker.edition == nil` only sees the
+# main card's edition, ignoring editions on merged sub-cards inside
+# soe_mergedcards.  A merged card counts as 1 joker; if any of its
+# sub-components carries an edition the whole card is "editioned" and
+# Yu Sze must not trigger.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS allinjest "Items/Jokers/yu_sze.lua"]'
+match_indent = true
+pattern = 'G.E_MANAGER:add_event(Event({'
+position = "before"
+payload = '''
+            if context.other_joker.ability.soe_mergedcards then
+                for _, mc in ipairs(context.other_joker.ability.soe_mergedcards) do
+                    if mc.edition then return end
+                end
+            end
+'''
+
+# SealsOnEverything: guard against nil scored_card in calculate_effect
+# SMODS.calculate_effect may be called with scored_card=nil from some
+# trigger paths (e.g. discard-related effects from alien_joker).  The
+# rewrite checked scored_card.soe_realcard unconditionally.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS SealsOnEverything "main.lua"]'
+match_indent = true
+pattern = 'elseif scored_card.soe_realcard then'
+position = "at"
+payload = 'elseif scored_card and scored_card.soe_realcard then'
+
+# SOE energy vice: nil-safe max_highlighted lookup
+# c_soe_energy stores max_highlighted in config.extra, but the shared
+# can_use function reads card.ability.max_highlighted directly.  Use a
+# fallback chain so both nesting styles work.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS SealsOnEverything "synonyms/consumeables/vice.lua"]'
+match_indent = true
+pattern = 'if G.jokers and #G.jokers.highlighted > 0 and #G.jokers.highlighted <= card.ability.max_highlighted then'
+position = "at"
+payload = 'if G.jokers and #G.jokers.highlighted > 0 and #G.jokers.highlighted <= (card.ability.max_highlighted or card.ability.extra.max_highlighted) then'
+
+# SealsOnEverything: guard against nil G.soe_old_editions in recalc_quantum_editions
+# G.soe_old_editions is only initialized in Game:start_run() (main.lua:4191).
+# When set_seal → recalc_quantum_editions is triggered from collection view
+# (e.g. Steamodded's modify_card), the table is nil — crash at bigfuncs.lua:137.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS SealsOnEverything "bigfuncs.lua"]'
+match_indent = true
+pattern = "local old_editions = G.soe_old_editions[card] or {}"
+position = "at"
+payload = "local old_editions = (G.soe_old_editions and G.soe_old_editions[card]) or {}"
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS SealsOnEverything "bigfuncs.lua"]'
+match_indent = true
+pattern = "G.soe_old_editions[card] = editions"
+position = "at"
+payload = "if G.soe_old_editions then G.soe_old_editions[card] = editions end"
+
+# Incantation: skip hand_type fast-path when card center defines a custom use()
+# Incantation's use_consumeable override has a fast-path for Planet cards
+# (ability.consumeable.hand_type) that calls level_up_hand() directly,
+# upgrading both chips and mult.  AIJ's moon planets define custom use()
+# upgrading only one stat; the fast-path bypasses it, degrading them into
+# normal planets.  Guard the fast-path: skip it when obj.use exists.
+[[patches]]
+[patches.regex]
+target = '=[SMODS incantation "Incantation.lua"]'
+pattern = '''(?<indent>[\t ]*)elseif not self\.naivebulkuse and self\.ability\.consumeable\.hand_type then'''
+position = 'at'
+line_prepend = '$indent'
+payload = '''elseif not self.naivebulkuse and self.ability.consumeable.hand_type and not (obj.use and type(obj.use) == 'function') then'''

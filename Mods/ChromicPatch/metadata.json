@@ -1,0 +1,16 @@
+{
+  "id": "chromicpatch",
+  "name": "Chromic Patch",
+  "prefix": "crmpatch",
+  "author": [
+    "ChromaPIE"
+  ],
+  "priority": 9999,
+  "description": "Various patches presented to you by ChromaPIE.",
+  "main_file": "main.lua",
+  "badge_colour": "33ffd3",
+  "version": "0.0.1",
+  "dependencies": [
+    "Lovely (>=0.7.1)"
+  ]
+}

@@ -1,0 +1,82 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = -999
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS allinjest "Utils/functions.lua"]'
+pattern = '''
+local destroy_texts = {
+'''
+position = "after"
+payload = '''
+"摧毁",
+"自毁",
+'''
+match_indent = true
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS allinjest "Utils/ui.lua"]'
+pattern = 'text = "Select"'
+position = "at"
+payload = 'text = "选择"'
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS allinjest "Items/Crossmod/Partners/flub.lua"]'
+pattern = '''
+    local benefits = 'half price'
+    if link_level == 1 then benefits = 'free' end
+'''
+position = "at"
+payload = '''
+    local benefits = '半价'
+    if link_level == 1 then benefits = '免费' end
+'''
+match_indent = true
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS allinjest "Items/Jokers/stock_broker.lua"]'
+pattern = '"X"..tostring(ran_amount.." Interest")'
+position = "at"
+payload = '"利息X"..tostring(ran_amount)'
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS SealsOnEverything "main.lua"]'
+pattern = '''
+                    name =  ((not v.original_mod) and localize({type = 'name_text', key = k, set = 'Planet'})..' Joker') or '',
+                    text = {
+                        "If played {C:attention}poker hand{} is",
+                        "{C:attention}#1#{}",
+                        "Upgrade played hand",
+'''
+position = "at"
+payload = '''
+                    name =  ((not v.original_mod) and localize({type = 'name_text', key = k, set = 'Planet'})..'小丑') or '',
+                    text = {
+                        "若所出{C:attention}牌型{}为{C:attention}#1#",
+                        "升级该牌型",
+'''
+match_indent = true
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS SealsOnEverything "synonyms/consumeables/vice.lua"]'
+pattern = "'Joker' or 'Jokers'"
+position = "at"
+payload = "'小丑牌' or '小丑牌'"
+match_indent = true
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS SealsOnEverything "main.lua"]'
+pattern = "'Nothing'"
+position = "at"
+payload = "'无'"
+match_indent = true
