@@ -86,11 +86,11 @@ return {
                 },
             },
             j_soe_sealjoker2 = {
-                name = 'Seal 2',
+                name = '蜡封2',
                 text={
-                    "Cards can have {X:soe_infinity,C:white}Unlimited{} amounts",
-                    "of all {C:attention}properties{}",
-                    --"{C:inactive}(Expect more than average lag!){}"
+                    "卡牌可拥有",
+                    "{X:soe_infinity,C:white}无限{}数量的{C:attention}强化特性",
+                    --"{C:inactive}（准备好迎接非一般的延迟！）"
                 },
             },
             j_soe_infinityred = {
@@ -108,18 +108,19 @@ return {
                 }
             },
             j_soe_infinitygold = {
-                name = 'Infinity Gold',
+                name = '无极金',
                 text={
-                    "Cards played and held in hand along with jokers",
-                    "give {X:money,C:white}#1#*n${} when scored,",
-                    "where {C:attention}n{} is the amount of seals that card has",
+                    "每张与小丑牌一并打出",
+                    "或留手的扑克牌",
+                    "在计分时给予{X:money,C:white}#1#*n$",
+                    "{C:attention}n{}为该计分牌拥有的蜡封数",
                 }
             },
             j_soe_infinitypurple = {
-                name = 'Infinity Purple',
+                name = '无极紫',
                 text={
-                    "Seals are {C:attention}forcetriggered{}",
-                    "when the card it's on is scored",
+                    "带有本蜡封的牌计分时",
+                    "{C:attention}强制触发{}所有蜡封"
                 }
             },
             j_soe_infinityomega = {
@@ -137,11 +138,11 @@ return {
                 }
             },
             j_soe_unorganizedjoker = {
-                name = 'Unorganized Joker',
+                name = '错杂小丑',
                 text = {
-                    'If a card has a {C:attention}modifier{}',
-                    'that was not meant for that card,',
-                    'it gives {X:mult,C:white}X#1#{} Mult',
+                    '每张牌若拥有',
+                    '不匹配自身类别的{C:attention}强化',
+                    '则给予{X:mult,C:white}X#1#{}倍率',
                 }
             },
             j_soe_seeder = {
@@ -153,18 +154,18 @@ return {
                 }
             },
             j_soe_v_blankjoker = {
-                name = 'Blank Joker',
+                name = '空白小丑',
                 text={
-                    "In {C:attention}#1#{} rounds, turn into",
-                    "{C:dark_edition}Antimatter Joker{}",
+                    "{C:attention}#1#{}回合后",
+                    "变为{C:dark_edition}反物质小丑",
                 }
             },
             j_soe_v_antimatterjoker = {
-                name = 'Antimatter Joker',
+                name = '反物质小丑',
                 text={
-                    "{C:attention}ALL{} {C:dark_edition}Negative{} cards",
-                    "give {X:mult,C:white}X#1#{} Mult",
-                    "and {C:dark_edition}Negative{} is {X:dark_edition,C:white}#2#X{} as often to appear"
+                    "{C:attention}所有{C:dark_edition}负片{}牌",
+                    "给予{X:mult,C:white}X#1#{}倍率",
+                    "且{C:dark_edition}负片{}牌出现几率{X:dark_edition,C:white}X#2#"
                 }
             },
             j_soe_c_talismanjoker = {
@@ -178,9 +179,8 @@ return {
             j_soe_c_souljoker = {
                 name = '灵魂小丑',
                 text = {
-                    '售出本牌',
-                    'a {C:legendary,E:1}Legendary{} Joker',
-                    'to your deck',
+                    '售出本牌后，将随机一张',
+                    '{C:legendary,E:1}传奇{}小丑牌加入牌组',
                 }
             },
             j_soe_thinkingemoji = {
@@ -201,35 +201,36 @@ return {
                 },
             },
             j_soe_ascendedjoker = {
-                name = 'Ascended Joker',
+                name = '升天小丑',
                 text={
-                    'Counts as {C:attention}every{}',
-                    'Vanilla Joker'
+                    '视作{C:attention}每张',
+                    '原版小丑牌'
                 }
             },
             j_soe_someinone = {
-                name = 'Some Jokers',
+                name = '某些小丑',
                 text={
-                    "Click this joker to choose a joker to replicate permanently!",
-                    "{C:inactive}(Expect crashes!){}",
+                    "点击本牌以选择一张小丑牌",
+                    "并永久复制之！",
+                    "{C:inactive}（做好崩溃的准备！）",
                 }
             },
             j_soe_allinone = {
-                name = 'Almost LITERALLY EVERY Joker',
+                name = '几乎真！的！是！所！有！小丑',
                 text={
-                    "ALL at the same time",
+                    "所有，一股脑，全部。",
                 }
             },
             j_joker_u = {
-                name="Joker",
+                name="小丑",
                 text={
-                    "{C:chips,s:1.1}+#2#{} Chips",
-                    "{C:red,s:1.1}+#1#{} Mult",
-                    "{X:red,s:1.1,C:white}X#3#{} Mult"
+                    "{C:chips,s:1.1}+#2#{}筹码",
+                    "{C:red,s:1.1}+#1#{}倍率",
+                    "{X:red,s:1.1,C:white}X#3#{}倍率"
                 },
             },
             j_soe_raspberryprint = {
-                name = 'Raspberryprint',
+                name = '树莓图',
                 text={
                     "Copies the ability of a random {C:attention}Joker{}",
                     "{C:inactive}(Any Joker that exists is valid){}",
@@ -238,7 +239,7 @@ return {
                 }
             },
             j_soe_purpureusprint = {
-                name = 'Purpureusprint',
+                name = '紫红图',
                 text={
                     "Copies the ability of a random {C:tarot}Tarot{}/{C:planet}Planet{}",
                     "{C:inactive}(Any Tarot/Planet that exists is valid){}",
@@ -247,7 +248,7 @@ return {
                 }
             },
             j_soe_amazonprint = {
-                name = 'Amazonprint',
+                name = '亚马逊图',
                 text={
                     "Copies the ability of a random {C:attention}Voucher{}",
                     "{C:inactive}(Any Voucher that exists is valid){}",
@@ -276,26 +277,24 @@ return {
                 }
             },
             j_soe_concupiscentjokester = {
-                name = '饥渴笑匠',
+                name = '情壑笑匠',
                 text = {
                     '每张留手的',
                     '{C:hearts}红桃{}牌给予{C:money}$#1#'
                 }
             },
             j_soe_infuriatedjokester = {
-                name = 'Infuriated Jokester',
+                name = '激恼笑匠',
                 text = {
-                    'Each {C:spades}Spade{}',
-                    'held in hand',
-                    'gives {C:money}$#1#{}'
+                    '每张留手的',
+                    '{C:spades}黑桃{}牌给予{C:money}$#1#'
                 }
             },
             j_soe_edaciousjokester = {
-                name = 'Edacious Jokester',
+                name = '馋嘴笑匠',
                 text = {
-                    'Each {C:clubs}Club{}',
-                    'held in hand',
-                    'gives {C:money}$#1#{}'
+                    '每张留手的',
+                    '{C:clubs}梅花{}牌给予{C:money}$#1#'
                 }
             },
             j_soe_apophenia = {
@@ -322,20 +321,20 @@ return {
                 }
             },
             j_soe_cheerfulexpression = {
-                name = 'Cheerful Expression',
+                name = '欢愉面容',
                 text = {
-                    'Each {C:attention}non-face{}',
-                    'held in hand',
-                    'gives {C:money}$#1#{}'
+                    '留手的每张',
+                    '{C:attention}非人头{}牌',
+                    '给予{C:money}$#1#'
                 }
             },
             j_soe_redfabric = {
-                name = 'Redfabric',
+                name = '红布',
                 text = {
-                    '{C:attention}Permanently{} stores ability',
-                    'of {C:attention}Joker{} to the right',
-                    'at end of round',
-                    '{C:inactive}(Does not lose removed Jokers){}'
+                    '回合结束时',
+                    '{C:attention}永久{}存储',
+                    '右侧{C:attention}小丑牌{}的能力',
+                    '{C:inactive}（不受目标牌在场与否影响）'
                 }
             },
             j_soe_what = {
@@ -447,10 +446,9 @@ return {
                 },
             },
             soe_upgradedredseal_seal = {
-                name = 'Upgraded Red Seal',
+                name = '进阶红色蜡封',
                 text = {
-                    'Rescore this',
-                    'card {C:attention}1{} time',
+                    '重新计分本牌{C:attention}1{}次',
                 },
             },
             soe_upgradedblueseal_seal = {
@@ -463,19 +461,18 @@ return {
                 },
             },
             soe_upgradedgoldseal_seal = {
-                name = 'Upgraded Gold Seal',
+                name = '进阶金色蜡封',
                 text = {
-                    '{X:money,C:white}$X#1#{} when this',
-                    'card is played',
-                    'and scores',
+                    '本牌被打出并计分后',
+                    '获得{X:money,C:white}$X#1#'
                 },
             },
             soe_upgradedpurpleseal_seal = {
-                name = 'Upgraded Purple Seal',
+                name = '进阶紫色蜡封',
                 text = {
-                    'Creates a {C:dark_edition}Negative{} {C:tarot}Tarot{} card',
-                    'and gives it a {C:red}Red{}',
-                    'and {C:attention}Gold Seal{} when {C:attention}discarded'
+                    '被{C:attention}弃掉{}后',
+                    '生成一张{C:dark_edition}负片{C:tarot}塔罗{}牌',
+                    '并给予其{C:red}红色{}及{C:money}金色{C:attention}蜡封'
                 },
             },
             soe_upgradedsoe_rainbowsealseal_seal = {
@@ -518,15 +515,15 @@ return {
                 },
             },
             cry_green_seal_joker = {
-				name = "Green Seal",
+				name = "绿色蜡封",
 				text = {
-					"Creates a {C:cry_code}Code{} card",
-					"when this Joker does not score",
-					"{C:inactive}(Must have room)",
+					"本牌不计分时",
+                    "生成一张{C:cry_code}代码{}牌",
+					"{C:inactive}（必须有空位）",
 				},
 			},
             cry_azure_seal_joker = {
-				name = "Azure Seal",
+				name = "天蓝蜡封",
 				text = {
 					"Create {C:attention}3{} {C:dark_edition}Negative{}",
 					"{C:planet}Planets{} for played",
@@ -535,14 +532,14 @@ return {
 				},
 			},
             legallygold = {
-                name="Gold Card",
+                name="黄金牌",
                 text={
-                    "{C:money}$#1#{} at",
-                    "end of round",
+                    "回合结束时",
+                    "获得{C:money}$#1#",
                 },
             },
             legallysleevePlasma = {
-                name = "Plasma Sleeve",
+                name = "等离子牌套",
                 text = G.localization.descriptions.Back["b_plasma"].text
             },
             p_soe_synonym_normal = {
@@ -567,25 +564,27 @@ return {
                 },
             },
             soe_epsilon = {
-                name = "Epsilon",
+                name = "艾普西龙",
                 text = {
-                    "{X:dark_edition,C:white}CANNOT{} be destroyed or sold",
-                    "{C:inactive,s:0.4}except for the gallows bird{}",
-                    "{X:dark_edition,C:white}CANNOT{} be removed"
+                    "{X:dark_edition,C:white}无法{}被摧毁或售出",
+                    "{C:inactive,s:0.7}仍可被绞死尸摧毁",
+                    "{X:dark_edition,C:white}无法{}移动位置"
                 }
             },
             dd_akyrs_seals_on_everything_ability = {
-                name = 'Seals On Everything Ability',
+                name = 'Seals On Everything能力',
                 text = {
-                    'All cards are considered as',
-                    'having {C:red}Red{} and {C:attention}Gold Seals{}'
+                    '所有牌均视为',
+                    '拥有{C:red}红色{}及{C:money}金色{C:attention}蜡封'
                 }
             },
             soe_seal_evolve = {
-                name = 'Seal Evolve',
+                name = '蜡封进化',
                 text = {
-                    'If all cards in deck have an {C:attention}enhancement{}, {C:dark_edition}edition{}',
-                    'and 2 or more {C:attention}seals{}, evolve into {X:soe_infinity,C:white}Seal{} {X:soe_infinity,C:white}2{}',
+                    '若牌组中的每张牌',
+                    '均有{C:attention}增强{}、{C:dark_edition}版本',
+                    '及多于1个{C:attention}蜡封',
+                    '进化为{X:soe_infinity,C:white}蜡封2',
                 }
             },
             soe_detach = {
@@ -604,38 +603,38 @@ return {
                 }
             },
             soe_redfabric = {
-                name = 'Redfabric',
+                name = '红布',
                 text = {
-                    '{C:attention}Triple{} click this card',
-                    'to see all {C:attention}copied{} cards'
+                    '连续点击本牌{C:attention}三次',
+                    '以查看{C:attention}复制{}的所有卡牌'
                 }
             },
             soe_upgrade_seal = {
-                name = 'Upgrade Seal',
+                name = '进阶蜡封',
                 text = {
-                    'If this card has a {C:red}Red Seal{}',
-                    'and you get the same seal {C:attention}twice{}',
-                    'it will upgrade',
-                    '{C:inactive}(Only works for vanilla seals and rainbow seal){}'
+                    '若卡牌拥有的蜡封中',
+                    '包含{C:red}红色蜡封',
+                    '且被打上{C:attention}重复{}的蜡封',
+                    '该蜡封将得到进阶',
+                    '{C:inactive}（仅作用于原版蜡封及虹彩蜡封）'
                 }
             },
             soe_seal_fuse = {
-                name = 'Seal Fuse',
+                name = '蜡封融合',
                 text = {
-                    'This card can be fused with',
-                    '{C:red}Infinity Red{}, {C:blue}Infinity Blue{}, {C:attention}Infinity Gold{}',
-                    'and {C:purple}Infinity Purple{} to create {V:1}Infinity Omega{}'
+                    '本牌可与{C:red}无极红{}、{C:blue}无极蓝{}、',
+                    '{C:attention}无极金{}及{C:purple}无极紫{}融合',
+                    '以得到{V:1}无极欧米伽'
                 }
             }
         },
         Planet={
             c_soe_planeter={
-                name = 'Planeter',
+                name = '星球人',
 				text = {
-					'{S:0.8}({S:0.8,V:1}lvl.#2#{S:0.8}){} Level up',
-					'{C:attention}#1#',
-					'{C:mult}+#3#{} Mult and',
-					'{C:chips}+#4#{} chips',
+                    "{S:0.8}（{S:0.8,V:1}等级#2#{S:0.8}）{}",
+                    "升级{C:attention}#1#",
+                    "{C:mult}+#3#{}倍率，{C:chips}+#4#{}筹码"
 				},
             },
         },
@@ -662,10 +661,10 @@ return {
                 }
             },
             c_soe_mediumq = {
-                name = 'Medium?',
+                name = '介质？',
                 text = {
-                    'Add a {C:purple}Purple Seal{}',
-                    'to a random joker',
+                    "为随机一张小丑牌",
+                    '打上{C:purple}紫色蜡封',
                 }
             },
             c_soe_typhoonq = {
@@ -690,18 +689,17 @@ return {
                 }
             },
             c_soe_dejavuqq = {
-                name = 'Deja Vu??',
+                name = '既视感？？',
                 text = {
-                    'Add a {C:red}Red Seal{}',
-                    'to a random consumable',
+                    '为任意一张消耗牌',
+                    '打上{C:red}红色蜡封'
                 }
             },
             c_soe_tdejince = {
-                name = 'TDejlnce',
+                name = '既入迷视感',
                 text = {
-                    'Add a {C:attention}random{} seal',
-                    'to {C:attention}1{} selected',
-                    'card in your hand',
+                    '为{C:attention}1{}张选定手牌',
+                    '打上{C:attention}随机{}蜡封',
                 }
             }
         },
@@ -783,10 +781,9 @@ return {
                 }
             },
             v_soe_rerolloverflow = {
-                name = "Reroll Overflow",
+                name = "重掷溢出",
                 text = {
-                    "{C:green}Rerolls{} are",
-                    "{C:attention}#1#%{} off",
+                    "{C:green}重掷{}降价{C:attention}#1#%",
                 }
             },
             v_soe_legerdemain = {
@@ -804,31 +801,32 @@ return {
                 }
             },
             v_soe_deception = {
-                name = "Deception",
+                name = "诡谲妙计",
                 text = {
                     {
-                        "All cards can appear",
-                        "with a {C:attention}Seal{}",
+                        "所有卡牌出现时",
+                        "均可能带有{C:attention}蜡封",
                     },
                     {
-                        "All cards are guaranteed to appear with either an",
-                        "{C:dark_edition}Edition{}, {C:attention}Enhancement{} or {C:attention}Seal{}",
+                        "所有卡牌出现时",
+                        "必定带有一个",
+                        "{C:dark_edition}版本{}，{C:attention}增强{}或{C:attention}蜡封",
                     }
                 }
             },
         },
         Sleeve = {
             sleeve_soe_seal = {
-                name = 'Seal Sleeve',
+                name = '蜡封牌套',
                 text = {
-                    "All cards in shop",
-                    "have seals",
+                    "商店内的所有卡牌",
+                    "均带有蜡封",
                 }
             },
             sleeve_soe_seal_extra = {
-                name = 'Seal Sleeve',
+                name = '蜡封牌套',
                 text = {
-                    'Start with the {C:attention}Seal 2{} Joker'
+                    '开局即拥有{C:attention}蜡封2{}小丑牌'
                 }
             },
             sleeve_soe_merged = {
@@ -872,10 +870,10 @@ return {
                 }
             },
             sleeve_soe_goldseal = {
-                name = "Gold Seal",
+                name = "金色蜡封",
                 text = {
-                    "First scoring card",
-                    "each hand gives {C:money}$3{}",
+                    "每手出牌的",
+                    "首张计分牌给予{C:money}$3",
                 }
             },
         },
@@ -973,12 +971,12 @@ return {
                 },
             },
             c_soe_energy = {
-                name = 'Energy',
+                name = '威能',
                 text = {
-                    'Increases all values of',
-                    'up to {C:attention}#1#{} selected',
-                    '#2# by {C:attention}1{}',
-                    --'{C:inactive}(May cause issues){}'
+                    '使最多{C:attention}#1#{}张',
+                    '选定#2#的',
+                    '所有数值提升{C:attention}1',
+                    --'{C:inactive}（可能导致问题）'
                 },
             },
             c_soe_gallowsbird = {
@@ -1041,11 +1039,11 @@ return {
                 },
             },
             c_soe_psyche = {
-                name = 'Psyche',
+                name = '精魄',
                 text = {
-                    "Creates an",
-                    "{X:soe_seal_gradient,C:white}Infinity{} Joker",
-                    "{C:inactive}(Must have room){}"
+                    "生成一张",
+                    "{X:soe_seal_gradient,C:white}无极{}小丑牌",
+                    "{C:inactive}（必须有空位）"
                 },
             },
             c_soe_dejajed = {
@@ -1106,7 +1104,7 @@ return {
         challenge_names={},
         collabs={},
         dictionary={
-            k_soe_infinity = 'Infinity',
+            k_soe_infinity = '无极',
             k_soe_basic = '基础',
             k_soe_unusual = '非凡',
             k_soe_unique = '绝伦',

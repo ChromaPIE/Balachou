@@ -1278,10 +1278,10 @@ return {
             j_perkeo={
                 name="帕奇欧",
                 text={
-                    "在离开商店时",
-                    "随机复制{C:attention}1{}张",
-                    "拥有的{C:attention}消耗牌{}",
-                    "并给那张牌{C:dark_edition}负片{}效果",
+                    "离开商店后",
+                    "随机生成{C:attention}1{}张",
+                    "所拥有{C:attention}消耗牌{}的",
+                    "{C:dark_edition}负片{}复制"
                 },
                 unlock={
                     "{E:1,s:1.3}?????",
