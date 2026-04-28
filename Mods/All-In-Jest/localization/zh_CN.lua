@@ -3119,16 +3119,16 @@ return {
             },
             j_aij_full_monty = { name = "Full Monty", text = { "" } },
             j_aij_chef = {
-                name = "Chef",
+                name = "大厨",
                 text = {
                     {
-                        "Base-edition {C:attention}Perishable{}",
-                        "Jokers become {C:dark_edition}Negative",
+                        "基础版本的",
+                        "{C:attention}易腐{}小丑牌",
+                        "变为{C:dark_edition}负片",
                     },
                     {
-                        "{C:attention}Editions{} on {C:attention}Perishable",
-                        "Jokers no longer come with",
-                        "a mark-up in the {C:money}shop"
+                        "{C:money}商店{}内{C:attention}易腐{}小丑牌",
+                        "的{C:attention}版本{}不再使该牌提价"
                     }
                 }
             },
@@ -4449,19 +4449,18 @@ return {
                 }
             },
             tag_aij_galloping_domino = {
-                name = 'Galloping Domino Tag',
+                name = '投琼标签',
                 text = {
-                    '{C:attention}All{} rerolls cost',
-                    '{C:money}$#1#{} next shop'
+                    '下个商店内',
+                    '重掷{C:attention}均价{C:money}$#1#'
                     -- TODO Needs a limit due to effectively quadratic
                     -- money scaling
                 }
             },
             tag_aij_gioco = {
-                name = 'Gioco Tag',
+                name = '把戏标签',
                 text = {
-                    '{C:attention}Double{} hand size',
-                    'next round',
+                    '下回合手牌上限{C:attention}翻倍'
                 }
             },
             tag_aij_stereoscopic = {
@@ -4481,10 +4480,10 @@ return {
                 }
             },
             tag_aij_dominus = {
-                name = 'Dominus Tag',
+                name = '头领标签',
                 text = {
-                    'Choose {C:attention}any Boss Blind{} to',
-                    'replace the current one'
+                    '{C:attention}任选Boss盲注',
+                    '以替换当前Boss盲注'
                 }
             },
             tag_aij_nonstandard = {

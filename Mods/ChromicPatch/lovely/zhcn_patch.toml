@@ -3,6 +3,15 @@ version = "1.0.0"
 dump_lua = true
 priority = -999
 
+# 减缓卡牌名称渐入效果以适应中文牌名普遍长度
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/utils.lua"]'
+pattern = "pop_in_rate = (not args.no_pop_in and (args.pop_in_rate or 4)) or nil,"
+position = "at"
+payload = "pop_in_rate = (not args.no_pop_in and (args.pop_in_rate or 1)) or nil,"
+match_indent = true
+
 [[patches]]
 [patches.pattern]
 target = '=[SMODS allinjest "Utils/functions.lua"]'
