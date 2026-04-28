@@ -212,13 +212,12 @@ return {
             j_artb_lego_joker = {
                 name = '乐高小丑',
                 text = { {
-                    "为已有{C:attention}积木蜡封{}的卡牌",
-                    "打上相同蜡封可将其{C:attention}叠搭",
+                    "允许{C:attention}叠搭积木蜡封",
                     "{C:inactive}（至多叠搭{C:attention}3{C:inactive}个）",
                 },
                 {
-                    "获得本牌后",
-                    "生成一个{C:attention}积木蜡封收藏品",
+                    "获得本牌后生成一个",
+                    "{C:attention}积木蜡封收藏品",
                     "{C:inactive}（必须有空位）"
                 } }
             },

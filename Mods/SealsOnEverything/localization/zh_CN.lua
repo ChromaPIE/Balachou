@@ -26,27 +26,26 @@ return {
                 }
             },
             b_soe_synonym = {
-                name = 'Synonym Deck',
+                name = '同义牌组',
                 text = {
-                    'Every other consumable in',
-                    'the shop is {C:attention}replaced{}',
-                    'with a {X:soe_synonym_gradient,C:white}Synonym{} consumable'
+                    '商店内每两张牌中',
+                    '均将有一张',
+                    '被{C:attention}替换{}为{X:soe_synonym_gradient,C:white}同义{}消耗牌'
                 }
             },
             b_soe_true = {
-                name = 'True Deck',
+                name = '真正的牌组',
                 text = {
-                    'Has the effects',
-                    'of all {C:attention}Seals On Everything{}',
-                    'decks and sleeves'
+                    '具有所有{C:attention}Seals On Everything',
+                    '提供的牌组及牌套的效果'
                 }
             },
 			b_cry_sl_deck = {
-				name = "Seal Deck",
+				name = "蜡封牌组",
 				text = {
-					"All cards have a {C:dark_edition}#1#{}",
-					"Cards cannot change seals",
-					"{C:inactive}(Click to edit)",
+					"所有卡牌均拥有{C:dark_edition}#1#",
+					"卡牌的蜡封无法变更",
+					"{C:inactive}（点击以编辑）",
 				},
 				unlock = {
 					"Use {C:spectral}Typhoon",
@@ -95,18 +94,17 @@ return {
                 },
             },
             j_soe_infinityred = {
-                name = 'Infinity Red',
+                name = '无极红',
                 text={
-                    "Every time a card triggers",
-                    "put a {C:red}Red Seal{} on it",
+                    "卡牌每次触发时",
+                    "为其打上{C:red}红色蜡封",
                 }
             },
             j_soe_infinityblue = {
-                name = 'Infinity Blue',
+                name = '无极蓝',
                 text={
-                    "{C:green}#1# in #2#{} chance for",
-                    "each scored card to be copied",
-                    "as a {C:dark_edition}Negative{} Joker"
+                    "每张计分牌有{C:green}#1#/#2#{}的几率",
+                    "被复制为{C:dark_edition}负片{}小丑牌"
                 }
             },
             j_soe_infinitygold = {
@@ -125,17 +123,17 @@ return {
                 }
             },
             j_soe_infinityomega = {
-                name = 'Infinity Omega',
+                name = '无极欧米伽',
                 text={
-                    '{C:attention}ALL{} cards count as {X:dark_edition,C:white}EVERYTHING{}',
-                    '{C:inactive}(Ranks, Suits, Seals, Enhancements, Editions, Stickers and Jokers)',
-                    '{C:inactive}(Will cause lag){}'
+                    '{C:attention}所有{}卡牌视作{X:dark_edition,C:white}一切',
+                    '{C:inactive}（点数、花色、蜡封、增强、版本、贴纸、小丑牌）',
+                    '{C:inactive}（必定导致延迟）'
                 }
             },
             j_soe_extralife = {
-                name = 'Extra Life',
+                name = '再走一遭',
                 text={
-                    "Prevents a game over {C:attention}#1#{} times",
+                    "阻止游戏结束{C:attention}#1#{}次",
                 }
             },
             j_soe_unorganizedjoker = {
@@ -278,11 +276,10 @@ return {
                 }
             },
             j_soe_concupiscentjokester = {
-                name = 'Concupiscent Jokester',
+                name = '饥渴笑匠',
                 text = {
-                    'Each {C:hearts}Heart{}',
-                    'held in hand',
-                    'gives {C:money}$#1#{}'
+                    '每张留手的',
+                    '{C:hearts}红桃{}牌给予{C:money}$#1#'
                 }
             },
             j_soe_infuriatedjokester = {
@@ -342,12 +339,11 @@ return {
                 }
             },
             j_soe_what = {
-                name = 'What? Only 7s?',
+                name = '七七大吉',
                 text = {
-                    'This Joker gains',
-                    '{C:green}+#1#{} to listed {C:green}probabilities{}',
-                    'every {C:attention}#2#{C:inactive} [#3#]{} {C:attention}7s{} scored',
-                    '{C:inactive}(Currently {C:green}+#4# {C:inactive}probabilities)'
+                    '每计分{C:attention}#2#{C:inactive} [#3#]{}张{C:attention}7',
+                    '使标注出的{C:green}几率+#1#',
+                    '{C:inactive}（当前为{C:green}+#4#{C:inactive}几率）'
                 }
             },
             j_soe_mindassault = {
@@ -405,15 +401,14 @@ return {
                 name = '洋红蜡封',
                 text = {
                     '若本牌被打出',
-                    '但未计分',
-                    '则摧毁之'
+                    '但未计分，摧毁之'
                 },
             },
             soe_aquaseal_seal = {
-                name = 'Aqua Seal',
+                name = '水蓝蜡封',
                 text = {
-                    'If this card is played and not scored,',
-                    'destroy this card',
+                    '若本牌被打出',
+                    '但未计分，摧毁之',
                 },
             },
             soe_yellowseal_seal = {
@@ -438,14 +433,14 @@ return {
                 },
             },
             soe_holoseal_seal = {
-                name = 'Holographic Seal',
+                name = '全息蜡封',
                 text = {
-                    "This card will {C:attention}retrigger{}",
-                    "until a {C:green}probability{} hits"
+                    "本牌将{C:attention}重新触发",
+                    "直至{C:green}几率判定{}成功"
                 },
             },
             soe_rustyseal_seal = {
-                name = '生锈',
+                name = '生锈蜡封',
                 text = {
                     "本牌被{C:attention}重新触发{}时",
                     "{X:mult,C:white}X#1#{}倍率"
@@ -484,12 +479,12 @@ return {
                 },
             },
             soe_upgradedsoe_rainbowsealseal_seal = {
-                name = 'Omega Seal',
+                name = '欧米伽蜡封',
                 text = {
-                    'This card counts as {X:dark_edition,C:white}EVERYTHING{}',
-                    '{C:inactive}(Ranks, Suits, Seals, Enhancements, Editions, Stickers and Jokers)',
-                    'This seal {C:attention}cannot{} be removed or replaced',
-                    '{C:inactive}(May cause lag){}'
+                    '本牌视作{X:dark_edition,C:white}一切',
+                    '{C:inactive}（点数、花色、蜡封、增强、版本、贴纸、小丑牌）',
+                    '{C:attention}无法{}移除或替换本蜡封',
+                    '{C:inactive}（可能导致延迟）'
                 },
             },
             red_seal_joker = {
@@ -594,11 +589,11 @@ return {
                 }
             },
             soe_detach = {
-                name = 'Detached Seals',
+                name = '剥离蜡封',
                 text = {
-                    '{C:attention}Detached{} seals have',
-                    'different {C:attention}permanent{} effects',
-                    '{C:inactive}(Only works for vanilla seals)'
+                    '{C:attention}剥离{}的蜡封具有',
+                    '不同的{C:attention}永久{}效果',
+                    '{C:inactive}（仅对原版蜡封有效）'
                 }
             },
             soe_merged_cards = {
@@ -901,9 +896,9 @@ return {
                 }
             },
             sp_soe_egg_upgrade1_name = {
-                name = "Egg",
+                name = "鸡蛋",
                 text = {
-                    "Egg",
+                    "鸡蛋",
                 }
             },
             sp_soe_egg_upgrade2 = {
@@ -914,9 +909,9 @@ return {
                 }
             },
             sp_soe_egg_upgrade2_name = {
-                name = "Egg",
+                name = "鸡蛋",
                 text = {
-                    "Egg",
+                    "鸡蛋",
                 }
             },
             sp_soe_egg_upgrade3 = {
@@ -928,9 +923,9 @@ return {
                 }
             },
             sp_soe_egg_upgrade3_name = {
-                name = "Egg",
+                name = "鸡蛋",
                 text = {
-                    "Egg",
+                    "鸡蛋",
                 }
             },
             sp_soe_egg_upgrade4 = {
@@ -941,9 +936,9 @@ return {
                 }
             },
             sp_soe_egg_upgrade4_name = {
-                name = "Egg",
+                name = "鸡蛋",
                 text = {
-                    "Egg",
+                    "鸡蛋",
                 }
             },
             sp_soe_egg_upgrade5 = {
@@ -1057,14 +1052,14 @@ return {
                 name = '艮卩礻见感见礻卩艮',
                 text = {
                     '为任意{C:attention}1{}张选定卡牌',
-                    '{C:attention}摘除{}一个蜡封'
+                    '{C:attention}剥离{}一个蜡封'
                 }
             },
             c_soe_cannotfinditemwithkeyc_deja_vu = {
-                name = 'Cannot find item with key: \'c_deja_vu\'',
+                name = '无法找到键为\'c_deja_vu\'的物品',
                 text = {
-                    'Merge {C:attention}any{}',
-                    '{C:attention}#1#{} selected cards'
+                    '合并{C:attention}任意',
+                    '{C:attention}#1#{}张选定卡牌'
                 }
             },
         },
@@ -1091,18 +1086,18 @@ return {
                 }
             },
             Purple = {
-                name = 'Purple Seal',
+                name = '紫色蜡封',
                 text = {
-                    "Creates a {C:tarot}Tarot{} card",
-                    "when {C:attention}discarding{}",
-                    "{C:inactive}(Must have room)",
+                    "{C:attention}弃牌{}后",
+                    "生成一张{C:tarot}塔罗{}牌",
+                    "{C:inactive}（必须有空位）",
                 },
             }
         },
     },
     misc = {
         achievement_descriptions={
-            ach_soe_completionist_plus_plus_plus = "Earn a Gold Sticker on every Playing Card",
+            ach_soe_completionist_plus_plus_plus = "为每张扑克牌赢得金注纪念贴",
         },
         achievement_names={
             ach_soe_completionist_plus_plus_plus = "Completionist+++",
@@ -1139,7 +1134,7 @@ return {
             soe_reverseseal_seal = '反转蜡封',
             soe_negativeseal_seal = '负片蜡封',
             soe_carmineseal_seal = '洋红蜡封',
-            soe_aquaseal_seal = 'Aqua Seal',
+            soe_aquaseal_seal = '水蓝蜡封',
             soe_yellowseal_seal = '黄色蜡封',
             soe_foilseal_seal = '闪箔蜡封',
             soe_holoseal_seal = '全息蜡封',
@@ -1148,9 +1143,9 @@ return {
             soe_upgradedblueseal_seal = '进阶蓝色蜡封',
             soe_upgradedgoldseal_seal = '进阶金色蜡封',
             soe_upgradedpurpleseal_seal = '进阶紫色蜡封',
-            soe_upgradedsoe_rainbowsealseal_seal = 'Omega Seal',
+            soe_upgradedsoe_rainbowsealseal_seal = '欧米伽蜡封',
 
-            k_soe_infinity = 'Infinity',
+            k_soe_infinity = '无极',
             k_soe_basic = '基础',
             k_soe_unusual = '非凡',
             k_soe_unique = '绝伦',
