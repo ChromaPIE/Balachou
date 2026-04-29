@@ -155,8 +155,8 @@ return {
             aij_torn = "Torn",
             -- Stickers
             aij_marked = "Marked",
-            aij_unusual_doubled = "Doubled",
-            aij_recherche_doubled = "Doubled",
+            aij_unusual_doubled = "翻倍",
+            aij_recherche_doubled = "翻倍",
             -- Seals
             aij_smiley_seal = "微笑蜡封",
             aij_melted_seal = "融化蜡封",
@@ -865,19 +865,17 @@ return {
                 },
             },
             v_aij_sticker_sheet = {
-                name = "Sticker Sheet",
+                name = "贴纸集",
                 text = {
-                    '{C:attention}Lessens{} the effect',
-                    'of {C:red}detrimental',
-                    '{C:attention}stickers'
+                    '{C:attention}削减{C:red}负面{C:attention}贴纸',
+                    '的效果'
                 },
             },
             v_aij_polkadot = {
-                name = "Polkadot",
+                name = "波点艺术",
                 text = {
-                    '{C:attention}Lessens{} the effect',
-                    'of {C:red}detrimental',
-                    '{C:attention}stickers'
+                    '{C:attention}削减{C:red}负面{C:attention}贴纸',
+                    '的效果'
                 },
             },
         },
@@ -1232,15 +1230,15 @@ return {
             },
             j_aij_pput_together = { name = "Put Together", text = { "" } },
             j_aij_krampus = {
-                name = "Krampus",
+                name = "坎卜斯",
                 text = {
                     {
-                        "Scored {C:attention}Gold Cards{}",
-                        "turn into {C:attention}Stone Cards{}",
+                        "{C:attention}黄金牌{}计分后",
+                        "变为{C:attention}石头牌",
                     },
                     {
-                        "{C:attention}Stone Cards{} earn",
-                        "{C:money}$#1#{} when scored"
+                        "{C:attention}石头牌{}计分后",
+                        "赚取{C:money}$#1#"
                     }
                 },
             },
@@ -2129,11 +2127,10 @@ return {
                 }
             },
             j_aij_scurra = {
-                name = "Scurra",
+                name = "街溜子",
                 text = {
-                    'Retrigger all played cards',
-                    'with a {C:red}Red Seal',
-                    '{C:attention}#1#{} additional time'
+                    '所有带{C:red}红色蜡封{}的出牌',
+                    '重新触发{C:attention}#1#{}次'
                 },
             },
             j_aij_pigpen = { name = "Pigpen", text = { "" } },
@@ -2638,10 +2635,10 @@ return {
                 }
             },
             j_aij_omlette = {
-                name = "Omelette",
+                name = "煎蛋卷",
                 text = {
-                    "Gains {C:money}$#1#{} of sell value when",
-                    "a {C:blue}hand{} or {C:red}discard{} is used",
+                    "每{C:blue}出{}或{C:red}弃{}牌一次",
+                    "售价{C:money}+$#1#"
                 }
             },
             j_aij_stave = { name = "Stave", text = { "" } },
@@ -2700,10 +2697,10 @@ return {
             j_aij_one_little_duck = { name = "One Little Duck", text = { "" } },
             j_aij_four_leaf_clover = { name = "四叶幸运草", text = { "" } },
             j_aij_aphantasia = {
-                name = "Aphantasia",
+                name = "心盲症",
                 text = {
-                    "All played {C:attention}enhanced{} cards",
-                    "become {C:red}Chaotic{}"
+                    "所有打出的{C:attention}增强{}牌",
+                    "变为{C:red}混沌"
                 }
             },
             j_aij_tabula_rasa = {
@@ -3038,23 +3035,22 @@ return {
                 }
             },
             j_aij_negative_space = {
-                name = "Negative Space",
+                name = "负空间",
                 text = {
-                    "{C:attention}+#1#{} Hand Size for every",
-                    "{C:dark_edition}Negative{} Joker held",
-                    "{C:inactive}(Currently {C:attention}+#2#{} {C:inactive}Hand Size){}",
-                    "{C:inactive}(Max of {C:attention}+#3#{}{C:inactive})"
+                    "每拥有一张{C:dark_edition}负片{}小丑牌",
+                    "手牌上限{C:attention}+#1#",
+                    "{C:inactive}（当前为{C:attention}+#2#{C:inactive}）",
+                    "{C:inactive}（至多{C:attention}+#3#{C:inactive}）"
                 }
             },
             j_aij_stargazer = { name = "Stargazer", text = { "" } },
             j_aij_skald = { name = "Skald", text = { "" } },
             j_aij_sky_trees = {
-                name = "Sky Trees",
+                name = "参天大树",
                 text = {
-                    "{C:attention}Blue Seals{} give both",
-                    "{C:mult}Mult{} and {C:chips}Chips{}-type",
-                    "{C:planet}Planet{} cards instead of",
-                    "{C:attention}base{}-type {C:planet}Planet{} cards"
+                    "{C:attention}蓝色蜡封{}同时给予",
+                    "{C:mult}倍率{}和{C:chips}筹码{}型{C:planet}星球{}牌",
+                    "而非仅{C:attention}基础{}型{C:planet}星球{}牌"
                 }
             },
             j_aij_the_freezer = { name = "The Freezer", text = { "" } },
@@ -4809,27 +4805,25 @@ return {
                 }
             },
             aij_unusual_doubled = {
-                name = "Doubled",
+                name = "翻倍",
                 text = {
-                    '{C:attention}X2{} effects',
-                    '{C:inactive,s:0.8}(Granted by an Unusual Tag){}'
+                    '效果{C:attention}X2',
+                    '{C:inactive,s:0.8}（由非常标签提供）'
                 }
             },
             aij_recherche_doubled = {
-                name = "Doubled",
+                name = "翻倍",
                 text = {
-                    '{C:attention}X2{} effects',
-                    '{C:inactive,s:0.8}(Granted by a Recherche Tag){}'
+                    '效果{C:attention}X2',
+                    '{C:inactive,s:0.8}（由珍稀标签提供）'
                 }
             },
             -- (not a sticker but treated as such)
             aij_jest_chaotic_card = {
-                name = "Chaotic",
+                name = "混沌",
                 text = {
-                    "{X:mult,C:white} X#1# {} Mult",
-                    "{C:edition}Enhancement{} is",
-                    "{C:attention}randomised{} after",
-                    "being played",
+                    "{X:mult,C:white}X#1#{}倍率",
+                    "打出后，{C:attention}随机变化{C:edition}增强"
                 }
             },
             -- Seals
