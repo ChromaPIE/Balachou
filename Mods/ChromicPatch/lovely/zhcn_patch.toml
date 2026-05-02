@@ -13,6 +13,46 @@ payload = "pop_in_rate = (not args.no_pop_in and (args.pop_in_rate or 1)) or nil
 match_indent = true
 
 [[patches]]
+[patches.regex]
+target = '=[SMODS allinjest "Items/Tag/Gold/nonstandard.lua"]'
+pattern = '"Set Suit"'
+position = "at"
+payload = '"设定花色"'
+match_indent = true
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS allinjest "Items/Tag/Gold/nonstandard.lua"]'
+pattern = '"Set Rank"'
+position = "at"
+payload = '"设定点数"'
+match_indent = true
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS allinjest "Items/Tag/Gold/nonstandard.lua"]'
+pattern = '"Enhancement"'
+position = "at"
+payload = '"增强"'
+match_indent = true
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS allinjest "Items/Tag/Gold/nonstandard.lua"]'
+pattern = 'label = "Edition"'
+position = "at"
+payload = 'label = "版本"'
+match_indent = true
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS allinjest "Items/Tag/Gold/nonstandard.lua"]'
+pattern = '"Seal"'
+position = "at"
+payload = '"蜡封"'
+match_indent = true
+
+[[patches]]
 [patches.pattern]
 target = '=[SMODS allinjest "Utils/functions.lua"]'
 pattern = '''

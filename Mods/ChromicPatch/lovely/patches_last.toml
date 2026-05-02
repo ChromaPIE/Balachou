@@ -1,0 +1,26 @@
+[manifest]
+version = "1.0.0"
+dump_lua = false
+priority = 214748365 #+1 than AIJ
+
+# ==============================================================
+# Patches applied at MINIMAL priority — after all other mods
+# have injected their code.  Targets code that other mods'
+# lovely patches generated, which doesn't exist yet at high
+# priority when those mods haven't run.
+# ==============================================================
+
+# All in Jest m_aij_simulated: guard .extra access
+# AIJ's eval_calculations.toml injects a loop that unconditionally
+# writes v.ability.extra.all_in_jest.to_hand.trigger = false for every
+# playing card with the m_aij_simulated enhancement.  v.ability.extra
+# may be a plain number (from other enhancements / base config).
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+match_indent = true
+pattern = '''
+v.ability.extra.all_in_jest.to_hand.trigger = false
+'''
+position = "at"
+payload = "if type(v.ability.extra) == 'table' and v.ability.extra.all_in_jest and v.ability.extra.all_in_jest.to_hand then v.ability.extra.all_in_jest.to_hand.trigger = false end"

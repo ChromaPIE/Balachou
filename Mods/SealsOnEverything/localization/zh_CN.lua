@@ -656,7 +656,7 @@ return {
             c_soe_talismanq = {
                 name = '护身符？',
                 text = {
-                    "为选定的{C:attention}1{}张小丑牌",
+                    "为随机一张小丑牌",
                     "打上{C:attention}金色蜡封"
                 }
             },
@@ -691,14 +691,14 @@ return {
             c_soe_dejavuqq = {
                 name = '既视感？？',
                 text = {
-                    '为任意一张消耗牌',
+                    '为随机一张消耗牌',
                     '打上{C:red}红色蜡封'
                 }
             },
             c_soe_tdejince = {
                 name = '既入迷视感',
                 text = {
-                    '为{C:attention}1{}张选定手牌',
+                    '为选定的{C:attention}1{}张手牌',
                     '打上{C:attention}随机{}蜡封',
                 }
             }

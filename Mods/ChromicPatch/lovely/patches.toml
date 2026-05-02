@@ -86,6 +86,21 @@ tag.count > 1 and {n = G.UIT.T, config = {text = 'x'..tag.count, scale = 0.4, co
 '''
 match_indent = true
 
+# All in Jest smiley seal: avoid nil ability.seal in collection view
+# SOE's homepage shows example cards with seals.  When generate_card_ui
+# processes the badge info_queue it calls the seal's loc_vars with the
+# display card.  For playing cards in the collection the ability.seal
+# sub-table may not exist.  Fall back to the seal center's own config.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS allinjest "Items/Seals/smiley.lua"]'
+match_indent = true
+pattern = '''
+return { vars = { card.ability.seal.extra.joker_amt } }
+'''
+position = "at"
+payload = "return { vars = { (card.ability.seal and card.ability.seal.extra and card.ability.seal.extra.joker_amt) or self.config.extra.joker_amt } }"
+
 # All in Jest: unusual_doubled sticker — guard against nil ability on un-apply
 # SOE copy_card_but_not calls apply(nil) on cards whose ability was never set,
 # but the not-val path assumed card.ability[self.key] existed.

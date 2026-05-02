@@ -10,6 +10,7 @@
   "main_file": "main.lua",
   "badge_colour": "33ffd3",
   "version": "0.0.1",
+  "uses_lovely": true,
   "dependencies": [
     "Lovely (>=0.7.1)"
   ]

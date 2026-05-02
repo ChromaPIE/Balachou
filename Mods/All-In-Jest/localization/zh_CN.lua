@@ -79,7 +79,7 @@ return {
             k_aij_two_into_one_ex = '合二为一！', -- Mycologists
             k_aij_plus_two_moons = "卫星牌+2", -- Sky Trees
             k_aij_does_not_score_ex = "不计分！", -- Opening Move
-            k_aij_create = "Create" -- Nonstandard tag
+            k_aij_create = "生成" -- Nonstandard tag
 
         },
         v_dictionary = {
@@ -1538,11 +1538,11 @@ return {
                 },
             },
             j_aij_magick_joker = {
-                name = "Magick Joker",
+                name = "万智小丑",
                 text = {
-                    "Played {V:1}#1#{} give their",
-                    "{C:chips}+Chips{} as {C:mult}+Mult{} instead",
-                    "{C:inactive,s:0.8}(Suit changes at end of round){}"
+                    "打出的{V:1}#1#{}牌",
+                    "给予{C:chips}+筹码{}而非{C:mult}+倍率",
+                    "{C:inactive,s:0.8}（回合结束时变更花色）"
                 }
             },
             j_aij_jeff_the_joker = {
@@ -4499,11 +4499,11 @@ return {
                 }
             },
             tag_aij_occult = {
-                name = 'Occult Tag',
+                name = '玄机标签',
                 text = {
-                    'Create {C:attention}3 {C:tarot}Tarot{} cards',
-                    'and {C:attention}2 {C:spectral}Spectral{} cards',
-                    '{s:0.8}They are {s:0.8,C:dark_edition}Negative',
+                    '生成{C:attention}3{}张{C:tarot}塔罗{}牌',
+                    '和{C:attention}2{}张{C:spectral}幻灵{}牌',
+                    '{s:0.8}均为{s:0.8,C:dark_edition}负片',
                 }
             },
             tag_aij_asteroid = {
