@@ -75,7 +75,7 @@ return {
             k_aij_blood_spilt_ex = '抛洒热血！', -- Blood Artist
             k_aij_double_ex = '双倍！', -- Taggart
             k_aij_triple_ex = '三倍！', -- Toto Legendary
-            k_aij_chaos_ex = '混乱！', -- Chaotic modifier
+            k_aij_chaos_ex = '混沌！', -- Chaotic modifier
             k_aij_two_into_one_ex = '合二为一！', -- Mycologists
             k_aij_plus_two_moons = "卫星牌+2", -- Sky Trees
             k_aij_does_not_score_ex = "不计分！", -- Opening Move
@@ -161,7 +161,7 @@ return {
             aij_smiley_seal = "微笑蜡封",
             aij_melted_seal = "融化蜡封",
             -- Other
-            aij_jest_chaotic_card = "Chaotic", -- Treated internally as a sticker
+            aij_jest_chaotic_card = "混沌", -- Treated internally as a sticker
         },
         poker_hands = {
             ['aij_Royal Flush'] = "皇家同花顺",
@@ -1162,12 +1162,11 @@ return {
                 },
             },
             j_aij_doodle = {
-                name = "Doodle",
+                name = "信手涂鸦",
                 text = {
-                    "At start of each {C:attention}round{}, {C:green}#1# in #2#{}",
-                    "chance to copy {C:attention}both adjacent{}",
-                    "Jokers for the rest of",
-                    "the {C:attention}round",
+                    "每{C:attention}回合{}开始时，有{C:green}#1#/#2#{}的几率",
+                    "复制{C:attention}左右紧邻{}的两张小丑牌",
+                    "直至{C:attention}回合{}结束",
                     "{C:inactive}#3#"
                 },
             },
@@ -2363,13 +2362,13 @@ return {
                 }
             },
             j_aij_corpse_paint = {
-                name = "Corpse Paint",
+                name = "尸妆",
                 text = {
-                    "Removes {C:dark_edition}Negative{} from",
-                    "scored cards. For each,",
-                    "{C:green}#1# in #2#{} chance this Joker",
-                    "gains {C:attention}+#3# hand size",
-                    "{C:inactive}(Currently {C:attention}+#4#{C:inactive} hand size)"
+                    "移除计分牌的{C:dark_edition}负片",
+                    "每移除一张，本牌皆有",
+                    "{C:green}#1#/#2#{}的几率",
+                    "使手牌上限{C:attention}+#3#",
+                    "{C:inactive}（当前为{C:attention}+#4#{C:inactive}手牌上限）"
                 }
             },
             j_aij_toothy_joker = {
@@ -3526,12 +3525,12 @@ return {
             j_aij_doink = { name = "Doink", text = { "" }, unlock = { "?????" } },
             j_aij_monarcho = { name = "Monarcho", text = { "" }, unlock = { "?????" } },
             j_aij_pompey = {
-                name = "Pompey",
+                name = "庞培",
                 text = {
-                    "{X:mult,C:white}X#1#{} Mult per {C:attention}Joker{}",
-                    "to the {C:attention}right{},",
-                    "Pompey included",
-                    "{C:inactive}（当前为{X:mult,C:white}X#2#{}{C:inactive} Mult){}"
+                    "{C:attention}右侧{}每有一张{C:attention}小丑牌",
+                    "{C:inactive,s:0.8}（包括本身）",
+                    "{X:mult,C:white}X#1#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）"
                 },
                 unlock = {
                     "?????"
@@ -3664,21 +3663,22 @@ return {
                 }
             },
             j_aij_dor = {
-                name = "D'or",
+                name = "金夫人",
                 text = {
-                    "{X:dark_edition,C:white}#1#{} Mult on {C:attention}final{}",
-                    "hand of {C:attention}round"
+                    "每{C:attention}回合{}的",
+                    "{C:attention}最后{}一手出牌",
+                    "{X:dark_edition,C:white}#1#{}倍率",
                 },
                 unlock = {
                     "?????"
                 }
             },
             j_aij_archy = {
-                name = "Archy",
+                name = "阿奇",
                 text = {
-                    "All initial {C:attention}cards{} and",
-                    "{C:attention}Booster Packs{} in the",
-                    "{C:money}Shop{} are free"
+                    "每个{C:money}商店{}内的",
+                    "首批{C:attention}卡牌{}和{C:attention}补充包",
+                    "均为免费"
                 },
                 unlock = {
                     "?????"
@@ -3797,20 +3797,20 @@ return {
             },
             j_aij_coryat = { name = "Coryat", text = { "" }, unlock = { "?????" } },
             j_aij_bluet = {
-                name = "Bluet",
+                name = "布卢伊特",
                 text = {
-                    "When {C:attention}Blind{} is selected,",
-                    "create a {C:dark_edition}Negative{}",
-                    "{C:spectral}Spectral{} card"
+                    "选择{C:attention}盲注{}后",
+                    "生成一张{C:dark_edition}负片{C:spectral}幻灵{}牌"
                 },
                 unlock = {
                     "?????"
                 }
             },
             j_aij_bebe = {
-                name = "Bébé",
+                name = "贝贝",
                 text = {
-                    "{C:blue}+#1#{} Hands per round",
+                    "每一回合",
+                    "出牌次数{C:blue}+#1#",
                 },
                 unlock = { "?????" }
             },
@@ -3849,12 +3849,12 @@ return {
             },
             j_aij_Ffwllier = { name = "Ffwllier", text = { "" }, unlock = { "?????" } },
             j_aij_martellino = {
-                name = "Martellino",
+                name = "马尔泰利诺",
                 text = {
-                    "After {C:attention}#2#{} rounds, {C:money}sell{} this",
-                    "Joker to create {C:attention}any Joker{}",
-                    "from your {C:attention}collection",
-                    "{C:inactive}(Currently {C:attention}#1#{}{C:inactive}/#2#){}"
+                    "{C:attention}#2#{}回合后{C:money}售出{}本牌",
+                    "即可生成{C:attention}收藏{}中的",
+                    "{C:attention}任意{}一张{C:attention}小丑牌",
+                    "{C:inactive}（当前为{C:attention}#1#{C:inactive}/#2#回合）"
                 },
                 unlock = { "?????" }
             },
@@ -3904,11 +3904,11 @@ return {
                 unlock = { "?????" }
             },
             j_aij_bozo = {
-                name = "Bozo",
+                name = "波佐",
                 text = {
-                    "When {C:attention}Boss Blind{} is",
-                    "defeated, create {C:attention}#1#{}",
-                    "random {C:dark_edition}Negative{} Jokers",
+                    "击败{C:attention}Boss盲注{}后",
+                    "随机生成{C:attention}#1#{}张",
+                    "{C:dark_edition}负片{}小丑牌",
                 },
                 unlock = { "?????" }
             },
