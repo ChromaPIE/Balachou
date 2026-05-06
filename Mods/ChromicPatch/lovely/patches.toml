@@ -407,3 +407,16 @@ pattern = '''(?<indent>[\t ]*)elseif not self\.naivebulkuse and self\.ability\.c
 position = 'at'
 line_prepend = '$indent'
 payload = '''elseif not self.naivebulkuse and self.ability.consumeable.hand_type and not (obj.use and type(obj.use) == 'function') then'''
+
+# SOE rustyseal (and similar): avoid nil ability.seal in collection view
+# Same pattern as AIJ smiley.  The loc_vars reads card.ability.seal which
+# is nil on display cards in SOE's / Steamodded's collection page.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS SealsOnEverything "main.lua"]'
+match_indent = true
+pattern = '''
+return {vars = {card.ability.seal.extra.xmult}}
+'''
+position = "at"
+payload = "return {vars = {card.ability.seal and card.ability.seal.extra and card.ability.seal.extra.xmult or self.config.extra.xmult}}"
