@@ -991,8 +991,8 @@ return {
             j_hanging_chad={
                 name="未断选票",
                 text={
-                    "出牌中{C:attention}第一张{}计分牌",
-                    "会重新触发{C:attention}#1#{}次"
+                    "出牌中的{C:attention}首张{}计分牌",
+                    "重新触发{C:attention}#1#{}次"
                 },
                 unlock={
                     "用{E:1,C:attention}#1#",
@@ -1290,9 +1290,8 @@ return {
             j_photograph={
                 name="照片",
                 text={
-                    "打出的第一张{C:attention}人头牌{}",
-                    "在计分时",
-                    "会给予{X:mult,C:white} X#1# {}倍率",
+                    "出牌中的首张{C:attention}人头牌",
+                    "在计分时给予{X:mult,C:white}X#1#{}倍率",
                 },
             },
             j_popcorn={

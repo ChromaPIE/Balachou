@@ -370,18 +370,18 @@ return {
                 }
             },
             tag_dvrprv_jumbo_tag = {
-                name = "Stamp Tag",
+                name = "票戳标签",
                 text = {
-                    "Gives a free",
-                    "{C:attention}Jumbo Tag Pack"
+                    "免费获得一个",
+                    "{C:attention}巨型标签包"
                 }
             },
             tag_dvrprv_mega_tag = {
-                name = "Mega Stamp Tag",
+                name = "超级票戳标签",
                 text = {
-                    "Gives a free",
-                    "{C:attention}Jumbo Tag Pack",
-                    "and a {C:attention}random Tag"
+                    "免费获得一个",
+                    "{C:attention}巨型标签包",
+                    "和{C:attention}随机{}一个{C:attention}标签"
                 }
             }
         },
@@ -417,9 +417,9 @@ return {
         },
         Edition = {
             e_negative_cine = {
-                name = "Negative",
+                name = "负片",
                 text = {
-                    "{C:dark_edition}+#1#{} Cine slot"
+                    "电影票槽位{C:dark_edition}+#1#"
                 }
             }
         },
