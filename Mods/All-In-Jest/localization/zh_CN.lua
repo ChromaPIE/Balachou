@@ -475,10 +475,9 @@ return {
                 },
             },
             bl_aij_the_thorn = {
-                name = "The Thorn",
+                name = "棘",
                 text = {
-                    'Debuffs all',
-                    'enhanced cards'
+                    '增强牌全部失效'
                 },
             },
             bl_aij_the_twin = {
@@ -1071,12 +1070,12 @@ return {
                 }
             },
             j_aij_squeezy_pete = {
-                name = "Squeezy Pete",
+                name = "捏捏皮皮",
                 text = {
-                    "Gains {X:mult,C:white}X#1#{} Mult per",
-                    "{C:attention}consecutive{} played hand",
-                    "containing a {C:attention}Full House{}",
-                    "{C:inactive}（当前为{X:mult,C:white}X#2#{}{C:inactive} Mult){}",
+                    "每次{C:attention}连续{}打出{C:attention}葫芦{}时",
+                    "本牌获得{X:mult,C:white}X#1#{}倍率",
+                    "若中断则重置",
+                    "{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）"
                 },
             },
             j_aij_infinite_jest = {
@@ -1937,12 +1936,11 @@ return {
                 },
             },
             j_aij_spectre = {
-                name = "Spectre",
+                name = "幻灵",
                 text = {
-                    "When {C:attention}Boss Blind{} is",
-                    "defeated, replace all held",
-                    "{C:attention}consumables{} with random",
-                    "{C:spectral}Spectral{} cards"
+                    "击败{C:attention}Boss盲注{}后",
+                    "将所持{C:attention}消耗牌",
+                    "全部替换为随机{C:spectral}幻灵{}牌"
                 }
             },
             j_aij_dapper_dan = {
@@ -2981,10 +2979,9 @@ return {
                 }
             },
             j_aij_illuminated_joker = {
-                name = "Illuminated Joker",
+                name = "泥金小丑",
                 text = {
-                    "{C:money}Gold{} Tags are {C:attention}more{} likely",
-                    "to appear"
+                    "{C:money}黄金{}标签{C:attention}更易{}出现"
                 }
             },
             j_aij_magazine_ad = { name = "Magazine Ad", text = { "" } },
@@ -4385,7 +4382,7 @@ return {
                 name = '晶光标签',
                 text = {
                     '为{C:attention}随机{}一张无版本的小丑牌',
-                    '及牌组中的{C:attention}#1#{}张牌添加{C:dark_edition}闪箔{}'
+                    '及牌组中的{C:attention}#1#{}张牌添加{C:dark_edition}闪箔'
                 }
             },
             tag_aij_iridescent = {
@@ -4423,11 +4420,10 @@ return {
                 }
             },
             tag_aij_capital = {
-                name = 'Capital Tag',
+                name = '资本标签',
                 text = {
-                    'After defeating',
-                    'the Boss Blind,',
-                    'gain {C:money}$#1#'
+                    '击败Boss盲注后',
+                    '获得{C:money}$#1#'
                 }
             },
             tag_aij_bierstiefel = {
@@ -4507,12 +4503,11 @@ return {
                 }
             },
             tag_aij_asteroid = {
-                name = 'Asteroid Tag',
+                name = '星陨标签',
                 text = {
-                    'Gives a free',
-                    '{C:planet}Celestial Pack',
-                    'with {C:dark_edition}Black Hole{},',
-                    '{C:dark_edition}Pulsar{}, and {C:dark_edition}Gravastar{}',
+                    '免费给予一个',
+                    '含有{C:dark_edition}黑洞{}、{C:dark_edition}脉冲星',
+                    '和{C:dark_edition}重力真空星{}的{C:planet}天体包',
                 }
             },
             tag_aij_polydactyly = {
@@ -4572,12 +4567,10 @@ return {
                 }
             },
             tag_aij_superlunary = {
-                name = 'Superlunary Tag',
+                name = '天外标签',
                 text = {
-                    'Apply {C:aij_stellar}Stellar{}',
-                    'to a {C:attention}random{} Joker',
-                    'and {C:attention}#1#{} cards in the deck',
-                    'that have no edition'
+                    '为{C:attention}随机{}一张无版本的小丑牌',
+                    '及牌组中的{C:attention}#1#{}张牌添加{C:aij_stellar}星辰'
                 }
             },
             tag_aij_gold_dust = {

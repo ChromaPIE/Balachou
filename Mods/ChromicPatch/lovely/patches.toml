@@ -374,6 +374,18 @@ pattern = 'if G.jokers and #G.jokers.highlighted > 0 and #G.jokers.highlighted <
 position = "at"
 payload = 'if G.jokers and #G.jokers.highlighted > 0 and #G.jokers.highlighted <= (card.ability.max_highlighted or card.ability.extra.max_highlighted) then'
 
+# SOE energy vice: modify only numbers that are actually shown on the card
+# The stock modifier recursively changes every number in ability, including
+# hidden state and formula inputs.  That can make shown values move backwards
+# (e.g. X3 -> X2).  Energy's text says card values, so bind it to loc_vars.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS SealsOnEverything "synonyms/consumeables/vice.lua"]'
+match_indent = true
+pattern = "SEALS.modify_joker_values(G.jokers.highlighted[i], {['+'] = 1})"
+position = "at"
+payload = "soe_energy_modify_joker_values(G.jokers.highlighted[i])"
+
 # SealsOnEverything: guard against nil G.soe_old_editions in recalc_quantum_editions
 # G.soe_old_editions is only initialized in Game:start_run() (main.lua:4191).
 # When set_seal → recalc_quantum_editions is triggered from collection view
@@ -420,3 +432,57 @@ return {vars = {card.ability.seal.extra.xmult}}
 '''
 position = "at"
 payload = "return {vars = {card.ability.seal and card.ability.seal.extra and card.ability.seal.extra.xmult or self.config.extra.xmult}}"
+
+# SOE energy vice: loc_vars-bound value mutation helper
+# This helper lives in vice.lua so Energy can use it without changing SOE's
+# generic SEALS.modify_joker_values semantics for other mechanics.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS SealsOnEverything "synonyms/consumeables/vice.lua"]'
+match_indent = true
+pattern = '''
+SMODS.Consumable {
+    key = 'energy',
+'''
+position = "before"
+payload = '''
+local function soe_energy_collect_number_paths(root, shown, paths, seen, path)
+    if seen[root] then return end
+    seen[root] = true
+    for k, v in pairs(root) do
+        local next_path = {unpack(path)}
+        next_path[#next_path + 1] = k
+        if type(v) == 'number' and shown[v] then
+            paths[#paths + 1] = next_path
+        elseif type(v) == 'table' then
+            soe_energy_collect_number_paths(v, shown, paths, seen, next_path)
+        end
+    end
+end
+
+local function soe_energy_get_path(root, path)
+    local current = root
+    for i = 1, #path - 1 do
+        current = current[path[i]]
+    end
+    return current, path[#path]
+end
+
+local function soe_energy_modify_joker_values(joker)
+    if not joker or not joker.config or not joker.config.center or not joker.config.center.loc_vars then return end
+    local vars = joker.config.center:loc_vars({}, joker)
+    vars = vars and vars.vars or {}
+    local shown = {}
+    for _, v in ipairs(vars) do
+        if type(v) == 'number' then shown[v] = true end
+    end
+    local paths = {}
+    if not joker.ability.extra then return end
+    soe_energy_collect_number_paths(joker.ability.extra, shown, paths, {}, {})
+    for _, path in ipairs(paths) do
+        local ref_table, ref_value = soe_energy_get_path(joker.ability.extra, path)
+        ref_table[ref_value] = ref_table[ref_value] + 1
+    end
+end
+
+'''
