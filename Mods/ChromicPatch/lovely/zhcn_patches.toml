@@ -3,6 +3,16 @@ version = "1.0.0"
 dump_lua = true
 priority = -999
 
+[[patches]]
+[patches.pattern]
+target = "functions/stat_events.lua"
+pattern = '''
+play_area_status_text("Not Allowed!")--localize('k_not_allowed_ex'), true)'''
+position = "at"
+payload = '''
+play_area_status_text("不允许！")--localize('k_not_allowed_ex'), true)'''
+match_indent = true
+
 # 减缓卡牌名称渐入效果以适应中文牌名普遍长度
 [[patches]]
 [patches.pattern]
@@ -18,7 +28,6 @@ target = '=[SMODS allinjest "Items/Tag/Gold/nonstandard.lua"]'
 pattern = '"Set Suit"'
 position = "at"
 payload = '"设定花色"'
-match_indent = true
 
 [[patches]]
 [patches.regex]
@@ -26,7 +35,6 @@ target = '=[SMODS allinjest "Items/Tag/Gold/nonstandard.lua"]'
 pattern = '"Set Rank"'
 position = "at"
 payload = '"设定点数"'
-match_indent = true
 
 [[patches]]
 [patches.regex]
@@ -34,7 +42,6 @@ target = '=[SMODS allinjest "Items/Tag/Gold/nonstandard.lua"]'
 pattern = '"Enhancement"'
 position = "at"
 payload = '"增强"'
-match_indent = true
 
 [[patches]]
 [patches.regex]
@@ -42,7 +49,6 @@ target = '=[SMODS allinjest "Items/Tag/Gold/nonstandard.lua"]'
 pattern = 'label = "Edition"'
 position = "at"
 payload = 'label = "版本"'
-match_indent = true
 
 [[patches]]
 [patches.regex]
@@ -50,7 +56,6 @@ target = '=[SMODS allinjest "Items/Tag/Gold/nonstandard.lua"]'
 pattern = '"Seal"'
 position = "at"
 payload = '"蜡封"'
-match_indent = true
 
 [[patches]]
 [patches.pattern]
@@ -71,7 +76,6 @@ target = '=[SMODS allinjest "Utils/ui.lua"]'
 pattern = 'text = "Select"'
 position = "at"
 payload = 'text = "选择"'
-match_indent = true
 
 [[patches]]
 [patches.pattern]
@@ -93,7 +97,6 @@ target = '=[SMODS allinjest "Items/Jokers/stock_broker.lua"]'
 pattern = '"X"..tostring(ran_amount.." Interest")'
 position = "at"
 payload = '"利息X"..tostring(ran_amount)'
-match_indent = true
 
 [[patches]]
 [patches.pattern]
@@ -120,7 +123,6 @@ target = '=[SMODS SealsOnEverything "synonyms/consumeables/vice.lua"]'
 pattern = "'Joker' or 'Jokers'"
 position = "at"
 payload = "'小丑牌' or '小丑牌'"
-match_indent = true
 
 [[patches]]
 [patches.regex]
@@ -128,4 +130,3 @@ target = '=[SMODS SealsOnEverything "main.lua"]'
 pattern = "'Nothing'"
 position = "at"
 payload = "'无'"
-match_indent = true

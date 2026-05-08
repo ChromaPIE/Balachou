@@ -148,9 +148,9 @@ return {
             j_soe_seeder = {
                 name = 'Seeder',
                 text={
-                    "Change the current runs {C:attention}seed{}",
-                    "once per ante",
-                    "{C:inactive}(#1#){}"
+                    "变更当前赛局的{C:attention}种子",
+                    "每底注限用一次",
+                    "{C:inactive}（#1#）"
                 }
             },
             j_soe_v_blankjoker = {

@@ -285,7 +285,7 @@ return {
             e_negative_generic = {
                 name = "负片",
                 text = {
-                    "{C:dark_edition}+#1#{}个区域槽位"
+                    "区域槽位{C:dark_edition}+#1#"
                 },
             }
         },

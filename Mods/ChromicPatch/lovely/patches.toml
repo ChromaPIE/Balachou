@@ -433,6 +433,25 @@ return {vars = {card.ability.seal.extra.xmult}}
 position = "at"
 payload = "return {vars = {card.ability.seal and card.ability.seal.extra and card.ability.seal.extra.xmult or self.config.extra.xmult}}"
 
+# SOE blue seals: do not generate All in Jest Moon variants
+# AIJ patches vanilla Blue Seal with this same rule.  SOE reimplements Blue Seal
+# generation in several paths, so keep it selecting the base planet for the hand.
+[[patches]]
+[patches.regex]
+target = '=[SMODS SealsOnEverything "main.lua"]'
+pattern = '''(?<indent>[\t ]*)if v\.config\.hand_type == G\.GAME\.last_hand_played then'''
+position = "at"
+line_prepend = "$indent"
+payload = '''if v.config.hand_type == G.GAME.last_hand_played and not v.config.moon then'''
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS SealsOnEverything "bigfuncs.lua"]'
+pattern = '''(?<indent>[\t ]*)if v\.config\.hand_type == G\.GAME\.last_hand_played then'''
+position = "at"
+line_prepend = "$indent"
+payload = '''if v.config.hand_type == G.GAME.last_hand_played and not v.config.moon then'''
+
 # SOE energy vice: loc_vars-bound value mutation helper
 # This helper lives in vice.lua so Energy can use it without changing SOE's
 # generic SEALS.modify_joker_values semantics for other mechanics.
@@ -469,20 +488,103 @@ local function soe_energy_get_path(root, path)
 end
 
 local function soe_energy_modify_joker_values(joker)
-    if not joker or not joker.config or not joker.config.center or not joker.config.center.loc_vars then return end
-    local vars = joker.config.center:loc_vars({}, joker)
-    vars = vars and vars.vars or {}
+    if not joker or not joker.ability then return end
+    local vars = {joker:generate_UIBox_ability_table(true)}
+    vars = vars[1] or {}
     local shown = {}
     for _, v in ipairs(vars) do
         if type(v) == 'number' then shown[v] = true end
     end
+    local name = joker.ability.name
+    if name == 'Throwback' then
+        joker.ability.extra = joker.ability.extra + 1
+        joker.ability.x_mult = joker.ability.x_mult + 1
+        return
+    elseif name == 'Red Card' then
+        joker.ability.extra = joker.ability.extra + 1
+        joker.ability.mult = joker.ability.mult + 1
+        return
+    elseif name == 'Blue Joker' then
+        local deck_count = ((G.deck and G.deck.cards) and #G.deck.cards or 52)
+        joker.ability.soe_energy_blue_joker_chip_delta = (joker.ability.soe_energy_blue_joker_chip_delta or 0) + 1 - deck_count
+        joker.ability.extra = joker.ability.extra + 1
+        return
+    end
+    if type(joker.ability.extra) == 'number' and shown[joker.ability.extra] then
+        joker.ability.extra = joker.ability.extra + 1
+        return
+    end
+    if type(joker.ability.extra) ~= 'table' then return end
     local paths = {}
-    if not joker.ability.extra then return end
     soe_energy_collect_number_paths(joker.ability.extra, shown, paths, {}, {})
     for _, path in ipairs(paths) do
         local ref_table, ref_value = soe_energy_get_path(joker.ability.extra, path)
         ref_table[ref_value] = ref_table[ref_value] + 1
     end
 end
-
 '''
+
+# SOE energy vice: Blue Joker derived chip display
+# Blue Joker's second loc_var is computed from extra * deck size.  Energy changes
+# the displayed slot itself, so carry the stored delta into the card text.
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+match_indent = true
+pattern = "elseif self.ability.name == 'Blue Joker' then loc_vars = {self.ability.extra, self.ability.extra*((G.deck and G.deck.cards) and #G.deck.cards or 52)}"
+position = "at"
+payload = "elseif self.ability.name == 'Blue Joker' then loc_vars = {self.ability.extra, self.ability.extra*((G.deck and G.deck.cards) and #G.deck.cards or 52) + (self.ability.soe_energy_blue_joker_chip_delta or 0)}"
+
+# SOE energy vice: Blue Joker derived chip scoring
+# Keep the real chip_mod equal to the patched displayed chip value.
+[[patches]]
+[patches.regex]
+target = "card.lua"
+pattern = '''(?<indent>[\t ]*)if self\.ability\.name == 'Blue Joker' and #G\.deck\.cards > 0 then\s*return \{\s*message = localize\{type='variable',key='a_chips',vars=\{self\.ability\.extra\*#G\.deck\.cards\}\},\s*chip_mod = self\.ability\.extra\*#G\.deck\.cards,\s*colour = G\.C\.CHIPS\s*\}\s*end'''
+position = "at"
+line_prepend = "$indent"
+payload = '''if self.ability.name == 'Blue Joker' and #G.deck.cards > 0 then
+    return {
+        message = localize{type='variable',key='a_chips',vars={self.ability.extra*#G.deck.cards + (self.ability.soe_energy_blue_joker_chip_delta or 0)}},
+        chip_mod = self.ability.extra*#G.deck.cards + (self.ability.soe_energy_blue_joker_chip_delta or 0),
+        colour = G.C.CHIPS
+    }
+end'''
+
+# All in Jest The Auroch: skip rankless/suitless deck cards
+# Some cross-mod playing cards may have no base.suit or base.value.  The
+# original reset code indexes suit_table/rank_table with nil and crashes.
+[[patches]]
+[patches.regex]
+target = '=[SMODS allinjest "Utils/functions.lua"]'
+pattern = '''(?<indent>[\t ]*)for _, v in pairs\(G\.deck\.cards\) do\s*suit_table\[v\.base\.suit\] = suit_table\[v\.base\.suit\] or 0\s*suit_table\[v\.base\.suit\] = suit_table\[v\.base\.suit\] \+ 1\s*rank_table\[v\.base\.value\] = rank_table\[v\.base\.value\] or 0\s*rank_table\[v\.base\.value\] = rank_table\[v\.base\.value\] \+ 1\s*end'''
+position = "at"
+line_prepend = "$indent"
+payload = '''for _, v in pairs(G.deck.cards) do
+    if v.base and v.base.suit and v.base.value then
+        suit_table[v.base.suit] = suit_table[v.base.suit] or 0
+        suit_table[v.base.suit] = suit_table[v.base.suit] + 1
+        rank_table[v.base.value] = rank_table[v.base.value] or 0
+        rank_table[v.base.value] = rank_table[v.base.value] + 1
+    end
+end'''
+
+# CardSleeves: skip sleeve individual area before deck exists
+# SMODS may calculate object weights while starting a run, before G.deck is
+# initialized. CardSleeves injects a fake individual area and indexes G.deck.cards.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS CardSleeves "CardSleeves.lua"]'
+match_indent = true
+pattern = "if _type == 'individual' then"
+position = "at"
+payload = "if _type == 'individual' and G.deck then"
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS CardSleeves "CardSleeves.lua"]'
+match_indent = true
+pattern = "scored_card = G.deck.cards[1] or G.deck,"
+position = "at"
+payload = "scored_card = (G.deck and G.deck.cards and G.deck.cards[1]) or G.deck,"
+
