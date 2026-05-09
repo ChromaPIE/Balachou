@@ -73,6 +73,14 @@ return {
                     "{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）"
                 },
             },
+            j_riftraft_tupperware = {
+                name = "特百惠餐盒",
+                text = {
+                    "手牌上限{C:red}#1#",
+                    "回合结束时",
+                    "所有手牌变为{C:dark_edition}负片"
+                },
+            },
         },
         -- Rift Cards
         Rift = {
@@ -233,8 +241,7 @@ return {
                 text = {
                     "获得等同于当前所示的",
                     "{C:riftraft_void}虚空{}牌之总价的资金",
-                    "{C:inactive}（最高{C:money}$#1#{C:inactive}，",
-                    "{C:inactive}当前为{C:money}$#2#{C:inactive}）",
+                    "{C:inactive}（最高{C:money}$#1#{C:inactive}，当前为{C:money}$#2#{C:inactive}）",
                 }
             },
             c_riftraft_entropy = {

@@ -65,10 +65,10 @@ return {
     },
     misc = {
         dictionary = {
-            k_riftraft_void_empty = {"OPEN BOOSTER PACKS", "TO FILL THE VOID"},
-            k_plus_riftraft_rift = "+1 Rift",
+            k_riftraft_void_empty = {"开启补充包", "以填充虚空"},
+            k_plus_riftraft_rift = "裂隙+1",
             k_riftraft_changed = "Changed!",
-            b_riftraft_void = "The Void",
+            b_riftraft_void = "虚空",
 
             -- config
             c_riftraft = "配置",
@@ -82,14 +82,12 @@ return {
             c_riftraft_only_jokers = "仅小丑牌",
             c_riftraft_only_jokers_desc = {
                 "完全禁用本模组的虚空机制",
-                "leaving only the Jokers and Spectral cards",
-                "that don't intersect with the Void.",
-                "(requires game restart)",
+                "仅保留不涉及虚空机制的小丑牌和幻灵牌",
+                "（需要重启游戏）",
             },
-            c_riftraft_voidrate = "Void Pack Rate",
+            c_riftraft_voidrate = "虚空包出现率",
             c_riftraft_voidrate_desc = {
-                "the likelihood of Void Packs",
-                "appearing in the Shop."
+                "虚空包出现于商店的几率"
             },
             c_riftraft_allow_buy = "Always Allow Send From Shop",
             c_riftraft_allow_buy_desc = {
@@ -106,7 +104,7 @@ return {
         },
         v_text = {
             ch_c_riftraft_no_void = {
-                "{C:riftraft_void}Void{} Packs no longer appear in the {C:attention}shop{}"
+                "{C:riftraft_void}虚空{}包不再出现于{C:attention}商店{}内"
             },
             ch_c_riftraft_only_retrieval_tag = {
                 "All tags are {C:attention}Retrieval{} Tags"
