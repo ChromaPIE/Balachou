@@ -276,7 +276,7 @@ return {
                 name = "负人",
                 text = {
                     "{C:dark_edition}负片{}小丑牌",
-                    "出现几率{C:attention}X#1#",
+                    "出现频率{C:attention}X#1#",
                 },
                 unlock = {
                     "携带{C:attention}负片妇人",
@@ -853,7 +853,7 @@ return {
                 name = "金牌",
                 text = {
                     "{C:money}黄金{}标签的",
-                    "出现几率{C:attention}X#1#",
+                    "出现频率{C:attention}X#1#",
                 },
             },
             v_aij_trophy = {
@@ -1114,7 +1114,7 @@ return {
                 name = "负片妇人",
                 text = {
                     "{C:attention}商店{}内{C:dark_edition}负片{}小丑牌的",
-                    "出现几率{C:attention}X#1#"
+                    "出现频率{C:attention}X#1#"
                 },
             },
             j_aij_old_joker = {

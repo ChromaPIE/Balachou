@@ -130,3 +130,42 @@ target = '=[SMODS SealsOnEverything "main.lua"]'
 pattern = "'Nothing'"
 position = "at"
 payload = "'无'"
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS RiftRaft "src/RiftRaft.lua"]'
+pattern = '''
+name = "Wormhole",
+text = {
+"{C:attention}Shop{} cards can be",
+"sent to the {C:riftraft_void}Void{}",
+"for their original",
+"price",
+'''
+position = "at"
+payload = '''
+name = "虫洞跃迁",
+text = {
+"可支付原价",
+"使{C:attention}商店{}内的卡牌",
+"堕入{C:riftraft_void}虚空"
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS RiftRaft "src/RiftRaft.lua"]'
+pattern = '''
+name = "Wormhole",
+text = {
+"{C:attention}Shop{} cards can be",
+"sent to the {C:riftraft_void}Void{}",
+'''
+position = "at"
+payload = '''
+ name = "虫洞跃迁",
+text = {
+"可使{C:attention}商店{}内的卡牌",
+"堕入{C:riftraft_void}虚空",
+'''
+match_indent = true
