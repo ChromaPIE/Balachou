@@ -163,9 +163,46 @@ text = {
 '''
 position = "at"
 payload = '''
- name = "虫洞跃迁",
+name = "虫洞跃迁",
 text = {
 "可使{C:attention}商店{}内的卡牌",
 "堕入{C:riftraft_void}虚空",
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS RiftRaft "src/VoidPacks.lua"]'
+pattern = '''
+{"Void Pack", 1, 3, 2, 1},
+{"Void Pack", 1, 3, 2, 1},
+{"Jumbo Void Pack", 1, 5, 4, 1},
+{"Mega Void Pack", 2, 5, 7, 0.25},
+'''
+position = "at"
+payload = '''
+{"虚空包", 1, 3, 2, 1},
+{"虚空包", 1, 3, 2, 1},
+{"巨型虚空包", 1, 5, 4, 1},
+{"超级虚空包", 2, 5, 7, 0.25},
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS RiftRaft "src/VoidPacks.lua"]'
+pattern = '''
+"Choose {C:attention}#1#{} of up to",
+"{C:attention}#2#{C:riftraft_void} Rift{} cards to",
+"be used immediately",
+},
+group_name = "Void Pack",
+'''
+position = "at"
+payload = '''
+"从{C:attention}#2#{}张{C:riftraft_void}裂隙{}牌中",
+"选择{C:attention}#1#{}张并立即使用",
+},
+group_name = "虚空包",
 '''
 match_indent = true
