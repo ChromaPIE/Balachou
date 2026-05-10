@@ -1,0 +1,26 @@
+name: Trigger Balachou Hub deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  trigger:
+    name: Trigger Netlify build hook
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Netlify deploy
+        shell: bash
+        env:
+          NETLIFY_BUILD_HOOK_URL: ${{ secrets.NETLIFY_BUILD_HOOK_URL }}
+        run: |
+          if [ -z "${NETLIFY_BUILD_HOOK_URL}" ]; then
+            echo "NETLIFY_BUILD_HOOK_URL secret is not set"
+            exit 1
+          fi
+
+          curl --fail --silent --show-error --request POST "${NETLIFY_BUILD_HOOK_URL}"
+          echo "Triggered Balachou Hub Netlify deploy"
