@@ -1,5 +1,15 @@
 return {
     descriptions = {
+        Back = {
+            b_riftraft_abyssal = {
+                name = "深渊牌组",
+                text = {
+                    "补充包均为{C:attention}超级",
+                    "每个商店均包含一个{C:riftraft_void}虚空{}包",
+                    "每个商店提供的补充包数量{C:red}-1"
+                }
+            }
+        },
         Enhanced = {
             -- Enhancements: m_[prefix]_[key]
             -- Seals On Everything
@@ -67,10 +77,88 @@ return {
             j_riftraft_flint = {
                 name = "打火石",
                 text = {
-                    "回合内每使用过一张消耗牌",
+                    "每使用过一张消耗牌",
                     "本牌获得{X:mult,C:white}X#1#{}倍率",
                     "回合结束时重置",
                     "{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）"
+                },
+            },
+            j_riftraft_refund = {
+                name = "收据",
+                text = {
+                    "每售出{C:attention}#3#{}张{C:dark_edition}负片{}小丑牌",
+                    "本牌获得{X:mult,C:white}X#1#{}倍率",
+                    "{C:inactive}（当前为{C:attention}#4#{C:inactive}/#3#，{X:mult,C:white}X#2#{C:inactive}倍率）"
+                },
+            },
+            j_riftraft_negativesixth = {
+                name = "超对撞机",
+                text = {
+                    "选择{C:attention}盲注{}后",
+                    "摧毁所有{C:dark_edition}负片{}消耗牌",
+                    "{s:0.8,C:dark_edition}负片{s:0.8,C:riftraft_void}裂隙{s:0.8,C:inactive}牌除外",
+                    "并生成一张{C:riftraft_void}裂隙{}牌"
+                },
+            },
+            j_riftraft_collector = {
+                name = "收藏集",
+                text = {
+                    "{C:riftraft_void}虚空{}中每有一{C:attention}种{}小丑牌",
+                    "给予{X:mult,C:white}X#1#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）"
+                },
+            },
+            j_riftraft_joke = {
+                name = "乐 ",
+                text = {
+                    "小丑牌槽位{C:attention}+#1#"
+                },
+            },
+            j_riftraft_magnify = {
+                name = "放大镜",
+                text = {
+                    "每持有一{C:attention}种{}消耗牌",
+                    "给予{X:mult,C:white}X#1#{}倍率"
+                },
+            },
+            j_riftraft_trifecta = {
+                name = "三重奏",
+                text = {
+                    "{C:dark_edition}闪箔{}牌给予{C:mult}+#2#{}倍率、{X:mult,C:white}X#3#{}倍率",
+                    "{C:dark_edition}全息{}牌给予{C:chips}+#1#{}筹码、{X:mult,C:white}X#3#{}倍率",
+                    "{C:dark_edition}炫彩{}牌给予{C:chips}+#1#{}筹码、{C:mult}+#2#{}倍率"
+                },
+            },
+            j_riftraft_abyss = {
+                name = "...也在凝视你",
+                text = {
+                    "随机复制",
+                    "{C:riftraft_void}虚空{}中的一张小丑牌",
+                    "{s:0.8,C:attention}...也在凝视你{s:0.8,C:inactive}除外",
+                    "{C:inactive}（当前为{C:attention}#1#{C:inactive}）"
+                },
+            },
+            j_riftraft_overflow = {
+                name = "溢出",
+                text = {
+                    "生成卡牌时，若无空位",
+                    "则直接使其堕入{C:riftraft_void}虚空"
+                },
+            },
+            j_riftraft_painter = {
+                name = "艺术家",
+                text = {
+                    "手牌数每比#2#多1",
+                    "{C:mult}+#1#{}倍率",
+                    "{C:inactive}（当前为{C:mult}+#3#{C:inactive}倍率）"
+                },
+            },
+            j_riftraft_backwards = {
+                name = "倒逆",
+                text = {
+                    "每张计分的{C:dark_edition}负片{}牌",
+                    "{C:red}失去{}其筹码数",
+                    "并获得同等数值的倍率"
                 },
             },
             j_riftraft_tupperware = {
@@ -81,6 +169,20 @@ return {
                     "所有手牌变为{C:dark_edition}负片"
                 },
             },
+            j_riftraft_carrythetwo = {
+                name = "二四进二",
+                text = {
+                    "若出牌{C:attention}牌型{}为{C:attention}#1#",
+                    "将点数最小的牌变为{C:dark_edition}负片"
+                },
+            },
+            j_riftraft_riftraft = {
+                name = "Rift-Raft",
+                text = {
+                    "所有由{C:attention}卡牌效果{}生成的卡牌",
+                    "均会{C:attention}再次{}生成"
+                },
+            }
         },
         -- Rift Cards
         Rift = {
@@ -252,6 +354,22 @@ return {
                 }
             }
         },
+        Tag = {
+            tag_riftraft_voidpack = {
+                name = "虚空标签",
+                text = {
+                    "免费获得一个",
+                    "{C:riftraft_void}超级虚空包"
+                }
+            },
+            tag_riftraft_voidpull = {
+                name = "索回标签",
+                text = {
+                    "取回随机{C:attention}#1#{}张",
+                    "{C:riftraft_void}虚空{}牌的复制"
+                }
+            },
+        },
         Spectral = {
             c_riftraft_haunt = {
                 name = "缠魂",
@@ -267,6 +385,21 @@ return {
                     "打上{C:riftraft_void}黑色蜡封"
                 }
             },
+            c_riftraft_echo = {
+                name = "扬漪",
+                text = {
+                    "取回随机{C:attention}#2#{}张",
+                    "{C:riftraft_void}虚空{}牌的{C:attention}#1#{}张复制",
+                    "{s:0.8,C:inactive}（无法取回{s:0.8,C:spectral}扬漪{s:0.8,C:inactive}）"
+                }
+            },
+            c_riftraft_dream = {
+                name = "梦乡",
+                text = {
+                    "取回当前所示的{C:legendary,E:1}每张",
+                    "{C:riftraft_void}虚空{}牌的一张{C:attention}复制"
+                }
+            }
         },
         Voucher = {
             -- RiftRaft
@@ -294,7 +427,7 @@ return {
             v_riftraft_booster_plus = {
                 name = "抽卡",
                 text = {
-                    "商店内可选购的",
+                    "商店提供的",
                     "{C:attention}补充包{}数量{C:attention}+1"
                 },
             },

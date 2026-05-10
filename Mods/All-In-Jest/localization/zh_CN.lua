@@ -1821,7 +1821,7 @@ return {
             j_aij_open_mind = {
                 name = "脑洞大开",
                 text = {
-                    "{C:attention}商店{}内可选购的",
+                    "{C:attention}商店{}提供的",
                     "{C:attention}补充包{}数量{C:attention}+#1#"
                 },
             },
@@ -2354,9 +2354,9 @@ return {
             j_aij_ijoker_co = {
                 name = "iJoker.co",
                 text = {
-                    "每个{C:money}商店{}内",
-                    "随机新增{C:attention}#1#{}个",
-                    "可选购的{C:attention}标签"
+                    "每个{C:money}商店{}",
+                    "随机提供",
+                    "{C:attention}#1#{}个{C:attention}标签"
                 }
             },
             j_aij_corpse_paint = {
@@ -2673,7 +2673,7 @@ return {
             j_aij_chitty = {
                 name = "小票",
                 text = {
-                    "{C:attention}商店{}内可选购的",
+                    "{C:attention}商店{}提供的",
                     "{C:attention}奖券{}数量{C:attention}+#1#"
                 }
             },
@@ -3080,9 +3080,9 @@ return {
             j_aij_arngren = {
                 name = "Arngren",
                 text = {
-                    "{C:money}商店{}内可选购的",
+                    "{C:money}商店{}提供的",
                     "卡牌、补充包",
-                    "和奖券各{C:attention}+#1#"
+                    "和奖券数量各{C:attention}+#1#"
                 }
             },
             j_aij_blacklist = {
@@ -3413,8 +3413,8 @@ return {
             j_aij_death_of_a_salesman = {
                 name = "推销员之死",
                 text = {
-                    "每个{C:money}商店{}内提供{C:attention}#1#{}个",
-                    "可选购的{C:red}混乱{}或{C:red}无序{C:attention}标签"
+                    "每个{C:money}商店{}提供{C:attention}#1#{}个",
+                    "{C:red}混乱{}或{C:red}无序{C:attention}标签"
                 }
             },
             j_aij_parking_space = {

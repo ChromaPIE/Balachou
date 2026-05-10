@@ -206,3 +206,42 @@ payload = '''
 group_name = "虚空包",
 '''
 match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS RiftRaft "src/Vouchers.lua"]'
+pattern = '''
+name = "Microtransaction",
+text = {
+"{C:attention}+1{} booster pack",
+"per {C:attention}shop{}",
+'''
+position = "at"
+payload = '''
+name = "微交易",
+text = {
+"{C:attention}商店{}提供的",
+"补充包数量{C:attention}+1"
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS RiftRaft "src/Vouchers.lua"]'
+pattern = '''
+name = "Microtransaction",
+text = {
+"{C:attention}+1{} booster pack",
+"per {C:attention}shop{},",
+"shop always has",
+"a {C:riftraft_void}Void{} Pack",
+'''
+position = "at"
+payload = '''
+name = "微交易",
+text = {
+"{C:attention}商店{}提供的",
+"补充包数量{C:attention}+1",
+"商店恒提供一个{C:riftraft_void}虚空{}包"
+'''
+match_indent = true
