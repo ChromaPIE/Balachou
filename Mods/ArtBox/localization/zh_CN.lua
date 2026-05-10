@@ -175,8 +175,8 @@ return {
                 },
                 {
                     "给予{X:mult,C:white}X(#1#n){}倍率",
-                    "n为所拥有的{C:attention}小丑牌",
-                    "和{C:attention}消耗牌售价{}之总和",
+                    "n为所持有的{C:attention}小丑牌",
+                    "和{C:attention}消耗牌{C:money}售价{}之总和",
                     "{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）"
                 } }
             },
@@ -464,7 +464,7 @@ return {
             c_artb_art_appraisal = {
                 name = '估价',
                 text = {
-                    "获得与当前所拥有消耗牌的",
+                    "获得与当前所持消耗牌的",
                     "售价等值的资金",
                     '{C:inactive}（上限为{C:money}$30{C:inactive}）',
                     '并生成一张{C:attention}小丑收藏品',

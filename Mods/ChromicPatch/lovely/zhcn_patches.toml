@@ -132,6 +132,44 @@ position = "at"
 payload = "'无'"
 
 [[patches]]
+[patches.regex]
+target = '=[SMODS Incantation "Incantation.lua"]'
+pattern = "'BULK USE'"
+position = "at"
+payload = "'批量使用'"
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS Incantation "Incantation.lua"]'
+pattern = "'BULK USE (ONE-AT-A-TIME)'"
+position = "at"
+payload = "'批量使用（逐一）'"
+
+[[patches]] # ts aint working
+[patches.pattern]
+target = '=[SMODS Saturn "core/logic/stack.lua"]'
+pattern = '''
+text = "USE ALL",
+'''
+position = "at"
+payload = '''
+text = "全部使用",
+'''
+match_indent = true
+
+[[patches]] # ts aint working
+[patches.pattern]
+target = '=[SMODS Saturn "core/logic/stack.lua"]'
+pattern = '''
+text = "SELL ALL",
+'''
+position = "at"
+payload = '''
+text = "全部售出",
+'''
+match_indent = true
+
+[[patches]]
 [patches.pattern]
 target = '=[SMODS RiftRaft "src/RiftRaft.lua"]'
 pattern = '''

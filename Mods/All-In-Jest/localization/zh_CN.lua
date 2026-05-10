@@ -353,7 +353,7 @@ return {
         Blind = {
             --Normal Blinds
             bl_aij_the_beith = {
-                name = "桦",
+                name = "檴",
                 text = {
                     '所有方片牌最后抽取'
                 },
@@ -456,10 +456,9 @@ return {
                 },
             },
             bl_aij_the_enigma = {
-                name = "The Enigma",
+                name = "谜",
                 text = {
-                    'Enhanced cards',
-                    'are drawn last',
+                    '增强牌最后抽取',
                 },
             },
             bl_aij_the_bullion = {
@@ -572,10 +571,9 @@ return {
                 },
             },
             bl_aij_the_yew = {
-                name = "The Yew",
+                name = "紫杉",
                 text = {
-                    'All odd ranks',
-                    'are debuffed'
+                    '奇数点卡牌全部失效'
                 },
             },
             bl_aij_the_hoard = {
@@ -599,10 +597,9 @@ return {
                 },
             },
             bl_aij_the_birch = {
-                name = "The Birch",
+                name = "桦",
                 text = {
-                    'All even ranks',
-                    'are debuffed'
+                    '偶数点卡牌全部失效'
                 },
             },
             bl_aij_the_sun = {
@@ -651,11 +648,9 @@ return {
                 },
             },
             bl_aij_the_brimstone = {
-                name = "The Brimstone",
+                name = "硫磺",
                 text = {
-                    'Lose half of',
-                    'your money',
-                    'each discard'
+                    '每弃牌一次，资金减半'
                 },
             },
             bl_aij_the_blush = {
@@ -668,8 +663,8 @@ return {
             bl_aij_the_heart = {
                 name = "心",
                 text = {
-                    '出牌必须包含#1#',
-                    '否则无法计分'
+                    '打出一手#1#前',
+                    '出牌无法计分'
                 },
             },
             bl_aij_the_rains = {
@@ -695,9 +690,8 @@ return {
             bl_aij_the_shell = {
                 name = "贝",
                 text = {
-                    '#1# in #2# cards are debuffed',
-                    '#3# in #4# cards are drawn',
-                    'face down'
+                    '#1#/#2#几率，卡牌失效',
+                    '#3#/#4#几率，卡牌背面朝上抽取'
                 },
             },
             bl_aij_the_earth = {
@@ -2143,8 +2137,8 @@ return {
             j_aij_sticker = {
                 name = "贴纸",
                 text = {
-                    "所拥有的{C:attention}小丑牌{}上",
-                     "每有一个{C:attention}贴纸",
+                    "所持有的{C:attention}小丑牌{}上",
+                    "每有一个{C:attention}贴纸",
                     "{C:mult}+#1#{}倍率",
                     "{C:inactive}（当前为{C:mult}+#2#{C:inactive}倍率）",
                 }

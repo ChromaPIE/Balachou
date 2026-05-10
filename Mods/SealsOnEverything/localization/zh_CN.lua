@@ -165,7 +165,7 @@ return {
                 text={
                     "{C:attention}所有{C:dark_edition}负片{}牌",
                     "给予{X:mult,C:white}X#1#{}倍率",
-                    "且{C:dark_edition}负片{}牌出现几率{X:dark_edition,C:white}X#2#"
+                    "且{C:dark_edition}负片{}牌出现频率{X:dark_edition,C:white}X#2#"
                 }
             },
             j_soe_c_talismanjoker = {

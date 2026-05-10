@@ -59,7 +59,7 @@ return {
                 text={
                     "离开商店后",
                     "随机生成{C:attention}1{}张",
-                    "所拥有{C:attention}消耗牌{}的",
+                    "所持{C:attention}消耗牌{}的",
                     "{C:dark_edition}负片{}复制"
                 },
             }
@@ -284,7 +284,7 @@ return {
             c_riftraft_ditch = {
                 name = "沟渠",
                 text = {
-                    "以{C:attention}#1#{}张{C:attention}拥有{}的小丑牌",
+                    "以{C:attention}#1#{}张{C:attention}持有{}的小丑牌",
                     "换取{C:riftraft_void}虚空{}中{C:attention}同等稀有度{}的",
                     "{C:attention}#1#{}张小丑牌",
                     "{C:inactive}（对调版本）"
@@ -293,7 +293,7 @@ return {
             c_riftraft_amnesia = {
                 name = "失忆",
                 text = {
-                    "使拥有的{C:attention}所有小丑牌{}堕入{C:riftraft_void}虚空",
+                    "使持有的{C:attention}小丑牌全部{}堕入{C:riftraft_void}虚空",
                     "每有一张，获得一个{C:attention}小丑牌标签",
                     "{C:inactive}（例如闪箔标签、罕见标签等）",
                 }

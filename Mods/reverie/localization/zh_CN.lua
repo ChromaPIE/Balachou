@@ -339,7 +339,7 @@ return {
                 }
             },
             sleeve_dvrprv_filmstrip_alt = {
-                name = "Filmstrip Sleeve",
+                name = "胶片带牌套",
                 text = {
                     "{C:cine}Exchange Coupons{} may appear",
                     "in the shop and has {C:green}#2# in #3#",
@@ -516,10 +516,9 @@ return {
                 "Enable JokerDisplay compatibility for",
                 "Exchange Coupons"
             },
-            b_dvrprv_tag_packs_shop = "Tag Packs in shop",
+            b_dvrprv_tag_packs_shop = "商店提供标签包",
             b_dvrprv_tag_packs_shop_info = {
-                "Allow Tag Packs to normally appear",
-                "in the shop"
+                "允许标签包照常出现于商店内"
             },
             b_dvrprv_crazy_packs_shop = "Crazy Packs in shop",
             b_dvrprv_crazy_packs_shop_info = {

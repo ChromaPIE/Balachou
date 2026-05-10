@@ -426,6 +426,10 @@ local function soe_energy_modify_joker_values(joker)
         joker.ability.extra = joker.ability.extra + 1
         joker.ability.x_mult = joker.ability.x_mult + 1
         return
+    elseif name == 'Caino' then
+        joker.ability.extra = joker.ability.extra + 1
+        joker.ability.caino_xmult = joker.ability.caino_xmult + 1
+        return
     elseif name == 'Red Card' then
         joker.ability.extra = joker.ability.extra + 1
         joker.ability.mult = joker.ability.mult + 1
@@ -602,3 +606,15 @@ match_indent = true
 pattern = "if v.soe_is_voucher_enhancement and v.soe_voucher_mod then"
 position = "at"
 payload = "if v.soe_is_voucher_enhancement and v.soe_voucher_mod and G.localization.descriptions.Voucher[v.soe_voucher_key] then"
+
+# SMODS create_card: accept object-poll args that use `type` instead of `set`
+# Steamodded shop creation builds {type = 'Joker', key = ...}; the current
+# SMODS.create_card path only forwards t.set, so forced keys can reach vanilla
+# create_card with _type=nil and crash in get_current_pool.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/utils.lua"]'
+match_indent = true
+pattern = "local _card = create_card(t.set, t.area, t.legendary, t.rarity, t.skip_materialize, t.soulable, t.key, t.key_append)"
+position = "at"
+payload = "local _card = create_card(t.set or t.type, t.area, t.legendary, t.rarity, t.skip_materialize, t.soulable, t.key, t.key_append)"
