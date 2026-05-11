@@ -247,7 +247,7 @@ return {
                 }
             },
             c_riftraft_loss = {
-                name = "失逝",
+                name = "损逝",
                 text = {
                     "向{C:riftraft_void}虚空{}中随机添加",
                     "{C:attention}#1#{}张{C:tarot}塔罗牌"
@@ -315,7 +315,7 @@ return {
                 }
             },
             c_riftraft_misfortune = {
-                name = "多舛",
+                name = "坎坷",
                 text = {
                     "有{C:green}#1#/#2#{}的几率",
                     "为随机一张{C:attention}小丑牌",
@@ -429,6 +429,18 @@ return {
                 text = {
                     "商店提供的",
                     "{C:attention}补充包{}数量{C:attention}+1"
+                },
+            },
+            v_riftraft_cardpack_card = {
+                name = "摊牌数卡",
+                text = {
+                    "补充包内含数量{C:attention}+1",
+                },
+            },
+            v_riftraft_cardpack_choose = {
+                name = "障眼妙手",
+                text = {
+                    "补充包选取次数{C:attention}+1",
                 },
             },
         },
