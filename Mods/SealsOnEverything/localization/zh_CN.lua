@@ -1056,8 +1056,7 @@ return {
             c_soe_cannotfinditemwithkeyc_deja_vu = {
                 name = '无法找到键为\'c_deja_vu\'的物品',
                 text = {
-                    '合并{C:attention}任意',
-                    '{C:attention}#1#{}张选定卡牌'
+                    '合并{C:attention}任意{C:attention}#1#{}张选定卡牌'
                 }
             },
         },

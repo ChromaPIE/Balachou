@@ -283,3 +283,19 @@ text = {
 "商店恒提供一个{C:riftraft_void}虚空{}包"
 '''
 match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS L6_luckyjimbo "luckyjimbo.lua"]'
+pattern = 'return { vars = { "left", colours = {G.C.BLUE} } }'
+position = "at"
+payload = "return { vars = { localize('t_left'), colours = {G.C.BLUE} } }"
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS L6_luckyjimbo "luckyjimbo.lua"]'
+pattern = 'return { vars = { "right", colours = {G.C.RED} } }'
+position = "at"
+payload = "return { vars = { localize('t_right'), colours = {G.C.RED} } }"
+match_indent = true

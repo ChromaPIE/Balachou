@@ -1276,7 +1276,8 @@ return {
             j_aij_fruity_joker = {
                 name = "硕果小丑",
                 text = {
-                    "{C:attention}炫彩{}牌和小丑",
+                    "每张带有{C:attention}炫彩{}的",
+                    "扑克牌和小丑牌",
                     "给予{C:mult}+#1#{}倍率"
                 }
             },

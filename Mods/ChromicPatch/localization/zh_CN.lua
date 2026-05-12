@@ -65,6 +65,137 @@ return {
             }
         },
         Joker = {
+            -- luckyjimbo
+            j_L6jimbo_lobotojimbo = {
+                name = "宝叶切除术",
+                text = {
+                    "若出牌仅有{C:attention}1{}张",
+                    "计分后{C:attention}摧毁{}之",
+                    "并为一张手牌添加随机{C:attention}版本"
+                }
+            },
+            j_L6jimbo_jimbostrike = {
+                name = "金宝行大运",
+                text = {
+                    "有{C:green}#5#/#6#{}的几率给予{C:mult}+#7#{}倍率",
+                    "有{C:green}#1#/#2#{}的几率给予{X:mult,C:white}X#3#{}倍率",
+                    "每次出牌后，分子{C:green}+#4#",
+                    "{C:inactive}触发后重置"
+                }
+            },
+            j_L6jimbo_russianjimbo = {
+                name = "金宝同志",
+                text = {
+                    "若手牌最小点数为{C:attention}2",
+                    "{X:mult,C:white}X#1#{}倍率"
+                }
+            },
+            j_L6jimbo_jimboshuffle = {
+                name = "金宝迪士高",
+                text = {
+                    "选择{C:attention}盲注{}后",
+                    "随机{C:attention}摧毁{}一张小丑牌",
+                    "并生成一张",
+                    "{C:attention}稀有度高一级{}的小丑牌",
+                    "（最高为{C:rare}稀有{}）",
+                    "{C:inactive}（必须有空位）",
+                    "{C:inactive}（范围不限，包括自身）"
+                }
+            },
+            j_L6jimbo_jimboree = {
+                name = "金宝贝",
+                text = {
+                        "打出的每张{C:attention}无增强{}牌",
+                        "均有{C:green}#1#/#2#{}的几率",
+                        "获得随机{C:attention}增强",
+                        "打出的每张{C:attention}增强{}牌",
+                        "均有{C:green}#1#/#3#{}的几率",
+                        "被移除{C:attention}增强"
+                }
+            },
+            j_L6jimbo_cooljimbo = {
+                name = "酷金宝",
+                text = {
+                    "打出的每张{C:attention}增强{}牌",
+                    "给予{C:chips}+#1#{}筹码和{C:mult}+#2#{}倍率"
+                }
+            },
+            j_L6jimbo_jimbro = {
+                name = "筋肉宝",
+                text = {
+                    "若出牌牌型等级至少为{C:attention}#1#",
+                    "每有一级，{X:mult,C:white}X#2#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#3#{C:inactive}倍率）"
+                }
+            },
+            j_L6jimbo_jimbotwins = {
+                name = "双头金宝",
+                text = {
+                    "重新触发左侧小丑牌{C:attention}#1#{}次",
+                    "选择{C:attention}Boss盲注{}后",
+                    "{C:attention}摧毁{}右侧{C:attention}小丑牌",
+                    "并按其{C:attention}稀有度{}提升重新触发次数",
+                    "{C:inactive}（例如普通 = 1，罕见 = 2等）"
+                }
+            },
+            j_L6jimbo_nerdyjimbo = {
+                name = "书呆子金宝",
+                text = {
+                    "{C:mult}+#1#{}倍率",
+                    "若计分牌总点数等于{C:attention}#2#",
+                    "数值{C:attention}翻倍",
+                    "{C:inactive}每回合变更点数要求"
+                }
+            },
+            j_L6jimbo_dealerjimbo = {
+                name = "荷官金宝",
+                text = {
+                    "回合首次出牌前",
+                    "手牌上限{C:attention}+#1#"
+                }
+            },
+            j_L6jimbo_nepojimbo = {
+                name = "黑手党金宝",
+                text = {
+                    "在商店内每花费{C:attention}$#2#{} {C:inactive}(#4#)",
+                    "获得{X:mult,C:white}X#1#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#3#{C:inactive}倍率）"
+                }
+            },
+            j_L6jimbo_jimboripper = {
+                name = "开膛手金宝",
+                text = {
+                    "{C:attention}摧毁{}每回合第一手出牌",
+                    "每摧毁一张，获得{C:attention}$#1#"
+                }
+            },
+            j_L6jimbo_jimboswitch = {
+                name = "变向金宝",
+                text = {
+                    "复制{V:1}#1#{}侧{C:attention}小丑牌{}的能力",
+                    "所有{C:attention}卡牌{}及{C:attention}效果",
+                    "完成结算后{C:attention}变更{}方向"
+                }
+            },
+            j_L6jimbo_himbo = {
+                name = "大只暖男宝",
+                text = {
+                    "牌组中的{C:attention}K",
+                    "每超出{C:attention}#2#{}一张",
+                    "{X:mult,C:white}X#1#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#4#{C:inactive}倍率）"
+                }
+            },
+            j_L6jimbo_groupiejimbo = {
+                name = "线下粉头宝",
+                text = {
+                    "手中每有一张{V:1}黑桃{C:attention}A",
+                    "给予{X:mult,C:white}X#1#{}倍率",
+                    "每计分一张{V:1}黑桃{C:attention}A{}提升{X:mult,C:white}X#2#",
+                    "{C:inactive}回合结束时重置"
+                }
+            },
+
             -- RiftRaft
             j_riftraft_bundle = {
                 name = "捆扎打包",
@@ -475,6 +606,10 @@ return {
             k_art = "创艺牌",
             k_collectable = "收藏品",
             k_rift = "裂隙",
+
+            -- For generic use
+            t_left = "左",
+            t_right = "右",
         }
     }
 }
