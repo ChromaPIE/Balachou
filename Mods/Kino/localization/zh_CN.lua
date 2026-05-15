@@ -5175,7 +5175,7 @@ return {
                 name = "粉红糖霜甜甜圈",
                 text = {
                     "下次出牌中的计分牌",
-                    "每有一{C:attention}种{}花色"
+                    "每有一{C:attention}种{}花色",
                     "各牌型{C:chips}+#1#{}筹码"
                 }
             },
