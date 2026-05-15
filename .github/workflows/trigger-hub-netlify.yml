@@ -27,8 +27,13 @@ jobs:
       - name: Install fonttools
         run: pip install "fonttools[woff]" brotli
 
-      - name: Build and upload
-        env:
-          GIST_ID: ${{ secrets.GIST_ID }}
-          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+      - name: Build assets
         run: python scripts/build-manifest.py
+
+      - name: Upload to Gist
+        env:
+          GH_TOKEN: ${{ secrets.GIST_TOKEN }}
+          GIST_ID: ${{ secrets.GIST_ID }}
+        run: |
+          gh api --method PATCH "/gists/${GIST_ID}" --input gist-body.json
+          echo "Uploaded to Gist"

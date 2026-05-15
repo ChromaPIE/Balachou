@@ -1,16 +1,18 @@
-"""Build repo-tree.json and font WOFF2 subset, upload both to Gist."""
+"""Build repo-tree.json and font WOFF2 subset, write Gist body to disk."""
 import json, os, sys, base64, urllib.request, urllib.error, urllib.parse, subprocess, tempfile
 
 TREE_API = "https://api.github.com/repos/ChromaPIE/Balachou/git/trees/main?recursive=1"
 RAW_BASE = "https://raw.githubusercontent.com/ChromaPIE/Balachou/main"
 FONT_SOURCE_URL = "https://raw.githubusercontent.com/ChromaPIE/Balachou-Hub/main/assets/SarasaMonoSlabSC-Regular.ttf"
-GIST_ID = os.environ["GIST_ID"]
-GIST_TOKEN = os.environ["GIST_TOKEN"]
 
 ASCII_RANGES = [(0x0020, 0x007E), (0x00A0, 0x00FF), (0x2000, 0x206F)]
 
 def fetch_json(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "Balachou-Build", "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"})
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "Balachou-Build",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    })
     with urllib.request.urlopen(req, timeout=30) as r:
         return json.load(r)
 
@@ -24,17 +26,21 @@ data = fetch_json(TREE_API)
 files = [{"p": item["path"], "t": "f", "s": item.get("size", 0)}
          for item in data["tree"] if item["type"] == "blob"]
 files.sort(key=lambda x: x["p"])
+
+# Write repo-tree.json for the workflow to reference
 tree_json = json.dumps(files, ensure_ascii=False, indent=2)
+with open("repo-tree.json", "w", encoding="utf-8") as f:
+    f.write(tree_json + "\n")
 print(f"  {len(files)} files")
 
 print("Collecting characters from .lua files...")
 all_text = []
-for f in files:
-    if f["p"].endswith(".lua"):
+for file in files:
+    if file["p"].endswith(".lua"):
         try:
-            all_text.append(fetch_text(f"{RAW_BASE}/{urllib.parse.quote(f['p'])}"))
+            all_text.append(fetch_text(f"{RAW_BASE}/{urllib.parse.quote(file['p'])}"))
         except Exception as e:
-            print(f"  skip {f['p']}: {e}")
+            print(f"  skip {file['p']}: {e}")
 
 chars = set("".join(all_text))
 for lo, hi in ASCII_RANGES:
@@ -45,7 +51,10 @@ print(f"  {len(char_string)} unique chars from {sum(len(t) for t in all_text)} c
 
 print("Downloading source font...")
 with tempfile.NamedTemporaryFile(suffix=".ttf", delete=False) as tmp:
-    tmp.write(urllib.request.urlopen(urllib.request.Request(FONT_SOURCE_URL, headers={"User-Agent": "Balachou-Build"}), timeout=60).read())
+    tmp.write(urllib.request.urlopen(
+        urllib.request.Request(FONT_SOURCE_URL, headers={"User-Agent": "Balachou-Build"}),
+        timeout=60,
+    ).read())
     source_ttf = tmp.name
 
 print("Subsetting font...")
@@ -60,7 +69,7 @@ subprocess.run([
 woff2_size = os.path.getsize(woff2_path)
 print(f"  WOFF2: {woff2_size / 1024:.0f} KB")
 
-print("Uploading to Gist...")
+print("Writing Gist body...")
 with open(woff2_path, "rb") as f:
     woff2_b64 = base64.b64encode(f.read()).decode("ascii")
 
@@ -70,19 +79,9 @@ body = {
         "sarasa-mono-slab-sc.woff2": {"content": woff2_b64, "encoding": "base64"},
     }
 }
-req = urllib.request.Request(
-    f"https://api.github.com/gists/{GIST_ID}",
-    data=json.dumps(body).encode("utf-8"),
-    headers={
-        "Authorization": f"token {GIST_TOKEN}",
-        "Accept": "application/vnd.github.v3+json",
-        "Content-Type": "application/json",
-    },
-    method="PATCH",
-)
-with urllib.request.urlopen(req, timeout=30) as r:
-    resp = json.load(r)
-    print(f"  OK: {', '.join(resp.get('files', {}).keys())}")
+with open("gist-body.json", "w", encoding="utf-8") as f:
+    json.dump(body, f, ensure_ascii=False)
+print(f"  gist-body.json written ({os.path.getsize('gist-body.json')} bytes)")
 
 os.unlink(source_ttf)
 os.unlink(woff2_path)
