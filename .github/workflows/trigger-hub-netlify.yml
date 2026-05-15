@@ -12,6 +12,9 @@ on:
       - 'LICENSE'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update:
     name: Build manifest and font subset
@@ -39,20 +42,17 @@ jobs:
             '{files: {"repo-tree.json": {content: $content}}}' > gist.json
           gh api --method PATCH "/gists/${GIST_ID}" --input gist.json
 
-      - name: Push font to Hub repo
-        env:
-          GH_TOKEN: ${{ secrets.GIST_TOKEN }}
+      - name: Commit font to repo
         run: |
-          git clone "https://x-access-token:${GH_TOKEN}@github.com/ChromaPIE/Balachou-Hub.git" hub
-          cp sarasa-mono-slab-sc.woff2 hub/assets/
-          cd hub
+          mkdir -p assets
+          cp sarasa-mono-slab-sc.woff2 assets/
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add assets/sarasa-mono-slab-sc.woff2
           if git diff --staged --quiet; then
-            echo "Font unchanged, skipping push"
+            echo "Font unchanged, skipping commit"
           else
-            git commit -m "update font subset"
+            git commit -m "update font subset [skip ci]"
             git push
-            echo "Font pushed to Hub"
+            echo "Font committed"
           fi
