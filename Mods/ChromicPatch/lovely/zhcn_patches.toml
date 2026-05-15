@@ -299,3 +299,66 @@ pattern = 'return { vars = { "right", colours = {G.C.RED} } }'
 position = "at"
 payload = "return { vars = { localize('t_right'), colours = {G.C.RED} } }"
 match_indent = true
+
+# Kino genre 本地化映射表
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/card_ui.lua"]'
+pattern = '''
+    for i, _genre in ipairs(_genres) do
+'''
+position = "before"
+payload = '''
+    if not Kino._genre_zh then
+        Kino._genre_zh = {
+            Action = '动作', Adventure = '冒险', Animation = '动画',
+            Biopic = '传记', Christmas = '圣诞', Comedy = '喜剧',
+            Crime = '犯罪', Drama = '剧情', Family = '家庭',
+            Fantasy = '奇幻', Historical = '历史', Horror = '恐怖',
+            Musical = '歌舞', Mystery = '悬疑', Romance = '爱情',
+            ['Sci-fi'] = '科幻', Silent = '默片', Sports = '运动',
+            Superhero = '超英', Thriller = '惊悚', Western = '西部',
+        }
+    end
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/card_ui.lua"]'
+pattern = '''string = {_genre},'''
+position = "at"
+payload = '''string = {Kino._genre_zh[_genre] or _genre},'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/blockbuster/playset/playsetCollection.lua"]'
+pattern = '''label = {'Content Packages'},'''
+position = "at"
+payload = '''label = {'内容包'},'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/blockbuster/playset/playsetCollection.lua"]'
+pattern = '''label = {'Playsets'},'''
+position = "at"
+payload = '''label = {'播单'},'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/blockbuster/spells/spellCollection.lua"]'
+pattern = '''label = {'Spells'},'''
+position = "at"
+payload = '''label = {'魔咒'},'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/blockbuster/counters/collectionUI.lua"]'
+pattern = '''label = {'Counters'},'''
+position = "at"
+payload = '''label = {'计数标'},'''
+match_indent = true

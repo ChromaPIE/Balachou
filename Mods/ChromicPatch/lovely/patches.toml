@@ -618,3 +618,63 @@ match_indent = true
 pattern = "local _card = create_card(t.set, t.area, t.legendary, t.rarity, t.skip_materialize, t.soulable, t.key, t.key_append)"
 position = "at"
 payload = "local _card = create_card(t.set or t.type, t.area, t.legendary, t.rarity, t.skip_materialize, t.soulable, t.key, t.key_append)"
+
+# SMODS create_blind_pool: nil-guard boolean true values from unused boss blinds
+# eligible_bosses entries not in G.GAME.bosses_used stay as `true` (boolean),
+# which crashes the `eligible_bosses[k] > min_use` comparison at line 195
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/utils/weights.lua"]'
+match_indent = true
+pattern = "if eligible_bosses[k] > min_use then"
+position = "at"
+payload = "if type(eligible_bosses[k]) == 'number' and eligible_bosses[k] > min_use then"
+
+# AIJ retrieve_joker_text get_text(): fix operator precedence for Dynatext fallback
+# `text .. chosen_option.string or get_text(...)` parses as `(text .. string) or get_text(...)`
+# because Lua .. binds tighter than `or`. When chosen_option has no `string` field,
+# concatenation with nil crashes. Add parens so `or` evaluates first.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS allinjest "Utils/functions.lua"]'
+match_indent = true
+pattern = "text = text .. chosen_option.string or get_text(chosen_option)"
+position = "at"
+payload = "text = text .. (chosen_option.string or get_text(chosen_option))"
+
+# Kino Vulcan: fix loc_vars showing stacks count instead of actual upgrade amount
+# Text uses #2#, which was `stacks`; use() actually upgrades by mult * stacks
+# Now #2# = mult * stacks — matches the actual upgrade applied in use()
+# #1# = mult (unused by text, kept for array index stability)
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "items/consumables/planets.lua"]'
+match_indent = true
+position = "at"
+pattern = '''    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.mult,
+                card.ability.extra.stacks
+            }
+        }
+    end,'''
+payload = '''    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.mult,
+                card.ability.extra.mult * card.ability.extra.stacks
+            }
+        }
+    end,'''
+
+# AIJ Fabled sleeve: nil-guard deck_or_sleeve.config.extra when should_increase is false
+# After buying a legendary joker, should_increase=false causes fallback to
+# G.GAME.selected_back.effect (which lacks config.extra), crashing at end_of_round
+[[patches]]
+[patches.pattern]
+target = '=[SMODS allinjest "Items/Crossmod/Sleeves/fabled.lua"]'
+match_indent = true
+pattern = "if context.end_of_round and not context.repetition and not context.individual and deck_or_sleeve.config.extra.should_increase then"
+position = "at"
+payload = "if context.end_of_round and not context.repetition and not context.individual and deck_or_sleeve.config.extra and deck_or_sleeve.config.extra.should_increase then"
