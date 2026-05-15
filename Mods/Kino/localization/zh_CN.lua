@@ -1295,12 +1295,16 @@ return {
                 }
             },
             j_kino_elephant_man = {
-                name = "Elephant Man",
+                name = "象人",
                 text = {
-                    {"{C:chips}+#1#{} Chips per played",
-                    "{C:chips}Hand{} this round"},
-                    {"{C:mult}+#2#{} Mult per used",
-                    "{C:mult}Discard{} this round"}
+                    {
+                        "本回合每{C:chips}出{}过一次牌",
+                        "{C:chips}+#1#{}筹码"
+                    },
+                    {
+                        "本回合每{C:mult}弃{}过一次牌",
+                        "{C:mult}+#2#{}倍率"
+                    }
                 }
             },
             j_kino_elf = {
@@ -1636,11 +1640,11 @@ return {
                 }
             },
             j_kino_gravity = {
-                name = "Gravity",
+                name = "地心引力",
                 text = {
-                    "Upgrade a random hand {C:attention}#1# Times{}",
-                    "if you own a {C:planet}Planet",
-                    "when {C:attention}Blind{} is selected",
+                    "选择{C:attention}盲注{}后",
+                    "每拥有一张{C:planet}星球牌",
+                    "随机升级一个牌型{C:attention}#1#次",
                 }
             },
             j_kino_gremlins_1 = {
@@ -1758,17 +1762,16 @@ return {
                 }
             },
             j_kino_hellboy_1 = {
-                name = "Hellboy",
+                name = "地狱男爵",
                 text = {
-                    {"{C:attention}Demonic Cards{} do not ",
-                    "trigger {C:attention}Sacrifices"},
-                    {"Gain {C:chips}+#2#{} Chips when",
-                    "a {C:attention}Demonic Card{} scores",
-                    "{C:inactive}(Currently: {C:chips}+#1#{C:inactive} Chips)"}
+                    {"{C:attention}恶魔牌{}不再触发{C:attention}牺牲"},
+                    {"{C:attention}恶魔牌{}计分时",
+                    "获得{C:chips}+#2#{}筹码",
+                    "{C:inactive}（当前为{C:chips}+#1#{C:inactive}筹码）"}
                 },
                 unlock = {
-                    "Sacrifice {C:attention}#2#{} cards",
-                    "{C:inactive}(#1#)"
+                    "牺牲{C:attention}#2#{}张牌",
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_hellraiser_1 = {
@@ -3184,9 +3187,9 @@ return {
             j_kino_shawshank_redemption = {
                 name = "肖申克的救赎",
                 text = {
-                    "Every {C:attention}card{} in hand", 
-                    "permanently gains {C:chips}+#1#{} Chips",
-                    "whenever a card is {C:attention}discarded{}"
+                    "每次{C:attention}弃牌{}后",
+                    "每张{C:attention}手牌",
+                    "永久获得{C:chips}+#1#{}筹码"
                 }
             },
             j_kino_shazam_1 = {
@@ -3211,13 +3214,14 @@ return {
                 }
             },
             j_kino_shinkamenrider = {
-                name = "Shin Kamen Rider",
+                name = "新·假面骑士",
                 text = {
-                    {"Gains {X:mult,C:white}x#2#{} Mult",
-                    "when a {C:attention}Boss Blind{} is defeated",
-                    "{C:inactive}(Currently: {X:mult,C:white}x#1#{C:inactive} Mult)"},
-                    {"{C:attention}Big Blinds{} have a {C:green}1 in 2{} chance",
-                    "to be {C:attention}Boss Blinds",}
+                    {
+                        "击败{C:attention}Boss盲注{}后",
+                        "本牌获得{X:mult,C:white}X#2#{}倍率",
+                        "{C:inactive}（当前为{X:mult,C:white}X#1#{C:inactive}倍率）"},
+                    {"{C:attention}大盲注{}有{C:green}1/2{}的几率",
+                    "变为{C:attention}Boss盲注",}
                 },
                 unlock = {
                     "Defeat {C:attention}#2#{} Boss Blinds",
@@ -3732,12 +3736,10 @@ return {
                 }
             },
             j_kino_terror_train = {
-                name = "Terror Train",
+                name = "死亡列车",
                 text = {
-                    "Each card held in hand",
-                    "that shares a rank",
-                    "with a scoring card has a",
-                    "{C:green}#1# in #2#{} chance to {C:Jumpscare}Jumpscare"
+                    "每张与计分牌{C:attention}同点{}的手牌",
+                    "均有{C:green}#1#/#2#{}的几率{C:Jumpscare}跳脸杀"
                 }
             },
             j_kino_they_live = {
@@ -4176,13 +4178,11 @@ return {
                 }
             },
             j_kino_yes_man = {
-                name = "Yes Man",
+                name = "好好先生",
                 text = {
-                    "Gains {X:mult,C:white}X#2#{} Mult",
-                    "when you play a hand",
-                    "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive} Mult)",
-                    "{C:red}Self-Destruct{} when", 
-                    "a card is {C:attention}discarded{}",
+                    "出牌时，获得{X:mult,C:white}X#2#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#1#{C:inactive}倍率）",
+                    "若{C:attention}弃牌{}，{C:red}自毁"
                 }
             },
             j_kino_young_frankenstein = {
@@ -4436,12 +4436,12 @@ return {
                 }
             },
             m_kino_demonic = {
-                name = "Demonic Card",
+                name = "恶魔牌",
                 text = {
-                    "Sacrifices lowest scoring",
-                    "{C:attention}non-Demonic card",
-                    "{X:mult,C:white}X#3#{} for each",
-                    "non-Demonic scored card"
+                    "{C:red}牺牲{}计分牌中",
+                    "点数最小的{C:attention}非恶魔牌",
+                    "每有一张计分的{C:attention}非恶魔牌",
+                    "{X:mult,C:white}X#3#{}倍率"
                 }
             },
             m_kino_romance = {
@@ -4806,11 +4806,11 @@ return {
             },
             
             c_kino_investor = {
-                name = "Investor",
+                name = "投资者",
                 text = {
-                    "Add a {C:green}Money Counter{}",
-                    "to random card", 
-                    "in your deck {C:attention}#1#{} times"
+                    "对牌组中随机一张牌",
+                    "施加1位{C:green}金钱计数标",
+                    "重复{C:attention}#1#{}次"
                 }
             },
             c_kino_investor_debug = {
@@ -4919,13 +4919,10 @@ return {
                 }
             },
             c_kino_pandora = {
-                name = "Pandora",
+                name = "潘多拉星",
                 text = {
-                    "Upgrade most",
-                    "played hand with",
-                    "{C:chips}+#1#{} Chips ",
-                    "for each time",
-                    "it has been played"
+                    "最常出牌型每已出一次",
+                    "使其{C:chips}+#1#{}筹码"
                 }
             },
             c_kino_arrakis = {
@@ -5921,11 +5918,10 @@ return {
                 }
             },
             bl_kino_rico_dynamite = {
-                name = "Rico Dynamite",
+                name = "里科叔叔",
                 text = {
-                    "Played poker hand loses 2 levels",
-                    "and two random poker hands",
-                    "gain 1 level"
+                    "打出的牌型降低2级",
+                    "随机2个牌型各升1级"
                 }
             },
             bl_kino_mr_chow = {
@@ -5957,12 +5953,10 @@ return {
                 }
             },
             bl_kino_amadeus = {
-                name = "W. Amadeus Mozart",
+                name = "莫扎特",
                 text = {
-                    "Lower base mult",
-                    "by combined levels",
-                    "of all hands besides",
-                    "played poker hand"
+                    "以未出牌型的总等级数",
+                    "削减基础倍率"
                 }
             },
             bl_kino_sallie_tomato = {
@@ -6234,10 +6228,10 @@ return {
                 }
             },
             bl_kino_varang = {
-                name = "Varang",
+                name = "瓦琅",
                 text = {
-                    "Put a {C:Burn}Burn Counter{} on first",
-                    "{C:attention}5{} cards played or discarded"
+                    "对头{C:attention}5{}张打出或弃掉的牌",
+                    "施加{C:Burn}燃烧计数标"
                 }
             },
             bl_kino_te_ka = {
@@ -6250,11 +6244,10 @@ return {
 
             -- Poison Counters
             bl_kino_pgande = {
-                name = "PG&E",
+                name = "太平洋天然气和电气公司",
                 text = {
-                    "Put {C:attention}2 {C:green}Poison Counters",
-                    "on each card held in hand",
-                    "when hand is played"
+                    "出牌后对所有手牌",
+                    "施加{C:attention}2{}位{C:green}毒害计数标"
                 }
             },
             bl_kino_evilqueen = {
@@ -6391,12 +6384,12 @@ return {
                 }
             },
             c_kino_defibrillator = {
-                name = "Defibrillator",
+                name = "除颤器",
                 text = {
-                    {"Replace {C:attention}Sleep Counters{} on selected",
-                    "{C:attention}Joker{} with {C:attention}Shock Counters"},
-                    {"Regains charge when hand is played",
-                    "or discarded"}
+                    {"将选定{C:attention}小丑牌{}的{C:attention}沉睡计数标",
+                    "替换为{C:attention}震颤计数标"},
+                    {"出牌或弃牌后",
+                    "重新充能"}
                 }
             },
             c_kino_barrage = {
@@ -6450,7 +6443,7 @@ return {
                 }
             },
             tag_kino_counter = {
-                name = "Counter Tag",
+                name = "计数标标签",
                 text = {
                     "Adds {C:attention}3 {C:green}Money Counters",
                     "to {C:attention}5{} random cards",
@@ -6563,10 +6556,11 @@ return {
                 }
             },
             p_kino_romance_booster = {
-                name = "Romance Pack",
+                name = "爱情片包",
                 text = {
-                    "Choose {C:attention}#1#{} of",
-                    "up to {C:attention}#2# Romance Jokers{}",  
+                    "从至多{C:attention}#2#{}张",
+                    "{C:attention}爱情片小丑牌{}中",
+                    "选取{C:attention}#1#{}张"
                 }
             },
             p_kino_fantasy_booster = {
@@ -6921,28 +6915,27 @@ return {
                 }
             },
             kino_thriller_seal = {
-                name = "Thriller Seal",
+                name = "惊悚蜡封",
                 text = {
-                    "Has a {C:green}#1# in #2#{} chance",
-                    "to {C:Jumpscare}Jumpscare{} while",
-                    "held in hand"
+                    "留手时",
+                    "有{C:green}#1#/#2#{}的几率",
+                    "{C:Jumpscare}跳脸杀"
                 }
             },
             kino_comedy_seal = {
-                name = "Comedy Seal",
+                name = "喜剧蜡封",
                 text = {
-                    "Add a {C:attention}Retrigger Counter",
-                    "to a random joker",
-                    "when the only card",
-                    "that is discarded"
+                    "单独弃置本牌后",
+                    "对随机一张小丑牌",
+                    "施加1位{C:attention}重新触发计数标"
                 }
             },
             kino_cheese_seal = {
-                name = "Cheese Seal",
+                name = "奶酪蜡封",
                 text = {
-                    "Create a {C:Confection}Confection",
-                    "when a played hand contains",
-                    "a scoring Cheese Seal"
+                    "若计分牌包含",
+                    "带有奶酪蜡封的牌",
+                    "生成一张{C:Confection}甜食零嘴{}牌"
                 }
             },
 
@@ -7877,12 +7870,12 @@ return {
                 }
             },
             counter_money = {
-                name = "Money Counter",
+                name = "金钱计数标",
                 text = {
-                    "{C:attention}Ticks Down 1",
+                    "{C:attention}步退1位",
                     " ",
-                    "Gain {C:money}$#1#{}",
-                    "per Counter"
+                    "每有1位",
+                    "获得{C:money}$#1#"
                 }
             },
             counter_investment = {
@@ -7926,12 +7919,12 @@ return {
 
             -- Status Counters
             counter_burn = {
-                name = "Burn Counter",
+                name = "燃烧计数标",
                 text = {
-                    "{C:attention}Ticks Up 1",
+                    "{C:attention}步进1位",
                     " ",
-                    "Has a {C:green}1 in 10{}",
-                    "chance to {C:red}self-destruct"
+                    "有{C:green}1/10{}的几率",
+                    "{C:red}自毁"
                 }
             },
             counter_frost = {
@@ -8247,7 +8240,7 @@ return {
         dictionary = {
             ---- UI elements ----
             b_confection_rate = "Confection Rate",
-            b_kino_pull = "TAKE",
+            b_kino_pull = "拿取",
             b_questlog = "任务",
             k_kino_legendary = "Legendaries",
             -- Actor UI
