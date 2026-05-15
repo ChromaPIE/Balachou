@@ -1,4 +1,4 @@
-"""Build repo-tree.json and font WOFF2 subset, write Gist body to disk."""
+"""Build repo-tree.json and font WOFF2 subset."""
 import json, os, sys, base64, urllib.request, urllib.error, urllib.parse, subprocess, tempfile
 
 TREE_API = "https://api.github.com/repos/ChromaPIE/Balachou/git/trees/main?recursive=1"
@@ -27,7 +27,6 @@ files = [{"p": item["path"], "t": "f", "s": item.get("size", 0)}
          for item in data["tree"] if item["type"] == "blob"]
 files.sort(key=lambda x: x["p"])
 
-# Write repo-tree.json for the workflow to reference
 tree_json = json.dumps(files, ensure_ascii=False, indent=2)
 with open("repo-tree.json", "w", encoding="utf-8") as f:
     f.write(tree_json + "\n")
@@ -58,7 +57,7 @@ with tempfile.NamedTemporaryFile(suffix=".ttf", delete=False) as tmp:
     source_ttf = tmp.name
 
 print("Subsetting font...")
-woff2_path = source_ttf + ".woff2"
+woff2_path = "sarasa-mono-slab-sc.woff2"
 subprocess.run([
     "pyftsubset", source_ttf,
     f"--output-file={woff2_path}",
@@ -69,20 +68,5 @@ subprocess.run([
 woff2_size = os.path.getsize(woff2_path)
 print(f"  WOFF2: {woff2_size / 1024:.0f} KB")
 
-print("Writing Gist body...")
-with open(woff2_path, "rb") as f:
-    woff2_b64 = base64.b64encode(f.read()).decode("ascii")
-
-body = {
-    "files": {
-        "repo-tree.json": {"content": tree_json},
-        "sarasa-mono-slab-sc.woff2": {"content": woff2_b64, "encoding": "base64"},
-    }
-}
-with open("gist-body.json", "w", encoding="utf-8") as f:
-    json.dump(body, f, ensure_ascii=False)
-print(f"  gist-body.json written ({os.path.getsize('gist-body.json')} bytes)")
-
 os.unlink(source_ttf)
-os.unlink(woff2_path)
 print("Done.")
