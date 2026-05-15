@@ -279,12 +279,11 @@ return {
                 }
             },
             j_kino_as_above = {
-                name = "As Above, So Below",
+                name = "地下墓穴",
                 text = {
-                    "{C:chips}+#2#{} Chips for",
-                    "each card {C:attention}discarded",
-                    "this round",
-                    "{C:inactive}(Currently: {C:chips}+#1#{C:inactive} Chips)"
+                    "本回合每{C:attention}弃掉{}一张牌",
+                    "{C:chips}+#2#{}筹码",
+                    "{C:inactive}（当前为{C:chips}+#1#{C:inactive}筹码）"
                 }
             },
             j_kino_asteroid_city = {
@@ -303,12 +302,12 @@ return {
                 }
             },
             j_kino_avatar = {
-                name = "Avatar",
+                name = "阿凡达",
                 text = {
-                    "Gain {C:chips}+#2#{} Chips for each time",
-                    "most played hand type has been played",
-                    "when a {C:planet}Planet{} is used",
-                    "{C:inactive}(Currently: {C:chips}+#1#{C:inactive} Chips)"
+                    "使用{C:planet}星球牌{}后",
+                    "最常出牌型每已被打出一次",
+                    "本牌获得{C:chips}+#2#{}筹码",
+                    "{C:inactive}（当前为{C:chips}+#1#{C:inactive}筹码）"
                 }
             },
             j_kino_baby_driver = {
@@ -2582,14 +2581,14 @@ return {
                 }
             },
             j_kino_nightmare_on_elm_street = {
-                name = "A Nightmare on Elm Street",
+                name = "猛鬼街",
                 text = {
-                    "{C:attention}Monster cards{} held in hand",
-                    "give {X:mult,C:white}X#1#{} Mult"
+                    "留手的{C:attention}怪兽牌",
+                    "给予{X:mult,C:white}X#1#{}倍率"
                 },
                 unlock = {
-                    "Have {C:attention}10{} Horror",
-                    "and Monster cards in your deck"
+                    "牌组中包含{C:attention}10{}张",
+                    "恐怖片和怪兽牌"
                 }
             },
             j_kino_nope = {
@@ -2617,7 +2616,7 @@ return {
                 },
             },
             j_kino_nosferatu_2024 = {
-                name = "Nosferatu (2024)",
+                name = "诺斯费拉图（2024）",
                 text = {
                     {"{C:Drain}Drain{} scoring {C:attention}Enhancements",
                     "and gain {C:mult}+#2#{} Mult",
@@ -2703,7 +2702,7 @@ return {
                 }
             },
             j_kino_oppenheimer = {
-                name = "Oppenheimer",
+                name = "奥本海默",
                 text = {
                     "Whenever you solve",
                     "the {C:attention}Codex{}",
@@ -2714,10 +2713,10 @@ return {
                 }
             },
             j_kino_pain_and_gain = {
-                name = "Pain & Gain",
+                name = "健男抢钱团",
                 text = {
-                    "{C:Bullet}Loaded:{} Consume a {C:Bullet}Bullet",
-                    "to make a card give {X:mult,C:white}X#1#{}"
+                    "{C:Bullet}填弹：{}消耗一枚{C:Bullet}子弹",
+                    "使一张牌给予{X:mult,C:white}X#1#{}倍率"
                 }
             },
             j_kino_panic_room = {
@@ -3176,14 +3175,14 @@ return {
                 }
             },
             j_kino_shang_chi = {
-                name = "Shang-Chi and the Legend of the 10 Rings",
+                name = "尚气与十环传奇",
                 text = {
                     "{C:Magic}Cast the next Spell",
                     "of the {C:attention}10"
                 }
             },
             j_kino_shawshank_redemption = {
-                name = "The Shawshank Redemption",
+                name = "肖申克的救赎",
                 text = {
                     "Every {C:attention}card{} in hand", 
                     "permanently gains {C:chips}+#1#{} Chips",
@@ -4465,12 +4464,11 @@ return {
                 }
             },
             m_kino_monster = {
-                name = "Monster Card",
+                name = "怪兽牌",
                 text = {
-                    "{C:attention}Cannot be Discarded{}",
+                    "{C:attention}无法弃置",
                     "",
-                    "Returns to slumber",
-                    "after scoring"
+                    "计分后，沉睡"
                 }
             },
             m_kino_flying_monkey = {
@@ -5037,8 +5035,8 @@ return {
             c_kino_popcorn = {
                 name = "影院爆米花",
                 text = {
-                    "升级下一手打出的牌型",
-                    "使其{C:mult}+#1#{}倍率"
+                    "使下一手出牌的",
+                    "对应牌型{C:mult}+#1#{}倍率"
                 }
             },
             c_kino_icecream = {
@@ -5089,8 +5087,8 @@ return {
             c_kino_fries = {
                 name = "薯条",
                 text = {
-                    "升级下一手打出的牌型",
-                    "使其{C:chips}+#1#{}筹码"
+                    "使下一手出牌的",
+                    "对应牌型{C:chips}+#1#{}筹码"
                 }
             },
             c_kino_hotdog = {
@@ -5130,7 +5128,7 @@ return {
                 }
             },
             c_kino_sourcandy = {
-                name = "Sour Candy",
+                name = "酸糖",
                 text = {
                     "{C:green}#1# in #2#{} chance to {C:attention}destroy",
                     "each scoring card next hand",
@@ -5157,7 +5155,7 @@ return {
                 }
             },
             c_kino_garlic_bread = {
-                name = "Garlic Bread",
+                name = "蒜香烤面包",
                 text = {
                     "Increase {C:money}sell value",
                     "of every owned {C:attention}Joker",
@@ -5174,12 +5172,11 @@ return {
                 }
             },
             c_kino_donut = {
-                name = "Pink-frosted Donut",
+                name = "粉红糖霜甜甜圈",
                 text = {
-                    "Upgrade every poker hand",
-                    "with {C:chips}+#1#{} Chips",
-                    "for each {C:attention}unique{} scoring suit",
-                    "next hand"
+                    "下次出牌中的计分牌",
+                    "每有一{C:attention}种{}花色"
+                    "各牌型{C:chips}+#1#{}筹码"
                 }
             },
             c_kino_nachos = {
@@ -5190,12 +5187,11 @@ return {
                 }
             },
             c_kino_milkshake = {
-                name = "Milkshake",
+                name = "奶昔",
                 text = {
-                    "Change suit of every",
-                    "scoring card to that of",
-                    "first scoring card",
-                    "next hand"
+                    "下次出牌时",
+                    "将每张计分牌的花色",
+                    "变为首张计分牌的花色"
                 }
             },
             c_kino_beans = {
@@ -6877,7 +6873,7 @@ return {
             },
 
             kino_silver_sticker={
-                name="Silver Sticker",
+                name="银色纪念贴",
                 text={
                     "Used this Joker",
                     "to win on {C:SilverScreen}Silver",
@@ -8285,19 +8281,19 @@ return {
 
 
             kino_settings_jumpscare_mechanic = "跳脸杀小丑牌？",
-            kino_settings_vampire_jokers = "Vampiric Jokers?",
+            kino_settings_vampire_jokers = "吸血鬼小丑牌？",
             kino_settings_time_based_jokers = "计时性小丑牌？",
             kino_settings_speed_factor = "Quick Timer",
             kino_settings_confection_mechanic = "甜食零嘴？", 
 
-            kino_settings_feedback_box = "Feedback Box on Run End",
-            kino_settings_actor_synergy = "Actors?",
-            kino_settings_self_synergize = "Jokers can synergize with themselves?",
-            kino_settings_genre_synergy = "Genre?",
-            kino_settings_movie_jokers_only = "Movie Jokers Only?",
-            kino_settings_custom_rarity = "Rarity System?",
-            kino_settings_halloween_music = "Halloween Deck Music?",
-            kino_settings_halloween_deck = "Halloween Mode?",
+            kino_settings_feedback_box = "赛局结束显示反馈框",
+            kino_settings_actor_synergy = "演员？",
+            kino_settings_self_synergize = "小丑牌可否与自身连协？",
+            kino_settings_genre_synergy = "类型？",
+            kino_settings_movie_jokers_only = "仅电影小丑牌？",
+            kino_settings_custom_rarity = "稀有度系统？",
+            kino_settings_halloween_music = "万圣节牌组音乐？",
+            kino_settings_halloween_deck = "万圣节模式？",
 
             -- OTHER --
             kino_credits_header = "鸣谢",
