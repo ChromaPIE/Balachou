@@ -1,9 +1,9 @@
 """Build repo-tree.json and font WOFF2 subset."""
-import json, os, sys, base64, urllib.request, urllib.error, urllib.parse, subprocess, tempfile
+import json, os, base64, urllib.request, urllib.error, urllib.parse, subprocess
 
 TREE_API = "https://api.github.com/repos/ChromaPIE/Balachou/git/trees/main?recursive=1"
 RAW_BASE = "https://raw.githubusercontent.com/ChromaPIE/Balachou/main"
-FONT_SOURCE_URL = "https://raw.githubusercontent.com/ChromaPIE/Balachou-Hub/main/assets/SarasaMonoSlabSC-Regular.ttf"
+FONT_SOURCE = "assets/SarasaMonoSlabSC-Regular.ttf"
 
 ASCII_RANGES = [(0x0020, 0x007E), (0x00A0, 0x00FF), (0x2000, 0x206F)]
 
@@ -48,13 +48,7 @@ for lo, hi in ASCII_RANGES:
 char_string = "".join(sorted(chars))
 print(f"  {len(char_string)} unique chars from {sum(len(t) for t in all_text)} chars of text")
 
-print("Downloading source font...")
-with tempfile.NamedTemporaryFile(suffix=".ttf", delete=False) as tmp:
-    tmp.write(urllib.request.urlopen(
-        urllib.request.Request(FONT_SOURCE_URL, headers={"User-Agent": "Balachou-Build"}),
-        timeout=60,
-    ).read())
-    source_ttf = tmp.name
+source_ttf = FONT_SOURCE  # from repo checkout
 
 print("Subsetting font...")
 woff2_path = "sarasa-mono-slab-sc.woff2"
@@ -68,5 +62,4 @@ subprocess.run([
 woff2_size = os.path.getsize(woff2_path)
 print(f"  WOFF2: {woff2_size / 1024:.0f} KB")
 
-os.unlink(source_ttf)
 print("Done.")
