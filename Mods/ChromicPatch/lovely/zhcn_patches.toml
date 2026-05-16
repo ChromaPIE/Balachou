@@ -362,3 +362,11 @@ pattern = '''label = {'Counters'},'''
 position = "at"
 payload = '''label = {'计数标'},'''
 match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS monarchy "contents/jokers/mechanics_grip.lua"]'
+pattern = '''SMODS.calculate_effect({message = 'Returned!'}, context.other_card)'''
+position = "at"
+payload = '''SMODS.calculate_effect({message = localize('monarchy_returned')}, context.other_card)'''
+match_indent = true

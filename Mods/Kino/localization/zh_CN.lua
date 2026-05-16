@@ -46,8 +46,8 @@ return {
                     }
                 },
                 unlock = {
-                    'Play a hand that contains',
-                    'only one {C:attention}爱情片牌{}'
+                    '单独打出一张',
+                    '{C:attention}爱情片牌'
                 },
             },
             j_kino_12_angry_men = {
@@ -257,14 +257,14 @@ return {
                 }
             },
             j_kino_apollo_13 = {
-                name = "Apollo 13",
+                name = "阿波罗13号",
                 text = {
-                    "Put one {C:attention}Retrigger Counter",
-                    "on another {C:attention}Joker",
-                    "when a {C:planet}Planet{} is used",
+                    "使用{C:planet}星球牌{}后",
+                    "对另一张{C:attention}小丑牌{}施加",
+                    "1位{C:attention}重新触发计数标"
                 },
                 unlock = {
-                    "Use a {C:StrangePlanet}Strange Planet{}"
+                    "使用一张{C:StrangePlanet}奇异星球牌"
                 }
             },
             j_kino_arrival = {
@@ -544,15 +544,16 @@ return {
                 }
             },
             j_kino_black_swan = {
-                name = "Black Swan",
+                name = "黑天鹅",
                 text = {
-                    "{C:green}#1# in #2#{} chance to destroy",
-                    "scoring {C:attention}Queen{} and create a copy",
-                    "upgraded with {C:mult}+#3#{} Mult"
+                    "有{C:green}#1#/#2#{}的几率",
+                    "摧毁计分的{C:attention}Q",
+                    "并生成一张",
+                    "{C:mult}+#3#{}倍率的复制"
                 },
                 unlock = {
-                    "Play a hand containing",
-                    "{C:attention}five{} {C:blue}Black{C:attention} Queens"
+                    "出牌包含",
+                    "{C:attention}5{}张{C:blue}暗色{C:attention}Q"
                 }
             },
             j_kino_blade_1 = {
@@ -733,16 +734,16 @@ return {
                 }
             },
             j_kino_castaway = {
-                name = "Cast Away",
+                name = "荒岛余生",
                 text = {
-                    "If scoring hand is a {C:attention}High Card{}",
-                    "upgrade every scoring card with {C:chips}+#1#{} Chips",
-                    "for every unscored card"
+                    "若所出牌型为{C:attention}高牌",
+                    "每有一张{C:attention}不计分牌",
+                    "使{C:attention}计分牌{}获得{C:chips}+#1#{}筹码"
                 },
                 unlock = {
-                    "Win a run with",
-                    "half or less of",
-                    "your starting deck remaining"
+                    "在牌组张数至多为",
+                    "起始张数一半时",
+                    "赢下一局"
                 }
             },
             j_kino_cat_people = {
@@ -827,13 +828,14 @@ return {
                 }
             },
             j_kino_clockwork_orange = {
-                name = "A Clockwork Orange",
+                name = "发条橙",
                 text = {
-                    {"{C:white,X:attention}Active:{} Consume {C:attention}Charges{} to give",
-                    "{X:mult,C:white}#2#X{} Mult per {C:attention}Charge{}",
-                    "{C:inactive}(Currently: #1# Charges)"},
-                    {"Gain a {C:attention}Charge{} whenever",
-                    "a card is destroyed",},   
+                    {"{C:white,X:attention}激发{}：消耗{C:attention}蓄能",
+                    "每消耗一层",
+                    "给予{X:mult,C:white}X#2#{}倍率",
+                    "{C:inactive}（当前具有#1#层）"},
+                    {"每有一张卡牌被摧毁",
+                    "获得一层{C:attention}蓄能",},   
                 },
                 unlock = {
                     "Win a run with a",
@@ -901,18 +903,18 @@ return {
                 }
             },
             j_kino_conjuring_1 = {
-                name = "The Conjuring",
+                name = "招魂",
                 text = {
-                    "{C:attention}Cannot be sold!{}",
+                    "{C:attention}无法售出！",
                     " ",
-                    "Destroys {C:attention}first{} card",
-                    "drawn each hand",
-                    "to gain {C:mult}+#1#{} Mult",
-                    "{C:inactive}(Currently: {C:mult}+#2#{C:inactive} Mult)"
+                    "摧毁每回合",
+                    "抽到的{C:attention}第一张{}牌",
+                    "并获得{C:mult}+#1#{}倍率",
+                    "{C:inactive}（当前为{C:mult}+#2#{C:inactive}倍率）"
                 },
                 unlock = {
-                    "Use the {C:attention}Witch{} 25 times",
-                    "{C:inactive}(#1#)"
+                    "使用25次{C:attention}女巫",
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_contagion = {
@@ -1152,7 +1154,7 @@ return {
                 text = {
                     "若回合{C:attention}首次{}出牌恰为{C:attention}2{}张",
                     "则对每张计分牌",
-                    "施加{C:attention}#1#{}位吓呆计数标",
+                    "施加{C:attention}#1#{}位惊愕计数标",
                     "并对左侧{C:attention}小丑牌",
                     "施加{C:attention}#2#{}位重新触发计数标"
                 },
@@ -1445,11 +1447,11 @@ return {
                 }
             },   
             j_kino_final_destination = {
-                name = "Final Destination",
+                name = "死神来了",
                 text = {
-                    "Gain {X:mult,C:white}X#2#{} when",
-                    "a {C:attention}Playing Card{} is destroyed",
-                    "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive} Mult)"
+                    "若有{C:attention}扑克牌{}被摧毁",
+                    "本牌获得{X:mult,C:white}X#2#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#1#{C:inactive}倍率）"
                 }
             },
             j_kino_fish_called_wanda = {
@@ -1673,9 +1675,9 @@ return {
             j_kino_guardians_of_the_galaxy_1 = {
                 name = "银河护卫队",
                 text = {
-                    "Gain {C:mult}+#1#{} Mult",
-                    "per {C:planet}Planet{} for",
-                    "each {C:planet}Planet{} you own",
+                    "选择{C:attention}盲注{}时",
+                    "每拥有一张{C:planet}星球牌",
+                    "本牌获得{C:mult}+#1#{}倍率",
                     "{C:inactive}（当前为{C:mult}+#2#{C:inactive}倍率）"
                 }
             },
@@ -2730,27 +2732,31 @@ return {
                 }
             },
             j_kino_pans_labyrinth = {
-                name = "Pan's Labyrinth",
+                name = "潘神的迷宫",
                 text = {
-                    {"{C:white,E:1}Complete the Quests"},
-                    {"Played {C:hearts}Hearts{} give {C:mult}+#1#{} Mult"},
-                    {"Earn {C:money}$#2#{} for each {C:diamonds}Diamonds{} left in deck"},
-                    {"{C:chips}+#3#{} Chips for each {C:clubs}Clubs{} held in hand"},
-                    {"{X:mult,C:white}X#4#{} Mult for each {C:spades}Spades{} discarded",
-                        "{C:inactive}(Currently: {X:mult,C:white}X#5#{C:inactive} Mult)"}
+                    {"{C:white,E:1}完成任务"},
+                    {"打出的{C:hearts}红桃{}牌",
+                    "给予{C:mult}+#1#{}倍率"},
+                    {"牌组中每留有一张{C:diamonds}方片",
+                    "赚取{C:money}$#2#"},
+                    {"每张留手的{C:clubs}梅花{}牌",
+                    "{C:chips}+#3#{}筹码"},
+                    {"每弃掉一张{C:spades}黑桃{}牌",
+                    "本牌获得{X:mult,C:white}X#4#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#5#{C:inactive}倍率）"}
                 },
 
                 unlock = {
-                    "NOT YET IMPLEMENTED"
+                    "尚未完善"
                 }
             },
             j_kino_pans_labyrinth_locked = {
-                name = "Pan's Labyrinth BUT CRAZY AND FUCKED UP",
+                name = "发癫潘神的操蛋迷宫",
                 text = {
-                    {"{C:white,E:1}Complete the Quests"},
-                    {"{C:red}To Unlock{C:white}: Defeat a {C:attention}Boss Blind"},
-                    {"{C:red}To Unlock{C:white}: Consume {C:attention}5{C:Confection} Confections"},
-                    {"{C:red}To Unlock{C:white}: Remove a {C:attention}2{C:white} from your deck"}
+                    {"{C:white,E:1}完成任务"},
+                    {"{C:red}解锁条件{C:white}：击败一个{C:attention}Boss盲注"},
+                    {"{C:red}解锁条件{C:white}：使用{C:attention}5{C:white}张{C:Confection}甜食零嘴牌"},
+                    {"{C:red}解锁条件{C:white}：从牌组中移除一张{C:attention}2"}
                 },
             },
             j_kino_party_people = {
@@ -3273,11 +3279,11 @@ return {
                 }
             },
             j_kino_skyscraper = {
-                name = "Skyscraper",
+                name = "摩天营救",
                 text = {
-                    "{C:mult}+#2#{} Mult",
-                    "{C:mult}-#3#{} Mult when",
-                    "scoring hand is not a {C:attention}High Card"
+                    "{C:mult}+#2#{}倍率",
+                    "若出牌牌型不为{C:attention}高牌",
+                    "{C:mult}-#3#{}倍率"
                 }
             },
             j_kino_sleepy_hollow = {
@@ -3643,18 +3649,18 @@ return {
                 }
             },
             j_kino_taken_1 = {
-                name = "Taken",
+                name = "飓风营救",
                 text = {
-                    "{C:mult}+#1#{} Mult when",
-                    "a {C:attention}Queen{} is drawn",
-                    "{C:mult}-#2#{} Mult when",
-                    "a {C:attention}Queen{} is discarded",
-                    "{C:inactive}(Currently: {C:mult}+#3#{C:inactive} Mult)"
+                    
+                    "每抽到一张{C:attention}Q",
+                    "获得{C:mult}+#1#{}倍率",
+                    "每弃掉一张{C:attention}Q",
+                    "倍率加成{C:mult}-#2#",
+                    "{C:inactive}（当前为{C:mult}+#3#{C:inactive}倍率）"
                 },
                 unlock = {
-                    "Win a run with",
-                    "no {C:attention}Queens",
-                    "in your deck"
+                    "牌组中无{C:attention}Q{}时",
+                    "赢下一局"
                 }
             },
             j_kino_terminator_1 = {
@@ -3695,10 +3701,10 @@ return {
                 }
             },
             j_kino_sunshine = {
-                name = "Sunshine",
+                name = "太阳浩劫",
                 text = {
-                    "{C:mult}+#1#{} Mult for each",
-                    "{C:hearts}Hearts{} held in hand"
+                    "手中每有一张{C:hearts}红桃{}牌",
+                    "{C:mult}+#1#{}倍率"
                 }
             },
             j_kino_superman_1978 = {
@@ -4172,9 +4178,9 @@ return {
             j_kino_x = {
                 name = "X",
                 text = {
-                    "{X:attention,C:white}Active{}: Draw {C:attention}#1#{} additional cards",
-                    "and destroy {C:attention}1{} random card when",
-                    "{C:attention}opening hand{} is drawn"
+                    "{X:attention,C:white}激发{}：可额外抽取{C:attention}#1#{}张牌",
+                    "抽取{C:attention}第一手牌{}后",
+                    "随机摧毁{C:attention}1{}张手牌"
                 }
             },
             j_kino_yes_man = {
@@ -4393,15 +4399,15 @@ return {
                 },
             },
             j_kino_singing_in_the_rain = {
-                name = "Singing In The Rain",
+                name = "雨中曲",
                 text = {
                     {
-                        "When a {C:attention}Counter{} is applied,",
-                        "apply {C:attention}X#1#{} that many"
+                        "施加任何{C:attention}计数标{}时",
+                        "使实际施加位数{C:attention}X#1#"
                     },
                     {
-                        "Put {C:attention}#2#{} random beneficial {C:attention}Counter",
-                        "on each unscored card"
+                        "对每张{C:attention}不计分牌{}施加{C:attention}#2#{}位",
+                        "随机的正面{C:attention}计数标"
                     }
                 },
                 unlock={
@@ -4498,7 +4504,7 @@ return {
                 }
             },
             m_kino_fantasy = {
-                name = "Fantasy Card",
+                name = "奇幻片牌",
                 text = {
                     "{C:Magic}Casts a Spell{}",
                     "when scored based on",
@@ -4764,10 +4770,10 @@ return {
                 }
             },
             c_kino_witch = {
-                name = "Witch",
+                name = "女巫",
                 text = {
-                    "Upgrade #1# card into",
-                    "a {C:attention}Fantasy Card{}"
+                    "将#1#张选定卡牌",
+                    "增强为{C:attention}奇幻片牌"
                 }
             },
             c_kino_gangster = {
@@ -4842,11 +4848,10 @@ return {
                 }
             },
             c_kino_homerun = {
-                name = "Homerun",
+                name = "全垒打",
                 text = {
-                    "Add a {C:red}Sports Seal{}",
-                    "to {C:attention}1{} selected",
-                    "card in your hand",
+                    "为{C:attention}1{}张选定卡牌",
+                    "打上{C:red}运动蜡封",
                 }
             },
             c_kino_gathering = {
@@ -5037,7 +5042,7 @@ return {
                 }
             },
             c_kino_icecream = {
-                name = "Ice Cream Snack",
+                name = "冰淇淋零食",
                 text = {
                     "Upgrade next",
                     "poker hand played with",
@@ -5045,10 +5050,10 @@ return {
                 }
             },
             c_kino_candy = {
-                name = "Candy Snack",
+                name = "糖果零食",
                 text = {
-                    "Gain {C:attention}+#1#{} hand size",
-                    "next round",
+                    "下回合",
+                    "手牌上限{C:attention}+#1#"
                 }
             },
             c_kino_peanuts = {
@@ -5975,13 +5980,12 @@ return {
                 }
             },
             bl_kino_anton_chigurh = {
-                name = "Anton Chigurh",
+                name = "安东·奇古尔",
                 text = {
-                    "{C:green}#1# in #2#{} chance to",
-                    "put {C:attention}Stun Counters{} equal",
-                    "to current hands",
-                    "on first {C:attention}Joker",
-                    "when hand is played"
+                    "有{C:green}#1#/#2#{}的几率",
+                    "对最左侧{C:attention}小丑牌",
+                    "施加位数等同于当前",
+                    "出牌次数的{C:attention}惊愕计数标"
                 }
             },
             bl_kino_beachthatmakesyouold = {
@@ -6018,11 +6022,9 @@ return {
                 }
             },
             bl_kino_dr_evil = {
-                name = "Dr. Evil",
+                name = "邪恶博士",
                 text = {
-                    "Each subsequent hand",
-                    "must be larger than",
-                    "previous hand"
+                    "出牌得分必须越来越高"
                 }
             },
             
@@ -6132,10 +6134,10 @@ return {
                 }
             },
             bl_kino_kingkong = {
-                name = "King Kong",
+                name = "金刚",
                 text = {
-                    "Extra large blind and",
-                    "create a {C:attention}Damsel",
+                    "特大盲注",
+                    "生成一张{C:attention}遇险少女",
                 }
             },
 
@@ -6300,11 +6302,11 @@ return {
                 }
             },
             bl_kino_clubber =  {
-                name = "Clubber Lang",
+                name = "克鲁伯·朗",
                 text = {
-                    "When you {C:red}discard",
-                    "put a {C:Chain}Chain Counter{} on every",
-                    "card remaining in hand"
+                    "{C:red}弃牌{}后",
+                    "对剩余手牌施加",
+                    "1位{C:Chain}链缚计数标"
                 }
             },
             bl_kino_ghost_rider =  {
@@ -6319,11 +6321,11 @@ return {
         },
         BlindAbility = {
             c_kino_damsel = {
-                name = "Damsel",
+                name = "遇险少女",
                 text = {
-                    "Put {C:attention}#3#{C:red} Stun Counters{} on a {C:attention}face{} card",
-                    "to lower {C:attention}Blind{} requirement",
-                    "by {C:attention}#2#%{}"
+                    "对一张{C:attention}人头{}牌",
+                    "施加{C:attention}#3#{}位{C:red}惊愕计数标",
+                    "并使{C:attention}盲注{}得分要求削减{C:attention}#2#%"
                 }
             },
             c_kino_high_noon = {
@@ -6564,10 +6566,11 @@ return {
                 }
             },
             p_kino_fantasy_booster = {
-                name = "Fantasy Pack",
+                name = "奇幻片包",
                 text = {
-                    "Choose {C:attention}#1#{} of",
-                    "up to {C:attention}#2# Fantasy Jokers{}",  
+                    "从至多{C:attention}#2#{}张",
+                    "{C:attention}奇幻片小丑牌{}中",
+                    "选取{C:attention}#1#{}张"
                 }
             },
             p_kino_actor_booster = {
@@ -6745,12 +6748,10 @@ return {
                 }
             },
             gloss_active = {
-                name = "Active",
+                name = "激发",
                 text = {
-                    "Active jokers have",
-                    "specific abilities",
-                    "if they're in the",
-                    "{C:attention}First joker slot{}"
+                    "位于{C:attention}最左侧{}时",
+                    "具有特殊能力"
                 }
             },
             gloss_jump_scare = {
@@ -6758,7 +6759,7 @@ return {
                 text = {
                     "给予{X:mult,C:white}X#1#",
                     "对卡牌施加2位",
-                    "{C:red}吓呆计数标"
+                    "{C:red}惊愕计数标"
                 }
             },
             gloss_spellcasting = {
@@ -6804,10 +6805,10 @@ return {
                 }
             },
             keyword_temporary_hand_size = {
-                name = "Temporary Hand Size",
+                name = "临时手牌上限",
                 text = {
-                    "Temporary Hand Size disappears",
-                    "when a hand is played"
+                    "出牌后",
+                    "临时手牌上限失效"
                 }
             },
 
@@ -6886,12 +6887,11 @@ return {
                 }
             },
             kino_sports_seal={
-                name="Sports Seal",
+                name="运动蜡封",
                 text={
-                    "If this card is the only",
-                    "played card then increase",
-                    "the rank of every card in hand",
-                    "lower than this card by {C:attention}1 "
+                    "{C:attention}单独{}打出本牌后",
+                    "使所有点数{C:attention}小于{}本牌的手牌",
+                    "点数提升{C:attention}1 "
                 },
             },
             kino_family_seal={
@@ -7865,7 +7865,7 @@ return {
                 text = {
                     "{C:attention}步退1位",
                     " ",
-                    "每1位",
+                    "每有1位",
                     "重新触发{C:attention}#1#{}次"
                 }
             },
@@ -7891,16 +7891,17 @@ return {
 
             -- Detrimental Counters
             counter_poison = {
-                name = "Poison Counter",
+                name = "毒害计数标",
                 text = {
-                    "{C:attention}Ticks Down 1",
+                    "{C:attention}步退1位",
                     " ",
-                    "Reduce {C:chips}Chips{} & {C:mult}Mult",
-                    "by {C:attention}#1#%{} per Counter"
+                    "每有1位",
+                    "使{C:chips}筹码{}和{C:mult}倍率",
+                    "削减{C:attention}#1#%"
                 }
             },
             counter_stun = {
-                name = "吓呆计数标",
+                name = "惊愕计数标",
                 text = {
                     "{C:attention}步退1位",
                     " ",
@@ -7912,7 +7913,7 @@ return {
                 text = {
                     "{C:attention}步退1位",
                     " ",
-                    "每1位",
+                    "每有1位",
                     "损失{C:money}$#1#"
                 }
             },
@@ -8034,12 +8035,11 @@ return {
                 }
             },
             counter_kino_chain = {
-                name = "Chain Counter",
+                name = "链缚计数标",
                 text = {
-                    "{C:attention}Ticks Down 1 when discarded",
+                    "{C:attention}尝试弃置后，步退1位",
                     " ",
-                    "Cannot be discarded",
-                    "while this has counters"
+                    "有位数时，无法弃置"
                 }
             }
         },
@@ -8266,8 +8266,8 @@ return {
 
             kino_settings_sci_fi_enhancement = "科幻片牌？",
             kino_settings_spellcasting = "施咒牌？",
-            kino_settings_demonic_enhancement = "Demonic Cards?",
-            kino_settings_horror_enhancement = "Horror/Monster Cards?",
+            kino_settings_demonic_enhancement = "恶魔牌？",
+            kino_settings_horror_enhancement = "恐怖片/怪兽牌？",
             kino_settings_romance_enhancement = "爱情片牌？",
             kino_settings_crime_enhancement = "犯罪片牌？",
             kino_settings_action_enhancement = "动作片牌？",
@@ -8328,7 +8328,7 @@ return {
             kino_codex = "Solved",
             k_kino_drained = "Drained!",
             k_kino_bang = "Bang!",
-            k_kino_downgrade_ex = "Value Down",
+            k_kino_downgrade_ex = "数值削减",
             k_kino_perished = "Perished!",
             
             k_longlegs_ex = "Captured",
@@ -8420,7 +8420,7 @@ return {
             k_kino_james_bond_1 = "Shaken, not stirred",
             k_kino_terminator_destroyed = "I'll be back",
             k_kino_forrest_gump = "Run, Forrest, Run",
-            k_kino_singing_in_the_rain = "What a wonderful feeling",
+            k_kino_singing_in_the_rain = "何其美妙！",
             k_kino_pans_labyrinth = "Well done, child",
             k_kino_deadpool = "从头来过！",
             k_kino_snakes_on_a_plane = "Snakes! On a Plane?!",
@@ -8431,7 +8431,7 @@ return {
 
 
             -- Enhancement Barks
-            k_monster_turn = "ROAR!",
+            k_monster_turn = "哇嗷！",
             k_crime_card = "Stolen",
             k_action_card = "Bang!",
             k_kino_mystery = "I would've gotten away with it too!",
@@ -8460,8 +8460,8 @@ return {
             k_kino_vulcan_use = "火神星！", -- Chromic temp
 
             -- Seals
-            k_kino_sportsseal_1 = "Coached",
-            k_kino_sportsseal_2 = "Coaching",
+            k_kino_sportsseal_1 = "到！",
+            k_kino_sportsseal_2 = "全体都有！",
             k_kino_adventureseal_1 = "Gained Notariety",
             k_kino_adventureseal_2 = "Treasure!",
 
