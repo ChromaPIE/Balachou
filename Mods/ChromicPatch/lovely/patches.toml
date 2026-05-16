@@ -678,3 +678,88 @@ match_indent = true
 pattern = "if context.end_of_round and not context.repetition and not context.individual and deck_or_sleeve.config.extra.should_increase then"
 position = "at"
 payload = "if context.end_of_round and not context.repetition and not context.individual and deck_or_sleeve.config.extra and deck_or_sleeve.config.extra.should_increase then"
+
+# Kino Mr. Glass: nil-guard _target when no jokers exist
+# get_counter_targets({}) → {} → pseudorandom_element({}) → nil → crash at :juice_up()
+[[patches]]
+[patches.regex]
+target = '=[SMODS kino "items/blinds/blind_normal.lua"]'
+pattern = '''(?<indent>[\t ]*)local _target = pseudorandom_element\(_valid_targets\)\s*_target:juice_up\(\)\s*_target:bb_counter_apply\("counter_kino_glass", self\.debuff\.counters_applied\)'''
+position = "at"
+line_prepend = "$indent"
+payload = '''local _target = pseudorandom_element(_valid_targets)
+if _target then
+    _target:juice_up()
+    _target:bb_counter_apply("counter_kino_glass", self.debuff.counters_applied)
+end'''
+times = 2
+
+# Kino Pan's Labyrinth: nil-guard card in generate_ui when called without a card context
+# AIJ retrieve_joker_text passes nil as card to generate_card_ui during pool building
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "items/jokers/pans_labyrinth.lua"]'
+match_indent = true
+position = "at"
+pattern = '''generate_ui = function(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
+        local _desc_nodes_dummy = {}'''
+payload = '''generate_ui = function(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
+        if not card then return end
+        local _desc_nodes_dummy = {}'''
+
+# Kino Count Rugen discard: skip forced deselect when ≤1 card highlighted
+# Otherwise the discard becomes a no-op (harmless but pointless)
+[[patches]]
+[patches.regex]
+target = '=[SMODS kino "src/kinofunctions.lua"]'
+pattern = '''(?<discard_indent>[\t ]*)if G\.GAME\.current_round\.count_rugen then\s*local _target = pseudorandom_element\(G\.hand\.highlighted, pseudoseed\("kino_count_rugen"\)\)\s*G\.hand:remove_from_highlighted\(_target, true\)\s*card_eval_status_text\(_target, 'extra', nil, nil, nil,\s*\{ message = localize\('k_kino_rugen'\), colour = G\.C\.BLACK\}\)\s*end\s*local _ret = _o_discard'''
+position = "at"
+line_prepend = "$discard_indent"
+payload = '''if G.GAME.current_round.count_rugen and #G.hand.highlighted > 1 then
+    local _target = pseudorandom_element(G.hand.highlighted, pseudoseed("kino_count_rugen"))
+    G.hand:remove_from_highlighted(_target, true)
+    card_eval_status_text(_target, 'extra', nil, nil, nil,
+        { message = localize('k_kino_rugen'), colour = G.C.BLACK})
+end
+
+local _ret = _o_discard'''
+
+# Kino Count Rugen play: when ≤1 card highlighted, treat as NOT ALLOWED instead of
+# deselecting the last card (which would empty G.play and crash at NULL hand)
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/kinofunctions.lua"]'
+match_indent = true
+position = "at"
+pattern = '''local _o_play = G.FUNCS.play_cards_from_highlighted
+G.FUNCS.play_cards_from_highlighted = function(e)
+    if G.GAME.current_round.count_rugen then
+        local _target = pseudorandom_element(G.hand.highlighted, pseudoseed("kino_count_rugen"))
+        G.hand:remove_from_highlighted(_target, true)
+        card_eval_status_text(_target, 'extra', nil, nil, nil,
+            { message = localize('k_kino_rugen'), colour = G.C.BLACK})
+    end
+
+    local _ret = _o_play(e)
+    return _ret
+end'''
+payload = '''local _o_play = G.FUNCS.play_cards_from_highlighted
+G.FUNCS.play_cards_from_highlighted = function(e)
+    if G.GAME.current_round.count_rugen then
+        if #G.hand.highlighted <= 1 then
+            play_area_status_text(localize('k_chromicpatch_no_card_played'))
+            G.hand:unhighlight_all()
+            ease_hands_played(-1)
+            G.STATE = G.STATES.DRAW_TO_HAND
+            G.STATE_COMPLETE = false
+            return
+        end
+        local _target = pseudorandom_element(G.hand.highlighted, pseudoseed("kino_count_rugen"))
+        G.hand:remove_from_highlighted(_target, true)
+        card_eval_status_text(_target, 'extra', nil, nil, nil,
+            { message = localize('k_kino_rugen'), colour = G.C.BLACK})
+    end
+
+    local _ret = _o_play(e)
+    return _ret
+end'''

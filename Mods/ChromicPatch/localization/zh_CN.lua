@@ -610,6 +610,9 @@ return {
             -- For generic use
             t_left = "左",
             t_right = "右",
+
+            -- Patch specific
+            k_chromicpatch_no_card_played = "无牌可出",
         }
     }
 }
