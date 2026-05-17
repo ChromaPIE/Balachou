@@ -48,18 +48,35 @@ for lo, hi in ASCII_RANGES:
 char_string = "".join(sorted(chars))
 print(f"  {len(char_string)} unique chars from {sum(len(t) for t in all_text)} chars of text")
 
-source_ttf = FONT_SOURCE  # from repo checkout
+CHARSET_PATH = "assets/char-set.txt"
+WOFF2_PATH = "sarasa-mono-slab-sc.woff2"
 
-print("Subsetting font...")
-woff2_path = "sarasa-mono-slab-sc.woff2"
-subprocess.run([
-    "pyftsubset", source_ttf,
-    f"--output-file={woff2_path}",
-    "--flavor=woff2",
-    f"--text={char_string}",
-    "--no-hinting",
-], check=True)
-woff2_size = os.path.getsize(woff2_path)
-print(f"  WOFF2: {woff2_size / 1024:.0f} KB")
+old_chars = ""
+try:
+    with open(CHARSET_PATH, encoding="utf-8") as f:
+        old_chars = f.read().strip()
+except FileNotFoundError:
+    pass
+
+if char_string == old_chars:
+    print("Character set unchanged, skipping font subset")
+    with open("font-updated.flag", "w") as f:
+        f.write("false")
+else:
+    print(f"Character set changed ({len(old_chars)} → {len(char_string)} chars), subsetting font...")
+    subprocess.run([
+        "pyftsubset", FONT_SOURCE,
+        f"--output-file={WOFF2_PATH}",
+        "--flavor=woff2",
+        f"--text={char_string}",
+        "--no-hinting",
+    ], check=True)
+    woff2_size = os.path.getsize(WOFF2_PATH)
+    print(f"  WOFF2: {woff2_size / 1024:.0f} KB")
+    with open(CHARSET_PATH, "w", encoding="utf-8") as f:
+        f.write(char_string + "\n")
+    print(f"  Saved character set ({len(char_string)} chars)")
+    with open("font-updated.flag", "w") as f:
+        f.write("true")
 
 print("Done.")
