@@ -763,3 +763,20 @@ G.FUNCS.play_cards_from_highlighted = function(e)
     local _ret = _o_play(e)
     return _ret
 end'''
+
+# Kino j_kino_x: fix draw-4 effect — G.FUNCS.draw_from_deck_to_hand ignores
+# its count argument and recalculates limit internally.  Since hand is already
+# full after first_hand_drawn, limit=0 and nothing gets drawn.
+# SMODS's CardArea:draw_card_from bypasses the hand limit for G.hand, so
+# direct draw_card() calls actually draw cards regardless of current hand size.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "items/jokers/x.lua"]'
+match_indent = true
+position = "at"
+pattern = "G.FUNCS.draw_from_deck_to_hand(card.ability.extra.cards_drawn)"
+payload = '''for i = 1, card.ability.extra.cards_drawn do
+                    if #G.deck.cards > 0 then
+                        draw_card(G.deck, G.hand, i*100/card.ability.extra.cards_drawn, 'up', true)
+                    end
+                end'''

@@ -92,11 +92,12 @@ payload = '''
 match_indent = true
 
 [[patches]]
-[patches.regex]
+[patches.pattern]
 target = '=[SMODS allinjest "Items/Jokers/stock_broker.lua"]'
-pattern = '"X"..tostring(ran_amount.." Interest")'
+pattern = 'local string = "X"..tostring(ran_amount.." Interest")'
 position = "at"
-payload = '"利息X"..tostring(ran_amount)'
+payload = 'local string = "利息X"..tostring(ran_amount)'
+match_indent = true
 
 [[patches]]
 [patches.pattern]
@@ -370,3 +371,75 @@ pattern = '''SMODS.calculate_effect({message = 'Returned!'}, context.other_card)
 position = "at"
 payload = '''SMODS.calculate_effect({message = localize('monarchy_returned')}, context.other_card)'''
 match_indent = true
+
+# Kino spellUI: replace G.UIT.T title with DynaText so {f:crmpatch_xuandong} font
+# format code is parsed instead of rendered as raw text
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/blockbuster/spells/spellUI.lua"]'
+match_indent = true
+position = "at"
+pattern = '''
+text = localize("k_bb_spellbook"),
+colour = G.C.L_BLACK, 
+scale = 0.6, 
+'''
+payload = '''
+text = localize("k_bb_spellbook"),
+colour = G.C.L_BLACK, 
+scale = 0.8,
+font = SMODS.Fonts["crmpatch_xuandong"],
+'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/blockbuster/spells/spellUI.lua"]'
+match_indent = true
+position = "at"
+pattern = "scale = 0.3,"
+payload = '''
+scale = 0.35,
+font = SMODS.Fonts["crmpatch_xuandong"],
+'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/blockbuster/spells/spellUI.lua"]'
+match_indent = true
+position = "at"
+pattern = '''
+{power_level = 1, objects = "2, 3, 4, 5"},
+{power_level = 2, objects = "6, 7, 8, 9, 10"},
+{power_level = 3, objects = "Jack, Queen, King"},
+{power_level = 4, objects = "Ace"},
+'''
+payload = '''
+{power_level = 1, objects = "2、3、4、5"},
+{power_level = 2, objects = "6、7、8、9、10"},
+{power_level = 3, objects = "J、Q、K"},
+{power_level = 4, objects = "A"},
+'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "items/jokers/sound_of_music.lua"]'
+match_indent = true
+position = "at"
+pattern = '''
+"Do, a deer a female deer",
+"Re, a drop of golden sun",
+"Mi, a name I call myself",
+"Fa, a long way to run",
+"So, a needle pulling thread",
+"La, a note to follow So",
+"Ti, a drink with jam and bread"
+'''
+payload = '''
+"Do，是一只小母鹿",
+"Re，是金色的阳光",
+"Mi，是称呼我自己",
+"Fa，是道路远又长",
+"So，是穿针又引线",
+"La，这音符紧跟So",
+"Ti，是饮料和茶点"
+'''
