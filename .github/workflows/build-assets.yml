@@ -54,11 +54,9 @@ jobs:
           else
             git commit -m "update font subset [skip ci]"
             git push
-            echo "FONT_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
             echo "Font committed"
-          else
-            echo "FONT_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
           fi
+          echo "FONT_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
 
       - name: Update font version on Gist
         env:
