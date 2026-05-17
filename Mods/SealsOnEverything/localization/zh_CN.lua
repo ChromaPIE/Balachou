@@ -331,8 +331,7 @@ return {
             j_soe_redfabric = {
                 name = '红布',
                 text = {
-                    '回合结束时',
-                    '{C:attention}永久{}存储',
+                    '回合结束时，{C:attention}永久{}存储',
                     '右侧{C:attention}小丑牌{}的能力',
                     '{C:inactive}（不受目标牌在场与否影响）'
                 }

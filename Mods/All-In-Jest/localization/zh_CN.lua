@@ -1635,8 +1635,7 @@ return {
                 text = {
                     "若{C:attention}出牌牌型{}为{C:attention}#1#{}",
                     "{C:attention}重新触发{}所有计分牌",
-                    "{C:inactive}（回合结束时",
-                    "{C:inactive}变更牌型）"
+                    "{C:inactive}（回合结束时变更牌型）"
                 }
             },
             j_aij_clay_joker = {
