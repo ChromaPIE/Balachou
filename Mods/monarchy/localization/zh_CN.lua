@@ -35,6 +35,24 @@ local loc_table = {
             monarchy_abberant_trigger = '反常！',
             monarchy_anchor_active = '起锚！',
             monarchy_anchor_primed = '下锚！',
+        },
+        collab_palettes = {
+            monarchy_spades = {
+                '低对比度色彩',
+                '高对比度色彩',
+            },
+            monarchy_clubs = {
+                '低对比度色彩',
+                '高对比度色彩',
+            },
+            monarchy_hearts = {
+                '低对比度色彩',
+                '高对比度色彩',
+            },
+            monarchy_diamonds = {
+                '低对比度色彩',
+                '高对比度色彩',
+            }
         }
     },
     descriptions = {}
@@ -140,7 +158,7 @@ local descriptions = {
             }
         },
         gift_receipt = {
-            name = '购礼小票',
+            name = '皱巴巴小票',
             text = {
                 '{C:attention}售出小丑牌{}后',
                 '获得等同于其售价之',
@@ -371,10 +389,8 @@ local descriptions = {
         vespertine = {
             name = '暮起望鸮',
             text = {
-                '前一手出牌中',
-                '每{C:attention}计分{}一张牌',
-                '本牌给予{C:mult}+#1#{}倍率',
-                '{C:inactive}（当前为{C:mult}+#2#{C:inactive}倍率）'
+                '{C:attention}最后一手出牌{}中的',
+                '每张牌给予{C:red}+#1#{}倍率'
             }
         },
         walkman = {
