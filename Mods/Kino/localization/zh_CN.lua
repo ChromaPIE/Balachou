@@ -40,7 +40,7 @@ return {
                         "每{C:attention}层{}给予{C:chips}+#2#{}筹码和{C:mult}+#1#{}倍率",
                     },
                     {
-                        "若出牌不包含{C:attention}爱情片牌",
+                        "若出牌不含{C:attention}爱情片牌",
                         "蓄能{C:attention}1{}层",
                         "{C:inactive}（当前蓄能层数：#3#）"
                     }
@@ -1033,12 +1033,11 @@ return {
                 }
             },
             j_kino_demolition_man = {
-                name = "Demolition Man",
+                name = "越空狂龙",
                 text = {
-                    "If {C:attention}first{} discard of round",
-                    "has only {C:attention}one{} card, destroy",
-                    "it and upgrade every",
-                    "card held in hand with {C:mult}+#1#{} Mult"
+                    "若回合{C:attention}首次{}弃牌仅有{C:attention}1{}张",
+                    "摧毁之，并使每张手牌",
+                    "获得{C:mult}+#1#{}倍率"
                 }
             },
             j_kino_demon_knight = {
@@ -2035,12 +2034,10 @@ return {
                 }
             },
             j_kino_karate_kid_1 = {
-                name = "The Karate Kid",
+                name = "龙威小子",
                 text = {
-                    "If played hand ",
-                    "contains an {C:attention}Ace{}",
-                    "or a {C:attention}2{}",
-                    "level up a {C:attention}random{} poker hand"
+                    "若出牌包含{C:attention}A{}或{C:attention}2",
+                    "{C:attention}随机{}升级一种牌型"
                 }
             },
             j_kino_kiki_delivery = {
@@ -2112,12 +2109,11 @@ return {
                 }
             },
             j_kino_krazy_house = {
-                name = "Krazy House",
+                name = "疯乱之家",
                 text = {
-                    "{C:chips}+#1#{} Chips, {C:mult}+#2#{} Mult or {X:mult,C:white}X#3#{} Mult",
-                    "if scored hand contains a {C:attention}Full House",
-                    "and increase value of another",
-                    "option by {C:attention}#4#%{}"
+                    "若出牌包含{C:attention}葫芦",
+                    "{C:chips}+#1#{}筹码，或{C:mult}+#2#{}倍率，或{X:mult,C:white}X#3#{}倍率",
+                    "并将另一项的数值提升{C:attention}#4#%"
                 }
             },
             j_kino_kung_fu_panda_1 = {
@@ -2431,12 +2427,11 @@ return {
                 }
             },
             j_kino_monster_house = {
-                name = "Monster House",
+                name = "怪兽屋",
                 text = {
-                    "{C:mult}+#2#{} Mult",
-                    "{C:mult}-#3#{} Mult when",
-                    "scoring hand does not", 
-                    "contain a {C:attention}Full House"
+                    "{C:mult}+#2#{}倍率",
+                    "若出牌不含{C:attention}葫芦",
+                    "{C:mult}-#3#{}倍率"
                 }
             },
             j_kino_moonfall = {
@@ -3756,12 +3751,11 @@ return {
                 }
             },
             j_kino_three_musketeers_1 = {
-                name = "The Three Musketeers (2011)",
+                name = "三个火枪手（2011）",
                 text = {
-                    "{C:mult}+#2#{} Mult",
-                    "{C:mult}-#3#{} Mult when",
-                    "scoring hand does not", 
-                    "contain a {C:attention}Three of a Kind"
+                    "{C:mult}+#2#{}倍率",
+                    "若出牌不含{C:attention}三条",
+                    "{C:mult}-#3#{}倍率"
                 }
             },            
             j_kino_titanic = {
@@ -4064,12 +4058,12 @@ return {
                 }
             },
             j_kino_weapons = {
-                name = "Weapons",
+                name = "凶器",
                 text = {
-                    "The first #2# times each Ante",
-                    "a {C:attention}5 or lower{} is destroyed",
-                    "create a {C:tarot}Hanged Man",
-                    "{C:inactive}(#1# triggers left this Ante)"
+                    "每底注限{C:attention}#2#{}次",
+                    "摧毁点数{C:attention}≤5{}的卡牌后",
+                    "生成一张{C:tarot}倒吊人",
+                    "{C:inactive}（当前底注内还可触发#1#次）"
                 },
                 unlock = {
                     "Win a run without",
@@ -4898,15 +4892,13 @@ return {
                 }
             },
             c_kino_krypton = {
-                name = "Krypton",
+                name = "氪星",
                 text = {
-                    "Double level of",
-                    "most played hand",
-                    "{C:green}#1# in #2#{} chance to",
-                    "set it to 1 instead",
-                    "Chances doubles for every", 
-                    "Krypton you've played",
-                    "{C:inactive}(Currently: #3# Kryptons played.){}"
+                    "使{C:attention}最常出牌型{}等级{C:attention}翻倍",
+                    "有{C:green}#1#/#2#{}的几率",
+                    "转而{C:attention}重置{}其等级为{C:attention}1",
+                    "每使用过一张氪星，几率翻倍",
+                    "{C:inactive}（当前已使用#3#张）"
                 }
             },
             c_kino_cybertron = {
@@ -5807,11 +5799,10 @@ return {
                 }
             },
             bl_kino_bonnieandclyde = {
-                name = "Bonnie & Clyde",
+                name = "雌雄大盗",
                 text = {
-                    "{X:chips,C:white}X#3#{} Chips if hand contains",
-                    "a {C:attention}#1#{} and {X:mult,C:white}X#4#{} Mult",
-                    "if hand contains a {V:1}#2#{}"
+                    "若出牌包含{C:attention}#1#{}，{X:chips,C:white}X#3#{}筹码",
+                    "若出牌包含{V:1}#2#{}，{X:mult,C:white}X#4#{}倍率"
                 }
             },
             bl_kino_dracula = {
@@ -5856,12 +5847,9 @@ return {
                 }
             },
             bl_kino_blofeld = {
-                name = "Ernst Stavro Blofeld",
+                name = "E.S.布罗菲尔德",
                 text = {
-                    "If played hand",
-                    "is as big or larger than",
-                    "previous hand",
-                    "it does not score"
+                    "出牌得分必须越来越低"
                 }
             },
             bl_kino_loki = {
@@ -5905,10 +5893,10 @@ return {
                 }
             },
             bl_kino_humungus = {
-                name = "Lord Humungus",
+                name = "修曼格斯",
                 text = {
-                    "{C:red}Discard{} #1# cards from top",
-                    "of deck when hand is played or discarded"
+                    "出牌或弃牌后",
+                    "{C:red}弃掉{}牌堆顶的#1#张牌"
                 }
             },
             bl_kino_amadeus = {
