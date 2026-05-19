@@ -82,15 +82,15 @@ return {
 				text = rocket_text,
 			},
 			c_worm_polarskull_soyuz1 = {
-				name = "Soyuz 1",
+				name = "联盟一号",
 				text = rocket_text,
 			},
 			c_worm_polarskull_titaniv = {
-				name = "Titan IV",
+				name = "泰坦四号",
 				text = rocket_text,
 			},
 			c_worm_polarskull_atlascentaur = {
-				name = "Atlas-Centaur",
+				name = "擎天神-半人马",
 				text = rocket_text,
 			},
 			c_worm_polarskull_spaceshuttle = {

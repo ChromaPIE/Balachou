@@ -190,10 +190,10 @@ return {
 	},
 	Back = {
 		b_worm_util_black_hole = {
-			name = "Black Hole Deck",
+			name = "黑洞牌组",
 			text = {
-				"{C:attention}Hand level ups{} give an",
-				"additional {C:attention}level{}"
+				"{C:attention}牌型升级{}时",
+				"额外{C:attention}再升一级"
 			}
 		}
 	},

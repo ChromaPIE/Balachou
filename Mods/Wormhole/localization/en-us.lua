@@ -12,11 +12,11 @@ return {
 	},
 	misc = {
 		dictionary = {
-			b_wormhole_custom_menu = 'Toggle Custom Menu',
-			b_wormhole_disable_nyan = 'Disable Nyan Rainbow Effect',
+			b_wormhole_custom_menu = '启用/禁用自定义菜单',
+			b_wormhole_disable_nyan = '禁用彩虹喵特效',
 			b_wormhole_quantum_rock = 'Quantum Rock',
-			b_wormhole_family_friendly = 'Family-Friendly Mode',
-			b_wormhole_cosmic_gorilla_beast_mode = 'Cosmic Gorilla Beast Mode',
+			b_wormhole_family_friendly = '老少咸宜模式',
+			b_wormhole_cosmic_gorilla_beast_mode = '宇宙哥斯拉猛兽模式',
 		}
 	}
 }

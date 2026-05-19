@@ -159,22 +159,21 @@ return {
 			c_worm_crimson = {
 				name = { "绯噜", "{s:0.6}白羊座 & 金牛座" },
 				text = {
-					"{C:attention}Aces{} and {C:attention}2s{} held in",
-					"hand gain {C:chips}+#1#{} Chips",
-					"permanently",
+					"使手中的{C:attention}A{}和{C:attention}2",
+					"永久获得{C:chips}+#1#{}筹码"
 				},
 			},
 			c_worm_lemon = {
 				name = { "柠缅", "{s:0.6}双子座 & 巨蟹座" },
 				text = {
-					"留手的{C:attention}3{}和{C:attention}4",
+					"使手中的{C:attention}3{}和{C:attention}4",
 					"永久获得{C:mult}+#1#{}倍率"
 				},
 			},
 			c_worm_viridian = {
 				name = { "翠绒", "{s:0.6}狮子座 & 处女座" },
 				text = {
-					"留手的{C:attention}5{}和{C:attention}6",
+					"使手中的{C:attention}5{}和{C:attention}6",
 					"有{C:green}#1#/#2#{}的几率",
 					"永久获得{C:money}$#3#",
 				},
@@ -182,25 +181,22 @@ return {
 			c_worm_clear_sky = {
 				name = { "晴暹", "{s:0.6}天秤座 & 天蝎座" },
 				text = {
-					"{C:attention}7s{} and {C:attention}8s{} held in",
-					"hand gain {C:chips}+#1#{} Chips",
-					"permanently",
+					"使手中的{C:attention}7{}和{C:attention}8",
+					"永久获得{C:chips}+#1#{}筹码"
 				},
 			},
 			c_worm_deep_sea = {
 				name = { "渊琳", "{s:0.6}射手座 & 摩羯座" },
 				text = {
-					"{C:attention}9s{} and {C:attention}10s{} held in",
-					"hand gain {C:mult}+#1#{} Mult",
-					"permanently",
+					"使手中的{C:attention}9{}和{C:attention}10",
+					"永久获得{C:mult}+#1#{}倍率"
 				},
 			},
 			c_worm_blossom = {
-				name = { "棠咪", "{s:0.6}Aquarius, Pisces & Ophiuchus" },
+				name = { "朵咪", "{s:0.6}水瓶座、双鱼座 & 蛇夫座" },
 				text = {
-					"{C:attention}Face cards{} held in",
-					"hand gain {X:mult,C:white}X#1#{} Mult",
-					"permanently",
+					"使手中的{C:attention}人头牌",
+					"永久获得{X:mult,C:white}X#1#{}倍率"
 				},
 			},
 		},
@@ -223,9 +219,9 @@ return {
 			c_worm_lunar_lemon = {
 				name = "凝月柠檬味",
 				text = {
-					"Attached {C:attention}Joker{} has a",
-					"{C:green}#1# in #2#{} chance to earn",
-					"{C:money}$#3#{} at end of round",
+					"套有其包装的{C:attention}小丑牌",
+					"有{C:green}#1#/#2#{}的几率",
+					"在回合结束时赚取{C:money}$#3#",
 				},
 			},
 			c_worm_meteor_mint = {

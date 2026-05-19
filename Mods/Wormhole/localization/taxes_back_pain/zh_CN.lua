@@ -20,8 +20,8 @@ local other_loc_table = {
             tbp_equipped = '装备完成！',
             tbp_durability_restored = '修复完成！',
             k_tbp_name_Spaceship = "模块化宇宙飞船",
-            k_tbp_name_Vaianu = "Vaianu XI",
-            k_tbp_name_Explorer = "Explorer",
+            k_tbp_name_Vaianu = "瓦亚努XI号",
+            k_tbp_name_Explorer = "探索者号",
             k_tbp_name_Artemis = "阿耳忒弥斯号",
             k_tbp_name_Galactica = "星河号",
             k_tbp_name_Sealab = "Sealab Galactic Travels",
@@ -152,13 +152,13 @@ local other_loc_table = {
                 name = "飞船模块包",
                 text = {
                     {
-                        "Choose {C:attention}#1#{} of up to",
-                        "{C:attention}#2#{C:tbp_module} Module{} cards"
+                        "从至多{C:attention}#2#{}张",
+                        "{C:tbp_module}飞船模块{}卡中",
+                        "选取{C:attention}#1#{}张",
                     },
                     {
-                        "When opened,",
-                        "create a {C:attention}Modular Spaceship{}",
-                        "if none are owned"
+                        "若未拥有飞船，则打开后",
+                        "生成一艘{C:attention}模块化宇宙飞船"
                     }
                 },
             },
@@ -166,13 +166,13 @@ local other_loc_table = {
                 name = "飞船模块包",
                 text = {
                     {
-                        "Choose {C:attention}#1#{} of up to",
-                        "{C:attention}#2#{C:tbp_module} Module{} cards"
+                        "从至多{C:attention}#2#{}张",
+                        "{C:tbp_module}飞船模块{}卡中",
+                        "选取{C:attention}#1#{}张",
                     },
                     {
-                        "When opened,",
-                        "create a {C:attention}Modular Spaceship{}",
-                        "if none are owned"
+                        "若未拥有飞船，则打开后",
+                        "生成一艘{C:attention}模块化宇宙飞船"
                     }
                 },
             },
@@ -180,13 +180,13 @@ local other_loc_table = {
                 name = "飞船模块包",
                 text = {
                     {
-                        "Choose {C:attention}#1#{} of up to",
-                        "{C:attention}#2#{C:tbp_module} Module{} cards"
+                        "从至多{C:attention}#2#{}张",
+                        "{C:tbp_module}飞船模块{}卡中",
+                        "选取{C:attention}#1#{}张",
                     },
                     {
-                        "When opened,",
-                        "create a {C:attention}Modular Spaceship{}",
-                        "if none are owned"
+                        "若未拥有飞船，则打开后",
+                        "生成一艘{C:attention}模块化宇宙飞船"
                     }
                 },
             },
@@ -194,13 +194,13 @@ local other_loc_table = {
                 name = "飞船模块包",
                 text = {
                     {
-                        "Choose {C:attention}#1#{} of up to",
-                        "{C:attention}#2#{C:tbp_module} Module{} cards"
+                        "从至多{C:attention}#2#{}张",
+                        "{C:tbp_module}飞船模块{}卡中",
+                        "选取{C:attention}#1#{}张",
                     },
                     {
-                        "When opened,",
-                        "create a {C:attention}Modular Spaceship{}",
-                        "if none are owned"
+                        "若未拥有飞船，则打开后",
+                        "生成一艘{C:attention}模块化宇宙飞船"
                     }
                 },
             },
@@ -222,13 +222,13 @@ local other_loc_table = {
                 name = "巨型飞船模块包",
                 text = {
                     {
-                        "Choose {C:attention}#1#{} of up to",
-                        "{C:attention}#2#{C:tbp_module} Module{} cards"
+                        "从至多{C:attention}#2#{}张",
+                        "{C:tbp_module}飞船模块{}卡中",
+                        "选取{C:attention}#1#{}张",
                     },
                     {
-                        "When opened,",
-                        "create a {C:attention}Modular Spaceship{}",
-                        "if none are owned"
+                        "若未拥有飞船，则打开后",
+                        "生成一艘{C:attention}模块化宇宙飞船"
                     }
                 },
             },
@@ -236,13 +236,13 @@ local other_loc_table = {
                 name = "超级飞船模块包",
                 text = {
                     {
-                        "Choose {C:attention}#1#{} of up to",
-                        "{C:attention}#2#{C:tbp_module} Module{} cards"
+                        "从至多{C:attention}#2#{}张",
+                        "{C:tbp_module}飞船模块{}卡中",
+                        "选取{C:attention}#1#{}张",
                     },
                     {
-                        "When opened,",
-                        "create a {C:attention}Modular Spaceship{}",
-                        "if none are owned"
+                        "若未拥有飞船，则打开后",
+                        "生成一艘{C:attention}模块化宇宙飞船"
                     }
                 },
             },
@@ -250,13 +250,13 @@ local other_loc_table = {
                 name = "超级飞船模块包",
                 text = {
                     {
-                        "Choose {C:attention}#1#{} of up to",
-                        "{C:attention}#2#{C:tbp_module} Module{} cards"
+                        "从至多{C:attention}#2#{}张",
+                        "{C:tbp_module}飞船模块{}卡中",
+                        "选取{C:attention}#1#{}张",
                     },
                     {
-                        "When opened,",
-                        "create a {C:attention}Modular Spaceship{}",
-                        "if none are owned"
+                        "若未拥有飞船，则打开后",
+                        "生成一艘{C:attention}模块化宇宙飞船"
                     }
                 },
             },
@@ -312,12 +312,11 @@ local descriptions = {
         },
         -- CORE --
         nebula = {
-            name = "Nebula Core",
+            name = "星云核心",
             text = {
-                'When a {C:tbp_module}Module{} is {C:attention}exhausted{},',
-                'level up a random',
-                'poker hand by {C:attention}#1#{}',
-                '{s:0.8,C:inactive}(Depletes when triggered)'
+                '有{C:tbp_module}模块{C:attention}竭尽{}时',
+                '使随机牌型提升{C:attention}#1#{}级',
+                '{s:0.8,C:inactive}（触发时消耗耐久度）'
             }
         },
         astrophage = {
@@ -348,13 +347,11 @@ local descriptions = {
         },
         -- WEAPON --
         void = {
-            name = 'Void Ray',
+            name = '虚湮光束',
             text = {
-                'Destroy random cards played',
-                'in {C:attention}first hand{} of round',
-                'and add {C:purple}#1#%{} of the',
-                'required score for each',
-                '{s:0.8,C:inactive}(Depletes for each card destroyed)'
+                '摧毁回合{C:attention}首次出牌{}中的随机卡牌',
+                '每摧毁一张，获得得分需求的{C:purple}#1#%',
+                '{s:0.8,C:inactive}（每摧毁一张，消耗耐久度）'
             }
         },
         ballistics = {
@@ -362,16 +359,16 @@ local descriptions = {
             text = {
                 "打出的每张{C:attention}卡牌",
                 "计分后永久获得{C:chips}+#1#{}筹码",
-                '{s:0.8,C:inactive}（每张牌计分后消耗耐久度）'
+                '{s:0.8,C:inactive}（每张牌计分时消耗耐久度）'
             }
         },
         waste = {
-            name = 'Weaponized Waste Disposal',
+            name = '武器化粪污倾弃管',
             text = {
-                '{C:mult}+#1#{} Mult for every',
-                '{C:tbp_module}Module{} exhausted this run',
-                '{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)',
-                '{s:0.8,C:inactive}(Depletes each hand)'
+                '本赛局内每有一个{C:tbp_module}模块{}竭尽',
+                '{C:mult}+#1#{}倍率',
+                '{C:inactive}（当前为{C:mult}+#2#{C:inactive}倍率）',
+                '{s:0.8,C:inactive}（每次出牌消耗耐久度）'
             }
         },
         salvo = {
@@ -411,21 +408,19 @@ local descriptions = {
             }
         },
         redundancy = {
-            name = 'Redundancy Battery',
+            name = '后备大容量储能器',
             text = {
-                'When a {C:tbp_module}Module{} would',
-                '{C:attention}deplete{}, this module',
-                'depletes by {C:attention}#1#{} instead',
+                '其他{C:tbp_module}模块{}将{C:attention}竭尽{}时',
+                '免除之并消耗{C:attention}#1#{}点耐久度',
             }
         },
         -- THRUSTERS --
         warp_drive = {
-            name = 'Warp Drive',
+            name = '曲速引擎',
             text = {
-                'Gain {X:mult,C:white}X#1#{} Mult',
-                'when skipping a {C:attention}Blind',
-                '{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive})',
-                '{C:inactive,s:0.8}(Depletes when defeating a Blind)'
+                '跳过{C:attention}盲注{}后获得{X:mult,C:white}X#1#{}倍率',
+                '{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）',
+                '{C:inactive,s:0.8}（击败盲注后消耗耐久度）'
             }
         },
         temporal_jump = {
@@ -437,20 +432,19 @@ local descriptions = {
             }
         },
         repeater = {
-            name = 'Repeater Engine',
+            name = '中继引擎',
             text = {
-                'Retrigger each scored',
-                '{C:attention}Enhanced{} card',
-                'in played hand {C:attention}twice',
-                '{s:0.8,C:inactive}(Depletes each hand)'
+                '每张计分的{C:attention}增强{}牌',
+                '重新触发{C:attention}两次',
+                '{s:0.8,C:inactive}（每次出牌消耗耐久度）'
             }
         },
         antimatter = {
-            name = 'Anti-Matter Thrusters',
+            name = '反物质推进器',
             text = {
-                'Create a {C:dark_edition}Negative{}',
-                '{C:planet}Planet{} card for the played hand',
-                '{s:0.8,C:inactive}(Depletes each hand)'
+                '生成出牌对应牌型的',
+                '{C:dark_edition}负片{C:planet}星球{}牌',
+                '{s:0.8,C:inactive}（每次出牌消耗耐久度）'
             }
         },
         -- hyperlight_rotors = {

@@ -51,9 +51,10 @@ return {
                 }
             },
             c_worm_ibu_supergiant = {
-                name = 'Supergiant',
+                name = '超巨',
                 text = {
-                    "{C:attention}Triple{} a card's {C:chips}Chip{} value"
+                    "使选定卡牌的",
+                    "{C:chips}筹码{}数{C:attention}X3"
                 }
             }
         },

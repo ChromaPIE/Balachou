@@ -216,21 +216,20 @@ return {
                 }
             },
             c_worm_ct_busted_3d_printer = {
-                name = "Busted 3D Printer",
+                name = "报废3D打印机",
                 text = {
                     {
-                        "Convert {C:attention}#1#{} selected",
-                        "non-{C:attention}Junk Card{} into",
-                        "a {C:attention}Junk Card"
+                        "将{C:attention}#1#{}张选定的非{C:attention}垃圾牌{}",
+                        "转换为{C:attention}垃圾牌"
                     },
                     {
-                        "Clean-up {C:attention}#2#{} {f:6}—{} Copy each of",
-                        "the {C:attention}cleaned-up cards",
+                        "清理{C:attention}#2#{}张 {f:6}—",
+                        "复制每张{C:attention}已清理牌",
                     }
                 }
             },
             c_worm_ct_trash_compactor = {
-                name = "Trash Compactor",
+                name = "垃圾压实机",
                 text = {
                     {
                         "将{C:attention}#1#{}张选定的非{C:attention}垃圾牌{}",

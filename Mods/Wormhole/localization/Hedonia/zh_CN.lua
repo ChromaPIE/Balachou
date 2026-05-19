@@ -79,10 +79,9 @@ return {
         },
         worm_hedonia_menu = {
             c_worm_hedonia_hadron = {
-                name = 'Hadron Colada',
+                name = '强子飘香',
                 text = {
-                    'Add {E:2}Tipsy{} to',
-                    'all selected cards'
+                    '使所有选定卡牌{E:2}微醺'
                 }
             },
             c_worm_hedonia_cosmo = {
@@ -93,10 +92,10 @@ return {
                 }
             },
             c_worm_hedonia_mojitury = {
-                name = 'Mojitury',
+                name = '水星莫吉托',
                 text = {
-                    'Add {C:dark_edition,E:1}Very Drunk{} to',
-                    'up to {C:attention}#1#{} selected cards'
+                    '使至多{C:attention}#1#{}张',
+                    '选定卡牌{C:dark_edition,E:1}烂醉'
                 }
             },
             c_worm_hedonia_blackHoleBomb = {
@@ -106,7 +105,7 @@ return {
                 }
             },
             c_worm_hedonia_jawbreaker = {
-                name = '下巴脱臼大冰球',
+                name = '下巴脱臼大星球',
                 text = {
                     '使随机一张手牌',
                     '获得{C:chips}+#1#{}额外筹码'
@@ -121,17 +120,17 @@ return {
                 }
             },
             c_worm_hedonia_debbie = {
-                name = 'Cosmic Brownies',
+                name = '寰宇布朗尼',
                 text = {
-                    'Converts up to {C:attention}#1#{} selected cards',
-                    'to the same random rank'
+                    '使至多{C:attention}#1#{}张选定卡牌',
+                    '变为随机的相同点数'
                 }
             },
             c_worm_hedonia_jam = {
-                name = 'Space Jam',
+                name = '太空果酱',
                 text = {
-                    'Converts up to {C:attention}#1#{} selected cards',
-                    'to the same random suit'
+                    '使至多{C:attention}#1#{}张选定卡牌',
+                    '变为随机的相同花色'
                 }
             }
         },
@@ -156,14 +155,13 @@ return {
         },
         Edition = {
             e_worm_hedonia_tipsy = {
-                name = 'Tipsy',
+                name = '微醺',
                 text = {
-                    '{C:green}#1# in #2#{} chance to {C:attention}sober up{}',
-                    'whilst held in hand',
-                    'Randomize rank and {C:green}#3# in #4#{} chance',
-                    'to {C:attention}get drunker{} after scoring',
-                    '{C:inactive}(max rank variance: {C:attention}#5#{C:inactive})' },
-                label = 'Tipsy'
+                    '留手时有{C:green}#1#/#2#{}的几率{C:attention}醒酒',
+                    '随机变换点数，且有{C:green}#3#/#4#{}的几率',
+                    '在计分后{C:attention}更醉一步',
+                    '{C:inactive}（点数最大变更区间：{C:attention}#5#{C:inactive}）' },
+                label = '微醺'
             },
             e_worm_hedonia_drunk = {
                 name = 'Drunk',

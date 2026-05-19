@@ -95,11 +95,11 @@ return {
             },
 
             j_worm_stew_astrologer = {
-                name = 'Astrologer',
+                name = '占星家',
                 text = {
-                    "Creates a random {C:planet}Planet{}",
-                    "when a {C:tarot}Tarot{} card is used",
-                    "{C:inactive}(Must have room)",
+                    "使用{C:tarot}塔罗{}牌后",
+                    "随机生成一张{C:planet}星球牌",
+                    "{C:inactive}（必须有空位）"
                 }
             },
 

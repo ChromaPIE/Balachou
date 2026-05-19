@@ -17,18 +17,18 @@ return {
                 }
             },
             c_worm_acme_ray_gun = {
-                name = 'ACME Disintegrator-Inverse-Atron',
+                name = 'ACME便携式逆向崩解器',
                 text = {
-                    "{X:attention,C:white}After{} selling {C:attention}#1#{} cards",
-                    "{X:attention,C:white}Use{} to apply a random {C:dark_edition,E:1}Edition{}",
-                    "to a random held {C:attention}Joker{}",
-                    "{S:0.8,C:inactive}(Currently {C:attention,S:0.8}#2#{}{S:0.8,C:inactive})"
+                    "{X:attention,C:white}使用条件{}：售出{C:attention}#1#{}张牌",
+                    "{X:attention,C:white}使用效果{}：为持有的随机一张",
+                    "{C:attention}小丑牌{}添加随机{C:dark_edition,E:1}版本",
+                    "{S:0.8,C:inactive}（当前已售出{C:attention,S:0.8}#2#{S:0.8,C:inactive}张）"
                 }
             },
             c_worm_acme_ray_gun_alt = {
-                name = 'ACME Disintegrator-Inverse-Atron',
-                text = { "Apply a random {C:dark_edition,E:1}Edition{}",
-                    "to a random held {C:attention}Joker{}"
+                name = 'ACME便携式逆向崩解器',
+                text = { "为持有的随机一张{C:attention}小丑牌",
+                    "添加随机{C:dark_edition,E:1}版本"
                 }
             },
 
@@ -36,7 +36,7 @@ return {
             c_worm_acme_jam = {
                 name = 'ACME可铺散型莓果蜜浆',
                 text = {
-                    '{X:attention,C:white}使用条件{}：持有本牌时，触发{C:attention}#1#{}张{C:attention}#2#',
+                    '{X:attention,C:white}使用条件{}：{C:attention}#1#{}张{C:attention}#2#{}触发留手效果',
                     '{X:attention,C:white}使用效果{}：使每种{E:1,C:legendary}牌型{C:attention}提升1级'
                 }
             },
@@ -47,20 +47,19 @@ return {
                 }
             },
             c_worm_acme_hammer = {
-                name = 'ACME Sure-Hit Anvil Cracker',
+                name = 'ACME百砸百中碎砧锤',
                 text = {
-                    '{X:attention,C:white}After{} using {C:tarot}Strength',
-                    '{X:attention,C:white}Use{} to {C:attention}flatten{} the',
-                    'rank of {C:attention}#1#{} selected {C:attention}Cards',
-                    'to the {C:attention}lowest{} selected Rank'
+                    '{X:attention,C:white}使用条件{}：使用{C:tarot}力量',
+                    '{X:attention,C:white}使用效果{}：将{C:attention}#1#{}张',
+                    '选定{C:attention}卡牌{}的点数',
+                    '{C:attention}砸扁{}至其中{C:attention}最小{}牌的点数'
                 }
             },
             c_worm_acme_hammer_alt = {
-                name = 'ACME Sure-Hit Anvil Cracker',
+                name = 'ACME百砸百中碎砧锤',
                 text = {
-                    '{C:attention}Flatten{} the rank',
-                    'of {C:attention}#1#{} selected {C:attention}Cards',
-                    'to the {C:attention}lowest{} selected Rank'
+                    '将{C:attention}#1#{}张选定{C:attention}卡牌{}的点数',
+                    '{C:attention}砸扁{}至其中{C:attention}最小{}牌的点数'
                 }
             },
             c_worm_acme_trash = {
@@ -79,20 +78,19 @@ return {
                 }
             },
             c_worm_acme_brush = {
-                name = 'ACME Instant Tunnel Apparatus',
+                name = 'ACME隧穿通道瞬时现形套组',
                 text = {
-                    '{X:attention,C:white}After{} scoring a Hand containing {C:attention}#3#{} Suits,',
-                    '{X:attention,C:white}Use{} for a {C:green}#1# in #2#{} chance to turn',
-                    'each card {C:attention}held in hand',
-                    "to {C:attention}1{} selected Card's {C:attention}Suit"
+                    '{X:attention,C:white}使用条件{}：出牌包含{C:attention}#3#{}种花色',
+                    '{X:attention,C:white}使用效果{}：有{C:green}#1#/#2#{}的几率',
+                    '使每张{C:attention}手牌{}的花色',
+                    "变为{C:attention}1{}张选定卡牌的{C:attention}花色"
                 }
             },
             c_worm_acme_brush_alt = {
-                name = 'ACME Instant Tunnel Apparatus',
+                name = 'ACME隧穿通道瞬时现形套组',
                 text = {
-                    '{X:attention,C:white}Use{} for a {C:green}#1# in #2#{} chance to turn',
-                    'each card {C:attention}held in hand',
-                    "to {C:attention}1{} selected Card's {C:attention}Suit"
+                    '有{C:green}#1#/#2#{}的几率使每张{C:attention}手牌{}的花色',
+                    "变为{C:attention}1{}张选定卡牌的{C:attention}花色"
                 }
             },
             c_worm_acme_mr_jr = {
@@ -109,48 +107,49 @@ return {
             c_worm_acme_mr_jr_legendary = {
                 name = '合法特异型ACME自动化助手',
                 text = {
-                    '{X:attention,C:white}After{} opening {C:attention}#1# #2#{},',
-                    '{X:attention,C:white}Use{} to create a random {C:Legendary,E:1}Legendary{} Joker',
-                    '{C:inactive}(Must have room)'
+                    '{X:attention,C:white}使用条件{}：打开{C:attention}#1#{}个#2#',
+                    '{X:attention,C:white}使用效果{}：随机生成一张{C:legendary,E:1}传奇{}小丑牌',
+                    '{C:inactive}（必须有空位）'
                 }
             },
             c_worm_acme_mr_jr_alt = {
                 name = '合法特异型ACME自动化助手',
                 text = {
-                    '{X:attention,C:white}Use{} to create a random {C:mult}rare{} Joker',
-                    '{C:inactive}Fixed {C:green}1 in 25{C:inactive} chance to become',
-                    '{C:Legendary,E:1}Legendary{C:inactive} at the end of the shop',
-                    '{C:inactive}(Must have room)'
+                    '随机生成一张{C:mult}稀有{C:attention}小丑牌',
+                    '{C:inactive}退出商店后',
+                    '{C:inactive}有{C:green}1/25{C:inactive}的固定几率',
+                    '{C:inactive}变为{C:legendary,E:1}传奇',
+                    '{C:inactive}（必须有空位）'
                 }
             },
             c_worm_acme_mr_jr_legendary_alt = {
-                name = 'Legally Distinct ACME Automated Helper',
+                name = '合法特异型ACME自动化助手',
                 text = {
-                    '{X:attention,C:white}Use{} to create a random {C:Legendary,E:1}Legendary{} Joker',
-                    '{C:inactive}(Must have room)'
+                    '随机生成一张{C:legendary,E:1}传奇{}小丑牌',
+                    '{C:inactive}（必须有空位）'
                 }
             },
             c_worm_acme_wineglass = {
-                name = 'ACME Refill-O-Matic Stemware',
+                name = 'ACME“再斟满”玻璃制流体容器',
                 text = {
-                    '{X:attention,C:white}After{} a {C:attention}glass card{} is destroyed,',
-                    '{X:attention,C:white}Use{} to create {C:attention}#1#{} permanent',
-                    '{C:attention}glass #2#{} of selected card.',
-                    '{C:inactive}Number increases by 1 whenever',
-                    '{C:inactive}a glass card is destroyed.'
+                    '{X:attention,C:white}使用条件{}：{C:attention}玻璃牌{}被摧毁',
+                    '{X:attention,C:white}使用效果{}：生成选定卡牌的',
+                    '{C:attention}#1#{}张永久{C:attention}玻璃牌复制',
+                    '{C:inactive}每有玻璃牌被摧毁',
+                    '{C:inactive}可生成张数+1'
                 }
             },
             c_worm_acme_wineglass_alt = {
-                name = 'ACME Refill-O-Matic Stemware',
+                name = 'ACME“再斟满”玻璃制流体容器',
                 text = {
-                    '{X:attention,C:white}Use{} to create {C:attention}#1#{} permanent',
-                    '{C:attention}glass #2#{} of selected card.',
-                    '{C:inactive}Number increases by 1 whenever',
-                    '{C:inactive}a glass card is destroyed.'
+                    '生成选定卡牌的',
+                    '{C:attention}#1#{}张永久{C:attention}玻璃牌复制',
+                    '{C:inactive}每有玻璃牌被摧毁',
+                    '{C:inactive}可生成张数+1'
                 }
             },
             c_worm_acme_bombs = {
-                name = 'ACME Bombs',
+                name = 'ACME炸弹',
                 text = {
                     '{X:attention,C:white}Use{} to play the {C:attention}bomb minigame{}',
                     'and destroy {C:attention}5{} selected cards in hand',
@@ -158,7 +157,7 @@ return {
                 }
             },
             c_worm_acme_bombs_alt = {
-                name = 'ACME Bombs',
+                name = 'ACME炸弹',
                 text = {
                     '{X:attention,C:white}Use{} with {C:attention}5{} cards selected',
                     'to {C:red}destroy{} them',
@@ -166,7 +165,7 @@ return {
                 }
             },
             c_worm_acme_printer = {
-                name = 'ACME Counterfeiter 3000',
+                name = 'ACME通货伪造者3000型',
                 text = {
                     '{X:attention,C:white}After{} scoring {C:blind}Blind Requirement{}',
                     'in a single hand,',
@@ -176,7 +175,7 @@ return {
                 }
             },
             c_worm_acme_printer_alt = {
-                name = 'ACME Counterfeiter 3000',
+                name = 'ACME通货伪造者3000型',
                 text = {
                     '{X:attention,C:white}Use{} to gain {C:money}$5{} per digit in your',
                     '{C:attention}max score{} this run',
@@ -226,9 +225,9 @@ return {
                 },
             },
             j_worm_acme_test_dummy = {
-                name = 'Test Dummy',
+                name = '测试假人',
                 text = {
-                    '{C:acme_gadget}Gadgets{} become {E:1,C:dark_edition}Negative',
+                    '{C:acme_gadget}装置{}均为{E:1,C:dark_edition}负片',
                 },
             },
             j_worm_ACME_big_brother = {
@@ -286,24 +285,27 @@ return {
                 },
             },
             p_worm_acme_gadget_normal = {
-                name = "Gadget Pack",
+                name = "装置包",
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:acme_gadget} Gadget{} cards"
+                    "从至多{C:attention}#2#{}张",
+                    "{C:acme_gadget}装置{}牌中",
+                    "选取{C:attention}#1#{}张"
                 },
             },
             p_worm_acme_gadget_jumbo = {
-                name = "Jumbo Gadget Pack",
+                name = "巨型装置包",
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:acme_gadget} Gadget{} cards"
+                    "从至多{C:attention}#2#{}张",
+                    "{C:acme_gadget}装置{}牌中",
+                    "选取{C:attention}#1#{}张"
                 },
             },
             p_worm_acme_gadget_mega = {
-                name = "Mega Gadget Pack",
+                name = "超级装置包",
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:acme_gadget} Gadget{} cards"
+                    "从至多{C:attention}#2#{}张",
+                    "{C:acme_gadget}装置{}牌中",
+                    "选取{C:attention}#1#{}张"
                 },
             },
         },

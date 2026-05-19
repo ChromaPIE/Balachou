@@ -149,35 +149,31 @@ return {
         
         Other = {
             p_worm_shrug_alien_normal_1 = {
-                name = "Sighting Pack",
+                name = "目击档案包",
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:shrug_alien} Alien{} cards to",
-                    "be used immediately",
+                    "从至多{C:attention}#2#{}张{C:shrug_alien}外星生物{}卡中",
+                    "选择{C:attention}#1#{}张并立即使用",
                 },
             },
             p_worm_shrug_alien_normal_2 = {
-                name = "Sighting Pack",
+                name = "目击档案包",
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:shrug_alien} Alien{} cards to",
-                    "be used immediately",
+                    "从至多{C:attention}#2#{}张{C:shrug_alien}外星生物{}卡中",
+                    "选择{C:attention}#1#{}张并立即使用",
                 },
             },
             p_worm_shrug_alien_jumbo = {
-                name = "Jumbo Sighting Pack",
+                name = "巨型目击档案包",
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:shrug_alien} Alien{} cards to",
-                    "be used immediately",
+                    "从至多{C:attention}#2#{}张{C:shrug_alien}外星生物{}卡中",
+                    "选择{C:attention}#1#{}张并立即使用",
                 },
             },
             p_worm_shrug_alien_mega = {
-                name = "Mega Sighting Pack",
+                name = "超级目击档案包",
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:shrug_alien} Alien{} cards to",
-                    "be used immediately",
+                    "从至多{C:attention}#2#{}张{C:shrug_alien}外星生物{}卡中",
+                    "选择{C:attention}#1#{}张并立即使用",
                 },
             },
             undiscovered_shrug_alien = {

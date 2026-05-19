@@ -154,11 +154,10 @@ return {    -- yo it's GHOSTSALT here look at me TYPING before i SUBMIT THIS THI
 				} },
             },
             j_worm_dum_pentapod = {
-                name = "Pentapod",
+                name = "五足",
                 text = {
-                    "{X:mult,C:white}X#1#{} Mult {C:attention}before{} scoring",
-                    "if {C:attention}scoring hand{} contains",
-                    "exactly {C:attention}#2#{} cards"
+                    "若{C:attention}出牌{}恰包含{C:attention}#2#{}张牌",
+                    "计分{C:attention}开始前{}，{X:mult,C:white}X#1#{}倍率"
                 }
             },
             j_worm_dum_mouthwash = {

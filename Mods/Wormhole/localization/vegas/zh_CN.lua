@@ -29,12 +29,12 @@ return {
 		        }
             },
             j_worm_gravity_assist = {
-                name = "Gravity Assist",
+                name = "引力辅助",
 		        text = {
-			        "{C:green}#1# in #2#{} chance to create an",
-			        "{C:attention}inferior{} {C:planet}Planet{} card",
-			        "when a {C:planet}Planet{} card is used",
-			        "{C:inactive}(Must have room)"
+					"使用{C:planet}星球{}牌后",
+			        "有{C:green}#1#/#2#{}的几率",
+			        "生成一张{C:attention}次等{C:planet}星球{}牌",
+			        "{C:inactive}（必须有空位）"
 		        }
             },
             j_worm_astronaut = {
@@ -147,10 +147,10 @@ return {
 				}
 			},
 			c_worm_gj = {
-				name = "GJ 504 b",
+				name = "室女座59b",
 				text = {
-					"Permanently adds {C:mult}+#1#{} Mult",
-					"to {C:attention}#2#{} selected cards in hand"
+					"使手牌中{C:attention}#2#{}张选定卡牌",
+					"永久获得{C:mult}+#1#{}倍率"
 				}
 			},
 			c_worm_wasp = {
@@ -182,7 +182,7 @@ return {
 		        }
             },
             Inferior = {
-                name = "Inferior",
+                name = "次等星球牌",
                 text = {
                     "The {C:planet}Planets'{} associated",
                     "hand type has less base",
