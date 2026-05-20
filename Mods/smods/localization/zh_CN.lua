@@ -258,15 +258,15 @@ return {
                 }
             },
             generic_extra_slots = {
-                name = "已使用槽位",
+                name = "占用槽位",
                 text = {
-                    '填充{C:dark_edition}#1#{}个槽位'
+                    '占用{C:dark_edition}#1#{}个槽位'
                 }
             },
             generic_extra_slots_pc = {
                 name = "手牌空位",
                 text = {
-                    '填充{C:dark_edition}#1#{}个手牌空位'
+                    '占用{C:dark_edition}#1#{}个手牌上限'
                 }
             },
             card_chips_minus = {
