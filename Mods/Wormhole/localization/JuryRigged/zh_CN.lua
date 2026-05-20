@@ -181,11 +181,11 @@ return {
     },
     Voucher = {
       v_worm_jr_launch_pad = {
-        name = 'Launchpad',
+        name = '发射台',
         text = {
-          {"Adds {C:attention}#1#{} {C:worm_jr_satellite}Satellite{} card",
-          "to {C:planet}Celestial{} packs"},
-          {"{C:attention}+1{} consumable slot",}
+          {"{C:planet}天体{}包中额外提供",
+          "{C:attention}#1#{}张{C:worm_jr_satellite}人造卫星{}牌",},
+          {"消耗牌槽位{C:attention}+1",}
         }
       },
       v_worm_jr_flyby = {

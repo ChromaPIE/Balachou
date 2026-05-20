@@ -21,11 +21,11 @@ descriptions={
 		},
 		j_worm_mrrp_cookie_cat ={
 			name=
-				"Cookie Cat"
+				"猫猫曲奇"
 			, text={
-				"{C:planet}#1#{} {C:attention}temporary{} levels to",
-				"each played {C:attention}poker hand{}",
-				"{C:planet,s:0.8}#2#{s:0.8} at end of round{}",
+				"使所出{C:attention}牌型{}的等级",
+				"{C:attention}临时{C:planet}#1#",
+				"{s:0.8}回合结束时{C:planet,s:0.8}#2#",
 			}
 		},
 		j_worm_mrrp_countdown ={

@@ -240,14 +240,13 @@ return {
             },
             j_worm_lfc_fw = {
                 name = {
-                    "Moon Berry",
-                    "{E:1,C:inactive,s:0.5}WOW"
+                    "月莓",
+                    "{E:1,C:inactive,s:0.5}哇哦！"
                 },
                 text = {
                     {
-                        "Played {C:attention}#1#s{}",
-                        "give {X:mult,C:white} X#2# {} Mult",
-                        "when scored",
+                        "打出的{C:attention}#1#{}在计分时",
+                        "给予{X:mult,C:white}X#2#{}倍率"
                     },
                     {
                         "{C:inactive,s:0.85}#3#{}",

@@ -151,31 +151,35 @@ return {
 			},
 
 			p_worm_rocket_normal_1 = {
-				name = "Basic Booster Pack",
+				name = "基础推进器包",
 				text = {
-					"Choose {C:attention}#1#{} of up to",
-					"{C:attention}#2#{} {C:polarskull_rocket}Rocket{} cards",
+					"从至多{C:attention}#2#{}张",
+					"{C:polarskull_rocket}火箭{}牌中",
+					"选取{C:attention}#1#{}张"
 				},
 			},
 			p_worm_rocket_normal_2 = {
-				name = "Basic Booster Pack",
+				name = "基础推进器包",
 				text = {
-					"Choose {C:attention}#1#{} of up to",
-					"{C:attention}#2#{} {C:polarskull_rocket}Rocket{} cards",
+					"从至多{C:attention}#2#{}张",
+					"{C:polarskull_rocket}火箭{}牌中",
+					"选取{C:attention}#1#{}张"
 				},
 			},
 			p_worm_rocket_jumbo = {
-				name = "Jumbo Booster Pack",
+				name = "巨型推进器包",
 				text = {
-					"Choose {C:attention}#1#{} of up to",
-					"{C:attention}#2#{} {C:polarskull_rocket}Rocket{} cards",
+					"从至多{C:attention}#2#{}张",
+					"{C:polarskull_rocket}火箭{}牌中",
+					"选取{C:attention}#1#{}张"
 				},
 			},
 			p_worm_rocket_mega = {
-				name = "Mega Booster Pack",
+				name = "超级推进器包",
 				text = {
-					"Choose {C:attention}#1#{} of up to",
-					"{C:attention}#2#{} {C:polarskull_rocket}Rocket{} cards",
+					"从至多{C:attention}#2#{}张",
+					"{C:polarskull_rocket}火箭{}牌中",
+					"选取{C:attention}#1#{}张"
 				},
 			},
 		},

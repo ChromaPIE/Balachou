@@ -24,7 +24,7 @@ local other_loc_table = {
             k_tbp_name_Explorer = "探索者号",
             k_tbp_name_Artemis = "阿耳忒弥斯号",
             k_tbp_name_Galactica = "星河号",
-            k_tbp_name_Sealab = "Sealab Galactic Travels",
+            k_tbp_name_Sealab = "SEALAB银河之旅号",
             k_tbp_name_Eremillenium = "Eremillenium Falcon",
         }
     },
@@ -314,18 +314,17 @@ local descriptions = {
         nebula = {
             name = "星云核心",
             text = {
-                '有{C:tbp_module}模块{C:attention}消耗耐久度{}时',
+                '有{C:tbp_module}模块{C:attention}耗尽耐久度{}时',
                 '使随机牌型提升{C:attention}#1#{}级',
                 '{s:0.8,C:inactive}（触发时消耗耐久度）'
             }
         },
         astrophage = {
-            name = "Astrophage Core",
+            name = "噬星体核心",
             text = {
-                'Using a {C:planet}Planet{} card',
-                'increases the durability of',
-                'a random {C:tbp_module}Module{} by {C:attention}#1#{}',
-                '{s:0.8,C:inactive}(Depletes when triggered)'
+                '使用{C:planet}星球{}牌后',
+                '使随机一个{C:tbp_module}模块{}的耐久度恢复{C:attention}#1#',
+                '{s:0.8,C:inactive}（触发时消耗耐久度）'
             }
         },
         dellinger = {
@@ -337,12 +336,11 @@ local descriptions = {
             }
         },
         black_hole_generator = {
-            name = "Black Hole Generator",
+            name = "黑洞发生器",
             text = {
-                'When a {C:tbp_module}Module{} is {C:attention}exhausted{},',
-                'increases the durability of',
-                'other {C:tbp_module}Modules{} by {C:attention}#1#{}',
-                '{s:0.8,C:inactive}(Depletes when triggered)'
+                '有{C:tbp_module}模块{C:attention}耗尽耐久度{}时',
+                '使另一个{C:tbp_module}模块{}的耐久度提升{C:attention}#1#{}',
+                '{s:0.8,C:inactive}（触发时消耗耐久度）'
             }
         },
         -- WEAPON --
@@ -365,20 +363,19 @@ local descriptions = {
         waste = {
             name = '武器化粪污倾弃管',
             text = {
-                '本赛局内每有一个{C:tbp_module}模块{}消耗耐久度',
+                '本赛局内每有一个{C:tbp_module}模块{}耗尽耐久度',
                 '{C:mult}+#1#{}倍率',
                 '{C:inactive}（当前为{C:mult}+#2#{C:inactive}倍率）',
                 '{s:0.8,C:inactive}（每次出牌消耗耐久度）'
             }
         },
         salvo = {
-            name = 'Overcharged Salvo',
+            name = '过充能齐射飞弹',
             text = {
-                '{X:mult,C:white}X#1#{} Mult for each',
-                '{C:tbp_module}Module{} installed if scored hand',
-                'contains {C:attention}5{} cards',
-                '{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)',
-                '{s:0.8,C:inactive}(Depletes all Modules when triggered)'
+                '若打出{C:attention}5{}张牌',
+                '每搭载有一个{C:tbp_module}模块{}，{X:mult,C:white}X#1#{}倍率',
+                '{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）',
+                '{s:0.8,C:inactive}（触发时，消耗所有模块的耐久度）'
             }
         },
         -- UTILITY --
@@ -400,11 +397,10 @@ local descriptions = {
             }
         },
         interference = {
-            name = 'Interference Matrix',
+            name = '干涉矩阵',
             text = {
-                'Disable selected',
-                '{C:attention}Boss Blind{}',
-                '{s:0.8,C:inactive}(Depletes when triggered)'
+                '使所选{C:attention}Boss盲注{}的限制失效',
+                '{s:0.8,C:inactive}（触发时消耗耐久度）'
             }
         },
         redundancy = {

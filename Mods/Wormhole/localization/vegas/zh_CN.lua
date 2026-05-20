@@ -114,10 +114,9 @@ return {
         },
 		Blind = {
 			bl_worm_whitehole = {
-				name = "White Hole",
+				name = "白洞",
 				text = {
-					"Decrease level of {C:red}all{}",
-					"poker hands by 1 when played"
+					"出牌后，{C:red}所有{}牌型降低1级"
 				}
 			},
 			bl_worm_heatdeath = {

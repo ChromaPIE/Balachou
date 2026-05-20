@@ -88,11 +88,11 @@ return {    -- yo it's GHOSTSALT here look at me TYPING before i SUBMIT THIS THI
                 } },
             },
             j_worm_dum_garlicbread = {
-                name = { "{C:worm_dum_garlicbread}Garlic Bread{} that", "went to {C:planet}Space{}" },
+                name = { "{C:worm_dum_garlicbread}蒜香面包", "{C:planet}直上九天" },
                 text = {
-                    "Upgrade {C:attention}all{} poker hands",
-                    "after using {C:attention}#2#{} {C:planet}Planet{} cards",
-                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}/#2#){}"
+                    "使用{C:attention}#2#{}张{C:planet}星球{}牌后",
+                    "升级{C:attention}所有{}牌型",
+                    "{C:inactive}（当前已使用{C:attention}#1#{C:inactive}/#2#张）"
                 },
             },
             j_worm_dum_farfromhome = {
@@ -110,11 +110,11 @@ return {    -- yo it's GHOSTSALT here look at me TYPING before i SUBMIT THIS THI
                 } },
             },
             j_worm_dum_gleebleglorp = {
-                name = "Gleebleglorp", -- <3
+                name = "咯哩咕噜", -- <3
                 text = {
-                    "{C:white,X:mult}X#1#{} Mult if played",
-                    "{C:attention}poker hand{} is not your",
-                    "{C:attention}highest-level{} hand"
+                    "若出牌{C:attention}牌型{}",
+                    "不为{C:attention}等级最高{}的牌型",
+                    "{C:white,X:mult}X#1#{}倍率"
                 },
             },
 			j_worm_dum_crystalsphere = {
@@ -195,13 +195,12 @@ return {    -- yo it's GHOSTSALT here look at me TYPING before i SUBMIT THIS THI
         },
         Blind = {
             bl_worm_dum_dummy_blind = {
-                name = "Test Flight",
+                name = "试验飞行",
                 text = {
-                    "You can't lose to this Blind.",
-                    "Earn {C:attention}rewards{} based",
-                    "on how well you score.",
-                    "{s:0.8,C:worm_dum_brown}Let's see if you can",
-                    "{s:0.8,C:worm_dum_brown}steer this Space Ship!"
+                    "无法输掉本盲注",
+                    "基于得分情况赢得{C:attention}奖励",
+                    "{s:0.8,C:worm_dum_brown}来看看你能不能驾驭得了",
+                    "{s:0.8,C:worm_dum_brown}这艘宇宙飞船！"
                 },
             },
         },

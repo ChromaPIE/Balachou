@@ -34,7 +34,7 @@ return {
 								--[["Certain {C:attention}Jokers{} prefer different flavours of {C:worm_meow_spacetart}©Spacetarts{}",
 								"and the effect of the {C:worm_meow_spacetart}©Spacetart{} will be greatly {C:attention}boosted{}."]]
 								"各张{C:attention}小丑牌{}有不同的口味偏好。",
-								"如果吃到了喜欢的{C:worm_meow_spacetart}©太空挞{}，就会{C:attention}增促{}其{C:attention}包装{}的能力！",
+								"如果吃到了喜欢的{C:worm_meow_spacetart}©太空挞{}，就会{C:attention}加强{}其{C:attention}包装{}的能力！",
 							},
 						},
 					},
@@ -242,8 +242,8 @@ return {
 				name = "黑洞黑莓味",
 				text = {
 					"套有其包装的{C:attention}小丑牌",
-					"balances {C:chips}Chips{} and",
-					"{C:mult}Mult{} by {X:legendary,C:white}#1#%{}",
+					"均分{C:chips}筹码{}和",
+					"{C:mult}倍率{}的{X:legendary,C:white}#1#%",
 				},
 			},
 
@@ -269,33 +269,33 @@ return {
 				},
 			},
 			c_worm_meteor_mint_regular = {
-				name = " Meteor Mint ",
+				name = " 浡陨薄荷 ",
 				text = {
-					"{C:attention}Boosts{} other {C:worm_meow_spacetart}©Spacetarts{}",
-					"attached to this {C:attention}Joker{}",
-					"{C:inactive,s:0.8}(Total mint boosts on this Joker: {C:attention,s:0.8}#1#{C:inactive,s:0.8})",
+					"{C:attention}加强{}所在{C:attention}小丑牌{}上的",
+					"其他{C:worm_meow_spacetart}©太空挞{}包装",
+					"{C:inactive,s:0.8}（薄荷加强总数：{C:attention,s:0.8}#1#{C:inactive,s:0.8}）",
 				},
 			},
 			c_worm_blueshift_blueberry_regular = {
-				name = " Blueshift Blueberry ",
+				name = " 蓝移蓝莓 ",
 				text = {
-					"{C:chips}+#1#{} Chips",
+					"{C:chips}+#1#{}筹码",
 				},
 			},
 			c_worm_black_hole_blackberry_regular = {
-				name = " Black Hole Blackberry ",
+				name = " 黑洞黑莓 ",
 				text = {
-					"Balances {C:chips}Chips{} and",
-					"{C:mult}Mult{} score by {X:legendary,C:white}#1#%{}",
+					"均分{C:chips}筹码{}和",
+					"{C:mult}倍率{}的{X:legendary,C:white}#1#%",
 				},
 			},
 		},
 		Joker = {
 			j_worm_meow_nyan_cat = {
-				name = "Nyan Cat",
+				name = "彩虹喵",
 				text = {
-					"Increases max {C:worm_meow_spacetart}©Spacetart{} limit",
-					"on cards by {C:attention}+#1# ",
+					"使小丑牌可拥有的",
+					"{C:worm_meow_spacetart}©太空挞{}数量上限{C:attention}+#1#",
 				},
 			},
 			j_worm_meow_nyarlathotep = {
@@ -525,7 +525,7 @@ return {
 			},
 			worm_meow_spacetart_stacks = {
 				text = {
-					"{C:inactive,s:0.8}（增促等级：{C:attention,s:0.8}#2#{C:inactive,s:0.8}）",
+					"{C:inactive,s:0.8}（加强等级：{C:attention,s:0.8}#2#{C:inactive,s:0.8}）",
 					"{C:inactive,s:0.8}（叠加片数：{C:attention,s:0.8}#1#{C:inactive,s:0.8}）",
 				},
 			},

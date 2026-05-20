@@ -343,7 +343,7 @@ local Other = {
 		}
 	},
 	worm_tlr_const_max_level = {
-		name = "已达上限",
+		name = "上限",
 		text = {
 			"本牌已无法",
 			"{C:inactive,s:0.8}（借助常规方式）",
@@ -351,10 +351,10 @@ local Other = {
 		}
 	},
 	worm_tlr_const_max_real = {
-		name = "Beyond",
+		name = "超限",
 		text = {
-			"The card cannot",
-			"be upgraded any further"
+			"本牌已无法",
+			"进一步升级"
 		}
 	},
 	undiscovered_worm_tlr_constellation = {
@@ -396,10 +396,9 @@ return {
 	descriptions = {
 		Tarot = {
 			c_worm_tlr_observation = {
-				name = "The Observer",
+				name = "观测者",
 				text = {
-					"Upgrades leftmost",
-					"{V:1}Constellation{} card",
+					"升级最左侧的{V:1}星座{}牌",
 					"{C:inactive,s:0.7}依稀可察 -> 显而易见 -> 熠熠生辉 -> ???"
 				}
 			}

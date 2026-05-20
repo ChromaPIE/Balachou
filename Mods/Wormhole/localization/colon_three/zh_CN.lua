@@ -33,13 +33,12 @@ return {
                 }
             },
             j_worm_ct_nyan_cat = {
-                name = "Nyan Cat",
+                name = "彩虹喵",
                 text = {
-                    "This Joker gains {C:chips}+#1#{} Chips",
-                    "per {C:attention}consecutive{} hand",
-                    "played with {C:attention}two or more",
-                    "unique scoring suits",
-                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
+                    "{C:attention}连续{}打出计分牌中{C:attention}至少",
+                    "包含{C:attention}2{}种花色的出牌时",
+                    "本牌获得{C:chips}+#1#{}筹码",
+                    "{C:inactive}（当前为{C:chips}+#2#{C:inactive}筹码）",
                 }
             },
             j_worm_ct_event_horizon = {

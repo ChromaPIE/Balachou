@@ -20,16 +20,14 @@ return {
                 },
             },
             j_kino_9_movie = {
-                name = "9",
+                name = "机器人9号",
                 text = {
-                    "Each scoring {C:attention}9{} gives",
-                    "{C:chips}+#1#{} Chips for each",
-                    "time a {C:attention}9{} scored this {C:attention}ante",
-                    "{C:inactive}(Currently: {C:chips}+#2#{C:inactive} Chips)"
+                    "当前{C:attention}底注{}内每有一张{C:attention}9{}计分",
+                    "每张{C:attention}9{}在计分时给予{C:chips}+#1#{}筹码",
+                    "{C:inactive}（当前为{C:chips}+#2#{C:inactive}筹码）"
                 },
                 unlock = {
-                    'Play a hand that contains',
-                    "{C:attention}five 9s",
+                    '出牌包含{C:attention}5{}张{C:attention}9',
                 },
             },
             j_kino_10_things_i_hate_about_you = {
@@ -2821,11 +2819,10 @@ return {
                 }
             },
             j_kino_pirates_of_the_caribbean_1 = {
-                name = "Pirates of the Caribbean: Curse of the Black Pearl",
+                name = "加勒比海盗：黑珍珠号的诅咒",
                 text = {
-                    "When a {C:attention}playing card{} is destroyed",
-                    "increase {C:money}sell value{} of",
-                    "adjacent {C:attention}Jokers{} by {C:money}$#1#{}",
+                    "有{C:attention}扑克牌{}被摧毁时",
+                    "使紧邻{C:attention}小丑牌{}的{C:money}售价{}提升{C:money}$#1#",
                 }
             },
             j_kino_pirates_of_the_caribbean_2 = {
@@ -3139,11 +3136,11 @@ return {
                 }
             },  
             j_kino_secretary = {
-                name = "Secretary",
+                name = "秘书",
                 text = {
-                    "Each scored {C:spades}Spades{} ", 
-                    "gives {C:chips}+#2#{} Chips",
-                    "for each other scoring {C:spades}Spades{}",
+                    "每有另一张计分的{C:spades}黑桃{}牌",
+                    "每张{C:spades}黑桃{}牌",
+                    "在计分时给予{C:chips}+#2#{}筹码"
                 }
             },
             j_kino_seven_brides_for_seven_brothers = {
@@ -3596,11 +3593,11 @@ return {
                 }
             },
             j_kino_stripes = {
-                name = "Stripes",
+                name = "杂牌军东征",
                 text = {
-                    "Gain {C:chips}+#2#{} Chips when a card is scored",
-                    "Lose {C:chips}-#2#{} Chips a card is discarded",
-                    "{C:inactive}(Currently: {C:chips}+#1#{C:inactive} Chips)"
+                    "每张牌计分时，获得{C:chips}+#2#{}筹码",
+                    "每弃掉一张牌，筹码加成{C:chips}-#2#",
+                    "{C:inactive}（当前为{C:chips}+#1#{C:inactive}筹码）"
                 }
             },
             j_kino_substance = {
@@ -7885,14 +7882,13 @@ return {
                 }
             },
             counter_sleep = {
-                name = "Sleep Counter",
+                name = "沉睡计数标",
                 text = {
-                    "{C:attention}Ticks Down 1",
-                    "{C:green}1 in #1#{} (Total Counters) chance",
-                    "to clear all Counters",
+                    "{C:attention}步退1位",
+                    "有{C:green}1/#1#{}（计数标总位数）",
+                    "的几率清除所有计数标",
                     " ",
-                    "Debuffed while this",
-                    "has any counters",
+                    "有位数时，失效"
     
                 }
             },

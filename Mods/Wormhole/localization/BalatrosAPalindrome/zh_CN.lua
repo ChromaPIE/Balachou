@@ -20,11 +20,11 @@ return {
         },
         Edition = {
             e_worm_bap_void = {
-                name = 'Void',
-                label = 'Void',
+                name = '虚空',
+                label = '虚空',
                 text = {
-                    "{C:chips}#1#{} chips when {C:attention}held{}",
-                    "Never scores"
+                    "{C:attention}留手{}时，{C:chips}#1#{}筹码",
+                    "永不计分"
                 }
             }
         },
