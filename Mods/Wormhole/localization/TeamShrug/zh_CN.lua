@@ -213,35 +213,35 @@ return {
 
         shrug_alien = {
             c_worm_shrug_alien_spades = {
-                name = 'Flatwoods Monster',
+                name = '弗拉特伍兹怪物',
                 text = {
-                    'Convert up to {C:attention}#1#{} random',
-                    'non-{C:spades}Spade{} cards in deck',
-                    'into {C:spades}Spades{}, lose {C:money}$#2#',
+                    '将牌组中随机',
+                    '{C:attention}#1#{}张非{C:spades}黑桃{}牌',
+                    '转换为{C:spades}黑桃{}并损失{C:money}$#2#',
                 }
             },
             c_worm_shrug_alien_hearts = {
-                name = 'Fresno Nightcrawlers',
+                name = '弗雷斯诺夜行者',
                 text = {
-                    'Convert up to {C:attention}#1#{} random',
-                    'non-{C:hearts}Heart{} cards in deck',
-                    'into {C:hearts}Hearts{}, lose {C:money}$#2#',
+                    '将牌组中随机',
+                    '{C:attention}#1#{}张非{C:hearts}红桃{}牌',
+                    '转换为{C:hearts}红桃{}并损失{C:money}$#2#',
                 }
             },
             c_worm_shrug_alien_clubs = {
-                name = 'Reptillian',
+                name = '蜥蜴人',
                 text = {
-                    'Convert up to {C:attention}#1#{} random',
-                    'non-{C:clubs}Club{} cards in deck',
-                    'into {C:clubs}Clubs{}, lose {C:money}$#2#',
+                    '将牌组中随机',
+                    '{C:attention}#1#{}张非{C:clubs}梅花{}牌',
+                    '转换为{C:clubs}梅花{}并损失{C:money}$#2#',
                 }
             },
             c_worm_shrug_alien_diamonds = {
-                name = 'Hopkinsville Goblin',
+                name = '霍普金斯维尔妖精',
                 text = {
-                    'Convert up to {C:attention}#1#{} random',
-                    'non-{C:diamonds}Diamond{} cards in deck',
-                    'into {C:diamonds}Diamonds{}, lose {C:money}$#2#',
+                    '将牌组中随机',
+                    '{C:attention}#1#{}张非{C:diamonds}方片{}牌',
+                    '转换为{C:diamonds}方片{}并损失{C:money}$#2#',
                 }
             },
             c_worm_shrug_alien_martian = {

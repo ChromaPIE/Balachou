@@ -194,12 +194,11 @@ return {
         },
         Voucher = {
             v_worm_ACME_voucher_1 = {
-                name = "ACME Mass Production",
+                name = "ACME大批量生产",
                 text = {
-                    {"{C:acme_gadget}Gadget{} cards appear",
-                    "{C:attention}2X{} more frequently",
-                    "in the shop"},
-                    {"{C:attention}+1{} consumable slot",}
+                    {"{C:acme_gadget}装置{}牌在商店内的",
+                    "出现频率{C:attention}X2"},
+                    {"消耗牌槽位{C:attention}+1",}
                 }
             },
             v_worm_ACME_voucher_2 = {

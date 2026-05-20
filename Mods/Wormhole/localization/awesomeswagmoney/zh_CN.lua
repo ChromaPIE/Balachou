@@ -113,19 +113,19 @@ return {
         },
         worm_ultrabeast = {
             c_worm_pheromosa = {
-                name = 'Pheromosa',
+                name = '费洛美螂',
                 text = {
-                    "Activate to gain {C:chips}+#1#{} chips",
-                    "on your next hand,",
-                    "Consumes self when scoring"
+                    "激活以获得{C:chips}+#1#{}筹码",
+                    "并生效于下次出牌",
+                    "计分后，消耗自身"
                 }
             },
             c_worm_buzzwole = {
-                name = 'Buzzwole',
+                name = '爆肌蚊',
                 text = {
-                    "Activate to gain {C:mult}+#1#{} mult",
-                    "on your next hand,",
-                    "Consumes self when scoring"
+                    "激活以获得{C:mult}+#1#{}倍率",
+                    "并生效于下次出牌",
+                    "计分后，消耗自身"
                 }
             },
             c_worm_xurkitree = {
@@ -178,10 +178,10 @@ return {
                 }
             },
             c_worm_naganadel = {
-                name = "Naganadel",
+                name = "四颚针龙",
                 text = {
-                    "Turn a random {C:attention}Joker{}",
-                    "{C:dark_edition}Eternal{} and {C:dark_edition}Polychrome{}",
+                    "使随机一张{C:attention}小丑牌",
+                    "变为{C:dark_edition}永恒{}及{C:dark_edition}炫彩",
                 }
             },
             c_worm_poipole = {
@@ -209,22 +209,22 @@ return {
         challenge_names = {},
         collabs = {},
         dictionary = {
-            k_worm_ultrabeast = "Ultra Beast",
-            b_worm_ultrabeast_cards = "Ultra Beasts",
-            k_worm_ultrawormhole = "Ultra Wormhole",
-            k_worm_necrozma_r = "UB-BLACK",
-            k_asm_necrozmaspawn = "WORMHOLE!"
+            k_worm_ultrabeast = "究极异兽",
+            b_worm_ultrabeast_cards = "究极异兽",
+            k_worm_ultrawormhole = "究极之洞",
+            k_worm_necrozma_r = "究极异兽",
+            k_asm_necrozmaspawn = "虫洞！"
         },
         high_scores = {},
         labels = {
-            worm_ultrabeast = "Ultra Beast",
+            worm_ultrabeast = "究极异兽",
             k_worm_necrozma_r = "UB-BLACK",
         },
         poker_hand_descriptions = {},
         poker_hands = {},
         quips = {
             worm_kartana_jumpscare = { --reverse jetstream sam jumpscare
-                "?tsal uoy nac gnol woH"
+                "？久多持坚能你"
             }
         },
         ranks = {},

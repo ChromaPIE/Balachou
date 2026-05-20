@@ -314,7 +314,7 @@ local descriptions = {
         nebula = {
             name = "星云核心",
             text = {
-                '有{C:tbp_module}模块{C:attention}竭尽{}时',
+                '有{C:tbp_module}模块{C:attention}消耗耐久度{}时',
                 '使随机牌型提升{C:attention}#1#{}级',
                 '{s:0.8,C:inactive}（触发时消耗耐久度）'
             }
@@ -365,7 +365,7 @@ local descriptions = {
         waste = {
             name = '武器化粪污倾弃管',
             text = {
-                '本赛局内每有一个{C:tbp_module}模块{}竭尽',
+                '本赛局内每有一个{C:tbp_module}模块{}消耗耐久度',
                 '{C:mult}+#1#{}倍率',
                 '{C:inactive}（当前为{C:mult}+#2#{C:inactive}倍率）',
                 '{s:0.8,C:inactive}（每次出牌消耗耐久度）'
@@ -410,7 +410,7 @@ local descriptions = {
         redundancy = {
             name = '后备大容量储能器',
             text = {
-                '其他{C:tbp_module}模块{}将{C:attention}竭尽{}时',
+                '其他{C:tbp_module}模块{}将{C:attention}消耗耐久度{}时',
                 '免除之并消耗{C:attention}#1#{}点耐久度',
             }
         },

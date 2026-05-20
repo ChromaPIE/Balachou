@@ -227,21 +227,21 @@ return {
 			c_worm_meteor_mint = {
 				name = "浡陨薄荷味",
 				text = {
-					"{C:attention}Boosts{} other {C:worm_meow_spacetart}©Spacetarts{}",
-					"attached to the applied {C:attention}Joker{}",
+					"{C:attention}加强{}所在{C:attention}小丑牌{}上的",
+					"其他{C:worm_meow_spacetart}©太空挞{}包装"
 				},
 			},
 			c_worm_blueshift_blueberry = {
 				name = "蓝移蓝莓味",
 				text = {
-					"Attached {C:attention}Joker{}",
-					"gives {C:chips}+#1#{} Chips",
+					"套有其包装的{C:attention}小丑牌",
+					"给予{C:chips}+#1#{}筹码",
 				},
 			},
 			c_worm_black_hole_blackberry = {
 				name = "黑洞黑莓味",
 				text = {
-					"Attached {C:attention}Joker{}",
+					"套有其包装的{C:attention}小丑牌",
 					"balances {C:chips}Chips{} and",
 					"{C:mult}Mult{} by {X:legendary,C:white}#1#%{}",
 				},
@@ -262,11 +262,10 @@ return {
 				},
 			},
 			c_worm_lunar_lemon_regular = {
-				name = " Lunar Lemon ",
+				name = " 凝月柠檬 ",
 				text = {
-					"{C:green}#1# in #2#{} chance",
-					"to earn {C:money}$#3#{} at",
-					"end of round",
+					"有{C:green}#1#/#2#{}的几率",
+					"在回合结束时赚取{C:money}$#3#",
 				},
 			},
 			c_worm_meteor_mint_regular = {

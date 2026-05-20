@@ -3,16 +3,16 @@ return {
     descriptions = {
         Back = {
             b_worm_hedonia_bar = {
-                name = 'Space Bar',
+                name = '太空酒吧',
                 text = {
-                    'Start with a random',
-                    '{C:attention}Bartender{} Joker'
+                    '开局即拥有随机一张',
+                    '{C:attention}酒保{}小丑牌'
                 }
             }
         },
         Joker = {
             j_worm_hedonia_casino = {
-                name = 'Casino Bartender',
+                name = '赌场酒保',
                 text = {
                     {
                         'Played {C:edition}{E:2}Tipsy{}, {C:edition}{E:1}Drunk{}, {C:dark_edition}{E:1}Very Drunk{},',
@@ -46,14 +46,14 @@ return {
                 }
             },
             j_worm_hedonia_happy_hour = {
-                name = 'Happy Hour',
+                name = '欢乐时光',
                 text = {
                     {
-                        'Earn {C:money}$#2#{} when a',
-                        '{C:worm_hedonia_menu}Menu Item{} is used',
+                        '使用{C:worm_hedonia_menu}餐品{}后',
+                        '赚取{C:money}$#2#'
                     },
                     {
-                        '{C:worm_hedonia_menu}Menu Packs{} cost {C:money}$#1#{} less'
+                        '{C:worm_hedonia_menu}餐品{}售价{C:money}-$#1#'
                     }
                 }
             },
@@ -85,10 +85,10 @@ return {
                 }
             },
             c_worm_hedonia_cosmo = {
-                name = 'Cosmopolitan',
+                name = '宇宙都会鸡尾酒',
                 text = {
-                    'Add {E:1}Drunk{} to',
-                    'up to {C:attention}#1#{} selected cards'
+                    '使至多{C:attention}#1#{}张',
+                    '选定卡牌{E:1}醉酒'
                 }
             },
             c_worm_hedonia_mojitury = {
@@ -160,28 +160,26 @@ return {
                     '留手时有{C:green}#1#/#2#{}的几率{C:attention}醒酒',
                     '随机变换点数，且有{C:green}#3#/#4#{}的几率',
                     '在计分后{C:attention}更醉一步',
-                    '{C:inactive}（点数最大变更区间：{C:attention}#5#{C:inactive}）' },
+                    '{C:inactive}（点数最大变换区间：{C:attention}#5#{C:inactive}）' },
                 label = '微醺'
             },
             e_worm_hedonia_drunk = {
-                name = 'Drunk',
+                name = '醉酒',
                 text = {
-                    '{C:green}#1# in #2#{} chance to {C:attention}sober up{}',
-                    'whilst held in hand',
-                    'Randomize rank and {C:green}#3# in #4#{} chance',
-                    'to {C:attention}get drunker{} after scoring',
-                    '{C:inactive}(max rank variance: {C:attention}#5#{C:inactive})' },
-                label = 'Drunk'
+                    '留手时有{C:green}#1#/#2#{}的几率{C:attention}醒酒',
+                    '随机变换点数，且有{C:green}#3#/#4#{}的几率',
+                    '在计分后{C:attention}更醉一步',
+                    '{C:inactive}（点数最大变换区间：{C:attention}#5#{C:inactive}）' },
+                label = '醉酒'
             },
             e_worm_hedonia_very_drunk = {
-                name = 'Very Drunk',
+                name = '烂醉',
                 text = {
-                    '{C:green}#1# in #2#{} chance to {C:attention}sober up{}',
-                    'whilst held in hand',
-                    'Randomize rank and {C:green}#3# in #4#{} chance',
-                    'to {C:attention}get drunker{} after scoring',
-                    '{C:inactive}(max rank variance: {C:attention}#5#{C:inactive})' },
-                label = 'Very Drunk'
+                    '留手时有{C:green}#1#/#2#{}的几率{C:attention}醒酒',
+                    '随机变换点数，且有{C:green}#3#/#4#{}的几率',
+                    '在计分后{C:attention}更醉一步',
+                    '{C:inactive}（点数最大变换区间：{C:attention}#5#{C:inactive}）' },
+                label = '烂醉'
             },
             e_worm_hedonia_blackout = {
                 name = '醉倒',

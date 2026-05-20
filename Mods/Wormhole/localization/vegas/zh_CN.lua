@@ -130,11 +130,11 @@ return {
 		},
 		Spectral = {
 			c_worm_expanse = {
-				name = "Expanse",
+				name = "浩瀚",
 				text = {
-					"Add {C:dark_edition}Negative{} to up",
-					"to {C:attention}#1#{} random cards",
-          "in your full deck"
+					"为完整牌组中",
+					"至多{C:attention}#1#{}张随机卡牌",
+          			"添加{C:dark_edition}负片"
 				}
 			}
 		},

@@ -275,12 +275,12 @@ return {
     misc = {
         dictionary = {
             k_worm_stew_dinos_extinct = 'Extinct',
-            k_worm_stew_yum = 'Yum!',
+            k_worm_stew_yum = '好吃！',
             k_worm_stew_cook = 'Let Him Cook!',
             k_worm_stew_uncook = 'Stove\'s Off...',
         },
         labels = {
-            worm_stew_stellar = 'Stellar'
+            worm_stew_stellar = '繁星'
         },
         achievement_names = {
             ach_worm_stew_spaced_joker = 'Spaced Joker',

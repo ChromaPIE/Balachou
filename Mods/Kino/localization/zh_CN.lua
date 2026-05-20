@@ -2117,11 +2117,10 @@ return {
                 }
             },
             j_kino_kung_fu_panda_1 = {
-                name = "Kung-Fu Panda",
+                name = "功夫熊猫",
                 text = {
-                    "{C:chips}+#1#{} Chips if",
-                    "scoring hand", 
-                    "contains {C:spades}Spades{}",
+                    "若出牌包含{C:spades}黑桃",
+                    "{C:chips}+#1#{}筹码"
                 }
             },
             j_kino_la_la_land = {
@@ -3218,16 +3217,17 @@ return {
                 }
             },
             j_kino_signs = {
-                name = "Signs",
+                name = "天兆",
                 text = {
-                    {"{C:Alien}Abduct{} a random unscored card",},
-                    {"Gives {C:mult}+#3#{} for each card",
-                    "{C:Alien}Abducted{}",
-                    "{C:inactive}(Currently: {C:mult}+#4#{C:inactive} Mult)"}
+                    {"随机{C:Alien}劫持{}一张不计分牌"},
+                    {
+                        "每有一张牌{C:Alien}遭劫持",
+                        "给予{C:mult}+#3#{}倍率",
+                        "{C:inactive}（当前为{C:mult}+#4#{C:inactive}倍率）"
+                    }
                 },
                 unlock = {
-                    "Win a run without playing",
-                    "any unscoring cards"
+                    "赢下一局而无任何不计分牌"
                 }
             },
             j_kino_simpsons = {
@@ -3399,24 +3399,25 @@ return {
                 }
             },
             j_kino_star_wars_clone_wars = {
-                name = "Star Wars: The Clone Wars",
+                name = "星球大战：克隆人战争",
                 text = {
                     {
-                        "{C:mult}+#1#{} Mult for each",
-                        "{C:Animation}Animation{} Joker",
-                        "{C:inactive}(Currently: {C:mult}+#2#{C:inactive} Mult)"
+                        "每有一张",
+                        "{C:Animation}动画片{C:attention}小丑牌",
+                        "{C:mult}+#1#{}倍率",
+                        "{C:inactive}（当前为{C:mult}+#2#{C:inactive}倍率）"
                     },
                     {
-                        "Retrigger this {C:attention}Joker",
-                        "#3# time(s) for each",
-                        "adjacent {C:Sci-Fi}Sci-Fi{} {C:attention}Joker",
-                        "{C:inactive}(Currently: {C:attention}+#4#{C:inactive} Retriggers)"
+                        "紧邻两侧每有一张",
+                        "{C:Sci-Fi}科幻片{C:attention}小丑牌",
+                        "重新触发{C:attention}本牌{}#3#次",
+                        "{C:inactive}（当前可重新触发{C:attention}#4#{C:inactive}次）"
                     }
                 },
                 unlock = {
-                    "Win a run with two",
-                    "copies of the same",
-                    "{C:attention}Star Wars{} Joker"
+                    "携带两张同名的",
+                    "{C:attention}星球大战{}小丑牌",
+                    "赢下一局"
                 }
             },
             j_kino_star_wars_holiday = {
@@ -3507,7 +3508,7 @@ return {
                     "{C:attention}x#3#{} when hand is played"
                 },
                 unlock = {
-                    "Defeat {C:attention}Emperor Palpatine"
+                    "击败{C:attention}帕尔帕庭"
                 }
             },
             j_kino_star_wars_vii = {
@@ -3540,16 +3541,16 @@ return {
                 }
             },
             j_kino_star_wars_ix = {
-                name = "Star Wars Episode IX: The Rise of Skywalker",
+                name = "星球大战：天行者崛起",
                 text = {
-                    "Gain {C:attention}+#1#{} Handsize",
-                    "for each {C:planet}Planet{} used",
-                    "since last round",
-                    "{C:inactive}(Currently: +#2# Handsize)"
+                    "自上回合起",
+                    "每使用过一张{C:planet}星球{}牌",
+                    "获得{C:attention}+#1#{}手牌上限",
+                    "{C:inactive}（当前为+#2#手牌上限）"
                 },
                 unlock = {
-                    "Use the {C:attention}Emperor",
-                    "while facing {C:attention}Palpatine"
+                    "迎战{C:attention}帕尔帕庭{}时",
+                    "使用{C:attention}皇帝"
                 }
             },
             j_kino_stargate = {
@@ -4175,12 +4176,13 @@ return {
                 }
             },
             j_kino_zardoz = {
-                name = "Zardoz",
+                name = "萨杜斯",
                 text = {
-                    {"{C:attention}Stone Cards{} give",
-                    "{X:mult,C:white}X#1#{} Mult"},
-                    {"Increases by {X:mult,C:white}X#2#{} Mult",
-                    "whenever a card is {C:attention}destroyed"}
+                    {"{C:attention}石头牌{}给予{X:mult,C:white}X#1#{}倍率"},
+                    {
+                        "每有一张牌被{C:attention}摧毁",
+                        "倍率加成提升{X:mult,C:white}X#2#"
+                    }
                 }
             },
             j_kino_zodiac = {
@@ -4290,13 +4292,13 @@ return {
                 },
             },
             j_kino_citizen_kane = {
-                name = "Citizen Kane",
+                name = "公民凯恩",
                 text = {
-                    "Gain {X:mult,C:white}X#1#{} Mult when you",
-                    "{C:attention}play{} a hand or {C:attention}discard",
-                    "and double {X:mult,C:white}Mult{} gained until",
-                    "end of the round",
-                    "{C:inactive}(Currently: {X:mult,C:white}X#2#{C:inactive} Mult)"
+                    "{C:attention}出牌{}或{C:attention}弃牌{}时",
+                    "本牌获得{X:mult,C:white}X#1#{}倍率",
+                    "并使每次可获{X:mult,C:white}倍率{}翻倍",
+                    "回合结束时，重置每次可获倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）"
                 },
                 unlock={
                     "{E:1,s:1.3}?????",
@@ -5109,18 +5111,16 @@ return {
             c_kino_garlic_bread = {
                 name = "蒜香烤面包",
                 text = {
-                    "Increase {C:money}sell value",
-                    "of every owned {C:attention}Joker",
-                    "by {C:money}$#1#"
+                    "使所持全部{C:attention}小丑牌",
+                    "{C:money}售价{}提升{C:money}$#1#"
                 }
             },
             c_kino_magic_beans = {
-                name = "Magic Beans",
+                name = "魔豆糖",
                 text = {
-                    "{C:Magic}Cast a spell{} based",
-                    "on first three cards",
-                    "held in hand",
-                    "hext hand"
+                    "下次出牌",
+                    "以前三张手牌为要素",
+                    "{C:Magic}施放一道咒术"
                 }
             },
             c_kino_donut = {
@@ -5147,7 +5147,7 @@ return {
                 }
             },
             c_kino_beans = {
-                name = "Canned Beans",
+                name = "焗豆罐头",
                 text = {
                     "Put {C:attention}+#1#{} Beneficial Counters",
                     "on next {C:attention}#2#{} cards drawn"
@@ -5939,10 +5939,10 @@ return {
                 }
             },
             bl_kino_thanos = {
-                name = "Thanos",
+                name = "灭霸",
                 text = {
-                    "Half of all cards are debuffed",
-                    "and alternate each hand"
+                    "使半数卡牌失效",
+                    "每次出牌后与另一半交替失效"
                 }
             },
             bl_kino_immortan_joe = {
@@ -5953,13 +5953,12 @@ return {
                 }
             },
             bl_kino_palpatine = {
-                name = "Emperor Palapatine",
+                name = "帕尔帕庭",
                 text = {
-                    "{C:attention}Force Choke{} every",
-                    "joker, weakening it",
-                    "by {C:attention}20%{} each round",
-                    "After being {C:attention}Force Choked",
-                    "five times, destroy the joker"
+                    "对每张小丑牌施展{C:attention}原力锁喉",
+                    "使其每回合弱化{C:attention}20%",
+                    "遭到{C:attention}原力锁喉{}5次后",
+                    "小丑牌将被摧毁"
                 }
             },
             bl_kino_dr_evil = {
@@ -5979,12 +5978,12 @@ return {
                 }
             },
             bl_kino_mr_glass = {
-                name = "Mr. Glass",
+                name = "玻璃先生",
                 text = {
-                    "Put {C:attention}#1#{} Glass Counters",
-                    "on a random {C:attention}Joker{} and",
-                    "repeat if {C:attention}Blind{} is beaten",
-                    "with {C:red}2x{} or more of goal"
+                    "对随机一张{C:attention}小丑牌",
+                    "施加{C:attention}#1#{}位玻璃计数标",
+                    "若以至少{C:red}2倍{}的得分击败{C:attention}盲注",
+                    "重复施加一次"
                 }
             },
             bl_kino_count_rugen = {
@@ -6252,11 +6251,11 @@ return {
                 }
             },
             bl_kino_ghost_rider =  {
-                name = "Ghost Rider",
+                name = "恶灵骑士",
                 text = {
-                    "Put {C:attention}#1#{} {C:Chain}Chain Counters{} on",
-                    "every card in deck and",
-                    "create {C:attention}Penance Stare"
+                    "对牌组中的所有卡牌",
+                    "施加{C:attention}#1#{}位{C:Chain}锁链计数标",
+                    "并生成一张{C:attention}审判之眼"
                 }
             },
 
@@ -6345,13 +6344,12 @@ return {
                 }
             },
             c_kino_penance_stare = {
-                name = "Penance Stare",
+                name = "审判之眼",
                 text = {
                     {
-                        "Double {C:Chain}Chain Counters{} on",
-                        "selected card and remove {C:attention}1",
-                        "counter from all cards that share",
-                        "its suit or rank in full deck"
+                        "使选定卡牌的{C:Chain}锁链计数标{}位数{C:attention}翻倍",
+                        "并使完整牌组中与其点数或花色",
+                        "相同的卡牌之计数标位数{C:attention}-1"
                     }
                 }
             },
@@ -7970,7 +7968,7 @@ return {
                 }
             },
             counter_kino_chain = {
-                name = "链缚计数标",
+                name = "锁链计数标",
                 text = {
                     "{C:attention}尝试弃置后，步退1位",
                     " ",
@@ -8571,7 +8569,7 @@ return {
             },
             k_ratatouille_quest_5 = {
                 "持有一张发行于",
-                "00年代的电影小丑牌"
+                "2000年代的电影小丑牌"
             },
             k_ratatouille_quest_6 = {
                 "同时持有冥王星、",
@@ -8584,8 +8582,8 @@ return {
                 "or Drama Jokers"
             },
             k_citizen_kane_quest_2 = {
-                "Possess a Movie Joker",
-                "released in the 1940s"
+                "持有一张发行于",
+                "1940年代的电影小丑牌"
             },
             k_citizen_kane_quest_3 = {
                 "Possess a Movie Joker",
@@ -8606,12 +8604,12 @@ return {
 
             -- Godfather Quests
             k_kino_godfather_quest_1 = {
-                "Possess 2 Crime",
-                "or Drama Jokers"
+                "持有2张犯罪片",
+                "或剧情片小丑牌"
             },
             k_kino_godfather_quest_2 = {
-                "Possess a Movie Joker",
-                "released in the 1970s"
+                "持有一张发行于",
+                "1970年代的电影小丑牌"
             },
             k_kino_godfather_quest_3 = {
                 "Possess a Movie Joker",
@@ -8631,22 +8629,22 @@ return {
 
             -- Forrest Gump Quests
             k_kino_forrest_gump_quest_1 = {
-                "Possess 2 Drama Jokers",
+                "持有2张剧情片小丑牌",
             },
             k_kino_forrest_gump_quest_2 = {
-                "Possess a Movie Joker",
-                "released in the 1990s"
+                "持有一张发行于",
+                "1990年代的电影小丑牌"
             },
             k_kino_forrest_gump_quest_3 = {
                 "Possess a Movie Joker",
                 "that shares an actor"
             },
             k_kino_forrest_gump_quest_4 = {
-                "Have 50 or more", 
+                "Have 50 or more",
                 "numbered cards in your deck"
             },
             k_kino_forrest_gump_quest_5 = {
-                "Play a Straight", 
+                "Play a Straight",
                 "at least 10 times"
             },
             k_kino_forrest_gump_quest_6 = {
@@ -8656,8 +8654,8 @@ return {
 
             -- Bringing Up Baby Quests
             k_kino_bringing_up_baby_quest_1 = {
-                "Possess 2 Romance", 
-                "or Comedy Jokers",
+                "持有2张爱情片",
+                "或喜剧片小丑牌",
             },
             k_kino_bringing_up_baby_quest_2 = {
                 "Possess a Movie Joker",
@@ -8668,7 +8666,7 @@ return {
                 "that shares an actor"
             },
             k_kino_bringing_up_baby_quest_4 = {
-                "Have 20 or more", 
+                "Have 20 or more",
                 "enhanced cards in your deck"
             },
             k_kino_bringing_up_baby_quest_5 = {
@@ -8684,8 +8682,8 @@ return {
                 "Possess 3 Superhero jokers"
             },
             k_kino_avengers_endgame_quest_2 = {
-                "Possess a Movie Joker",
-                "released in the 2010s"
+                "持有一张发行于",
+                "2010年代的电影小丑牌"
             },
             k_kino_avengers_endgame_quest_3 = {
                 "Possess 2 Movie Jokers",
