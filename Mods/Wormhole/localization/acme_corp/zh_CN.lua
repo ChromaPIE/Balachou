@@ -230,12 +230,11 @@ return {
                 },
             },
             j_worm_ACME_big_brother = {
-		        name = "Big Joker",
+		        name = "老大丑",
 		        text = {
-			        'Draw {C:attention}#1#{} cards at the',
-			        'start of the {C:attention}Blind{}',
-			        'Set {C:blue}hand size{} to {C:attention}0{}', 
-			        'after first hand is drawn'
+			        '{C:attention}盲注{}开始时',
+                    '抽取{C:attention}#1#{}张牌',
+			        '并设{C:blue}手牌上限{}为{C:attention}0'
 		        },	
 	        },
             j_worm_acme_gas_station = {

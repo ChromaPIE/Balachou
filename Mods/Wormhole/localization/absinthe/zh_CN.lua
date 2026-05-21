@@ -398,31 +398,31 @@ return {
         },
         Other = {
             p_worm_abs_top_shelf_normal_1 = {
-                name = 'Top Shelf Pack',
+                name = '好酒特调包',
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:abs_drinks} Drinks{}"
+                    "从{C:attention}#2#{}款{C:abs_drinks}酒品{}中",
+                    "选取{C:attention}#1#{}款"
                 },
             },
             p_worm_abs_top_shelf_normal_2 = {
-                name = 'Top Shelf Pack',
+                name = '好酒特调包',
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:abs_drinks} Drinks{}"
+                    "从{C:attention}#2#{}款{C:abs_drinks}酒品{}中",
+                    "选取{C:attention}#1#{}款"
                 },
             },
             p_worm_abs_top_shelf_jumbo_1 = {
-                name = 'Jumbo Top Shelf Pack',
+                name = '巨型好酒特调包',
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:abs_drinks} Drinks{}"
+                    "从{C:attention}#2#{}款{C:abs_drinks}酒品{}中",
+                    "选取{C:attention}#1#{}款"
                 },
             },
             p_worm_abs_top_shelf_mega_1 = {
-                name = 'Mega Top Shelf Pack',
+                name = '超级好酒特调包',
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:abs_drinks} Drinks{}"
+                    "从{C:attention}#2#{}款{C:abs_drinks}酒品{}中",
+                    "选取{C:attention}#1#{}款"
                 },
             },
             undiscovered_abs_drinks = {

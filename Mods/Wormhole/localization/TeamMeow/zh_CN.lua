@@ -526,7 +526,7 @@ return {
 			worm_meow_spacetart_stacks = {
 				text = {
 					"{C:inactive,s:0.8}（加强等级：{C:attention,s:0.8}#2#{C:inactive,s:0.8}）",
-					"{C:inactive,s:0.8}（叠加片数：{C:attention,s:0.8}#1#{C:inactive,s:0.8}）",
+					"{C:inactive,s:0.8}（叠加层数：{C:attention,s:0.8}#1#{C:inactive,s:0.8}）",
 				},
 			},
 			undiscovered_worm_meow_zodicat = {

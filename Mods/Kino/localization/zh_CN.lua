@@ -230,13 +230,12 @@ return {
                 }
             },
             j_kino_annihilation = {
-                name = "Annihilation",
+                name = "湮灭",
                 text = {
-                    "{C:green}#1# in #2#{} chance for",
-                    "scored cards to copy",
-                    "{C:attention}first{} scored card's",
-                    "{C:attention}rank{}, {C:attention}suit{}, {C:attention}Enhancement{},", 
-                    "{C:attention}seal{C:attention} or {C:attention}edition"
+                    "每张计分牌有{C:green}#1#/#2#{}的几率",
+                    "复制{C:attention}首张{}计分牌的",
+                    "{C:attention}点数{}，{C:attention}花色{}，{C:attention}增强{}，",
+                    "{C:attention}蜡封{}或{C:attention}版本"
                 },
                 unlock = {
                     "Have only {C:attention}modified{} cards",
@@ -556,7 +555,7 @@ return {
                 }
             },
             j_kino_blade_1 = {
-                name = "Blade",
+                name = "刀锋战士",
                 -- text = {
                 --     "Destroy {C:Drain}Vampiric {C:attention}Joker to the right",
                 --     "and gain all its upgrades",
@@ -565,13 +564,17 @@ return {
                 --     "{C:inactive}(Currently: {X:chips,C:white}X#2#{C:inactive} Chips, {X:mult,C:white}X#1#{C:inactive} Mult)"
                 -- },
                 text = {
-                    {"{C:mult}+#1#{} Mult for every",
-                    "{C:Drain}Blood Counter{} in your deck",
-                    "{C:inactive}(Currently: {C:mult}+#2#{C:inactive} Mult)"},
                     {
-                        "Destroy {C:attention}Joker{} to the right",
-                        "and put {C:drain}Blood Counters{} equal",
-                        "to its value in your deck"
+                        "牌组中每有1位",
+                        "{C:Drain}鲜血计数标",
+                        "{C:mult}+#1#{}倍率",
+                        "{C:inactive}（当前为{C:mult}+#2#{C:inactive}倍率）"
+                    },
+                    {
+                        "选择{C:attention}盲注{}时",
+                        "摧毁右侧的{C:attention}小丑牌",
+                        "并向牌组施加位数等同于",
+                        "其售价的{C:Drain}鲜血计数标"
                     }
                 },
                 unlock = {
@@ -712,17 +715,15 @@ return {
                 }
             },
             j_kino_cars_1 = {
-                name = "Cars",
+                name = "赛车总动员",
                 text = {
-                    "{C:chips}+#1#{} Chips if you're",
-                    "{C:attention}Quick{}",
+                    "若够{C:attention}快{}，{C:chips}+#1#{}筹码",
                     " ",
-                    "{C:inactive}(Currently: {C:chips}+#2#{C:inactive} Chips)"
+                    "{C:inactive}（当前为{C:chips}+#2#{C:inactive}筹码）"
                 },
                 unlock = {
-                    "Consume {C:Confection}Beans",
-                    "while owning",
-                    "a {C:attention}Movie Joker"
+                    "持有{C:attention}电影小丑牌{}时",
+                    "食用{C:Confection}焗豆",
                 }
             },
             j_kino_casablanca = {
@@ -2026,9 +2027,10 @@ return {
                 }
             },
             j_kino_jurassic_park_1 = {
-                name = "Jurassic Park",
+                name = "侏罗纪公园",
                 text = {
-                    "Cards give {C:chips}X#1#{} base chips",
+                    "卡牌给予",
+                    "{C:chips}X#1#{}基础筹码",
                 }
             },
             j_kino_karate_kid_1 = {
@@ -2838,13 +2840,14 @@ return {
                 }
             },
             j_kino_pirates_of_the_caribbean_3 = {
-                name = "Pirates of the Caribbean: At World's End",
+                name = "加勒比海盗：世界的尽头",
                 text = {
-                    "Jokers give {C:chips}Chips{} equal to",
-                    "{C:attention}x#1#{} times their {C:money}Sell Value{}"
+                    "小丑牌给予等同于",
+                    "其{C:money}售价{C:attention}#1#倍{}的{C:chips}筹码"
                 },
                 unlock = {
-                    "Win a run with a {C:attention}Pirate{} Joker",
+                    "携带{C:attention}海盗{}小丑牌",
+                    "赢下一局",
                     
                 }
             },
@@ -3284,10 +3287,10 @@ return {
                 }
             },
             j_kino_snakes_on_a_plane = {
-                name = "Snakes on a Plane",
+                name = "航班蛇患",
                 text = {
-                    "When you discard",
-                    "always draw {C:attention}#1#{} cards"
+                    "弃牌后",
+                    "恒抽取{C:attention}#1#{}张牌"
                 }
             },
             j_kino_snow_white_1 = {
@@ -3486,12 +3489,11 @@ return {
                 }
             },
             j_kino_star_wars_v = {
-                name = "Star Wars Episode V: The Empire Strikes Back",
+                name = "星球大战V：帝国反击战",
                 text = {
-                    {"{C:mult}+#1#{} Mult",},
-                    {"Lower Mult by {C:mult}-#2#{} per hand"},
-                    {"Raise Mult by {C:mult}+#3#{} when", 
-                    "you use a {C:planet}Planet"}
+                    {"{C:mult}+#1#{}倍率",},
+                    {"每次出牌{C:mult}-#2#"},
+                    {"使用{C:planet}星球{}牌后{C:mult}+#3#"}
                 },
                 unlock = {
                     "Defeat {C:attention}Darth Vader"
@@ -4293,7 +4295,7 @@ return {
                 text = {
                     "{C:attention}出牌{}或{C:attention}弃牌{}时",
                     "本牌获得{X:mult,C:white}X#1#{}倍率",
-                    "并使每次可获{X:mult,C:white}倍率{}翻倍",
+                    "并使每次可获{X:mult,C:white}X倍率{}翻倍",
                     "回合结束时，重置每次可获倍率",
                     "{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）"
                 },
@@ -4481,9 +4483,10 @@ return {
 
             -- Special enhancements
             m_kino_pennywise_balloon = {
-                name = "Balloon Card",
+                name = "气球牌",
                 text = {
-                    "Any card can {C:attention,E:1}Pop{}"
+                    "任何卡牌",
+                    "皆可能{C:attention,E:1}爆炸"
                 }
             },
 
@@ -4901,13 +4904,12 @@ return {
                 }
             },
             c_kino_cybertron = {
-                name = "Cybertron",
+                name = "赛博坦",
                 text = {
-                    "Upgrade random hand",
-                    "with {X:mult,C:white}X#1#{} for",
-                    "each time a {C:attention}Sci-Fi Card{} upgraded",
-                    "last round",
-                    "{C:inactive}(Currently: {X:mult,C:white}X#2#{C:inactive})"
+                    "上回合中",
+                    "{C:attention}科幻片牌{}每升级过一次",
+                    "使随机牌型获得{X:mult,C:white}X#1#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}）"
                 }
             },
             c_kino_lv426 = {
@@ -6360,11 +6362,10 @@ return {
         },
         Tag = {
             tag_kino_dinner = {
-                name = "Dinner Tag",
+                name = "午餐标签",
                 text = {
-                    "Upgrades all future",
-                    "{C:Confection}Confections{} with",
-                    "{C:attention}+1{} values"
+                    "使后续所有",
+                    "{C:Confection}甜食零嘴{}的数值{C:attention}+1"
                 }
             },
             tag_kino_snacktag = {
@@ -6714,11 +6715,11 @@ return {
                 }
             },
             gloss_quick = {
-                name = "Quick",
+                name = "“快”",
                 text = {
-                    "Power of the effect",
-                    "lowers to 0 over a ",
-                    "period of #1# seconds"
+                    "开局抽牌时开始计时",
+                    "#1#秒后，效果数值降至0",
+                    "回合结束时重置"
                 }
             },
             bust_econ = {
@@ -8205,7 +8206,7 @@ return {
             kino_settings_jumpscare_mechanic = "跳脸杀小丑牌？",
             kino_settings_vampire_jokers = "吸血鬼小丑牌？",
             kino_settings_time_based_jokers = "计时性小丑牌？",
-            kino_settings_speed_factor = "Quick Timer",
+            kino_settings_speed_factor = "“快”计时",
             kino_settings_confection_mechanic = "甜食零嘴？", 
 
             kino_settings_feedback_box = "赛局结束显示反馈框",

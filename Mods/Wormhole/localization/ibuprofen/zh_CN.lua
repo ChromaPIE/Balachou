@@ -80,10 +80,10 @@ return {
         },
         Joker = {
             j_worm_ibu_enginefailure = {
-                name = 'Engine Failure',
+                name = '引擎熄火',
                 text = {
-                    "{X:mult,C:white}X#1#{} Mult",
-                    "{C:mult} Self destructs{} if score {C:attention}catches fire{}"
+                    "{X:mult,C:white}X#1#{}倍率",
+                    "若得分{C:attention}着火{}，{C:red}自毁"
                 }
             },
             j_worm_ibu_dyson = {
