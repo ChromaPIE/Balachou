@@ -443,3 +443,41 @@ payload = '''
 "La，这音符紧跟So",
 "Ti，是饮料和茶点"
 '''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/actor_ui.lua"]'
+match_indent = true
+position = "at"
+pattern = '''text = "Current Joker",'''
+payload = '''text = "当前小丑牌",'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/actor_ui.lua"]'
+match_indent = true
+position = "at"
+pattern = '''
+if _value > 999999999 then
+local _start, _garb = string.sub(_value, 1, -10)
+_text = "$" .. _start .. " Billion"    
+elseif _value > 999999 then
+local _start, _garb = string.sub(_value, 1, -7)
+_text = "$" .. _start .. " Million"  
+elseif _value > 999 then
+local _start, _garb = string.sub(_value, 1, -4)
+_text = "$" .. _start .. " Thousand"  
+end
+'''
+payload = '''
+if _value > 99999999 then
+local _start = string.sub(_value, 1, -9)
+_text = "$" .. _start .. " 亿"
+elseif _value > 9999 then
+local _start = string.sub(_value, 1, -5)
+_text = "$" .. _start .. " 万"
+elseif _value > 999 then
+local _start = string.sub(_value, 1, -4)
+_text = "$" .. _start .. " 千"
+end
+'''

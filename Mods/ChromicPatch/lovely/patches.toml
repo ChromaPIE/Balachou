@@ -607,6 +607,49 @@ pattern = "if v.soe_is_voucher_enhancement and v.soe_voucher_mod then"
 position = "at"
 payload = "if v.soe_is_voucher_enhancement and v.soe_voucher_mod and G.localization.descriptions.Voucher[v.soe_voucher_key] then"
 
+# SOE voucher enhancements: make tooltip vars use voucher UI semantics
+# The original fake ability has name/config but no set='Voucher', so
+# Card.generate_UIBox_ability_table never enters its voucher loc_vars branch.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS SealsOnEverything "main.lua"]'
+match_indent = true
+pattern = '''loc_vars = (not vv.original_mod and function()
+                    local ability = copy_table(vv.config)
+                    ability.name = vv.name
+                    local loc_vars, main_start, main_end = Card.generate_UIBox_ability_table({ability = ability, config = {center = vv}}, true)
+                    return {vars = loc_vars, main_start = main_start, main_end = main_end}
+                end) or vv.loc_vars or nil,'''
+position = "at"
+payload = '''loc_vars = function(center, info_queue, card)
+                    local use_card_ability = card and card.ability and (card.fake_card == center.key or (card.config and card.config.center == center))
+                    local cfg = use_card_ability and card.ability or vv.config or {}
+                    local fake_card = {ability = copy_table(cfg), config = {center = vv, center_key = vv.key}, fake_card = vv.key}
+                    fake_card.ability.name = vv.name
+                    fake_card.ability.set = 'Voucher'
+                    if vv.loc_vars and type(vv.loc_vars) == 'function' then
+                        local res = vv:loc_vars(info_queue, fake_card) or {}
+                        if res.vars or res.key or res.set or res.main_start or res.main_end then return res end
+                    end
+                    local vars = nil
+                    if vv.name == "Overstock" or vv.name == "Overstock Plus" then
+                    elseif vv.name == "Tarot Merchant" or vv.name == "Tarot Tycoon" then vars = {cfg.extra_disp}
+                    elseif vv.name == "Planet Merchant" or vv.name == "Planet Tycoon" then vars = {cfg.extra_disp}
+                    elseif vv.name == "Hone" or vv.name == "Glow Up" then vars = {cfg.extra}
+                    elseif vv.name == "Reroll Surplus" or vv.name == "Reroll Glut" then vars = {cfg.extra}
+                    elseif vv.name == "Grabber" or vv.name == "Nacho Tong" then vars = {cfg.extra}
+                    elseif vv.name == "Wasteful" or vv.name == "Recyclomancy" then vars = {cfg.extra}
+                    elseif vv.name == "Seed Money" or vv.name == "Money Tree" then vars = {cfg.extra/5}
+                    elseif vv.name == "Blank" or vv.name == "Antimatter" then
+                    elseif vv.name == "Hieroglyph" or vv.name == "Petroglyph" then vars = {cfg.extra}
+                    elseif vv.name == "Director's Cut" or vv.name == "Retcon" then vars = {cfg.extra}
+                    elseif vv.name == "Paint Brush" or vv.name == "Palette" then vars = {cfg.extra}
+                    elseif vv.name == "Telescope" or vv.name == "Observatory" then vars = {cfg.extra}
+                    elseif vv.name == "Clearance Sale" or vv.name == "Liquidation" then vars = {cfg.extra}
+                    end
+                    return {vars = vars or {}}
+                end,'''
+
 # SMODS create_card: accept object-poll args that use `type` instead of `set`
 # Steamodded shop creation builds {type = 'Joker', key = ...}; the current
 # SMODS.create_card path only forwards t.set, so forced keys can reach vanilla
@@ -694,6 +737,36 @@ if _target then
 end'''
 times = 2
 
+# Kino sleep blinds: nil-guard _target for counter targets
+# get_counter_targets may return an empty table — pseudorandom_element → nil → crash
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "items/blinds/blinds_sleep.lua"]'
+match_indent = true
+position = "at"
+pattern = '''_target:bb_counter_apply("counter_drowsy", 1)
+        card_eval_status_text(_target, 'extra', nil, nil, nil,
+        { message = localize("k_kino_rose"), colour = G.C.BLACK})'''
+payload = '''if _target then
+        _target:bb_counter_apply("counter_drowsy", 1)
+        card_eval_status_text(_target, 'extra', nil, nil, nil,
+        { message = localize("k_kino_rose"), colour = G.C.BLACK})
+    end'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "items/blinds/blinds_sleep.lua"]'
+match_indent = true
+position = "at"
+pattern = '''_target:bb_counter_apply("counter_drowsy", 1)
+                    card_eval_status_text(context.hand_drawn[i], 'extra', nil, nil, nil,
+                    { message = localize("k_kino_freddy"), colour = G.C.BLACK})'''
+payload = '''if _target then
+                    _target:bb_counter_apply("counter_drowsy", 1)
+                    card_eval_status_text(context.hand_drawn[i], 'extra', nil, nil, nil,
+                    { message = localize("k_kino_freddy"), colour = G.C.BLACK})
+                end'''
+
 # Kino Pan's Labyrinth: nil-guard card in generate_ui when called without a card context
 # AIJ retrieve_joker_text passes nil as card to generate_card_ui during pool building
 [[patches]]
@@ -780,3 +853,37 @@ payload = '''for i = 1, card.ability.extra.cards_drawn do
                         draw_card(G.deck, G.hand, i*100/card.ability.extra.cards_drawn, 'up', true)
                     end
                 end'''
+
+# Kino is_genre: nil-guard joker.config when checking cross-mod jokers
+# scream_1's post_trigger iterates individual card areas which may include
+# joker objects from other mods (e.g. Wormhole) lacking a config field.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/kinofunctions.lua"]'
+match_indent = true
+position = "at"
+pattern = "if joker.config.center.k_genre then"
+payload = "if joker.config and joker.config.center and joker.config.center.k_genre then"
+
+# Kino Annie Wilkes: restrict dissolve to main_eval to prevent multiple triggers
+# context.end_of_round fires multiple times per round (main pass + per-card gold
+# card/blue seal passes).  Without context.main_eval, the blind dissolves a joker
+# on every pass, destroying 2+ jokers on a first-hand beat.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "items/blinds/blind_normal.lua"]'
+match_indent = true
+position = "at"
+pattern = "if context.end_of_round and G.GAME.current_round.hands_played <= 2 and"
+payload = "if context.end_of_round and context.main_eval and G.GAME.current_round.hands_played <= 2 and"
+
+# Kino fabricated monster: skip delayed cleanse if enhancement state is gone
+# The scoring event runs asynchronously; cross-mod effects may replace/reset the
+# card before it executes, leaving ability.extra nil.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "items/blinds/blinds_halloween.lua"]'
+match_indent = true
+position = "before"
+pattern = "card.ability.extra.level_non = card.ability.extra.level_non -1"
+payload = "if not (card.ability and card.ability.extra and card.ability.extra.level_non) then return true end"
