@@ -2,12 +2,12 @@ return {
     descriptions = {
         Joker = {
             j_worm_orbit = {
-                name = "Orbit",
+                name = "天体轨道",
 		        text = {
-			        "Gains {C:mult}+#1#{} Mult when",
-			        "scoring a {C:attention}#2#",
-			        "Rank decreases after scoring",
-			        "{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)"
+					"有{C:attention}#2#{}计分时",
+			        "获得{C:mult}+#1#{}倍率",
+			        "计分后降低需求点数",
+			        "{C:inactive}（当前为{C:mult}+#3#{C:inactive}倍率）"
 		        }
             },
             j_worm_spaghettification = {

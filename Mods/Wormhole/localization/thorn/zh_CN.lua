@@ -155,10 +155,10 @@ return {
                     }
                 },
                 j_worm_thorn_piss = {
-                    name = "My super laser piss!",
+                    name = "吃我超级激光尿！",
                     text = {
-                        "Scored {C:clubs}#1#{} become {C:diamonds}#2#{}",
-                        "and gain {C:blue}+#3#{} Chips when scored"
+                        "计分的{C:clubs}#1#{}牌变为{C:diamonds}#2#",
+                        "并获得{C:blue}+#3#{}筹码"
                     }
                 },
                 thorn_piss_rant = {
@@ -232,6 +232,9 @@ return {
             dictionary = {
                 k_thorn_giygas_reveal = 'Revealed!',
                 k_thorn_giygas_enhanced = 'Enhanced!',
+            },
+            v_dictionary = {
+                k_thorn_hand_already_played = "#1# has been played this ante"
             }
         }
 }

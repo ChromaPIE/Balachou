@@ -138,9 +138,9 @@ return {
             p_worm_hedonia_menu = {
                 name = "#3#",
                 text = {
-                    "Order {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{} {C:worm_hedonia_menu}Menu items{} to",
-                    "be used immediately"
+                    "从至多{C:attention}#2#{}道",
+                    "{C:worm_hedonia_menu}餐品{}中",
+                    "点{C:attention}#1#{}道"
                 }
             },
             undiscovered_worm_hedonia_menu = {

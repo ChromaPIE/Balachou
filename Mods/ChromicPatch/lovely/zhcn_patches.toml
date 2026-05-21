@@ -146,28 +146,32 @@ pattern = "'BULK USE (ONE-AT-A-TIME)'"
 position = "at"
 payload = "'批量使用（逐一）'"
 
-[[patches]] # ts aint working
+[[patches]] # To deal with Saturn: lovely-injector/issues/366
 [patches.pattern]
-target = '=[SMODS Saturn "core/logic/stack.lua"]'
+target = 'main.lua'
 pattern = '''
-text = "USE ALL",
+  assert(load(nfs.read(Saturn.PATH .. "/core/logic/stack.lua")))()
 '''
 position = "at"
 payload = '''
-text = "全部使用",
+  assert(load(nfs.read(Saturn.PATH .. "/core/logic/stack.lua"), '=[SMODS Saturn "core/logic/stack.lua"]'))()
 '''
 match_indent = true
 
-[[patches]] # ts aint working
+[[patches]]
 [patches.pattern]
 target = '=[SMODS Saturn "core/logic/stack.lua"]'
-pattern = '''
-text = "SELL ALL",
-'''
+pattern = '''text = "USE ALL",'''
 position = "at"
-payload = '''
-text = "全部售出",
-'''
+payload = '''text = "全部使用",'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Saturn "core/logic/stack.lua"]'
+pattern = '''text = "SELL ALL",'''
+position = "at"
+payload = '''text = "全部售出",'''
 match_indent = true
 
 [[patches]]
@@ -481,3 +485,28 @@ local _start = string.sub(_value, 1, -4)
 _text = "$" .. _start .. " 千"
 end
 '''
+
+# Wormhole: Have to prepend a '/' to the target path: lovely-injector/issues/366
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "/content/Hedonia/menu.lua"]'
+match_indent = true
+position = "at"
+pattern = '''config = { extra = 3, choose = 1, name = "Menu Pack" },'''
+payload = '''config = { extra = 3, choose = 1, name = "餐品包" },'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "/content/Hedonia/menu.lua"]'
+match_indent = true
+position = "at"
+pattern = '''config = { extra = 4, choose = 1, name = "Jumbo Menu Pack" },'''
+payload = '''config = { extra = 4, choose = 1, name = "巨型餐品包" },'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "/content/Hedonia/menu.lua"]'
+match_indent = true
+position = "at"
+pattern = '''config = { extra = 4, choose = 2, name = "Mega Menu Pack" },'''
+payload = '''config = { extra = 4, choose = 2, name = "超级餐品包" },'''

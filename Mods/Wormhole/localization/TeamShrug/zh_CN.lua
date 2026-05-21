@@ -122,21 +122,21 @@ return {
 
             -- FIRST CONTACT
             v_worm_shrug_first_contact = {
-                name = "First Contact",
+                name = "首度接触",
                 text = {
-                    {"{C:dark_edition}Alien{} cards may",
-                    "appear in any",
-                    "{C:planet}Celestial Pack{}"},
-                    {"{C:attention}+1{} consumable slot",}
+                    {"{C:dark_edition}外星生物{}卡",
+                    "可能出现于",
+                    "任何{C:planet}天体包"},
+                    {"消耗牌槽位{C:attention}+1",}
                 }
             },
 
             -- FIRST CONTACT
             v_worm_shrug_trade_network = {
-                name = "Trade Network",
+                name = "贸易网络",
                 text = {
-                    "{C:dark_edition}Alien{} cards may",
-                    "appear in the shop"
+                    "{C:attention}商店{}内可能出现",
+                    "{C:dark_edition}外星生物{}卡"
                 }
             },
         },

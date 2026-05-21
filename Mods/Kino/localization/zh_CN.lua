@@ -843,14 +843,13 @@ return {
                 }
             },
             j_kino_close_encounters = {
-                name = "Close Encounters of the Third Kind",
+                name = "第三类接触",
                 text = {
-                    {"If your played hand contains",
-                    "only {C:attention}1{} card, {C:Alien}Abduct{} it",},
-                    {"{C:white,X:Alien}Release:{} return cards to deck"},
-                    {"{C:chips}+#3#{} Chips for {C:attention}every card",
-                    "currently {C:Alien}Abducted",
-                    "{C:inactive}(Currently: {C:chips}+#4#{C:inactive} Chips)"}
+                    {"若出牌仅有{C:attention}1{}张，{C:Alien}劫持{}之",},
+                    {"{C:white,X:Alien}释放{}：返还卡牌至牌组"},
+                    {"当前每有一张牌{C:Alien}遭劫持",
+                    "{C:chips}+#3#{}筹码",
+                    "{C:inactive}（当前为{C:chips}+#4#{C:inactive}筹码）"}
                 }
             },
             j_kino_clown = {
@@ -1279,12 +1278,12 @@ return {
                 }
             },
             j_kino_edward_scissorhands = {
-                name = "Edward Scissorhands",
+                name = "剪刀手爱德华",
                 text = {
-                    "If {C:attention}first{} hand of round",
-                    "has only {C:attention}1{} card" ,
-                    "{C:attention}Cut it into two", 
-                    "and draw those to hand"
+                    "若回合{C:attention}首次{}出牌",
+                    "仅有{C:attention}1{}张",
+                    "{C:attention}将其剪为两半",
+                    "并加入手牌"
                 }
             },
             j_kino_elephant_man = {
@@ -1766,15 +1765,13 @@ return {
                 }
             },
             j_kino_hellraiser_1 = {
-                name = "Hellraiser",
+                name = "猛鬼追魂",
                 text = {
-                    "Whenever you solve",
-                    "the {C:attention}Codex{}",
-                    "Destroy either {C:attention}ALL{} scoring",
-                    "or cards in hand",
-                    "and give {C:attention}Enhancements{}, {C:attention}Seals{},",
-                    "and {C:attention}Editions{} to all",
-                    "of the others"
+                    "{C:attention}解谜{}后，摧毁{C:attention}所有",
+                    "计分牌{C:attention}或{}手牌",
+                    "并给予其余卡牌",
+                    "随机的{C:attention}增强{}、",
+                    "{C:attention}蜡封{}、和{C:attention}版本"
                 }
             },
             j_kino_her = {
@@ -2377,10 +2374,10 @@ return {
                 }
             },
             j_kino_menu = {
-                name = "The Menu",
+                name = "菜单",
                 text = {
-                    "Create a {C:Confection}Confection",
-                    "when a {C:attention}Joker{} is sold"
+                    "有{C:attention}小丑牌{}被售出后",
+                    "生成一张{C:Confection}甜食零嘴{}牌",
                 }
             },
             j_kino_metropolis = {
@@ -6884,9 +6881,9 @@ return {
 
             -- Abduction System
             kino_abductionInfo = {
-                name = "Abducted Cards",
+                name = "遭劫持名单",
                 text = {
-                    "{C:Alien}Currently Abducted: #1#"
+                    "{C:Alien}遭劫持牌数：#1#"
                 }
             },
 
