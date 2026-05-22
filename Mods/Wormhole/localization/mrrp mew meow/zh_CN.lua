@@ -68,13 +68,12 @@ descriptions={
 		},
 		j_worm_mrrp_nyasa ={
 			name=
-				"NYASA Exploration Team"
+				"喵喵航天局探险队"
 			, text={
-				"When {C:attention}Blind{} is selected,",
-				"create a {C:planet}Space{} {C:attention}Joker{}",
-				"{C:green}#2# in #3#{} chance that",
-				"the Joker is {C:dark_edition}Negative{}",
-				"{C:inactive}(Must have room otherwise){}"
+				"选择{C:attention}盲注{}后",
+				"生成一张{C:planet}太空{C:attention}小丑牌",
+				"且有{C:green}#2#/#3#{}的几率为{C:dark_edition}负片",
+				"{C:inactive}（若不为负片，则必须有空位）"
 			}
 		},
 		j_worm_mrrp_orrery ={

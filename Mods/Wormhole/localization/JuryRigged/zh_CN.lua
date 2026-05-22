@@ -2,24 +2,24 @@ return {
   descriptions = {
     worm_jr_satellite = {
       sat_worm_new_horizon = {
-        name = "New Horizon",
+        name = "新地平线号",
         text = {
           {
-            "Upgrades {C:attention}#2#{}'s",
-            "{C:worm_jr_satellite}Satellite{} to {S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){}",
+            "升级{C:attention}#2#{}的",
+            "{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
           },
           {
-            "After playing a {C:attention}#2#{},",
-            "draw {C:attention}#1#{} more card#3#"
+            "打出{C:attention}#2#{}后",
+            "额外抽{C:attention}#1#{}张牌"
           }
         }
       },
       sat_worm_messenger = {
-        name = "MESSENGER",
+        name = "信使号",
         text = {
           {
-            "Upgrades {C:attention}#2#{}'s",
-            "{C:worm_jr_satellite}Satellite{} to {S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){}",
+            "升级{C:attention}#2#{}的",
+            "{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
           },
           {
             "If played hand is a {C:attention}#2#{},",
@@ -44,8 +44,8 @@ return {
         name = "Venera 9",
         text = {
           {
-            "Upgrades {C:attention}#2#{}'s",
-            "{C:worm_jr_satellite}Satellite{} to {S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){}",
+            "升级{C:attention}#2#{}的",
+            "{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
           },
           {
             "If played hand",
@@ -61,8 +61,8 @@ return {
         name = "Cassini-Huygens",
         text = {
           {
-            "Upgrades {C:attention}#2#{}'s",
-            "{C:worm_jr_satellite}Satellite{} to {S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){}",
+            "升级{C:attention}#2#{}的",
+            "{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
           },
           {
             "If played hand is a {C:attention}#2#{},",
@@ -77,7 +77,8 @@ return {
         name = "伽利略号",
         text = {
           {
-            "升级{C:attention}#2#{}的{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
+            "升级{C:attention}#2#{}的",
+            "{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
           },
           {
             "若出牌牌型为{C:attention}#2#",
@@ -88,19 +89,17 @@ return {
         }
       },
       sat_worm_sputnik_1 = {
-        name = "Sputnik 1",
+        name = "斯普特尼克1号",
         text = {
           {
-            "Upgrades {C:attention}#2#{}'s",
-            "{C:worm_jr_satellite}Satellite{} to {S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){}",
+            "升级{C:attention}#2#{}的",
+            "{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
           },
           {
-            "If played hand",
-            "is a {C:attention}#2#{},",
-            "apply a random",
-            "{C:attention}enhancement{}, {C:attention}edition{}",
-            "or {C:attention}seal{} to",
-            "{C:attention}#1#{} card#3# in deck"
+            "若出牌为{C:attention}#2#",
+            "对牌组中的{C:attention}#1#{}张牌",
+            "随机添加一个{C:attention}增强{}、",
+            "{C:attention}版本{}或{C:attention}蜡封"
           }
         }
       },
@@ -108,8 +107,8 @@ return {
         name = "Mariner 9",
         text = {
           {
-            "Upgrades {C:attention}#2#{}'s",
-            "{C:worm_jr_satellite}Satellite{} to {S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){}",
+            "升级{C:attention}#2#{}的",
+            "{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
           },
           {
             "If played hand is a",
@@ -123,8 +122,8 @@ return {
         name = "Voyager 2",
         text = {
           {
-            "Upgrades {C:attention}#2#{}'s",
-            "{C:worm_jr_satellite}Satellite{} to {S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){}",
+            "升级{C:attention}#2#{}的",
+            "{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
           },
           {
             "If played hand",
@@ -138,8 +137,8 @@ return {
         name = "Death Egg",
         text = {
           {
-            "Upgrades {C:attention}#2#{}'s",
-            "{C:worm_jr_satellite}Satellite{} to {S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){}",
+            "升级{C:attention}#2#{}的",
+            "{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
           },
           {
             "If played hand",
@@ -152,8 +151,8 @@ return {
         name = "Dawn",
         text = {
           {
-            "Upgrades {C:attention}#2#{}'s",
-            "{C:worm_jr_satellite}Satellite{} to {S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){}",
+            "升级{C:attention}#2#{}的",
+            "{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
           },
           {
             "If played hand",
@@ -167,8 +166,8 @@ return {
         name = "Manhole Cover",
         text = {
           {
-            "Upgrades {C:attention}#2#{}'s",
-            "{C:worm_jr_satellite}Satellite{} to {S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){}",
+            "升级{C:attention}#2#{}的",
+            "{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
           },
           {
             "If played hand",
@@ -245,27 +244,27 @@ return {
     },
     Other = {
       p_worm_jr_orbital_normal = {
-        name = "Orbital Pack",
+        name = "轨道包",
         text = {
-          "Choose {C:attention}#1#{} of up to {C:attention}#2#",
-          "{C:worm_jr_satellite}Satellite{} cards",
-          "to be used immediately"
+          "从至多{C:attention}#2#{}张",
+          "{C:worm_jr_satellite}人造卫星{}牌中",
+          "选择{C:attention}#1#{}张并立即使用"
         }
       },
       p_worm_jr_orbital_jumbo = {
-        name = "Jumbo Orbital Pack",
+        name = "巨型轨道包",
         text = {
-          "Choose {C:attention}#1#{} of up to {C:attention}#2#",
-          "{C:worm_jr_satellite}Satellite{} cards",
-          "to be used immediately"
+          "从至多{C:attention}#2#{}张",
+          "{C:worm_jr_satellite}人造卫星{}牌中",
+          "选择{C:attention}#1#{}张并立即使用"
         }
       },
       p_worm_jr_orbital_mega = {
-        name = "Mega Orbital Pack",
+        name = "超级轨道包",
         text = {
-          "Choose {C:attention}#1#{} of up to {C:attention}#2#",
-          "{C:worm_jr_satellite}Satellite{} cards",
-          "to be used immediately"
+          "从至多{C:attention}#2#{}张",
+          "{C:worm_jr_satellite}人造卫星{}牌中",
+          "选择{C:attention}#1#{}张并立即使用"
         }
       },
       undiscovered_worm_jr_satellite = {
@@ -280,10 +279,10 @@ return {
     },
     Tag = {
       tag_worm_jr_planetarium = {
-        name = "Planetarium Tag",
+        name = "天文馆标签",
         text = {
-          "Gives a free",
-          "{C:worm_jr_satellite}Mega Orbital Pack"
+          "免费获得一个",
+          "{C:worm_jr_satellite}超级轨道包"
         }
       },
     },
@@ -308,7 +307,7 @@ return {
       b_worm_jr_satellites = "人造卫星",
       b_worm_jr_satellite_cards = "人造卫星牌",
 
-      worm_jr_orbital_pack = "Orbital Pack",
+      worm_jr_orbital_pack = "轨道包",
 
       -- Satellite names for Run Info
       worm_jr_satellites_new_horizon = "新地平线号",

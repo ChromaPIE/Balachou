@@ -265,10 +265,11 @@ return {
                 },
             },
             j_worm_acme_alien_joker = {
-                name = 'Alien Joker',
+                name = '外星小丑',
                 text = {
-                    "{X:mult,C:white}X#2#{} Mult if played",
-                    "{C:planet}hand level{} is {C:attention}#1#{} or over"
+                    "若出牌{C:planet}牌型",
+                    "至少为{C:attention}#1#{}级",
+                    "{X:mult,C:white}X#2#{}倍率"
                 },
             }
         },

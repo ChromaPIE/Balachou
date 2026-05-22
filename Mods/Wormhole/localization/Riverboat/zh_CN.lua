@@ -59,12 +59,13 @@ return {
                 }
             },
             j_worm_riverboat_the_future = {
-                name = "The Future",
+                name = "将来",
                 text = {
-                    "Gives {X:mult,C:white} X#2# {} for each",
-                    "{C:attention}Joker{} purchased this {C:attention}run{}",
-                    "{C:inactive}(Currently {X:mult,C:white} X#1# {C:inactive} Mult)",
-                    "{C:inactive}Yearns for the Past."
+                    "本{C:attention}赛局{}内",
+                    "每购买过一张{C:attention}小丑牌",
+                    "给予{X:mult,C:white}X#2#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#1#{C:inactive}倍率）",
+                    "{C:inactive}时时回眸顾往昔。"
                 }
             },
             j_worm_riverboat_the_future_paired = {

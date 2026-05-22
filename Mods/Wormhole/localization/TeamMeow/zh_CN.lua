@@ -648,7 +648,7 @@ return {
 			b_worm_meow_spacetart_cards = "太空挞包装",
 			k_worm_meow_spacetart_pack = "太空挞包",
 			k_worm_meow_Zodicat_pack = "十二宫猫咪包",
-			k_worm_meow_ate = "Ate!",
+			k_worm_meow_ate = "吃掉了！",
 			k_worm_meow_eldritch = "Eldritch",
 			k_worm_meow_encounter = "Encounter",
 			k_worm_meow_sanity = "Sanity Lost",

@@ -6,7 +6,7 @@ return {
                 name = "吸血鬼",
                 text = {
                     "{C:Drain}耗竭{}计分的{c:attention}增强牌",
-                    "每耗竭一个{c:attention}增强",
+                    "每耗竭一项{c:attention}增强",
                     "获得{X:mult,C:white}X#1#{}倍率",
                     "{C:inactive}（当前为{X:mult,C:white}x#2#{C:inactive}倍率）"
                 },
@@ -469,13 +469,13 @@ return {
                 }
             },
             j_kino_bfg = {
-                name = "The BFG",
+                name = "圆梦巨人",
                 text = {
-                    "{C:mult}+#1#{} Mult for every",
-                    "time {C:attention}Best Hand{}",
-                    "was improved {C:attention}this run",
-                    "{C:inactive}(Currently: {C:mult}+#3#{C:inactive} Mult)",
-                    "{C:inactive}(Best Hand: {C:chips,E:1}+#2#{C:inactive})"
+                    "出牌得分超出",
+                    "{C:attention}本赛局最佳出牌{}时",
+                    "{C:mult}+#1#{}倍率",
+                    "{C:inactive}（当前为{C:mult}+#3#{C:inactive}倍率）",
+                    "{C:inactive}（最佳出牌：{C:chips,E:1}+#2#{C:inactive}）"
                 },
                 unlock = {
                     "Score {C:chips}1,000,000,000{} Chips",
@@ -851,12 +851,13 @@ return {
                 }
             },
             j_kino_clown = {
-                name = "Clown",
+                name = "小丑",
                 text = {
-                    "{C:mult}+#1#{} Mult per {C:attention}Clown",
-                    "Create another {C:attention}Clown",
-                    "at the end of a blind",
-                    "{C:inactive}(Must have room)"
+                    "每持有一张{C:attention}小丑",
+                    "{C:mult}+#1#{}倍率",
+                    "盲注结束时",
+                    "生成一张{C:attention}小丑",
+                    "{C:inactive}（必须有空位）"
                 }
             },
             j_kino_cocktail = {
@@ -1308,7 +1309,7 @@ return {
                 name = "魔法满屋",
                 text = {
                     "若出牌牌型为{C:attention}葫芦",
-                    "{C:attention}随机{C:Magic}施放{}一道{C:Magic}咒术"
+                    "{C:attention}随机{C:Magic}施放一道咒术"
                 },
                 unlock = {
                     "以{C:attention}葫芦{}出牌{C:Magic}施咒",
@@ -1828,11 +1829,11 @@ return {
                 }
             },
             j_kino_house_of_gucci = {
-                name = "House of Gucci",
+                name = "古驰家族",
                 text = {
-                    "Scored {C:attention}Enhanced{} cards give {C:chips}+#1#{} Chips",
-                    "Scored cards with {C:attention}Seals{} give {C:mult}+#2#{} Mult",
-                    "Scored {C:attention}Editioned{} cards give {X:mult,C:white}x#3#{} Mult"
+                    "计分的{C:attention}增强{}牌给予{C:chips}+#1#{}筹码",
+                    "计分的{C:attention}带蜡封{}牌给予{C:mult}+#2#{}倍率",
+                    "计分的{C:attention}带版本{}牌给予{X:mult,C:white}X#3#{}倍率"
                 }
             },
             j_kino_hustle = {
@@ -1889,11 +1890,11 @@ return {
                 }
             },
             j_kino_independence_day_1 = {
-                name = "Independence Day",
+                name = "独立日",
                 text = {
-                    "Lowers {C:attention}Boss Blinds{} requirements",
-                    "by #1#% for every",
-                    "{C:Alien}Abducted{} card"
+                    "每有一张牌{C:Alien}遭劫持",
+                    "使{C:attention}Boss盲注{}的",
+                    "得分要求削减#1#%",
                 }
             },
             j_kino_insidious = {
@@ -2061,10 +2062,10 @@ return {
                 }
             },
             j_kino_kindergarten_cop = {
-                name = "Kindergarten Cop",
+                name = "幼儿园警探",
                 text = {
-                    "{X:mult,C:white}X#1#{} Mult if scoring hand",
-                    "contains only {C:attention}5s or lower",
+                    "若计分牌均不大于{C:attention}5",
+                    "{X:mult,C:white}X#1#{}倍率",
                 }
             },
             j_kino_king_kong = {
@@ -2578,12 +2579,12 @@ return {
                 }
             },
             j_kino_nosferatu_1 = {
-                name = "Nosferatu (1922)",
+                name = "诺斯费拉图（1922）",
                 text = {
-                    "{C:Drain}Drain{} scoring {C:attention}Enhancements",
-                    "and gain {C:mult}+#1#{} Mult",
-                    "for each {C:attention}Enhancement{} drained",
-                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
+                    "{C:Drain}耗竭{}计分的{c:attention}增强牌",
+                    "每耗竭一项{c:attention}增强",
+                    "获得{C:mult}+#1#{}倍率",
+                    "{C:inactive}（当前为{C:mult}+#2#{C:inactive}倍率）",
                 },
             },
             j_kino_nosferatu_2024 = {
@@ -2602,16 +2603,15 @@ return {
                 }
             },
             j_kino_nowyouseeme_1 = {
-                name = "Now You See Me",
+                name = "惊天魔盗团",
                 text = {
-                    {"Gain a {C:attention}Charge{} when ",
-                    "a card scores"},
+                    {"每有一张牌计分",
+                    "{C:attention}蓄能{}一层"},
                     {
-                    "{C:Magic}Cast a {C:attention}random{C:Magic} Spell",
-                    "with rank based on",
-                    "gathered {C:attention}Charges",
-                    "on final hand",
-                    "{C:inactive}(Currently: {C:attention}#1#{C:inactive} Charges)"}
+                    "打出最后一手出牌时",
+                    "以{C:attention}蓄能层数{}为点数要素",
+                    "{C:attention}随机{C:Magic}施放一道咒术",
+                    "{C:inactive}（当前蓄能层数：{C:attention}#1#{C:inactive}）"}
                 },
                 unlock = {
                     "{C:Magic}Cast{C:attention} 20{C:Magic} Spells"
@@ -2770,11 +2770,12 @@ return {
                 }
             },
             j_kino_pink_panther_1 = {
-                name = "The Pink Panther",
+                name = "粉红豹",
                 text = {
-                    "Each scored {C:diamonds}Diamonds{}", 
-                    "gives {C:chips}+#2#{} Chips for",
-                    "each other scoring {C:diamonds}Diamonds{}"
+                    "每另有一张",
+                    "计分的{C:diamonds}方片{}牌",
+                    "每张计分的{C:diamonds}方片{}牌",
+                    "给予{C:chips}+#2#{}筹码"
                 }
             },
             j_kino_pinocchio_1940 = {
@@ -3999,19 +4000,17 @@ return {
                 }
             },
             j_kino_wicker_man = {
-                name = "The Wicker Man (2006)",
+                name = "异教徒（2006）",
                 text = {
-                    "If {C:attention}first{} discard of round",
-                    "has only {C:attention}1{} card, destroy",
-                    "it and gain {C:mult}Mult{} equal to its",
-                    "{C:chips}Chips{}, resets upon",
-                    "defeating {C:attention}Boss Blind",
-                    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+                    "若回合{C:attention}首次{}弃牌仅有{C:attention}1{}张",
+                    "摧毁之并获得",
+                    "等同于其{C:chips}筹码{}的{C:mult}倍率",
+                    "击败{C:attention}Boss盲注{}后重置",
+                    "{C:inactive}（当前为{C:mult}+#1#{C:inactive}倍率）",
                 },
                 unlock = {
-                    "Sell {C:attention}30{} cards",
-                    "in a single run",
-                    "{C:inactive}(#1#)"
+                    "单局售出{C:attention}30{}张卡牌",
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_war_of_the_worlds = {
