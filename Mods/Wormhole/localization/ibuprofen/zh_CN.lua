@@ -60,11 +60,12 @@ return {
         },
         Edition = {
             e_worm_ibu_cosmicedition = {
-                label = "Cosmic",
-                name = "Cosmic",
+                label = "寰宇",
+                name = "寰宇",
                 text = {
-                    "Gives {C:mult}+#1#{} Mult for each ",
-                    "{C:attention}level of played hand{} when scored"
+                    "计分时",
+                    "当前{C:attention}牌型{}每有{C:attention}一级",
+                    "给予{C:mult}+#1#{}倍率",
                 },
             }
         },

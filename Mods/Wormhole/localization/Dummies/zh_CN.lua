@@ -183,13 +183,13 @@ return {    -- yo it's GHOSTSALT here look at me TYPING before i SUBMIT THIS THI
         },
         Spectral = {
             c_worm_dum_pulsar = {
-                name = "Pulsar",
+                name = "脉冲星",
                 text = {
-                    "{C:attention}Doubles{} the per-level",
-                    "{C:chips}Chips{} & {C:mult}Mult{} scaling of",
-                    "{C:attention}most played hand{}",
-                    "and set its level to {C:attention}1",
-                    "{C:inactive}(Currently {C:attention}#1#{C:inactive})"
+                    "使{C:attention}最常出牌型",
+                    "每次升级可增加的",
+                    "{C:chips}筹码{}及{C:mult}倍率{C:attention}翻倍",
+                    "并设其等级为{C:attention}1",
+                    "{C:inactive}（当前为{C:attention}#1#{C:inactive}）"
                 }
             }
         },
@@ -206,23 +206,22 @@ return {    -- yo it's GHOSTSALT here look at me TYPING before i SUBMIT THIS THI
         },
         Voucher = {
             v_worm_dum_spacesuit = {
-                name = "Space Suit",
+                name = "宇航服",
                 text = { {
-                    "{C:attention}Gain{} and {C:attention}Increase{} your",
-                    "maximum amount of",
-                    "{C:spectral}Oxygen{} by {C:attention}#1#{} minutes",
+                    "{C:attention}获得{}可支撑{C:attention}#1#{}的{C:spectral}储氧量",
+                    "相应{C:attention}提升{}最大{C:spectral}储氧量",
                 }, {
-                    "Gain {C:attention}#2#{} seconds of {C:spectral}Oxygen{}",
-                    "after beating a {C:attention}Blind{}",
+                    "击败{C:attention}盲注{}后获得",
+                    "可支撑{C:attention}#2#{}秒的{C:spectral}氧气"
                 }, {
-                    "Multiply {C:chips}Chips{} and {C:mult}Mult{} by",
-                    "half of your current {C:spectral}Oxygen{}",
-                    "{C:inactive,s:0.8}(ex. {C:attention,s:0.8}2:53{C:inactive,s:0.8} -> {X:purple,C:white,s:0.8}X1.27{C:inactive,s:0.8} Mult and Chips){}",
-                    "{C:inactive,s:0.8}(Multiplier cannot go below {X:purple,C:white,s:0.8}X1{C:inactive,s:0.8}){}",
+                    "以当前{C:spectral}储氧量{}",
+                    "倍乘{C:chips}筹码{}和{C:mult}倍率",
+                    "{C:inactive,s:0.8}（例如{C:attention,s:0.8}2:53{C:inactive,s:0.8} -> {X:purple,C:white,s:0.8}X1.27{C:inactive,s:0.8}倍率和筹码）",
+                    "{C:inactive,s:0.8}（倍乘值最小为{X:purple,C:white,s:0.8}X1{C:inactive,s:0.8}）",
                 } }
             },
             v_worm_dum_oxygentank = {
-                name = "Oxygen Tank",
+                name = "氧气储罐",
                 text = { {
                     "{C:attention}Gain{} and {C:attention}Increase{} your",
                     "maximum amount of",
@@ -254,10 +253,10 @@ return {    -- yo it's GHOSTSALT here look at me TYPING before i SUBMIT THIS THI
         },
         Other = {
             worm_dum_spacesuit_warning = {
-                name = "{s:1.2}Warning{}",
+                name = "{s:1.2}警告",
                 text = {
-                    "When {C:spectral}Oxygen{} runs out,",
-                    "{C:red,E:2}Lose{E:2} the Game",
+                    "{C:spectral}氧气{}耗尽时",
+                    "{C:red,E:2}输掉{E:2}赛局",
                 }
             },
             worm_dum_spacesuit_upgrade = {
@@ -271,24 +270,23 @@ return {    -- yo it's GHOSTSALT here look at me TYPING before i SUBMIT THIS THI
         },
         Edition = {
             e_worm_dum_Celestial = {
-                name = 'Celestial',
+                name = '天体',
                 text = {
-                    "{C:green}#1# in #2#{} chance to",
-                    "upgrade a {C:attention}random{}",
-                    "poker hand when",
-                    "using a {C:planet}Planet{} Card"
+                    "使用{C:planet}星球{}牌时",
+                    "有{C:green}#1#/#2#{}的几率",
+                    "{C:attention}随机{}升级一种牌型"
                 }
             },
         }
     },
     misc = {
         labels = {
-            worm_dum_Celestial = 'Celestial',
+            worm_dum_Celestial = '天体',
         },
         dictionary = {
-            k_worm_dum_worm_free = "Free packs!",
+            k_worm_dum_worm_free = "免费补充包！",
             k_worm_dum_worm_eat = "Gulp!",
-            k_worm_dum_dummy_blind_saved = "Test flight failed!",
+            k_worm_dum_dummy_blind_saved = "试飞失败！",
             k_worm_dum_greg_eat = "Nom!",
             k_worm_dum_carnivore_eat = "Chomp!",
             worm_moony_menu_tooltip = {
@@ -303,7 +301,7 @@ return {    -- yo it's GHOSTSALT here look at me TYPING before i SUBMIT THIS THI
             worm_dum_apply = "+X#1# Applied",
             worm_dum_percent = "#1#%",
             worm_dum_xgeneric = "X#1#",
-            worm_dum_a_joker_slots = '+#1# Joker slots',
+            worm_dum_a_joker_slots = '小丑牌槽位+#1#',
         },
         challenge_names = {
             c_worm_dum_low_oxygen = "Low Oxygen",

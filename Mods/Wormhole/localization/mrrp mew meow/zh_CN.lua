@@ -144,12 +144,11 @@ descriptions={
 			}
 		},
 		j_worm_mrrp_tanabata = {
-			name = "Tanabata",
+			name = "东洋七夕",
 			text = {
-				"If scoring hand contains a",
-				"{C:attention}#1#{} and a {C:attention}#2#{}, create",
-				"a random {C:planet}#3#{} card",
-				"{C:inactive}(Must have room)"
+				"若出牌包含{C:attention}#1#{}和{C:attention}#2#",
+				"随机生成一张{C:planet}#3#",
+				"{C:inactive}（必须有空位）"
 			}
 		},
 		j_worm_mrrp_cats_eye_nebula = {

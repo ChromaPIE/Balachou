@@ -887,3 +887,15 @@ match_indent = true
 position = "before"
 pattern = "card.ability.extra.level_non = card.ability.extra.level_non -1"
 payload = "if not (card.ability and card.ability.extra and card.ability.extra.level_non) then return true end"
+
+# localize type='name': nil-guard name_parsed when loc_target passed directly
+# Wormhole spacetart menu passes loc_target directly; the elseif chain skips
+# the name_parsed init when args.loc_target is set, crashing ipairs at line 2014.
+[[patches]]
+[patches.pattern]
+target = "functions/misc_functions.lua"
+match_indent = true
+position = "at"
+pattern = "for _, lines in ipairs(args.type == 'unlocks' and loc_target.unlock_parsed or args.type == 'name' and loc_target.name_parsed or (args.type == 'text' or args.type == 'tutorial' or args.type == 'quips') and loc_target or loc_target.text_parsed) do"
+payload = "for _, lines in ipairs(args.type == 'unlocks' and (loc_target.unlock_parsed or {}) or args.type == 'name' and (loc_target.name_parsed or {}) or (args.type == 'text' or args.type == 'tutorial' or args.type == 'quips') and loc_target or (loc_target.text_parsed or {})) do"
+

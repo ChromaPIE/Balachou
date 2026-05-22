@@ -120,28 +120,28 @@ local CONSTELLATIONS = {
 	c_worm_tlr_const_ursa_minor_t1 = {
 		name = "小熊座",
 		text = {
-			"使当前{C:attention}盲注{}的", 
+			"使当前{C:attention}盲注{}的",
 			"得分要求削减{C:attention}10%"
 		}
 	},
 	c_worm_tlr_const_ursa_minor_t2 = {
 		name = "小熊座",
 		text = {
-			"使当前{C:attention}盲注{}的", 
+			"使当前{C:attention}盲注{}的",
 			"得分要求削减{C:attention}15%"
 		}
 	},
 	c_worm_tlr_const_ursa_minor_t3 = {
 		name = "小熊座",
 		text = {
-			"使当前{C:attention}盲注{}的", 
+			"使当前{C:attention}盲注{}的",
 			"得分要求削减{C:attention}25%"
 		}
 	},
 	c_worm_tlr_const_ursa_minor_t4 = {
 	name = "小熊座",
 		text = {
-			"使当前{C:attention}盲注{}的", 
+			"使当前{C:attention}盲注{}的",
 			"得分要求削减{C:attention}50%"
 		}
 	},
@@ -149,28 +149,28 @@ local CONSTELLATIONS = {
 	c_worm_tlr_const_ursa_major_t1 = {
 		name = "大熊座",
 		text = {
-			"使当前{C:attention}盲注{}的", 
+			"使当前{C:attention}盲注{}的",
 			"资金奖励提升{C:money}$3"
 		}
 	},
 	c_worm_tlr_const_ursa_major_t2 = {
 		name = "大熊座",
 		text = {
-			"使当前{C:attention}盲注{}的", 
+			"使当前{C:attention}盲注{}的",
 			"资金奖励提升{C:money}$6"
 		}
 	},
 	c_worm_tlr_const_ursa_major_t3 = {
 		name = "大熊座",
 		text = {
-			"使当前{C:attention}盲注{}的", 
+			"使当前{C:attention}盲注{}的",
 			"资金奖励提升{C:money}$10"
 		}
 	},
 	c_worm_tlr_const_ursa_major_t4 = {
 	name = "大熊座",
 		text = {
-			"使当前{C:attention}盲注{}的", 
+			"使当前{C:attention}盲注{}的",
 			"资金奖励提升{C:money}$25"
 		}
 	},
@@ -178,28 +178,28 @@ local CONSTELLATIONS = {
 	c_worm_tlr_const_pictor_t1 = {
 		name = "绘架座",
 		text = {
-			"下个{C:attention}盲注{}内",
+			"下一个{C:attention}盲注{}中",
 			"手牌上限{C:attention}+1",
 		}
 	},
 	c_worm_tlr_const_pictor_t2 = {
 		name = "绘架座",
 		text = {
-			"下个{C:attention}盲注{}内",
+			"下一个{C:attention}盲注{}中",
 			"手牌上限{C:attention}+2",
 		}
 	},
 	c_worm_tlr_const_pictor_t3 = {
 		name = "绘架座",
 		text = {
-			"下个{C:attention}盲注{}内",
+			"下一个{C:attention}盲注{}中",
 			"手牌上限{C:attention}+3",
 		}
 	},
 	c_worm_tlr_const_pictor_t4 = {
 	name = "绘架座",
 		text = {
-			"下个{C:attention}盲注{}内",
+			"下一个{C:attention}盲注{}中",
 			"手牌上限{C:attention}+4",
 		}
 	},
@@ -432,12 +432,12 @@ return {
 		},
 		Joker = {
 			j_worm_tlr_chert = {
-				name = 'Chert',
+				name = '切特',
 				text = {
-					'Create a tier {C:attention}1{}',
-					'or {C:attention}2{C:worm_tlr_constellation} Constellation{}',
-					'when {C:attention}Blind{} is selected',
-					'{C:inactive}(Must have room){}',
+					'星座{C:attention}盲注{}后',
+					'生成一张{C:attention}1{}级',
+					'或{C:attention}2{}级{C:worm_tlr_constellation}星座{}牌',
+					'{C:inactive}（必须有空位）',
 				}
 			},
 			j_worm_tlr_nomaimask = {
@@ -575,9 +575,9 @@ return {
 			k_worm_tlr_constellation = "星座",
 			k_tlr_const_pack = "星座包",
 			b_worm_tlr_constellation_cards = "星座",
-			k_worm_tlr_add = "Add",
-			k_worm_tlr_remove = "Remove",
-			k_worm_tlr_selected = "Selected",
+			k_worm_tlr_add = "添加",
+			k_worm_tlr_remove = "移除",
+			k_worm_tlr_selected = "已选择",
 			k_worm_tlr_confirm = "确认",
 			k_worm_tlr_orion_rerolls_left_1 = "次重掷",
 			k_worm_tlr_orion_rerolls_left_2 = "",

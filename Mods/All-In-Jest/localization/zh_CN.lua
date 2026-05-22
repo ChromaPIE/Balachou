@@ -612,7 +612,7 @@ return {
             bl_aij_the_spear = {
                 name = "长矛",
                 text = {
-                    '每一张致胜出牌永久失效'
+                    '每张致胜出牌永久失效'
                 },
             },
             bl_aij_the_steed = {

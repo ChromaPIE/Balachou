@@ -19,17 +19,19 @@ return {
                 }
             },
             p_worm_wormhole_normal = {
-                name = "Lesser Ultra Wormhole",
+                name = "次级究极之洞",
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2# {C:worm_ultrabeast}Ultra Beasts"
+                    "从至多{C:attention}#2#{}个",
+                    "{C:worm_ultrabeast}究极异兽{}中",
+                    "选择{C:attention}#1#{}个"
                 }
             },
             p_worm_wormhole_jumbo = {
-                name = "Ultra Wormhole",
+                name = "究极之洞",
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2# {C:worm_ultrabeast}Ultra Beasts"
+                    "从至多{C:attention}#2#{}个",
+                    "{C:worm_ultrabeast}究极异兽{}中",
+                    "选择{C:attention}#1#{}个"
                 }
             },
             p_worm_wormhole_mega = {

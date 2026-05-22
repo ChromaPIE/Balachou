@@ -510,3 +510,17 @@ match_indent = true
 position = "at"
 pattern = '''config = { extra = 4, choose = 2, name = "Mega Menu Pack" },'''
 payload = '''config = { extra = 4, choose = 2, name = "超级餐品包" },'''
+
+# Polar Skull rocket: localize #1# hand type in tooltip
+# loc_vars passes card.ability.extra.hand directly ("High Card") instead of
+# localize(hand, 'poker_hands') ("高牌")
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "/content/Polar Skull/rockets.lua"]'
+match_indent = true
+position = "at"
+pattern = '''card.ability.extra.hand,
+                    ppm and localize("k_polarskull_unlimited") or card.ability.extra.rounds,'''
+payload = '''localize(card.ability.extra.hand, 'poker_hands'),
+                    ppm and localize("k_polarskull_unlimited") or card.ability.extra.rounds,'''
+

@@ -70,11 +70,11 @@ return {
 		},
 		polarskull_rocket = {
 			c_worm_polarskull_atlasv = {
-				name = "Atlas V",
+				name = "宇宙神5号",
 				text = rocket_text,
 			},
 			c_worm_polarskull_vostok1 = {
-				name = "东方一号",
+				name = "东方1号",
 				text = rocket_text,
 			},
 			c_worm_polarskull_longmarch5 = {
@@ -82,11 +82,11 @@ return {
 				text = rocket_text,
 			},
 			c_worm_polarskull_soyuz1 = {
-				name = "联盟一号",
+				name = "联盟1号",
 				text = rocket_text,
 			},
 			c_worm_polarskull_titaniv = {
-				name = "泰坦四号",
+				name = "大力神4号",
 				text = rocket_text,
 			},
 			c_worm_polarskull_atlascentaur = {
@@ -272,7 +272,7 @@ return {
 			k_polarskull_unlimited = "unlimited",
 		},
 		v_dictionary = {
-			k_polarskull_left = "#1# left",
+			k_polarskull_left = "剩余#1#",
 			k_polarskull_martian_inactive = "Inactive",
 			k_polarskull_martian_active = "Active",
 		},

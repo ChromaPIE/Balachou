@@ -25,7 +25,7 @@ local other_loc_table = {
             k_tbp_name_Artemis = "阿耳忒弥斯号",
             k_tbp_name_Galactica = "星河号",
             k_tbp_name_Sealab = "SEALAB银河之旅号",
-            k_tbp_name_Eremillenium = "Eremillenium Falcon",
+            k_tbp_name_Eremillenium = "千年古隼号",
         }
     },
     descriptions = {

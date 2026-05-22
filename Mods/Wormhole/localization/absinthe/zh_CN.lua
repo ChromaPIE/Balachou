@@ -63,8 +63,8 @@ return {
                 name = '月光私酿',
                 text = {
                     {
-                        "{C:attention}调制{}完成后，打出的",
-                        "{C:spades}暗{C:clubs}色{}牌给予{C:chips}+#1#{}筹码",
+                        "打出的{C:spades}暗{C:clubs}色{}牌",
+                        "给予{C:chips}+#1#{}筹码",
                         "并{C:abs_drinks}一饮而尽"
                     },
                     {
@@ -158,36 +158,36 @@ return {
                 }
             },
             c_worm_abs_cosmospolitan = {
-                name = 'Cosmospolitan',
+                name = '宇宙大都会',
                 text = {
                     {
-                        "When {C:attention}primed{}, {C:attention}setting Blind{}",
-                        "creates a random card from",
-                        "{V:1}#1#{}, then is {C:abs_drinks}drank{}",
-                        "{C:attention,s:0.8}Team{C:inactive,s:0.8} changes after each {C:abs_drinks,s:0.8}refill",
-                        "{C:inactive}(Must have space!)",
+                        "选择{C:attention}盲注{}后，随机生成一张",
+                        "来自{V:1}#1#{}的卡牌",
+                        "并{C:abs_drinks}一饮而尽",
+                        "{C:inactive,s:0.8}每次{C:abs_drinks,s:0.8}续满{C:inactive,s:0.8}后变更{C:attention,s:0.8}队伍",
+                        "{C:inactive}（必须有空位）",
                     },
                     {
-                        "{C:abs_drinks}Refill{} by using {C:attention}#3#{} {C:planet}Planet{} cards",
-                        "{C:inactive,s:0.8}(#2#/#3#){}",
+                        "{C:abs_drinks}续满{}：使用{C:attention}#3#{}张{C:planet}星球{}牌",
+                        "{C:inactive,s:0.8}（#2#/#3#）",
                     }
                 }
             },
             c_worm_abs_cosmospolitan_empty = {
-                name = 'Cosmospolitan',
+                name = '宇宙大都会',
                 text = {
                     {
-                        "{C:inactive,s:0.8}Currently Empty{}",
-                        "{C:abs_drinks}Refill{} by using {C:attention}#3#{} {C:planet}Planet{} cards",
-                        "{C:inactive,s:0.8}(#2#/#3#){}",
+                        "{C:inactive,s:0.8}空杯",
+                        "使用{C:attention}#3#{}张{C:planet}星球{}牌以{C:abs_drinks}续满",
+                        "{C:inactive,s:0.8}（#2#/#3#）",
                     },
                     {
-                        "{C:inactive,s:0.8}After being Refilled:{}",
-                        "When {C:attention}primed{}, {C:attention}setting Blind{}",
-                        "creates a random card from",
-                        "{V:1}#1#{}, then is {C:abs_drinks}drank{}",
-                        "{C:attention,s:0.8}Team{C:inactive,s:0.8} changes after each {C:abs_drinks,s:0.8}refill",
-                        "{C:inactive}(Must have space!)",
+                        "{C:inactive,s:0.8}续满后：",
+                        "选择{C:attention}盲注{}后，随机生成一张",
+                        "来自{V:1}#1#{}的卡牌",
+                        "并{C:abs_drinks}一饮而尽",
+                        "{C:inactive,s:0.8}每次{C:abs_drinks,s:0.8}续满{C:inactive,s:0.8}后变更{C:attention,s:0.8}队伍",
+                        "{C:inactive}（必须有空位）",
                     }
                 }
             },
@@ -287,7 +287,6 @@ return {
                 name = '星光玛格丽特',
                 text = {
                     {
-                        "{C:attention}调制{}完成后",
                         "额外抽{C:attention}#1#{}张牌",
                         "并{C:abs_drinks}一饮而尽",
                     },
@@ -631,10 +630,10 @@ return {
             b_abs_drinks_cards = "Drinks",
             k_abs_drinks = 'Drinks',
             k_plus_drink = '+1 Drink',
-            k_worm_abs_emptied_ex = 'Emptied!',
-            k_worm_abs_sipped_ex = 'Sipped!',
-            k_worm_abs_refilled_ex = 'Refilled!',
-            k_worm_abs_top_shelf_pack = 'Top Shelf Pack'
+            k_worm_abs_emptied_ex = '干了！',
+            k_worm_abs_sipped_ex = '喝一口！',
+            k_worm_abs_refilled_ex = '满上！',
+            k_worm_abs_top_shelf_pack = '好酒特调包'
         },
         v_dictionary = {
             a_discards = "+#1# Discards",

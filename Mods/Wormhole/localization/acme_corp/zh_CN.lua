@@ -215,12 +215,12 @@ return {
         },
         Joker = {
             j_worm_ACME_enterprise = {
-                name = "Enterprise Joker",
+                name = "企业小丑",
                 text = {
-                    '{C:chips}+#1#{} Chips for each',
-                    '{C:attention}unique{} {C:planet}Planet{} card',
-                    'used this run',
-                    '{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)'
+                    '本赛局中',
+                    '每使用过一{C:attention}种{C:planet}星球{}牌',
+                    '{C:chips}+#1#{}筹码',
+                    '{C:inactive}（当前为{C:chips}+#2#{C:inactive}筹码）'
                 },
             },
             j_worm_acme_test_dummy = {

@@ -311,14 +311,14 @@ return {
                 },
             },
             c_worm_lfc_time_dilation = {
-                name = "Time Dilation",
+                name = "时间膨胀",
                 text = {
-                    "{C:attention}#1#{} Ante,",
-                    "{C:attention}#2#{} Winning Ante,",
-                    "{C:red}Destroys{} and {C:red}bans{} a",
-                    "random {C:attention}Joker{} you own",
-                    "{C:inactive,s:0.75}(Banned Jokers no longer",
-                    "{C:inactive,s:0.75}appear in the run)"
+                    "底注{C:attention}#1#",
+                    "获胜底注{C:attention}#2#",
+                    "{C:red}摧毁{}并{C:red}禁用{}随机一张",
+                    "所持有的{C:attention}小丑牌",
+                    "{C:inactive,s:0.75}被禁用的小丑牌",
+                    "{C:inactive,s:0.75}在本赛局内将不再出现"
                 },
             },
             c_worm_lfc_wish = {

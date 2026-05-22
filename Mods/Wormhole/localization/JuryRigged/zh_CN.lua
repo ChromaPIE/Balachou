@@ -227,12 +227,11 @@ return {
         }
       },
       j_worm_jr_deep_space_probe = {
-        name = "Deep Space Probe",
+        name = "深空探测器",
         text = {
-          "Every {C:attention}#2#{} level increases",
-          "for poker hands,",
-          "create a {C:worm_jr_satellite}Satellite{} Card",
-          "{C:inactive}(Currently {C:attention}#1#{C:inactive}/{C:inactive}#2#)",
+          "任何牌型每提升{C:attention}#2#{}级",
+          "生成一张{C:worm_jr_satellite}人造卫星{}牌",
+          "{C:inactive}（当前为{C:attention}#1#{C:inactive}/{C:inactive}#2#）",
         }
       },
       j_worm_jr_crash_course = {

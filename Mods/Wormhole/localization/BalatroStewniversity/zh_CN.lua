@@ -38,11 +38,11 @@ return {
             },
 
             j_worm_stew_impact_crater = {
-                name = 'Impact Crater',
+                name = '陨石坑',
                 text = {
-                    '{C:green}#2# in #3#{} chance to create',
-                    'a {C:attention,T:tag_meteor}#1#',
-                    'at the end of the {C:attention}shop{}'
+                    '退出{C:attention}商店{}后',
+                    '有{C:green}#2#/#3#{}的几率',
+                    '生成一个{C:attention,T:tag_meteor}#1#'
                     }
             },
 

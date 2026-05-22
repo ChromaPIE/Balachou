@@ -120,10 +120,9 @@ return {
 				}
 			},
 			bl_worm_heatdeath = {
-				name = "Heat Death",
+				name = "热寂",
 				text = {
-					"Defeat the blind in",
-					"{E:worm_vegas_timer}#1#{}"
+					"必须在{E:worm_vegas_timer}#1#{}内击败"
 				}
 			}
 		},
@@ -155,8 +154,8 @@ return {
 			c_worm_wasp = {
 				name = "Wasp J1407b",
 				text = {
-					"Permanently adds {C:chips}+#1#{} Chips",
-					"to {C:attention}#2#{} selected cards in hand"
+					"使手牌中{C:attention}#2#{}张选定卡牌",
+					"永久获得{C:chips}+#1#{}筹码"
 				}
 			}
 		},
