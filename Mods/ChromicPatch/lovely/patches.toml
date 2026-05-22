@@ -899,3 +899,80 @@ position = "at"
 pattern = "for _, lines in ipairs(args.type == 'unlocks' and loc_target.unlock_parsed or args.type == 'name' and loc_target.name_parsed or (args.type == 'text' or args.type == 'tutorial' or args.type == 'quips') and loc_target or loc_target.text_parsed) do"
 payload = "for _, lines in ipairs(args.type == 'unlocks' and (loc_target.unlock_parsed or {}) or args.type == 'name' and (loc_target.name_parsed or {}) or (args.type == 'text' or args.type == 'tutorial' or args.type == 'quips') and loc_target or (loc_target.text_parsed or {})) do"
 
+# Wormhole spacetart info menu: nil-guard target.text_parsed on custom page entries
+# Custom loc entries from zh_CN have text but no text_parsed per page
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "/content/TeamMeow/2_infomenu.lua"]'
+match_indent = true
+position = "at"
+pattern = "create_text_box({ loc_target = v, text_parsed = target.text_parsed[i], vars = args.vars }),"
+payload = "create_text_box({ loc_target = v, text_parsed = (target.text_parsed or {})[i], vars = args.vars }),"
+
+# SOE redfabric: replace triple-click with I hotkey
+# Adds an SMODS.Keybind that opens the copied-jokers view when I is pressed
+# while hovering/focusing redfabric
+[[patches]]
+[patches.pattern]
+target = '=[SMODS SealsOnEverything "main.lua"]'
+match_indent = true
+position = "after"
+pattern = '''SMODS.Keybind{
+    key_pressed = '-',
+    held_keys = {'lshift'},
+    event = 'pressed',
+    action = function(self)
+        if G.jokers and G.jokers.highlighted and #G.jokers.highlighted == 1 then
+            local joker = G.jokers.highlighted[1]
+            if not (joker.ability.soe_legalenhancements and next(joker.ability.soe_legalenhancements)) then
+                print('Highlighted joker is not enhanced')
+                return
+            end
+            print("Highlighted joker is enhanced with:")
+            for k, v in pairs(joker.ability.soe_legalenhancements) do
+                if v and v[1] then
+                    print(localize({type = 'name_text', key = k, set = 'Enhanced'})..' '..#v..' time'..((#v == 1) and '' or 's'))
+                end
+            end
+        end
+    end
+}'''
+payload = '''SMODS.Keybind{
+    key_pressed = 'i',
+    action = function()
+        local card = G and G.CONTROLLER and (G.CONTROLLER.focused.target or G.CONTROLLER.hovering.target)
+        if not (card and type(card) == 'table' and card.config and card.config.center_key == 'j_soe_redfabric') then return end
+        if not (card.ability and card.ability.extra and card.ability.extra.jokers and #card.ability.extra.jokers > 0) then return end
+        G.SETTINGS.paused = true
+        G.soe_mergedcardsviewcardarea = CardArea(G.ROOM.T.x+0.2*G.ROOM.T.w/2, G.ROOM.T.h, 5.3*G.CARD_W, 1.03*G.CARD_H, {card_limit = 5, type = 'title', highlight_limit = 0, collection = true})
+        local merged_cards = {
+            n = G.UIT.R,
+            config = { align = 'cm', padding = 0, no_fill = true },
+            nodes = {
+                {n = G.UIT.O, config = {object = G.soe_mergedcardsviewcardarea}},
+            },
+        }
+        for i=1, #card.ability.extra.jokers do
+            G.soe_creatingmergedcard = true
+            local v = card.ability.extra.jokers[i]
+            G.soe_mergedcardsviewcardarea:emplace(SMODS.create_card({key = v, skip_materialize = true, no_edition = true}))
+            G.soe_creatingmergedcard = nil
+        end
+        G.UIBOXGENERICOPTIONSMERGEDCARDSVIEW = create_UIBox_generic_options({
+            snap_back = true,
+            contents = {
+                {
+                    n = G.UIT.R,
+                    config = {align = 'cm', minw = 2.5, padding = 0.1, r = 0.1, colour = G.C.BLACK, emboss = 0.05},
+                    nodes = {merged_cards},
+                },
+            },
+        })
+        G.FUNCS.overlay_menu({
+            definition = G.UIBOXGENERICOPTIONSMERGEDCARDSVIEW,
+        })
+    end
+}'''
+
+
+

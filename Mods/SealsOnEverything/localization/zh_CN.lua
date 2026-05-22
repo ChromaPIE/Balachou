@@ -604,8 +604,9 @@ return {
             soe_redfabric = {
                 name = '红布',
                 text = {
-                    '连续点击本牌{C:attention}三次',
-                    '以查看{C:attention}复制{}的所有卡牌'
+                    '指向本牌并点击{C:attention}[I]键',
+                    '以查看{C:attention}复制{}的所有卡牌',
+                    '{s:0.7,C:inactive}（交互改动来自ChromicPatch）'
                 }
             },
             soe_upgrade_seal = {
