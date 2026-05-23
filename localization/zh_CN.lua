@@ -478,8 +478,7 @@ return {
             j_banner={
                 name="旗帜",
                 text={
-                    "每一个剩余的",
-                    "{C:attention}弃牌{}次数",
+                    "每剩余一次{C:attention}弃牌",
                     "{C:chips}+#1#{}筹码",
                 },
             },

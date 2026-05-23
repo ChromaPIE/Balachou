@@ -238,13 +238,12 @@ return {
 		        },	
 	        },
             j_worm_acme_gas_station = {
-                name = 'Interplanetary Gas Station',
+                name = '星际加油站',
                 text = {
-                    'On scoring, {C:attention}played hand',
-                    'loses a {C:mult}level',
-                    'Upgrade a random {C:attention}poker hand',
-                    'and gain {X:mult,C:white}X#1#{} Mult',
-                    '{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)'
+                    '计分阶段，{C:mult}降级{C:attention}所出牌型',
+                    '随机升级一种{C:attention}牌型',
+                    '并获得{X:mult,C:white}X#1#{}倍率',
+                    '{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）'
                 }
             },
             j_worm_acme_kraft_e_jackal = {

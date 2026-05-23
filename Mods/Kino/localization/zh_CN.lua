@@ -13,10 +13,10 @@ return {
             },
             -- Kino Jokers
             j_kino_6_underground = {
-                name = "6 Underground",
+                name = "鬼影特攻：以暴制暴",
                 text = {
-                    "Each played {C:attention}6{} ",
-                    "gives {C:mult}+#1#{} Mult when scored",
+                    "打出的每张{C:attention}6",
+                    "计分时给予{C:mult}+#1#{}倍率",
                 },
             },
             j_kino_9_movie = {
@@ -120,12 +120,10 @@ return {
                 }
             },
             j_kino_abyss = {
-                name = "The Abyss",
+                name = "深渊",
                 text = {
-                    "Cards held in hand have",
-                    "a {C:green}#1# in #2#{} chance to {C:Jumpscare}Jumpscare",
-                    "increased by {C:green}#3#{} per",
-                    "Unscoring card"
+                    "留手牌有{C:green}#1#/#2#{}的几率{C:Jumpscare}跳脸杀",
+                    "每有一张不计分牌，分子{C:green}+#3#"
                 }
             },
             j_kino_accountant_1 = {
@@ -310,19 +308,19 @@ return {
                 }
             },
             j_kino_baby_driver = {
-                name = "Baby Driver",
+                name = "极盗车神",
                 text = {
-                    "If a scoring card",
-                    "is adjacent to a card",
-                    "that is an {C:attention}adjacent{} rank",
-                    "it gives {C:chips}Chips{} equal to {C:attention}x1{} its rank"
+                    "若计分牌紧邻",
+                    "与其点数{C:attention}相邻{}的牌",
+                    "其给予等同于",
+                    "该牌{C:attention}点数{}的{C:chips}筹码"
                 }
             },
             j_kino_baby_geniuses = {
-                name = "Baby Geniuses",
+                name = "天才宝贝",
                 text = {
-                    "Each played {C:attention}2{} gives",
-                    "{C:chips}+#1#{} Chips when scored"
+                    "打出的每张{C:attention}2",
+                    "计分时给予{C:chips}+#1#{}筹码"
                 }
             },
             j_kino_batman_66 = {
@@ -521,23 +519,23 @@ return {
                 }
             },
             j_kino_black_panther = {
-                name = "Black Panther",
+                name = "黑豹",
                 text = {
                     {
-                        "{X:attention,C:white}Active{}: Score is played",
-                        "against this Joker instead of blind,",
-                        "increase blind and lose stored score",
-                        "at end of ante"
+                        "{X:attention,C:white}激发{}：出牌得分将用以",
+                        "对抗本牌而非盲注",
+                        "底注结束时，提升盲注",
+                        "并失去所存分数"
                     },
                     {
-                        "Gain {C:attention}#1#{} Charge when",
-                        "requirement is beaten",
-                        "{C:inactive}(Currently: {C:attention}#2#{C:inactive}/{C:attention}#3#{C:inactive} Score)"
+                        "达到本牌得分需求时",
+                        "蓄能{C:attention}#1#{}层",
+                        "{C:inactive}（当前得分：{C:attention}#2#{C:inactive}/{C:attention}#3#{C:inactive}）"
                     },
                     {
-                        "{X:inactive,C:white}Inactive{}: Gives {X:mult,C:white}X#4#{} Mult",
-                        "per {C:attention}Charge",
-                        "{C:inactive}(Currently: {X:mult,C:white}X#5#{C:inactive} Mult)"
+                        "{X:inactive,C:white}未激发{}：每有一层{C:attention}蓄能",
+                        "给予{X:mult,C:white}X#4#{}倍率",
+                        "{C:inactive}（当前为{X:mult,C:white}X#5#{C:inactive}倍率）"
                     }
                 }
             },
@@ -668,11 +666,12 @@ return {
                 }
             },
             j_kino_braveheart = {
-                name = "Braveheart",
+                name = "勇敢的心",
                 text = {
-                    "Each scored {C:hearts}Hearts{}",
-                    "gives {C:chips}+#2#{} Chips for each",
-                    "other scoring {C:hearts}Hearts{}"
+                    "每另有一张",
+                    "计分的{C:hearts}红桃{}牌",
+                    "每张计分的{C:hearts}红桃{}牌",
+                    "给予{C:chips}+#2#{}筹码"
                 }
             },
             j_kino_breakfast_club = {
@@ -1298,11 +1297,10 @@ return {
                 }
             },
             j_kino_elf = {
-                name = "Elf",
+                name = "圣诞精灵",
                 text = {
-                    "Retrigger each scored",
-                    "{C:attention}2{} and {C:attention}3{}",
-                    "an additional {C:attention}#1# time(s){}"
+                    "每张计分的{C:attention}2{}和{C:attention}3",
+                    "额外触发{C:attention}#1#{}次"
                 }
             },
             j_kino_encanto = {
@@ -1427,11 +1425,10 @@ return {
                 }
             },
             j_kino_fight_club = {
-                name = "Fight Club",
+                name = "搏击俱乐部",
                 text = {
-                    "{X:mult,C:white} X#1#{} Mult",
-                    "{C:attention}Destroy{} random",
-                    "scoring card",
+                    "{X:mult,C:white}X#1#{}倍率",
+                    "随机{C:attention}摧毁{}一张计分牌",
                 }
             },   
             j_kino_final_destination = {
@@ -1545,16 +1542,15 @@ return {
                 }
             },
             j_kino_ghostbusters_1 = {
-                name = "Ghostbusters",
+                name = "捉鬼敢死队",
                 text = {
-                    "{C:attention}Debuffed{} cards are",
-                    "{C:attention}destroyed{} when scored",
-                    "Give {C:chips}+#2#{} Chips for each",
-                    "card destroyed this way",
-                    "{C:inactive}(Currently: {C:chips}+#1#{C:inactive} Chips)"
+                    "{C:attention}摧毁{}计分的{C:attention}失效{}牌",
+                    "以此法每摧毁一张牌",
+                    "获得{C:chips}+#2#{}筹码",
+                    "{C:inactive}（当前为{C:chips}+#1#{C:inactive}筹码）"
                 },
                 unlock = {
-                    "Destroy a debuffed card"
+                    "摧毁一张失效牌"
                 }
             },
             j_kino_ghoulies = {
@@ -1586,15 +1582,15 @@ return {
                 }
             },
             j_kino_godzilla = {
-                name = "Godzilla (1954)",
+                name = "哥斯拉（1954）",
                 text = {{
-                    "{C:mult}+#1#{} Mult",
-                    "Doubled when {C:attention}Boss Blind{}",
-                    "is defeated"
+                    "{C:mult}+#1#{}倍率",
+                    "击败{C:attention}Boss盲注{}后",
+                    "倍率加成{C:attention}翻倍"
                 },
                 {
-                    "{C:attention}Blinds{} have a {C:green}1 in 4{} chance",
-                    "to be {C:attention}Boss Blinds"
+                    "{C:attention}盲注{}有{C:green}1/4{}的几率",
+                    "为{C:attention}Boss盲注"
                 }}
             },
             j_kino_goodfellas = {
@@ -1608,12 +1604,11 @@ return {
                 }
             },
             j_kino_gone_girl = {
-                name = "Gone Girl",
+                name = "消失的爱人",
                 text = {
-                    "Scoring {C:attention}Queens{} give {X:mult,C:white}X#1#{} Mult",
-                    "Scoring {C:attention}Jacks{} and {C:attention}Kings{} are",
-                    "{C:attention}debuffed{} and increase", 
-                    "Mult by {X:mult,C:white}X#2#{}"
+                    "计分的{C:attention}Q{}给予{X:mult,C:white}X#1#{}倍率",
+                    "计分的{C:attention}J{}和{C:attention}K{C:red}失效",
+                    "并使倍率加成提升{X:mult,C:white}X#2#"
                 }
             },
             j_kino_good_burger = {
@@ -1667,14 +1662,14 @@ return {
             j_kino_guardians_of_the_galaxy_2 = {
                 name = "银河护卫队2",
                 text = {
-                    "Transform every {C:planet}Planet",
-                    "owned into {C:attention}Ego",
-                    "at the end of the {C:attention}shop",
+                    "退出{C:attention}商店{}时",
+                    "使所持{C:planet}星球牌",
+                    "全部变为{C:attention}伊戈"
                 },
                 unlock = {
-                    "Use {C:StrangePlanet}Ego the Living Planet{}",
-                    "{C:attention}#2#{} times",
-                    "{C:inactive}(#1#)"
+                    "使用{C:attention}#2#{}次",
+                    "{C:StrangePlanet}伊戈，活体星球",
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_guardians_of_the_galaxy_3 = {
@@ -1919,21 +1914,18 @@ return {
                 }
             },
             j_kino_interstellar = {
-                name = "Interstellar",
+                name = "星际穿越",
                 text = {
-                    {"When a {C:planet}Planet{} is used",
-                    "store it in", 
-                    "this {C:attention}Joker{} instead"},
+                    {"使用{C:planet}星球{}牌时",
+                    "转而将其存储于{C:attention}本牌"},
                     {
-                        "Sell this card to",
-                        "level up {C:attention}most{} played hand",
-                        "for each {C:attention}stored{} {C:planet}Planet",
-                        "{C:inactive}(Currently: {C:attention}#1#{C:inactive} Stacks)"
+                        "本牌每{C:attention}存有{}一张{C:planet}星球{}牌",
+                        "被售出后，使{C:attention}最常出{}牌型{C:attention}提升一级",
+                        "{C:inactive}（当前存有{C:attention}#1#{C:inactive}张）"
                     }
                 },
                 unlock = {
-                    "Use {C:attention}#2#{} {C:planet}Planets{}",
-                    "in a single run"
+                    "单局使用{C:attention}#2#{}张{C:planet}星球{}牌"
                 }
             },
             j_kino_iron_giant = {
@@ -2204,12 +2196,11 @@ return {
                 }
             },
             j_kino_lucky_number_slevin = {
-                name = "Lucky Number Slevin",
+                name = "幸运数字斯莱文",
                 text = {
-                    "All {C:attention}listed{} odds are",
-                    "increased by {C:green}#1#{} for",
-                    "each {C:attention}7{} held in hand",
-                    "{C:inactive}(Currently: {C:green}#2#{C:inactive})"
+                    "手牌中每有一张{C:attention}7",
+                    "所有{C:attention}标出{}的几率分子{C:green}+#1#",
+                    "{C:inactive}（当前为{C:green}#2#{C:inactive}）"
                 }
             },
             j_kino_m3gan = {
@@ -2330,11 +2321,11 @@ return {
                 }
             },
             j_kino_meet_the_parents = {
-                name = "Meet the Parents",
+                name = "拜见岳父大人",
                 text = {
-                    "{C:attention}Non-face{} cards give {C:chips}+#1#{} Chips",
-                    "for each {C:attention}Face{} card held in hand",
-                    "that matches its suit"
+                    "{C:attention}非人头{}牌计分时",
+                    "手中每有一张同色{C:attention}人头{}牌",
+                    "给予{C:chips}+#1#{}筹码",
                 },
                 unlock = {
                     "Win a run with a",
@@ -2342,12 +2333,12 @@ return {
                 }
             },
             j_kino_megalopolis = {
-                name = "Megalopolis",
+                name = "大都会",
                 text = {
-                    "Each scored {C:clubs}Clubs{}",
-                    "gives {C:chips}+#2#{} Chips",
-                    "for each other ",
-                    "scoring {C:clubs}Clubs{}"
+                    "每另有一张",
+                    "计分的{C:clubs}梅花{}牌",
+                    "每张计分的{C:clubs}梅花{}牌",
+                    "给予{C:chips}+#2#{}筹码"
                 }
             },
             j_kino_memento = {
@@ -3065,13 +3056,12 @@ return {
                 }
             },
             j_kino_rush_hour = {
-                name = "Rush Hour",
+                name = "尖峰时刻",
                 text = {
-                    "Upgrade scoring hand",
-                    "with {C:chips}+#2#{} Chips",
-                    "per scoring {C:dark_edition}Black{} card",
-                    "and {C:mult}+#1#{} Mult per scoring {C:mult}Red{} card",
-                    "if hand contains a {C:attention}Pair"
+                    "若出牌包含{C:attention}对子",
+                    "每有一张计分的",
+                    "{C:dark_edition}暗色{}牌：使所出牌型{C:chips}+#2#{}筹码",
+                    "{C:mult}亮色{}牌：使所出牌型{C:mult}+#1#{}倍率"
                 }
             },
             j_kino_sausage_party = {
@@ -3436,15 +3426,15 @@ return {
                 }
             },
             j_kino_star_wars_i = {
-                name = "Star Wars Episode I: The Phantom Menace",
+                name = "星球大战I：魅影危机",
                 text = {
-                    "Upgrade {C:attention}#1#{} cards in your deck",
-                    "with {C:chips}+#2#{} Chips",
-                    "when a {C:planet}Planet{} is used"
+                    "使用{C:planet}星球{}牌后",
+                    "使牌组中{C:attention}#1#{}张牌",
+                    "获得{C:chips}+#2#{}筹码"
                 },
                 unlock = {
-                    "Win a run with a",
-                    "{C:attention}Star Wars{} Joker"
+                    "携带{C:attention}星球大战{}小丑牌",
+                    "赢下一局"
                 }
             },
             j_kino_star_wars_ii = {
@@ -3727,11 +3717,10 @@ return {
                 }
             },
             j_kino_thing = {
-                name = "The Thing (1982)",
+                name = "怪形（1982）",
                 text = {
-                    "Every {V:1}#1#{} counts",
-                    "as every suit,",
-                    "suit changes every round"
+                    "{V:1}#1#{}牌视作任何花色",
+                    "{C:inactive}（每回合变更花色）"
                 }
             },
             j_kino_thor_1 = {
@@ -3861,12 +3850,12 @@ return {
                 }
             },
             j_kino_truman_show = {
-                name = "The Truman Show",
+                name = "楚门的世界",
                 text = {
-                    "Gives {C:chips}Chips{} equal",
-                    "to your {C:attention,E:1}ratings",
+                    "给予等同于你的",
+                    "{C:attention,E:1}评分的{C:chips}筹码",
                     " ",
-                    "{C:attention}Current Ratings:"
+                    "{C:attention}当前评分："
                 }
                 -- text = {
                 --     {"Gain the current ratings",
@@ -3947,8 +3936,7 @@ return {
                         "给予{C:mult}+#2#{}倍率"
                     },
                     {
-                        "{C:attention}5{}计分后",
-                        "蓄能{C:attention}1{}层",
+                        "{C:attention}5{}计分时蓄能{C:attention}1{}层",
                         "若有{C:attention}人头{}牌计分",
                         "丧失所有{C:attention}蓄能",
                         "{C:inactive}（当前为{C:mult}+#1#{C:inactive}倍率）"
@@ -4040,12 +4028,11 @@ return {
                 }
             },
             j_kino_waterworld = {
-                name = "Waterworld",
+                name = "未来水世界",
                 text = {
-                    "Increase {C:attention}sell value",
-                    "of a random {C:attention}Joker",
-                    "by {C:money}$#1#{} for",
-                    "each unscoring card"
+                    "每有一张{C:attention}不计分牌",
+                    "使随机一张{C:attention}小丑牌{}的",
+                    "{C:attention}售价{}提升{C:money}$#1#"
                 }
             },
             j_kino_weapons = {
@@ -4778,11 +4765,11 @@ return {
             },
 
             c_kino_chef = {
-                name = "Chef",
+                name = "大厨",
                 text = {
-                    "Creates up to {C:attention}#1#",
-                    "random {C:Confection}Confection{} cards",
-                    "{C:inactive}(Must have room)",
+                    "随机生成至多{C:attention}#1#{}张",
+                    "{C:Confection}甜食零嘴{}牌",
+                    "{C:inactive}（必须有空位）",
                 }
             }
 
@@ -4860,14 +4847,13 @@ return {
         },
         Planet = {
             c_kino_ego = {
-                name = "Ego, the Living Planet",
+                name = "伊戈，活体星球",
                 text = {
-                    "Upgrade a {C:attention}random poker hand",
-                    "with {C:chips}+#1#{} Chips",
-                    "and {C:mult}+#2#{} Mult",
-                    "then {C:attention}Terraform{} another",
-                    "{C:attention}consumable{} into a stronger",
-                    "version of {C:attention}Ego"
+                    "使{C:attention}随机牌型",
+                    "获得{C:chips}+#1#{}筹码，{C:mult}+#2#{}倍率",
+                    "并对另一张{C:attention}消耗牌",
+                    "实施{C:attention}地形改造",
+                    "使其变为数值加强的{C:attention}伊戈"
                 }
             },
             c_kino_pandora = {
@@ -6070,11 +6056,10 @@ return {
 
             -- Frost Counters
             bl_kino_elsa = {
-                name = "Elsa",
+                name = "艾莎",
                 text = {
-                    "Spread {C:attention}10{}",
-                    "{C:Frost}Frost Counters{} across",
-                    "your {C:attention}Jokers"
+                    "对所持{C:attention}小丑牌{}施加",
+                    "总计{C:attention}10{}位{C:Frost}寒冻计数标"
                 }
             },
             bl_kino_jacktorrance = {
@@ -6584,11 +6569,10 @@ return {
 
             -- Power Dampening
             output_powerchange = {
-                name = "Power Dampening",
+                name = "能力抑制",
                 text = {
-                    "Final scoring bonuses",
-                    "by this joker are",
-                    "lowered by X#1#"
+                    "本牌最终提供的{C:attention}计分加成",
+                    "削减{C:red}X#1#"
                 }
             },
 
@@ -7852,13 +7836,11 @@ return {
                 }
             },
             counter_frost = {
-                name = "Frost Counter",
+                name = "寒冻计数标",
                 text = {
-                    "{C:attention}Ticks Down 1",
+                    "{C:attention}步退1位",
                     " ",
-                    "Halves given score",
-                    "while this has any",
-                    "Counters"
+                    "有位数时，给予分数减半"
                 }
             },
             counter_paralysis = {

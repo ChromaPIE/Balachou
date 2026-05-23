@@ -380,12 +380,11 @@ local descriptions = {
         },
         -- UTILITY --
         hardlight = {
-            name = 'Hardlight Barrier',
+            name = '直射光屏障',
             text = {
-                'Reduce {C:attention}Blind{}\'s',
-                'requirement by {C:red}#1#%{}',
-                'when {C:attention}Blind{} is selected',
-                '{s:0.8,C:inactive}(Depletes each round)'
+                '选择{C:attention}盲注{}后',
+                '使{C:attention}盲注{}得分要求削减{C:red}#1#%',
+                '{s:0.8,C:inactive}（每回合消耗耐久度）'
             }
         },
         quantum = {
@@ -420,11 +419,11 @@ local descriptions = {
             }
         },
         temporal_jump = {
-            name = 'Temporal Jump Jets',
+            name = '时间跳跃装置',
             text = {
-                'Get {C:attention}#1#{} random {C:attention}Tags',
-                'when skipping a {C:attention}Blind',
-                '{C:inactive,s:0.8}(Depletes when skipping a Blind)'
+                '跳过{C:attention}盲注{}时',
+                '随机获得{C:attention}#1#{}个{C:attention}标签',
+                '{C:inactive,s:0.8}（跳过盲注时消耗耐久度）'
             }
         },
         repeater = {

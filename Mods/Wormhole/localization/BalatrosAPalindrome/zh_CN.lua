@@ -20,7 +20,7 @@ return {
         },
         Edition = {
             e_worm_bap_void = {
-                name = '虚空',
+                name = '虚空牌',
                 label = '虚空',
                 text = {
                     "{C:attention}留手{}时，{C:chips}#1#{}筹码",
@@ -98,11 +98,10 @@ return {
                 }
             },
             j_worm_bap_vacuum = {
-                name = 'Vacuum',
+                name = '真空',
                 text = {
-                    "{X:mult,C:white}X2{} Mult if played",
-                    "hand contains",
-                    "a {T:e_worm_bap_void}Void{} card",
+                    "若出牌包含{T:e_worm_bap_void}虚空{}牌",
+                    "{X:mult,C:white}X2{}倍率"
                 }
             },
             j_worm_bap_space_worm = {

@@ -32,7 +32,8 @@ return {
         name = "天问四号",
         text = {
           {
-            "升级{C:attention}#2#{}的{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
+            "升级{C:attention}#2#{}的",
+            "{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
           },
           {
             "若出牌牌型为{C:attention}#2#",

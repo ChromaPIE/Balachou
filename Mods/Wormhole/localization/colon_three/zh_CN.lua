@@ -136,14 +136,14 @@ return {
         },
         JunkSet = {
             c_worm_ct_asteroid_harvester = {
-                name = "Asteroid Harvester",
+                name = "小行星采矿钻",
                 text = {
                     {
                         "将{C:attention}#1#{}张选定的非{C:attention}垃圾牌{}",
                         "转换为{C:attention}垃圾牌"
                     },
                     {
-                        "Clean-up {C:attention}#2#{} {f:6}—{} Earn {C:money}$#3#{}",
+                        "清理{C:attention}#2#{}张 {f:6}—{} 赚取{C:money}$#3#",
                     }
                 }
             },
@@ -169,20 +169,20 @@ return {
                     },
                     {
                         "清理{C:attention}#2#{}张 {f:6}—{} 当前和后续的",
-                        "{C:attention}垃圾牌{}给予{C:chips}+#3#{}筹码",
+                        "{C:attention}垃圾牌{}获得{C:chips}+#3#{}筹码",
                     }
                 }
             },
             c_worm_ct_lost_pliers = {
-                name = "Lost Pliers",
+                name = "丢失夹钳",
                 text = {
                     {
                         "将{C:attention}#1#{}张选定的非{C:attention}垃圾牌{}",
                         "转换为{C:attention}垃圾牌"
                     },
                     {
-                        "Clean-up {C:attention}#2#{} {f:6}—{} ALL current and",
-                        "future {C:attention}Junk Cards{} gain {C:mult}+#3#{} Mult",
+                        "清理{C:attention}#2#{}张 {f:6}—{} 当前和后续的",
+                        "{C:attention}垃圾牌{}获得{C:mult}+#3#{}倍率",
                     }
                 }
             },
@@ -235,10 +235,9 @@ return {
                         "转换为{C:attention}垃圾牌"
                     },
                     {
-                        "Clean-up {C:attention}#2#{} {f:6}—{} Merge the {C:attention}cleaned-up",
-                        "{C:attention}cards{} into a singular {C:attention}Junk Card{}",
-                        "with added values",
-                        "{C:inactive}(Retriggers excluded)",
+                        "清理{C:attention}#2#{}张 {f:6}—{} 将{C:attention}已清理牌{}合并为",
+                        "数值叠加的单张{C:attention}垃圾牌",
+                        "{C:inactive}（不继承重新触发次数）",
                     }
                 }
             },
