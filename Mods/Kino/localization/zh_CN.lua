@@ -685,9 +685,9 @@ return {
                 }
             },
             j_kino_bttf = {
-                name = "Back to the Future",
+                name = "回到未来",
                 text = {
-                    {"Reveals {c:attention}top #1#{} cards of deck",},
+                    {"揭示{C:attention}牌组顶{}的{C:attention}#1#{}张牌",},
                 }
             },
             j_kino_bucket_list = {
@@ -888,15 +888,14 @@ return {
                 }
             },
             j_kino_con_air = {
-                name = "Con Air",
+                name = "空中监狱",
                 text = {
-                    "Retrigger {C:attention}first{} scoring",
-                    "card {C:attention}#1#{} time(s) for each",
-                    "scoring {C:attention}Crime Card"
+                    "每有一张计分的{C:attention}犯罪片牌",
+                    "使{C:attention}首张{}计分牌重新触发{C:attention}#1#{}次"
                 },
                 unlock = {
-                    "Win a run with a",
-                    "{C:attention}Nicolas Cage{} Joker"
+                    "携带{C:attention}尼古拉斯·凯奇{}小丑牌",
+                    "赢下一局"
                 }
             },
             j_kino_conjuring_1 = {
@@ -1130,7 +1129,8 @@ return {
             j_kino_doctor_who = {
                 name = "神秘博士",
                 text = {
-                    {"{C:white,X:attention}激发{}：随机{C:Alien}劫持{}一张{C:attention}手牌"},
+                    {"{C:white,X:attention}激发{}：出牌计分后",
+                    "随机{C:Alien}劫持{}一张{C:attention}手牌"},
                     {"{C:white,X:Alien}释放{}：携带随机{C:attention}增强{}及{C:attention}版本{}回归"}
                 },
                 unlock = {
@@ -2238,11 +2238,11 @@ return {
                 }
             },
             j_kino_mamma_mia_1 = {
-                name = "Mamma Mia!",
+                name = "妈妈咪呀！",
                 text = {
-                    "{C:mult}+#2#{} Mult if",
-                    "scoring hand contains",
-                    "at least {C:attention}#1# {C:hearts}Hearts{}"
+                    "若出牌至少包含",
+                    "{C:attention}#1#{}张{C:hearts}红桃{}牌",
+                    "{C:mult}+#2#{}倍率"
                 }
             },
             j_kino_man_of_steel = {
@@ -3306,11 +3306,12 @@ return {
                 }
             },
             j_kino_social_network = {
-                name = "The Social Network",
+                name = "社交网络",
                 text = {
-                    "{C:chips}+#1#{} Chips for each",
-                    "{C:attention}face{} card in your full {C:attention}deck",
-                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
+                    "{C:attention}完整牌组{}中",
+                    "每有一张{C:attention}人头{}牌",
+                    "{C:chips}+#1#{}筹码",
+                    "{C:inactive}（当前为{C:chips}+#2#{C:inactive}筹码）",
                 } 
             },
             j_kino_solo = {
@@ -4178,10 +4179,10 @@ return {
                 }
             },
             j_kino_zoolander = {
-                name = "Zoolander",
+                name = "超级名模",
                 text = {
-                    "Each {C:spades}Spades{} held in hand",
-                    "gives {X:mult,C:white}X#1#{} Mult"
+                    "每张留手的{C:spades}黑桃{}牌",
+                    "给予{X:mult,C:white}X#1#{}倍率"
                 }
             },
             -- Crossmod: CRYPTID
@@ -4680,17 +4681,17 @@ return {
                 }
             },
             c_kino_droid = {
-                name = "Droid",
+                name = "机器人",
                 text = {
-                    "Upgrade {C:attention}#1#{} cards into",
-                    "{C:attention}Sci-Fi Cards{}"
+                    "将{C:attention}#1#{}张选定卡牌",
+                    "增强为{C:attention}科幻片牌"
                 }
             },
             c_kino_demon = {
                 name = "邪魔",
                 text = {
-                    "Upgrade {C:attention}#1#{} card into",
-                    "a {C:attention}Demonic Card{}"
+                    "将{C:attention}#1#{}张选定卡牌",
+                    "增强为{C:attention}邪魔牌"
                 }
             },
             c_kino_meetcute = {
@@ -4936,18 +4937,17 @@ return {
                 }
             },
             c_kino_solaris = {
-                name = "Solaris",
+                name = "索拉里斯",
                 text = {
                     {
-                        "Flip and shuffle all {C:attention}Jokers",
-                        "each round while this {C:planet}Planet{} is held"
+                        "持有{C:planet}本牌{}时，每回合",
+                        "翻转并洗乱所有{C:attention}小丑牌"
                     },
                     {
-                        "For each round this {C:planet}planet",
-                        "was held, set level of",
-                        "a random hand to",
-                        "that of highest hand",
-                        "{C:inactive}(Currently: {C:attention}#1#{C:inactive} hands)"
+                        "每持有{C:planet}本牌{}一回合",
+                        "将随机一种牌型的等级",
+                        "设为最高的牌型等级",
+                        "{C:inactive}（已持有{C:attention}#1#{C:inactive}回合）"
                     }
                 }
             },

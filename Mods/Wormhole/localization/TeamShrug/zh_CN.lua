@@ -88,12 +88,12 @@ return {
 
             -- BINARY SUNSET
             j_worm_shrug_binary_sunset = {
-                name = "Binary Sunset",
+                name = "双子日落",
                 text = {
-                    "If {C:attention}2{} consecutive {C:attention}poker hands{}",
-                    "are both {C:attention}Two Pairs{}, create",
-                    "a random {C:dark_edition}Alien{} card",
-                    "{C:inactive}(Must have room){}"
+                    "若连续{C:attention}2{}次出牌的",
+                    "{C:attention}牌型均为{C:attention}两对",
+                    "随机生成一张{C:dark_edition}外星生物{}卡",
+                    "{C:inactive}（必须有空位）"
                 }
             },
 

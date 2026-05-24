@@ -244,20 +244,20 @@ return {
         },
         Spectral = {
             c_worm_ct_accretion_disk = {
-                name = "Accretion Disk",
+                name = "吸积盘",
                 text = {
                     {
-                        "Convert all non-{C:attention}Junk Cards{} in hand",
-                        "into {C:attention}Junk Cards",
+                        "将手中所有非{C:attention}垃圾牌",
+                        "转换为{C:attention}垃圾牌",
                     },
                     {
-                        "ALL current and future {C:attention}Junk",
-                        "{C:attention}Cards{} gain {X:mult,C:white}X#1#{} Mult",
+                        "当前和后续的",
+                        "{C:attention}垃圾牌{}获得{X:mult,C:white}X#1#{}倍率",
                     },
                     {
-                        "Played hands with {C:attention}Junk Cards{}",
-                        "gain an additional {X:worm_c3_junkset,C:white}+X#2#{} multiplier",
-                        "to {C:chips}Chips{} and {C:mult}Mult{}"
+                        "若出牌包含{C:attention}垃圾牌",
+                        "{C:chips}筹码{}和{C:mult}倍率",
+                        "额外获得{X:worm_c3_junkset,C:white}+X#2#{}加成"
                     }
                 }
             },

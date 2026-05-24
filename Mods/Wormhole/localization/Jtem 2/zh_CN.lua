@@ -89,21 +89,21 @@ return {
 				},
 			},
 			j_worm_jtem2_stair = {
-				name = "Astral Stair",
+				name = "星界阶梯",
 				text = {
-					"Gives {C:mult}Mult{} equal to {C:mult}Mult{}",
-					"of {C:attention}most played{} poker hand",
-					"Changes to {C:chips}Chips{} at the end of round",
-					"{C:inactive}(Currently {C:mult}#1#{C:inactive} Mult from {C:attention}#2#{C:inactive}){}",
+					"给予等同于{C:attention}最常出",
+					"牌型之{C:mult}倍率{}的{C:mult}倍率",
+					"回合结束时，转变为{C:chips}筹码",
+					"{C:inactive}（当前为{C:mult}#1#{C:inactive}倍率，来自{C:attention}#2#{C:inactive}）",
 				},
 			},
 			j_worm_jtem2_stair_chips = {
-				name = "Astral Stair",
+				name = "星界阶梯",
 				text = {
-					"Gives {C:chips}Chips{} equal to {C:chips}Chips{}",
-					"of {C:attention}most played{} poker hand",
-					"Changes to {C:mult}Mult{} at the end of round",
-					"{C:inactive}(Currently {C:chips}#1#{C:inactive} Chips from {C:attention}#2#{C:inactive}){}",
+					"给予等同于{C:attention}最常出",
+					"牌型之{C:chips}筹码{}的{C:chips}筹码",
+					"回合结束时，转变为{C:mult}倍率",
+					"{C:inactive}（当前为{C:chips}#1#{C:inactive}筹码，来自{C:attention}#2#{C:inactive}）",
 				},
 			},
 			j_worm_jtem2__stair = {

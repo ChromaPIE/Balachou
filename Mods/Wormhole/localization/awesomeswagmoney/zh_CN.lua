@@ -6,8 +6,8 @@ return {
         Enhanced = {},
         Joker = {
             j_worm_necrozma = {
-                name = 'Necrozma',
-                text = { "Create a free", "{C:attention}#1#{}", "when {C:attention}Boss Blind", "is defeated" }
+                name = '奈克洛兹玛',
+                text = { "击败{C:attention}Boss盲注{}后", "免费获得一个", "{C:attention}#1#" }
             }
         },
         Other = {
@@ -46,19 +46,19 @@ return {
         Planet = {},
         Spectral = {
             c_worm_ultramegaopolis = {
-                name = "Ultramegaopolis",
+                name = "究极大都会",
                 text = {
-                    "Releases {C:worm_necrozma_r,E:1}UB-BLACK"
+                    "释放{C:worm_necrozma_r,E:1}UB-BLACK"
                 }
             }
         },
         Stake = {},
         Tag = {
             tag_worm_ub = {
-                name = 'Ultra Wormhole Tag',
+                name = '究极之洞标签',
                 text = {
-                    "Gives a free",
-                    "{C:worm_ultrabeast}Greater Ultra Wormhole"
+                    "免费获得一个",
+                    "{C:worm_ultrabeast}大型究极之洞"
                 }
             }
         },
@@ -131,11 +131,10 @@ return {
                 }
             },
             c_worm_xurkitree = {
-                name = "Xurkitree",
+                name = "电束木",
                 text = {
-                    "Earn {C:money}$#1#{}, then permanently",
-                    "increase this amount to",
-                    "the next {C:spectral}prime number{}"
+                    "赚取{C:money}$#1#{}，并永久提升",
+                    "后续本牌的{C:spectral}给予金额"
                 }
             },
             c_worm_kartana = {
@@ -165,11 +164,11 @@ return {
                 }
             },
             c_worm_guzzlord = {
-                name = "Guzzlord",
+                name = "恶食大王",
                 text = {
-                    "Destroys {C:attention}#1#{} random cards",
-                    "in hand, levels up {C:attention}most",
-                    "{C:attention}played poker hand{} by {C:attention}#2#"
+                    "随机摧毁{C:attention}#1#{}张手牌",
+                    "并使{C:attention}最常出牌型",
+                    "提升{C:attention}#2#{}级"
                 }
             },
             c_worm_stakataka = {

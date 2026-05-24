@@ -208,37 +208,36 @@ return {
         },
         euda_Fate = {
             c_worm_euda_crunch = {
-                name = {"Big Crunch"},
+                name = {"大挤压"},
                 text = {
                     "Sets each card in {C:attention}deck",
                     "to {C:attention}1{} of {C:attention}2{} random {C:attention}suits"
                 }
             },
             c_worm_euda_freeze = {
-                name = {"Big Freeze"},
+                name = {"大冻结"},
                 text = {
                     "Sets each card in {C:attention}deck",
                     "to {C:attention}1{} of {C:attention}4{} random {C:attention}ranks"
                 }
             },
             c_worm_euda_rip = {
-                name = {"Big Rip"},
+                name = {"大撕裂"},
                 text = {
-                    "{C:attention}Duplicates{} each card in {C:attention}deck",
-                    "and {C:attention}halves{} all their {C:attention}ranks",
-                    "{C:inactive}(Rounded down)"
+                    "{C:attention}复制{}整个{C:attention}牌组",
+                    "并使各牌{C:attention}点数减半",
+                    "{C:inactive}（向下取整）"
                 }
             },
             c_worm_euda_slurp = {
-                name = {"Big Slurp"},
+                name = {"大啜吸"},
                 text = {
-                    "Randomly {C:attention}destroys{} half",
-                    "of the {C:attention}deck",
-                    "{C:inactive}(Rounded up)"
+                    "随机{C:attention}摧毁{}半数{C:attention}牌组",
+                    "{C:inactive}（向上取整）"
                 }
             },
             c_worm_euda_bounce = {
-                name = {"Big Bounce"},
+                name = {"大反弹"},
                 text = {
                     "{C:attention}Destroys{} all cards in",
                     "deck and {C:attention}replaces{} them with",
@@ -250,11 +249,11 @@ return {
         },
         Spectral = {
             c_worm_euda_bang = {
-                name = {"Big Bang"},
+                name = {"大爆炸"},
                 text = {
-                    "{C:attention}Replaces{} all cards in deck",
-                    "with {C:attention,E:2}randomized{} ones",
-                    "{C:inactive}(Random suit, rank, enhancement, edition, seal)"
+                    "以等量{C:attention,E:2}随机{}卡牌",
+                    "{C:attention}替换{}整个牌组",
+                    "{C:inactive}（花色、点数、增强、版本、蜡封全部随机）"
                 }
             }
         },
@@ -280,27 +279,24 @@ return {
                 }
             },
             p_worm_euda_avadon_normal = {
-                name = "Avadon Pack",
+                name = "终焉包",
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:euda_fate} Fate{} cards to",
-                    "be used immediately"
+                    "从至多{C:attention}#2#{}张{C:euda_fate}命运{}牌中",
+                    "选择{C:attention}#1#{}张并立即使用"
                 },
             },
             p_worm_euda_avadon_jumbo = {
-                name = "Jumbo Avadon Pack",
+                name = "巨型终焉包",
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:euda_fate} Fate{} cards to",
-                    "be used immediately"
+                    "从至多{C:attention}#2#{}张{C:euda_fate}命运{}牌中",
+                    "选择{C:attention}#1#{}张并立即使用"
                 },
             },
             p_worm_euda_avadon_mega = {
-                name = "Mega Avadon Pack",
+                name = "超级终焉包",
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:euda_fate} Fate{} cards to",
-                    "be used immediately"
+                    "从至多{C:attention}#2#{}张{C:euda_fate}命运{}牌中",
+                    "选择{C:attention}#1#{}张并立即使用"
                 },
             },
             undiscovered_euda_fate = {

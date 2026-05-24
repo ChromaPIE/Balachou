@@ -171,11 +171,11 @@ return {
 
         Spectral = {
             c_worm_stew_solar_flare = {
-                name = "Solar Flare",
+                name = "日辉",
                 text = {
-                    "{C:attention}Debuff{} all cards in hand",
-                    "{C:attention}Level up{} a random poker hand",
-                    "for {C:attention}each{} card debuffed",
+                    "使所有手牌{C:attention}失效",
+                    "{C:attention}每{}使一张牌失效",
+                    "随机{C:attention}升级{}一种牌型"
                 },
            },
         },

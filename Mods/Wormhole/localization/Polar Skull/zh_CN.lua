@@ -1,8 +1,8 @@
 local rocket_text = {
-	"{C:attention}#2#{}#4#内",
-	"所有出牌视作{C:attention}#1#",
-	"但{C:chips}筹码{}和{C:mult}倍率{}计算",
-	"仍遵照实际牌型",
+	"{C:attention}#2#{}#4#内，所有出牌",
+	"在计分时视作{C:attention}#1#",
+	"且一并计入实际牌型的",
+	"{C:chips}筹码{}和{C:mult}倍率",
 	"{B:1,C:white}#3#",
 }
 

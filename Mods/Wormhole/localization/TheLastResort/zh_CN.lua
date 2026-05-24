@@ -318,13 +318,12 @@ end
 
 local Other = {
 	worm_tlr_star_seal = {
-		name = 'Star Seal',
+		name = '星星蜡封',
 		text = {
-			'Create a tier {C:attention}2{}',
-			'{C:worm_tlr_constellation}Constellation{} when scored',
-			'if chips scored exceeds',
-			'{C:attention}#1#%{} of {C:blind}Blind Requirement',
-			'{C:inactive}(Must have room)'
+			'计分后，若得分超过',
+			'{C:blind}盲注得分需求{}的{C:attention}#1#%',
+			'生成一张{C:attention}2{}级{C:worm_tlr_constellation}星座{}牌',
+			'{C:inactive}（必须有空位）'
 		}
 	},
 	worm_tlr_const_info = {
@@ -412,11 +411,10 @@ return {
 				}
 			},
 			c_worm_tlr_formation = {
-				name = "Formation",
+				name = "星生",
 				text = {
-					"Add a {V:1}Star Seal{} to",
-					"{C:attention}#1#{} Selected",
-					"card in your hand"
+					"为选定的{C:attention}#1#{}张手牌",
+                    "打上{V:1}星星蜡封"
 				}
 			},
 		},

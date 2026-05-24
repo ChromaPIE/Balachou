@@ -80,7 +80,7 @@ return {
                     {
                         "{C:inactive,s:0.8}空杯",
                         "{C:attention}计分#3#张{C:diamonds}亮{C:hearts}色{}牌",
-                        "以{C:abs_drinks}续满{}",
+                        "以{C:abs_drinks}续满",
                         "{C:inactive,s:0.8}（#2#/#3#）",
                     },
                     {
@@ -95,31 +95,31 @@ return {
                 name = '晔林飘香',
                 text = {
                     {
-                        "When {C:attention}primed{}, {X:mult,C:white}X#1#{} Mult if",
-                        "played hand contains a",
-                        "{C:diamonds}Lig{C:hearts}ht{} suit card, then is {C:abs_drinks}drank{}",
+                        "若出牌包含{C:diamonds}亮{C:hearts}色{}牌",
+                        "{X:mult,C:white}X#1#{}倍率",
+                        "并{C:abs_drinks}一饮而尽"
                     },
                     {
-                        "{C:abs_drinks}Refill{} by {C:attention}scoring{}",
-                        "#3# {C:spades}Da{C:clubs}rk{} suit cards",
-                        "{C:inactive,s:0.8}(#2#/#3#){}",
+                        "{C:abs_drinks}续满{}：{C:attention}计分",
+                        "#3#张{C:spades}暗{C:clubs}色{}牌",
+                        "{C:inactive,s:0.8}（#2#/#3#）",
                     }
                 }
             },
             c_worm_abs_pina_solada_empty = {
-                name = 'Piña Solada',
+                name = '晔林飘香',
                 text = {
                     {
-                        "{C:inactive,s:0.8}Currently Empty{}",
-                        "{C:abs_drinks}Refill{} by {C:attention}scoring{}",
-                        "#3# {C:spades}Da{C:clubs}rk{} suit cards",
-                        "{C:inactive,s:0.8}(#2#/#3#){}",
+                        "{C:inactive,s:0.8}空杯",
+                        "{C:attention}计分#3#张",
+                        "{C:spades}暗{C:clubs}色{}牌以{C:abs_drinks}续满",
+                        "{C:inactive,s:0.8}（#2#/#3#）",
                     },
                     {
-                        "{C:inactive,s:0.8}After being Refilled:{}",
-                        "When {C:attention}primed{}, {X:mult,C:white}X#1#{} Mult if",
-                        "played hand contains a",
-                        "{C:diamonds}Lig{C:hearts}ht{} suit card, then is {C:abs_drinks}drank{}",
+                        "{C:inactive,s:0.8}续满后：",
+                        "若出牌包含{C:diamonds}亮{C:hearts}色{}牌",
+                        "{X:mult,C:white}X#1#{}倍率",
+                        "并{C:abs_drinks}一饮而尽"
                     },
                 }
             },
@@ -627,8 +627,8 @@ return {
     misc = {
         dictionary = {
             k_glass = "Glass",
-            b_abs_drinks_cards = "Drinks",
-            k_abs_drinks = 'Drinks',
+            b_abs_drinks_cards = "酒饮",
+            k_abs_drinks = '酒饮牌',
             k_plus_drink = '+1 Drink',
             k_worm_abs_emptied_ex = '干了！',
             k_worm_abs_sipped_ex = '喝一口！',
