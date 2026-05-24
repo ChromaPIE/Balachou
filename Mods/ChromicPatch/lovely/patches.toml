@@ -974,5 +974,39 @@ payload = '''SMODS.Keybind{
     end
 }'''
 
+# Kino Zeus: only react to real Joker post-trigger events.
+# The broad post_trigger listener also catches non-Joker card evaluations, causing
+# selected/held cards to repeatedly feed the event queue with shock applications.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "items/blinds/blinds_shock.lua"]'
+match_indent = true
+position = "at"
+pattern = '''if context.post_trigger and
+        not context.other_context.destroying_card then
+            local _valid_targets = Blockbuster.Counters.get_counter_targets(G.deck.cards, {"none", "match", "no_match_class"}, "counter_frost", {"beneficial"})'''
+payload = '''if context.post_trigger and context.other_context and context.other_context.cardarea == G.jokers and
+        context.other_card and context.other_card.area == G.jokers and not context.other_context.destroying_card then
+            local _valid_targets = Blockbuster.Counters.get_counter_targets(G.deck.cards, {"none", "match", "no_match_class"}, "counter_paralysis", {"beneficial"})'''
 
+# Game:start_run save load: tolerate malformed playing_card values from mods
+# Kino abduction can reinsert saved playing cards with playing_card=true, which crashes
+# vanilla's numeric descending sort when mixed with normal numeric indices.
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+match_indent = true
+position = "at"
+pattern = "table.sort(G.playing_cards, function (a, b) return a.playing_card > b.playing_card end )"
+payload = "table.sort(G.playing_cards, function (a, b) return ((type(a.playing_card) == 'number' and a.playing_card) or 0) > ((type(b.playing_card) == 'number' and b.playing_card) or 0) end )"
+
+# Kino abduction: restore numeric playing_card ids when returning playing cards
+# rather than boolean true, keeping G.playing_cards sortable after save/load.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/abduction.lua"]'
+match_indent = true
+position = "at"
+pattern = "_card.playing_card = true"
+payload = "_card.playing_card = #G.playing_cards + 1"
 
