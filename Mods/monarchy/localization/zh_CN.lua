@@ -247,7 +247,7 @@ local descriptions = {
             }
         },
         lightning_bottle = {
-            name = '闪电瓶',
+            name = '瓶装闪电',
             text = {
                 '{C:attention}#1#',
                 '恒出现于{C:attention}起始手牌',
