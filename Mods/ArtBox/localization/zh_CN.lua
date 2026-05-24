@@ -162,7 +162,7 @@ return {
                 {
                     "每有一张被本牌摧毁的{C:attention}9",
                     "计分的{C:attention}7{}给予{C:mult}+#2#{}倍率",
-                    "{C:inactive}（当前为{C:mult}+#1#{C:inactive}倍率"
+                    "{C:inactive}（当前为{C:mult}+#1#{C:inactive}倍率）"
                 } }
             },
 
