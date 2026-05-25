@@ -43,14 +43,13 @@ return {
             },
             j_worm_ct_event_horizon = {
                 name = {
-                    "Event Horizon",
-                    "{s:0.5}(Reach for the Sun and Burn! Burn! Burn!)"
+                    "事件视界",
+                    "{s:0.5}（直奔太阳！烧！烧！烧！）"
                 },
                 text = {
-                    "This Joker interrupts all",
-                    "hand {C:attention}level-ups{} and redirects",
-                    "them to the {C:attention}next played{} hand",
-                    "{C:inactive}(Currently {C:attention}#1#{C:inactive} levels stored){}"
+                    "阻止并暂存所有牌型{C:attention}升级",
+                    "{C:attention}下次出牌{}时，对其牌型施加升级",
+                    "{C:inactive}（当前已暂存{C:attention}#1#{C:inactive}级）"
                 }
             },
             j_worm_ct_event_horizon_fake = {

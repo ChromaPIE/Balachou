@@ -477,21 +477,18 @@ return {
                     "{C:inactive}（最佳出牌：{C:chips,E:1}+#2#{C:inactive}）"
                 },
                 unlock = {
-                    "Score {C:chips}1,000,000,000{} Chips",
-                    "in one hand"
+                    "单次出牌得分{C:chips}1,000,000,000"
                 }
             },
             j_kino_big_daddy = {
-                name = "Big Daddy",
+                name = "老爸向前冲",
                 text = {
-                    "Each played {C:attention}non-face{} card",
-                    "becomes a {C:attention}2{} when scored",
-                    "if scoring hand contains {C:attention}King"
+                    "若出牌包含{C:attention}K",
+                    "打出的每张{C:attention}非人头{}牌",
+                    "计分时变为{C:attention}2"
                 },
                 unlock = {
-                    "Discard a {C:attention}2{}",
-                    "and a {C:attention}King",
-                    "and no other cards"
+                    "单独弃掉一张{C:attention}2{}和一张{C:attention}K"
                 }
             },
             j_kino_big_short = {
@@ -1260,11 +1257,11 @@ return {
                 }
             },
             j_kino_ed_wood = {
-                name = "Ed Wood",
+                name = "艾德·伍德",
                 text = {
-                    "{C:money}$#2#{} if hand",
-                    "scores less than {C:attention}#1#%{} of blind",
-                    "requirement"
+                    "若出牌得分不足",
+                    "盲注得分要求的{C:attention}#1#%",
+                    "赚取{C:money}$#2#"
                 },
                 unlock = {
                     "Win a run with {C:money}$0{} remaining"
@@ -1302,7 +1299,7 @@ return {
             j_kino_encanto = {
                 name = "魔法满屋",
                 text = {
-                    "若出牌牌型为{C:attention}葫芦",
+                    "打出{C:attention}葫芦{}时",
                     "{C:attention}随机{C:Magic}施放一道咒术"
                 },
                 unlock = {
@@ -2036,15 +2033,16 @@ return {
                 }
             },
             j_kino_killer_klowns = {
-                name = "Killer Klowns from Outer Space",
+                name = "外太空杀人小丑",
                 text = {
-                    "Destroy a random {C:attention}Joker",
-                    "and create {C:dark_edition,E:1}negative{C:planet} Planets{}",
-                    "for each {C:money}$#1#{} of {C:attention}sell value"
+                    "退出{C:attention}商店{}时",
+                    "随机摧毁一张{C:attention}小丑牌",
+                    "其{C:attention}售价{}每有{C:money}$#1#",
+                    "生成一张{C:dark_edition,E:1}负片{C:planet}星球牌"
                 },
                 unlock = {
-                    "Win a run with",
-                    "Jokers from each Rarity"
+                    "携带每个稀有度的小丑牌各一张",
+                    "赢下一局"
                 }
             },
             j_kino_kindergarten_cop = {
@@ -2123,12 +2121,11 @@ return {
                 }
             },
             j_kino_lethal_weapon = {
-                name = "Lethal Weapon",
+                name = "轰天炮",
                 text = {
-                    "{C:mult}+#2#{} Mult",
-                    "{C:mult}-#3#{} Mult when",
-                    "scoring hand does not", 
-                    "contain a {C:attention}Pair"
+                    "{C:mult}+#2#{}倍率",
+                    "若出牌不含{C:attention}对子",
+                    "{C:mult}-#3#{}倍率"
                 }
             },
             j_kino_limitless = {
@@ -2785,17 +2782,14 @@ return {
                 }
             },
             j_kino_pirates_movie = {
-                name = "The Pirates! Band of Misfits",
+                name = "神奇海盗团",
                 text = {
-                    "When a {C:attention}consumable{} with sell value",
-                    "of {C:money}$1{} or higher is used",
-                    "create a copy", 
-                    "with a {C:attention}sell value{} of {C:money}$0"
+                    "使用售价至少为{C:money}$1{}的{C:attention}消耗牌{}后",
+                    "生成一张{C:attention}售价{}为{C:money}$0{}的复制",
                 },
                 unlock = {
-                    "Win a run with the total",
-                    "{C:money}sell value of all current {C:attention}Jokers",
-                    "being {C:money}$50{} or higher"
+                    "携带{C:money}总售价{}至少为{C:money}$50{}的{C:attention}小丑牌",
+                    "赢下一局"
                 }
             },
             j_kino_pirates_of_the_caribbean_1 = {
@@ -3183,14 +3177,14 @@ return {
                 }
             },
             j_kino_shopaholic = {
-                name = "Confessions of a Shopaholic",
+                name = "一个购物狂的自白",
                 text = {
-                    {"Gains {X:mult,C:white}X#1#{} Mult when",
-                    "{C:money}$#5#{} is spend", 
-                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)"},
-                    {"Goes up by {C:money}$#3#{}",
-                    "every time", 
-                    "{C:inactive} (Spend {C:money}$#4#{C:inactive})"},
+                    {"花费{C:money}$#5#{}后",
+                    "本牌获得{X:mult,C:white}X#1#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）"},
+                    {"每次升级后",
+                    "花费要求提升{C:money}$#3#",
+                    "{C:inactive}（已花费{C:money}$#4#{C:inactive}）"},
                 }
             },
             j_kino_signs = {
@@ -3308,13 +3302,13 @@ return {
                 } 
             },
             j_kino_solo = {
-                name = "Solo: A Star Wars Story",
+                name = "游侠索罗：星球大战外传",
                 text = {
-                    "Create a random {C:planet}Planet",
-                    "if played hand is a {C:attention}High Card"
+                    "打出{C:attention}高牌{}时",
+                    "随机生成一张{C:planet}星球牌"
                 },
                 unlock = {
-                    "Discover the {C:attention}Original Trilogy"
+                    "发现{C:attention}星球大战三部曲"
                 }
             },
             j_kino_sorcerers_apprentice = {
@@ -8245,7 +8239,7 @@ return {
             k_west_side_neither = "Officer Kripke! Run!",
             k_shazam = "SHAZAM!",
             k_btlc = "Have ya paid your dues, Jack?",
-            k_klowns = "BWEHEHE!",
+            k_klowns = "木嘿嘿嘿！",
             k_independence_day = "Today, we celebrate our Independence Day!",
             k_polar_express_bad = "You've been a bad gambler",
             k_polar_express_good = "Ho ho ho!",

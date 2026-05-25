@@ -1017,6 +1017,18 @@ payload = '''if context.post_trigger and context.other_context and context.other
         context.other_card and context.other_card.area == G.jokers and not context.other_context.destroying_card then
             local _valid_targets = Blockbuster.Counters.get_counter_targets(G.deck.cards, {"none", "match", "no_match_class"}, "counter_paralysis", {"beneficial"})'''
 
+# AIJ upgrade_poker_hands: accept SMODS string-form hands
+# SMODS normalizes args.hands internally, but AIJ reads the original argument after delegation.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS allinjest "Utils/hooks.lua"]'
+match_indent = true
+position = "at"
+pattern = "for _, hand in ipairs(args.hands) do"
+payload = '''local aij_hands = args.hands or G.handlist
+    if type(aij_hands) == 'string' then aij_hands = {aij_hands} end
+    for _, hand in ipairs(aij_hands) do'''
+
 # Game:start_run save load: tolerate malformed playing_card values from mods
 # Kino abduction can reinsert saved playing cards with playing_card=true, which crashes
 # vanilla's numeric descending sort when mixed with normal numeric indices.

@@ -1889,7 +1889,7 @@ return {
                 },
             },
             eternal={
-                name="永恒卡",
+                name="永恒",
                 text={
                     "不可售出",
                     "无法摧毁"
