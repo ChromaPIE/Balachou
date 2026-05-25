@@ -4663,10 +4663,10 @@ return {
         },
         Tarot = {
             c_kino_slasher = {
-                name = "Slasher",
+                name = "杀人狂",
                 text = {
-                    "Upgrade #1# cards into ",
-                    "{C:attention}Horror cards{}"
+                    "将{C:attention}#1#{}张选定卡牌",
+                    "增强为{C:attention}恐怖片小丑牌"
                 }
             },
             c_kino_droid = {
@@ -4912,7 +4912,7 @@ return {
                     "各牌型倍率{C:mult}+#2#{}",
                     "回合结束时",
                     "每剩余一次{C:mult}弃牌",
-                    "倍率加成提升{C:attention}#1#{}"
+                    "倍率加成提升{C:attention}1{}"
                 }
             },
             c_kino_thra = {
@@ -5098,7 +5098,7 @@ return {
                 name = "堆料玉米片",
                 text = {
                     "给予下一张计分牌",
-                    "随机增强、版本及蜡封"
+                    "随机{C:attention}增强{}、{C:attention}版本{}及{C:attention}蜡封"
                 }
             },
             c_kino_milkshake = {
@@ -5293,23 +5293,22 @@ return {
         },
         Back = {
             b_kino_spooky = {
-                name = "Spooky Deck",
+                name = "瘆人牌组",
                 text = {
-                    "{C:attention}Horror Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
-                    "Start with a {C:attention}The Slasher{}",
-                    "and a {C:attention}The Demon"
+                    "{C:attention}恐怖片小丑牌{}加强{C:attention}50%",
+                    "且出现频率{C:attention}X#1#",
+                    "开局即拥有{C:attention}杀人狂{}和{C:attention}邪魔"
                 },
                 unlock = {
-                    "Win a run with at least",
-                    "{C:attention}#2#{} {V:1}#1#{} Jokers"
+                    "携带至少{C:attention}#2#{}张{V:1}#1#{}小丑牌",
+                    "赢下一局"
                 }
             },
             b_kino_tech = {
                 name = "Tech_Deck",
                 text = {
                     "{C:attention}Sci-Fi Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}The Droid{}"
                 },
@@ -5322,7 +5321,7 @@ return {
                 name = "Flirty Deck",
                 text = {
                     "{C:attention}Romance Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}The Meetcute{}"
                 },
@@ -5335,7 +5334,7 @@ return {
                 name = "Questionable Deck",
                 text = {
                     "{C:attention}Mystery Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}The Detective{}"
                 },
@@ -5348,7 +5347,7 @@ return {
                 name = "Enchanted Deck",
                 text = {
                     "{C:attention}Fantasy Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} times as common",
                     "Start with 2 copies of ",
                     "{C:attention}The Witch{}"
                 },
@@ -5361,7 +5360,7 @@ return {
                 name = "Illicit Deck",
                 text = {
                     "{C:attention}Crime Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}The Gangster{}"
                 },
@@ -5374,7 +5373,7 @@ return {
                 name = "Dangerous Deck",
                 text = {
                     "{C:attention}Action Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}The Soldier{}"
                 },
@@ -5387,7 +5386,7 @@ return {
                 name = "Heroic Deck",
                 text = {
                     "{C:attention}Superhero Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}The Superhero{}"
                 },
@@ -5401,7 +5400,7 @@ return {
                 name = "Athletic Deck",
                 text = {
                     "{C:attention}Sports Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}Homerun{}"
                 },
@@ -5414,7 +5413,7 @@ return {
                 name = "Childlike Deck",
                 text = {
                     "{C:attention}Family Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}Gathering{}"
                 },
@@ -5427,7 +5426,7 @@ return {
                 name = "Adventurous Deck",
                 text = {
                     "{C:attention}Adventure Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}Artifact{}"
                 },
@@ -5440,7 +5439,7 @@ return {
                 name = "High Pressure Deck",
                 text = {
                     "{C:attention}Thriller Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}Fright{}"
                 },
@@ -5453,7 +5452,7 @@ return {
                 name = "Funny Deck",
                 text = {
                     "{C:attention}Comedy Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}Whimsy{}"
                 },
@@ -5500,15 +5499,14 @@ return {
                 }
             },
             b_kino_c2n = {
-                name = "Cine2Nerdle Deck",
+                name = "Cine2Nerdle牌组",
                 text = {
-                    "If you own a {C:attention}Movie Joker",
-                    "then all Jokers spawning in shop",
-                    "will share cast with your",
-                    "current Jokers"
+                    "与所持{C:attention}小丑牌",
+                    "有相同演员的{C:attention}小丑牌",
+                    "出现频率{C:attention}X#1#"
                 },
                 unlock = {
-                    "Win a run with {C:attention}Bacon Deck{}"
+                    "使用{C:attention}培根牌组{}赢下一局"
                 }
 
             },
@@ -5577,10 +5575,10 @@ return {
             b_kino_darkknight = {
                 name = "Dark Knight Deck",
                 text = {
-                    "{C:attention}Batman Jokers{} are twice",
+                    "{C:attention}Batman Jokers{} are {C:attention}X#1#{}",
                     "as common",
-                    "{C:attention}Jokers{} have a {green}1 in 4{}",
-                    "chance to spawn with a {C:attention}Robin sticker"
+                    "{C:green}1 in 4{} chance for {C:attention}Jokers",
+                    "to have a {C:attention}Robin sticker"
                 },
                 unlock = {
                     "Unlock all {C:attention}Batman Jokers"
@@ -5616,9 +5614,9 @@ return {
             b_kino_alderaan = {
                 name = "Alderaan Deck",
                 text = {
-                    "{C:attention}Star Wars Jokers{} are",
-                    "2x as common",
-                    "When you defeat a blind",
+                    "{C:attention}Star Wars Jokers{} are {C:attention}X#1#",
+                    "as common",
+                    "When you defeat a {C:attention}Blind",
                     "level up a random hand",
                     "for each unused {C:mult}Discard"
                 },
@@ -5629,7 +5627,7 @@ return {
             b_kino_cosmonaut = {
                 name = "Cosmonaut's Deck",
                 text = {
-                    "{C:StrangePlanet}Strange Planets{} are {C:attention}4x",
+                    "{C:StrangePlanet}Strange Planets{} are {C:attention}X#1#",
                     "as common and {C:attention}ALL{} {C:planet}planets",
                     "can be taken instead of used"
                 },
@@ -5663,11 +5661,10 @@ return {
             b_kino_kinoween_vampire = {
                 name = "Bloodlust Deck",
                 text = {
-                    "{C:Drain}Vampire Jokers{} are twice",
+                    "{C:Drain}Vampire Jokers{} are {C:attention}X#1#",
                     "as common",
-                    "Playing a single {C:attention}enhanced{}",
-                    "card {C:Drain}drains{} it and boosts",
-                    "a random joker with {C:Power}20% Power{}"
+                    "Put {C:attention}#2#{C:Drain} Blood Counters{}",
+                    "in your deck when {C:attention}Blind{} is selected" 
                 },
                 unlock = {
                     "Discover every {C:Drain}Vampire{} Joker"
@@ -5723,8 +5720,8 @@ return {
                 name = "玛德琳·马德里加尔",
                 text = {
                     "本赛局每使用过一张{C:attention}消耗牌",
-                    "基础倍率削减{C:mult}#2#",
-                    "基础筹码削减{C:chips}#2#"
+                    "对牌组施加#1#位{C:attention}债务计数标",
+                    "{C:inactive}（将施加{C:attention}#2#{C:inactive}位）"
                 }
             },
             bl_kino_cruella = {
@@ -6788,7 +6785,7 @@ return {
                 text={
                     "{C:attention}单独{}打出本牌后，使所有",
                     "点数{C:attention}小于{}本牌的手牌",
-                    "点数提升{C:attention}1 "
+                    "点数提升{C:attention}1"
                 },
             },
             kino_family_seal={
@@ -7162,23 +7159,21 @@ return {
         Sleeve = {
             -- Genre Sleeves
             sleeve_kino_spooky = {
-                name = "Spooky Sleeve",
+                name = "瘆人牌套",
                 text = {
-                    "{C:attention}Horror Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
-                    "Start with a {C:attention}The Slasher{}",
-                    "and a {C:attention}The Demon"
+                    "{C:attention}恐怖片小丑牌{}加强{C:attention}50%",
+                    "且出现频率{C:attention}X#1#",
+                    "开局即拥有{C:attention}杀人狂{}和{C:attention}邪魔"
                 },
                 unlock = {
-                    "Defeat {C:black}Black Stake{} using",
-                    "{C:attention}Spooky Deck{}"
+                    "使用{C:attention}瘆人牌组{}击败{C:black}黑注"
                 }
             },
             sleeve_kino_tech = {
                 name = "Tech_Sl33ve",
                 text = {
                     "{C:attention}Sci-Fi Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}The Droid{}"
                 },
@@ -7191,7 +7186,7 @@ return {
                 name = "Flirty Sleeve",
                 text = {
                     "{C:attention}Romance Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}The Meetcute{}"
                 },
@@ -7204,7 +7199,7 @@ return {
                 name = "Questionable Sleeve",
                 text = {
                     "{C:attention}Mystery Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}The Detective{}"
                 },
@@ -7217,7 +7212,7 @@ return {
                 name = "Enchanted Sleeve",
                 text = {
                     "{C:attention}Fantasy Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}The Witch{}"
                 },
@@ -7230,7 +7225,7 @@ return {
                 name = "Illicit Sleeve",
                 text = {
                     "{C:attention}Crime Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}The Gangster{}"
                 },
@@ -7243,7 +7238,7 @@ return {
                 name = "Dangerous Sleeve",
                 text = {
                     "{C:attention}Action Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}The Soldier{}"
                 },
@@ -7256,7 +7251,7 @@ return {
                 name = "Heroic Sleeve",
                 text = {
                     "{C:attention}Superhero Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}The Superhero{}"
                 },
@@ -7270,7 +7265,7 @@ return {
                 name = "Athletic Sleeve",
                 text = {
                     "{C:attention}Sports Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}Homerun{}"
                 },
@@ -7283,7 +7278,7 @@ return {
                 name = "Childlike Sleeve",
                 text = {
                     "{C:attention}Family Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}Gathering{}"
                 },
@@ -7296,7 +7291,7 @@ return {
                 name = "Adventurous Sleeve",
                 text = {
                     "{C:attention}Adventure Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}Artifact{}"
                 },
@@ -7309,7 +7304,7 @@ return {
                 name = "High Pressure Sleeve",
                 text = {
                     "{C:attention}Thriller Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}Fright{}"
                 },
@@ -7322,7 +7317,7 @@ return {
                 name = "Funny Sleeve",
                 text = {
                     "{C:attention}Comedy Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}3{} times as common",
+                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
                     "Start with 2 copies of ",
                     "{C:attention}Whimsy{}"
                 },
@@ -7380,10 +7375,9 @@ return {
             sleeve_kino_c2n = {
                 name = "Cine2Nerdle Sleeve",
                 text = {
-                    "If you own a {C:attention}Movie Joker",
-                    "then all jokers that spawn",
-                    "will share cast with your",
-                    "current jokers"
+                    "{C:attention}Jokers{} sharing cast",
+                    "with owned {C:attention}Jokers{}",
+                    "are {C:attention}X#1#{} as common"
                 },
                 unlock = {
                     "Defeat {C:black}Black Stake{} using",
@@ -7480,10 +7474,10 @@ return {
             sleeve_kino_darkknight = {
                 name = "Dark Knight Sleeve",
                 text = {
-                    "{C:attention}Batman Jokers{} are twice",
+                    "{C:attention}Batman Jokers{} are {C:attention}X#1#{}",
                     "as common",
-                    "{C:attention}Jokers{} have a {green}1 in 4{}",
-                    "chance to spawn with a {C:attention}Robin sticker"
+                    "{C:green}1 in 4{} chance for {C:attention}Jokers",
+                    "to have a {C:attention}Robin sticker"
                 },
                 unlock = {
                     "Defeat {C:black}Black Stake{} using",
@@ -7493,10 +7487,10 @@ return {
             sleeve_kino_darkknight_alt = {
                 name = "Dark Knight Sleeve",
                 text = {
-                    "{C:attention}Batman Jokers{} are",
-                    "four times as common",
-                    "{C:attention}Jokers{} have a {green}1 in 4{}",
-                    "chance to spawn with a {C:attention}Robin sticker"
+                    "{C:attention}Batman Jokers{} are {C:attention}X#1#{}",
+                    "as common",
+                    "{C:green}1 in 4{} chance for {C:attention}Jokers",
+                    "to have a {C:attention}Robin sticker"
                 },
                 unlock = {
                     "Defeat {C:black}Black Stake{} using",
@@ -7507,9 +7501,9 @@ return {
             sleeve_kino_alderaan = {
                 name = "Alderaan Sleeve",
                 text = {
-                    "{C:attention}Star Wars Jokers{} are",
-                    "twice as common",
-                    "When you defeat a blind",
+                    "{C:attention}Star Wars Jokers{} are {C:attention}X#1#",
+                    "as common",
+                    "When you defeat a {C:attention}Blind",
                     "level up a random hand",
                     "for each unused {C:mult}Discard"
                 },
@@ -7521,9 +7515,9 @@ return {
             sleeve_kino_alderaan_alt = {
                 name = "Alderaan Sleeve",
                 text = {
-                    "{C:attention}Star Wars Jokers{} are",
-                    "four times as common",
-                    "When you defeat a blind",
+                    "{C:attention}Star Wars Jokers{} are {C:attention}X#1#",
+                    "as common",
+                    "When you defeat a {C:attention}Blind",
                     "level up a random hand",
                     "for each unused {C:mult}Discard",
                     "and {C:chips}Hand"
@@ -7537,7 +7531,7 @@ return {
             sleeve_kino_cosmonaut = {
                 name = "Cosmonaut's Sleeve",
                 text = {
-                    "{C:StrangePlanet}Strange Planets{} are {C:attention}4x",
+                    "{C:StrangePlanet}Strange Planets{} are {C:attention}X#1#",
                     "as common and {C:attention}ALL{} {C:planet}planets",
                     "can be taken instead of used"
                 },
@@ -7549,7 +7543,7 @@ return {
             sleeve_kino_cosmonaut_alt = {
                 name = "Cosmonaut's Sleeve",
                 text = {
-                    "{C:StrangePlanet}Strange Planets{} are {C:attention}16x",
+                    "{C:StrangePlanet}Strange Planets{} are {C:attention}X#1#",
                     "as common and {C:attention}ALL{} {C:planet}planets",
                     "can be taken instead of used"
                 },
@@ -7677,20 +7671,19 @@ return {
             sleeve_kino_kinoween_vampire = {
                 name = "Bloodlust Sleeve",
                 text = {
-                    "{C:Drain}Vampire Jokers{} are twice",
+                    "{C:Drain}Vampire Jokers{} are {C:attention}X#1#",
                     "as common",
-                    "Playing a single {C:attention}enhanced{}",
-                    "card {C:Drain}drains{} it and boosts",
-                    "a random joker with {C:Power}20% Power{}"
+                    "Put {C:attention}#2#{C:Drain} Blood Counters{}",
+                    "in your deck when {C:attention}Blind{} is selected" 
                 },
             },
             sleeve_kino_kinoween_vampire_alt = {
                 name = "Bloodlust Sleeve",
                 text = {
-                    "{C:Drain}Vampire Jokers{} are four times",
+                    "{C:Drain}Vampire Jokers{} are {C:attention}X#1#",
                     "as common",
-                    "Put {C:attention}10{C:Drain} Blood Counters{}",
-                    "in your deck when blind is selected" 
+                    "Put {C:attention}#2#{C:Drain} Blood Counters{}",
+                    "in your deck when {C:attention}Blind{} is selected"
                 },
             },
 
@@ -8335,7 +8328,7 @@ return {
             k_kino_eating_beans_3 = "This jester eating BEANS",
 
             -- Planet Barks
-            k_kino_ego_planet = "Ego!",
+            k_kino_ego_planet = "伊戈！",
             k_kino_treasure_planet_cons = "Treasure Acquired",
             k_kino_solaris = "Madness!",
             k_kino_altair4 = "心魔作祟！",
