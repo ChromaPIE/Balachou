@@ -1,6 +1,5 @@
 [manifest]
 version = "1.0.0"
-dump_lua = true
 priority = -999
 
 [[patches]]
@@ -524,3 +523,33 @@ pattern = '''card.ability.extra.hand,
 payload = '''localize(card.ability.extra.hand, 'poker_hands'),
                     ppm and localize("k_polarskull_unlimited") or card.ability.extra.rounds,'''
 
+# Kino Mystery Card font edit
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "items/enhancements/mystery.lua"]'
+match_indent = true
+position = "at"
+pattern = '''
+text_width = 30,
+text_height = 20,
+text_font = "kino_handwriting_bold",
+'''
+payload = '''
+text_width = 45,
+text_height = 30,
+text_font = "crmpatch_zhangqingping",
+'''
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS kino "items/enhancements/mystery.lua"]'
+position = "at"
+pattern = "of rank "
+payload = "点数: "
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS kino "items/enhancements/mystery.lua"]'
+position = "at"
+pattern = "suit is "
+payload = "花色: "

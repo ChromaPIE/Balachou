@@ -413,13 +413,22 @@ local function soe_energy_get_path(root, path)
     return current, path[#path]
 end
 
-local function soe_energy_modify_joker_values(joker)
-    if not joker or not joker.ability then return end
-    local vars = {joker:generate_UIBox_ability_table(true)}
-    vars = vars[1] or {}
-    local shown = {}
+local function soe_energy_add_shown_numbers(shown, vars)
+    if type(vars) ~= 'table' then return end
     for _, v in ipairs(vars) do
         if type(v) == 'number' then shown[v] = true end
+    end
+end
+
+local function soe_energy_modify_joker_values(joker)
+    if not joker or not joker.ability then return end
+    local shown = {}
+    local vars = {joker:generate_UIBox_ability_table(true)}
+    soe_energy_add_shown_numbers(shown, vars[1])
+    local center = joker.config and joker.config.center
+    if center and center.loc_vars and type(center.loc_vars) == 'function' then
+        local res = center:loc_vars({}, joker) or {}
+        soe_energy_add_shown_numbers(shown, res.vars)
     end
     local name = joker.ability.name
     if name == 'Throwback' then
@@ -888,26 +897,45 @@ position = "before"
 pattern = "card.ability.extra.level_non = card.ability.extra.level_non -1"
 payload = "if not (card.ability and card.ability.extra and card.ability.extra.level_non) then return true end"
 
-# localize type='name': nil-guard name_parsed when loc_target passed directly
-# Wormhole spacetart menu passes loc_target directly; the elseif chain skips
-# the name_parsed init when args.loc_target is set, crashing ipairs at line 2014.
+# localize type='name': direct loc_target tables must use their own parsed name
+# Wormhole spacetart menu passes loc_target directly instead of set/key.
 [[patches]]
 [patches.pattern]
 target = "functions/misc_functions.lua"
 match_indent = true
 position = "at"
-pattern = "for _, lines in ipairs(args.type == 'unlocks' and loc_target.unlock_parsed or args.type == 'name' and loc_target.name_parsed or (args.type == 'text' or args.type == 'tutorial' or args.type == 'quips') and loc_target or loc_target.text_parsed) do"
-payload = "for _, lines in ipairs(args.type == 'unlocks' and (loc_target.unlock_parsed or {}) or args.type == 'name' and (loc_target.name_parsed or {}) or (args.type == 'text' or args.type == 'tutorial' or args.type == 'quips') and loc_target or (loc_target.text_parsed or {})) do"
+pattern = '''  elseif args.type == 'name' then
+    loc_target = loc_target or {}
+    if pcall(function()
+    local name = G.localization.descriptions[(args.set or args.node.config.center.set)][args.key or args.node.config.center.key]
+    loc_target.name_parsed = name.name_parsed or {loc_parse_string(name.name)}
+    end) then
+    else loc_target.name_parsed = {} end
+  end'''
+payload = '''  elseif args.type == 'name' then
+    loc_target = loc_target or {}
+    if loc_target.name_parsed then
+    elseif loc_target.name then
+      loc_target.name_parsed = {}
+      for _, line in ipairs(type(loc_target.name) == 'table' and loc_target.name or {loc_target.name}) do
+        loc_target.name_parsed[#loc_target.name_parsed+1] = loc_parse_string(line)
+      end
+    elseif pcall(function()
+    local name = G.localization.descriptions[(args.set or args.node.config.center.set)][args.key or args.node.config.center.key]
+    loc_target.name_parsed = name.name_parsed or {loc_parse_string(name.name)}
+    end) then
+    else loc_target.name_parsed = {} end
+  end'''
 
-# Wormhole spacetart info menu: nil-guard target.text_parsed on custom page entries
-# Custom loc entries from zh_CN have text but no text_parsed per page
+# Wormhole spacetart info menu: restore PPU parsed loc before rendering
+# Info_Menu is outside vanilla init_localization; PPU's native parser owns this shape.
 [[patches]]
 [patches.pattern]
 target = '=[SMODS Wormhole "/content/TeamMeow/2_infomenu.lua"]'
 match_indent = true
-position = "at"
-pattern = "create_text_box({ loc_target = v, text_parsed = target.text_parsed[i], vars = args.vars }),"
-payload = "create_text_box({ loc_target = v, text_parsed = (target.text_parsed or {})[i], vars = args.vars }),"
+position = "after"
+pattern = 'local loc = G.localization.PotatoPatch.Info_Menu["worm_meow_tarts"]'
+payload = 'if loc then PotatoPatchUtils.LOC.recursive_parse(loc) end'
 
 # SOE redfabric: replace triple-click with I hotkey
 # Adds an SMODS.Keybind that opens the copied-jokers view when I is pressed
@@ -1009,4 +1037,38 @@ match_indent = true
 position = "at"
 pattern = "_card.playing_card = true"
 payload = "_card.playing_card = #G.playing_cards + 1"
+
+# Kino Rupert Pupkin: retrigger only the actual leftmost Joker
+# The blind was listening to every retrigger_joker_check target, including selected cards.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "items/blinds/blind_normal.lua"]'
+match_indent = true
+position = "at"
+pattern = '''    calculate = function(self, blind, context)
+        if context.retrigger_joker_check and
+        context.other_card and
+        context.other_card ~= self then
+            for _index, _joker in ipairs(G.jokers.cards) do
+                if _index == 1 and #G.jokers.cards > 1 then
+                    return {
+                        message = localize("k_again_ex"),
+                        repetitions = #G.jokers.cards - 1
+                    }
+                end
+            end
+        end
+    end,'''
+payload = '''    calculate = function(self, blind, context)
+        if context.retrigger_joker_check and
+        context.other_card == G.jokers.cards[1] and
+        not context.other_context.retrigger_joker and
+        #G.jokers.cards > 1 then
+            return {
+                message = localize("k_again_ex"),
+                repetitions = #G.jokers.cards - 1
+            }
+        end
+    end,'''
+
 
