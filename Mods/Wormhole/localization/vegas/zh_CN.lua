@@ -96,11 +96,11 @@ return {
 		        }
             },
             j_worm_Big_Bounce = {
-                name = "The Big Bounce",
+                name = "大反弹",
 				text = {
-					"When {C:attention}Blind {C:red}failed{}",
-					"restart your run with",
-					"the same {C:green}Seed{}"
+					"{C:red}输掉{C:attention}盲注{}时",
+					"以相同{C:green}种子",
+					"重开赛局"
 				}
             },
 			j_worm_bigbang = {

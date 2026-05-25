@@ -123,13 +123,13 @@ return {
                 }
             },
             j_worm_riverboat_worm_hole = {
-                name = "Worm Hole",
+                name = "虫之洞",
                 text = {
-                    "Played but {C:attention}unscored{} cards have a",
-                    "{C:green}#1# in #2#{} chance to {C:red}lose one rank{} and",
-                    "give this Joker {C:chips}+#3#{} Chips",
-                    "{C:inactive}(Currently {C:chips}+#4# {C:inactive}Chips)",
-                    "{C:inactive}(2s are destroyed instead)"
+                    "{C:attention}不计分{}牌有{C:green}#1#/#2#{}的几率",
+                    "{C:red}失去1点数{}并使本牌",
+                    "获得{C:chips}+#3#{}筹码",
+                    "{C:inactive}（当前为{C:chips}+#4#{C:inactive}筹码）",
+                    "{C:inactive}（若为2，则改为摧毁）"
                 }
             },
             j_worm_riverboat_roche = {

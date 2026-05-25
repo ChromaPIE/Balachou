@@ -28,12 +28,12 @@ return {
 
 		Joker = {
 			j_worm_sg_typhoon = {
-				name = "Humanoid Typhoon",
+				name = "人间台风",
 				text = {
-					"This Joker gains {X:mult,C:white}X#3#{} Mult if",
-					"played hand is a {C:attention}#2#{}",
-					"{s:0.8}poker hand changes each round",
-					"{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive}){}",
+					"若出牌牌型为{C:attention}#2#",
+					"本牌获得{X:mult,C:white}X#3#{}倍率",
+					"{s:0.8}每回合变更牌型",
+					"{C:inactive}（当前为{X:mult,C:white}X#1#{C:inactive}倍率）",
 				},
 			},
 

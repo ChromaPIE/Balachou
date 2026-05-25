@@ -242,8 +242,7 @@ return {
 				name = "黑洞黑莓味",
 				text = {
 					"套有其包装的{C:attention}小丑牌",
-					"均分{C:chips}筹码{}和",
-					"{C:mult}倍率{}的{X:legendary,C:white}#1#%",
+					"均分{C:chips}筹码{}和{C:mult}倍率{}的{X:legendary,C:white}#1#%",
 				},
 			},
 

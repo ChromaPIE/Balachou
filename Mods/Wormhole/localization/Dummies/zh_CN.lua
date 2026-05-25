@@ -147,7 +147,7 @@ return {    -- yo it's GHOSTSALT here look at me TYPING before i SUBMIT THIS THI
 			j_worm_dum_timcurry = {
                 name = "{C:worm_dum_timcurry}蒂姆·克里",
                 text = { {
-					"若出牌包含{C:attention}一对{C:attention}Q",
+					"若出牌包含{C:attention}一对Q",
                     "使{C:attention}随机{}牌型提升{C:planet}#1#{}级"
 				}, {
 					"{C:inactive}可能响应太空小丑"

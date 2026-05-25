@@ -279,11 +279,11 @@ return {
                 }
             },
             j_worm_lfc_astronaut_food = {
-                name = "Astronaut Food",
+                name = "太空员食品",
                 text = {
-                    "The next {C:attention}#1#{} hands gain",
-                    "an additional {C:chips}+#2#{} Chips",
-                    "and {C:mult}+#3#{} Mult when {C:attention}levelling up"
+                    "下{C:attention}#1#{}次牌型{C:attention}升级{}时",
+                    "使其额外获得",
+                    "{C:chips}+#2#{}筹码和{C:mult}+#3#{}倍率"
                 },
             },
             j_worm_lfc_hitchhiker = {

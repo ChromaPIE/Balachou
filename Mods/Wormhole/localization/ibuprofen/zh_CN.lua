@@ -106,10 +106,10 @@ return {
                 },
             },
             j_worm_ibu_redshift = {
-                name = 'Red Shift',
+                name = '红移',
                 text = {
-                    "Played {C:attention}Enhanced{} Cards give",
-                    "{C:mult}+#1#{} Mult when scored"
+                    "打出的{C:attention}增强{}牌",
+                    "计分时给予{C:mult}+#1#{}倍率"
                 }
             },
             j_worm_ibu_permafrost = {

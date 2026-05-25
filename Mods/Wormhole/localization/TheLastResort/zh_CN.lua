@@ -439,12 +439,11 @@ return {
 				}
 			},
 			j_worm_tlr_nomaimask = {
-				name = "Nomai Mask",
+				name = "挪麦面具",
 				text = {
-					"{V:1}Constellation{} cards are upgraded",
-					"twice when {C:attention}Boss Blind{}",
-					"is defeated",
-					"{C:inactive}And may reach {C:edition}???"
+					"击败{C:attention}Boss盲注{}后",
+					"{V:1}星座{}牌将双倍升级",
+					"{C:inactive}且可升至{C:edition}???"
 				}
 			}
 		},

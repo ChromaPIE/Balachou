@@ -343,19 +343,19 @@ return {
         },
         Joker = {
             j_worm_abs_clg = {
-                name = 'Cosmically Large Glass',
+                name = '宇宙无敌超大杯',
                 text = {
-                    "When {C:attention}Blind{} is selected,",
-                    "create an {C:attention}Empty {C:abs_drinks}Drink",
-                    "{C:inactive}(Must have space!)",
+                    "选择{C:attention}盲注{}后",
+                    "生成一个{C:attention}空{C:abs_drinks}杯",
+                    "{C:inactive}（必须有空位）",
                 }
             },
             j_worm_abs_seeing_stars = {
-                name = 'Seeing Stars',
+                name = '眼冒金星',
                 text = {
-                    "{C:attention}+#2#{} Consumable Slot",
-                    "Earn {C:money}$#1#{} when a",
-                    "{C:abs_drinks}Drink{} is {C:abs_drinks}Refilled{}",
+                    "消耗牌槽位{C:attention}+#2#",
+                    "{C:abs_drinks}续满{C:abs_drinks}酒品{}时",
+                    "赚取{C:money}$#1#"
                 }
             },
             j_worm_abs_water_world = {

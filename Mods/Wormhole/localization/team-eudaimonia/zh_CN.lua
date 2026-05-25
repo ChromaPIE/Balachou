@@ -199,10 +199,11 @@ return {
                 }
             },
             j_worm_euda_csaber = {
-                name = "Cyalume Saber",
+                name = "赛卢姆荧光剑",
                 text = {
-                    "{C:green}#1# in #2#{} chance to add {C:chips}+#3#{}",
-                    "Chips to any source of {C:chips}+Chips{}"
+                    "有{C:green}#1#/#2#{}的几率",
+                    "使任何{C:chips}+筹码{}",
+                    "额外{C:chips}+#3#{}筹码"
                 },
             },
         },
