@@ -167,33 +167,33 @@ return {
 			},
 			j_worm_jtem2_kurzgesagt = {
 				name = {
-					"Kurzgesagt",
-					"{s:0.8}- in a nutshell -",
+					"{s:0.8}- 三句话概括 -",
+					"Kurzgesagt"
 				},
 				text = {
 					{
-						"Scored {C:attention}Steel Cards{} becomes {C:green}Strange Card{}",
-						"Scored {C:attention}Gold Cards{} becomes {C:blue}Gravacard{}",
-						"Scored {C:attention}Stone Card{} becomes {C:spectral}Neutron Card{}",
+						"计分的{C:attention}钢铁牌{}变为{C:green}怪异牌",
+						"计分的{C:attention}黄金牌{}变为{C:blue}重力真空牌",
+						"计分的{C:attention}石头牌{}变为{C:spectral}中子牌",
 					},
 				},
 			},
 		},
 		Enhanced = {
 			m_worm_jtem2_strange_card = {
-				name = "Strange Card",
+				name = "怪异牌",
 				text = {
-					"{X:mult,C:white}X#1#{} Mult when held",
-					"Randomize value on any {C:attention}hand drawn{}",
-					"{C:inactive}(from {X:mult,C:white}X#2#{C:inactive} to {X:mult,C:white}X#3#{C:inactive})",
+					"留手时给予{X:mult,C:white}X#1#{}",
+					"{C:attention}抽牌{}时变更数值",
+					"{C:inactive}（范围为{X:mult,C:white}X#2#{C:inactive}-{X:mult,C:white}X#3#{C:inactive}）",
 				},
 			},
 			m_worm_jtem2_gravacard = {
-				name = "Gravacard",
+				name = "重力真空牌",
 				text = {
-					"Gain {C:money}${} based on how many cards",
-					"are to the {C:attention}right{} when held",
-					"{X:blind,C:white}X#1#{} Blind Size when this is drawn",
+					"留手时，根据其{C:attention}右侧",
+					"卡牌的数量给予{C:money}资金",
+					"抽取后，盲注得分要求{X:blind,C:white}X#1#",
 				},
 			},
 			m_worm_jtem2_neutron_card = {

@@ -104,13 +104,12 @@ return {
                     }
                 },
                 j_worm_thorn_binary = {
-                    name = "Binary Stars",
+                    name = "双子星",
                     text = {
-                        "{C:planet}Planet{} cards have",
-                        "a {C:green}#1# in #2#{} chance to",
-                        "level up hand by one {C:attention}extra level{},",
-                        "otherwise level it {C:red}down{} by one level",
-                        "{C:inactive}(Won't go below lvl.1)"
+                        "{C:planet}星球{}牌有{C:green}#1#/#2#{}的几率",
+                        "{C:attention}额外升级{}一次",
+                        "几率失败时，则{C:red}降低{}一级",
+                        "{C:inactive}（不低于lvl.1）"
                     }
                 },
                 j_worm_thorn_derse = {

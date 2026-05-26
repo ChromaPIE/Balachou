@@ -51,7 +51,6 @@ return {
             j_kino_12_angry_men = {
                 name = "十二怒汉",
                 text = {
-                    
                     "当前底注内",
                     "每计分过一张{C:attention}人头{}牌",
                     "{C:attention}K{}计分时给予{C:mult}+#1#{}倍率",
@@ -97,7 +96,6 @@ return {
                     "{C:attention}#1#{} additional times",
                     "when scored"
                 },
-                
             },
             j_kino_500_days_of_summer = {
                 name = "和莎莫的500天",
@@ -276,7 +274,7 @@ return {
             j_kino_as_above = {
                 name = "地下墓穴",
                 text = {
-                    "本回合每{C:attention}弃掉{}一张牌",
+                    "回合内每{C:attention}弃掉{}一张牌",
                     "{C:chips}+#2#{}筹码",
                     "{C:inactive}（当前为{C:chips}+#1#{C:inactive}筹码）"
                 }
@@ -692,7 +690,7 @@ return {
                 text = {
                     "剩余出牌次数为{C:chips}0{}时",
                     "若仍未击败{C:attention}盲注",
-                    "则施放一层{C:attention}蓄能",
+                    "则释放一层{C:attention}蓄能",
                     "并获得{C:chips}1{}次出牌",
                     "{C:inactive}（当前蓄能层数：{C:attention}#1#{C:inactive}）"
                 },
@@ -920,12 +918,11 @@ return {
                 }
             },
             j_kino_creature_from_the_black_lagoon = {
-                name = "The Creature from the Black Lagoon",
+                name = "黑湖妖谭",
                 text = {
-                    "If played hand contains", 
-                    "only a {C:attention}Queen{}",
-                    "destroy it and upgrade every card",
-                    "in deck with {C:mult}+#1#{} Mult",
+                    "若出牌仅包含一张{C:attention}Q",
+                    "摧毁之并使牌组中的",
+                    "每张牌获得{C:mult}+#1#{}倍率",
                 }
             },
             j_kino_cronos = {
@@ -1161,12 +1158,12 @@ return {
                 }
             },
             j_kino_dr_strangelove = {
-                name = "Dr. Strangelove",
+                name = "奇爱博士",
                 text = {
-                    "{C:inactive}or How I Learned to Stop Worrying and Love the Bomb{}",
-                    "If played hand is a {C:attention}#1#{}",
-                    "blow up hand and score (by {X:mult,C:white}X#2#{}),",
-                    "poker hand changes every round"
+                    "{C:inactive}或我如何学会停止恐惧并爱上炸弹",
+                    "若出牌为{C:attention}#1#",
+                    "引爆手牌并score (by {X:mult,C:white}X#2#{}),",
+                    "{C:inactive}（每回合变更牌型）"
                 }
             },
             j_kino_dracula_1931 = {
@@ -1280,11 +1277,11 @@ return {
                 name = "象人",
                 text = {
                     {
-                        "本回合每{C:chips}出{}过一次牌",
+                        "回合内每{C:chips}出{}过一次牌",
                         "{C:chips}+#1#{}筹码"
                     },
                     {
-                        "本回合每{C:mult}弃{}过一次牌",
+                        "回合内每{C:mult}弃{}过一次牌",
                         "{C:mult}+#2#{}倍率"
                     }
                 }
@@ -1848,20 +1845,21 @@ return {
                 }
             },
             j_kino_inception = {
-                name = "Inception",
+                name = "盗梦空间",
                 text = {
                     {
-                        "Put a {C:attention}Drowsy Counter{}",
-                        "on Joker to the right",
-                        'when {C:attention}Blind{} is selected'
+                        '选择{C:attention}盲注{}后',
+                        "对右侧小丑牌",
+                        "施加1位{C:attention}困倦计数标"
+                        
                     },
                     {
-                        "Copies abilities of Jokers",
-                        "with {C:attention}Drowsy Counters"
+                        "复制带有{C:attention}困倦计数标{}的",
+                        "小丑牌的能力"
                     }
                 },
                 unlock = {
-                    "Win a run with every {C:attention}Nolan{} Joker",
+                    "携带各张{C:attention}克里斯托弗·诺兰{}小丑牌",
                     "{C:inactive}(#2#/#1#)"
                 }
             },
@@ -1964,7 +1962,7 @@ return {
             j_kino_joe_dirt = {
                 name = "乔迪尔特历险记",
                 text = {
-                    "本回合每弃掉一张{C:attention}非黑桃{}牌",
+                    "回合内每弃掉一张{C:attention}非黑桃{}牌",
                     "{C:spades}黑桃{}牌计分时给予{C:chips}+#1#{}筹码",
                     "{C:inactive}（当前给予{C:chips}+#2#{C:inactive}筹码）"
                 }
@@ -1995,12 +1993,11 @@ return {
                 }
             },
             j_kino_junior = {
-                name = "Junior",
+                name = "魔鬼二世",
                 text = {
-                    "When {C:attention}Kings{} or {C:attention}Jacks{}",
-                    "have scored {C:attention}10{} times",
-                    "create a random {C:attention}Polychrome 2",
-                    "{C:inactive}(Currently: #1# triggers)"
+                    "{C:attention}K{}或{C:attention}J{}每计分满{C:attention}10{}次",
+                    "生成一张随机的{C:attention}炫彩2",
+                    "{C:inactive}（当前已触发#1#次）"
                 }
             },
             j_kino_jurassic_park_1 = {
@@ -2063,16 +2060,15 @@ return {
                 }}
             },
             j_kino_kramervskramer = {
-                name = "Kramer Vs. Kramer",
+                name = "克莱默夫妇",
                 text = {
-                    "Gains {C:mult}+#2#{} Mult",
-                    "when a {C:Romance}Romance{} Joker",
-                    "is sold",
-                    "{C:inactive}(Currently: {C:mult}+#1#{C:inactive} Mult)"
+                    "售出{C:Romance}爱情片{}小丑牌后",
+                    "本牌获得{C:mult}+#2#{}倍率",
+                    "{C:inactive}（当前为{C:mult}+#1#{C:inactive}倍率）"
                 },
                 unlock = {
-                    "Sell {C:attention}5 {C:Romance}Romance{} Jokers",
-                    "in a single run"
+                    "单局售出{C:attention}5{}张",
+                    "{C:Romance}爱情片{}小丑牌"
                 }
             },
             j_kino_kraven = {
@@ -2142,18 +2138,20 @@ return {
                 }
             },
             j_kino_longlegs = {
-                name = "Longlegs",
+                name = "长脚怪",
                 text = {
-                    {"{X:mult,C:white}X#3#{} Mult if scoring hand",
-                    "contains a card with same",
-                    "{C:attention}rank{} as last destroyed",
-                    "playing card",
-                    "{C:inactive}(Rank: {C:attention}#1#{C:inactive})"},
-                    {"{X:mult,C:white}X#3#{} Mult if scoring hand",
-                    "contains a card with same",
-                    "{C:attention}suit{} as last destroyed",
-                    "playing card",
-                    "{C:inactive}(Suit: {C:attention}#2#{C:inactive})"},
+                    {
+                        "若出牌中有卡牌",
+                        "与上一张被摧毁牌",
+                        "{C:attention}点数{}或{C:attention}花色{}相同",
+                        "{X:mult,C:white}X#3#{}倍率",
+                        "{C:inactive}（点数：{C:attention}#1#{C:inactive}）",
+                        "{C:inactive}（花色：{C:attention}#2#{C:inactive}）"
+                    },
+                    {
+                        "若两者{C:attention}均相同",
+                        "可叠加计算",
+                    }
                 },
                 -- text = {
                 --     {"{X:mult,C:white}X3{} Mult"},
@@ -2162,9 +2160,8 @@ return {
                 --     "{C:attention}Longleg's Secret Partner{} scores"}
                 -- },
                 unlock = {
-                    "Use the {C:attention}Demon{}",
-                    "and the {C:attention}Devil{}",
-                    "in the same run"
+                    "在同一局内",
+                    "使用{C:attention}邪魔{}和{C:attention}恶魔"
                 }
             },
             j_kino_lord_of_the_rings_1 = {
@@ -2264,14 +2261,14 @@ return {
                 }
             },
             j_kino_martian = {
-                name = "The Martian",
+                name = "火星救援",
                 text = {
-                    "Create {C:attention}#1# {C:Confection}Confections",
-                    "when {C:planet}Mars{} is used"
+                    "使用{C:planet}火星{}后",
+                    "生成{C:attention}#1#{}张",
+                    "{C:Confection}甜食零嘴{}牌"
                 },
                 unlock = {
-                    "Level up {C:attention}Four of a Kind",
-                    "to level {C:attention}10{} or higher"
+                    "将{C:attention}四条升至{C:attention}10{}级"
                 }
             },
             j_kino_marty_supreme = {
@@ -3343,16 +3340,15 @@ return {
                 }
             },
             j_kino_spartacus = {
-                name = "Spartacus",
+                name = "斯巴达克斯",
                 text = {
-                    "If {C:attention}final played hand",
-                    "of round contains only {C:attention}1{} card,",
-                    "turn every card in",
-                    "hand into a copy of it"
+                    "若回合{C:attention}最后一手出牌",
+                    "仅有{C:attention}1{}张",
+                    "将所有手牌变为其复制"
                 },
                 unlock = {
-                    "Have {C:attention}10{} identical cards",
-                    "in your deck"
+                    "牌组中包含{C:attention}10{}张",
+                    "各不相同的牌"
                 }
             },
             j_kino_stand_by_me = {
@@ -3769,17 +3765,16 @@ return {
                 }
             },
             j_kino_trading_places = {
-                name = "Trading Places",
+                name = "颠倒乾坤",
                 text = {
-                    "Gains {X:mult,C:white}X#2#{} Mult when",
-                    "card with {C:attention}sell value{}", 
-                    "of {C:money}$#3#{} or more",
-                    "is sold",
-                    "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive} Mult)"
+                    "售出{C:attention}售价{}至少为",
+                    "{C:money}$#3#{}的小丑牌后",
+                    "本牌获得{X:mult,C:white}X#2#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#1#{C:inactive}倍率）"
                 },
                 unlock = {
-                    "Own a {C:Comedy}Comedy{} Joker",
-                    "with a {C:attention}sell value{} of {C:money}$10{}"
+                    "拥有一张{C:attention}售价{}为{C:money}$10{}的",
+                    "{C:Comedy}喜剧片{}小丑牌"
                 }
             },
             j_kino_treasure_island = {
@@ -3809,15 +3804,16 @@ return {
                 }
             },
             j_kino_tron = {
-                name = "Tron",
+                name = "电子世界争霸战",
                 text = {
-                    "Gain {C:mult}+#2#{} Mult whenever",
-                    "{C:attention}#3#{} {C:Sci-Fi}Sci-Fi{} Jokers have triggered",
-                    "{C:inactive}(Currently: {C:mult}+#1#{C:inactive} Mult)"
+                    "{C:Sci-Fi}科幻片小丑牌",
+                    "每触发{C:attention}#3#{}次",
+                    "本牌获得{C:mult}+#2#{}倍率",
+                    "{C:inactive}（当前为{C:mult}+#1#{C:inactive}倍率）"
                 },
                 unlock = {
-                    "Open {C:attention}#2# Sci-Fi Packs",
-                    "{C:inactive}(#1#)"
+                    "开启{C:attention}#2#{}个{C:attention}科幻片包",
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_true_lies = {
@@ -3933,16 +3929,16 @@ return {
 
             },
             j_kino_voyage_dans_le_lune = {
-                name = "Le Voyage Dans le Lune",
+                name = "月球旅行记",
                 text={
-                    "{C:green}#1# in #2#{} chance to create",
-                    "a {C:planet}Planet{} card when any",
-                    "{C:attention}Booster Pack{} is opened",
-                    "{C:inactive}(Must have room)",
+                    "开启任何{C:attention}补充包{}时",
+                    "有{C:green}#1#/#2#{}的几率",
+                    "生成一张{C:planet}星球{}牌",
+                    "{C:inactive}（必须有空位）",
                 },
             },
             j_kino_wall_e = {
-                name = "Wall-E",
+                name = "机器人总动员",
                 text = {
                     "Gain {C:mult}+#1#{} Mult",
                     "when you discard",
@@ -4430,7 +4426,7 @@ return {
             m_kino_superhero = {
                 name = "超英片牌",
                 text = {
-                    "本回合每出过一次牌",
+                    "回合内每出过一次牌",
                     "获得{X:mult,C:white}X#1#{}倍率",
                     "{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）"
                 }

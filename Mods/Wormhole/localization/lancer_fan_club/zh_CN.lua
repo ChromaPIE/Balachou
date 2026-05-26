@@ -165,15 +165,15 @@ return {
             j_worm_lfc_log = {
                 name =
                 {
-                    "Joker\'s Log",
-                    "{s:0.5,C:inactive}Stardate #4#"
+                    "小丑日志",
+                    "{s:0.5,C:inactive}星历 #4#"
                 },
                 text = {
                     {
-                        "{C:inactive,s:0.8}#3# Days since Impact",
-                        "This Joker gains {C:chips}+#1#{} Chips for every",
-                        "{C:attention}unique{} Joker obtained this run",
-                        "{C:inactive}(Currently {}{C:chips}+#2#{} {C:inactive}Chips){}",
+                        "{C:inactive,s:0.8}撞击后第#3#天",
+                        "本赛局内每获得过一{C:attention}种{}小丑牌",
+                        "本牌获得{C:chips}+#1#{}筹码",
+                        "{C:inactive}（当前为{C:chips}+#2#{C:inactive}筹码）",
                     }
 
                 }
@@ -288,15 +288,13 @@ return {
             },
             j_worm_lfc_hitchhiker = {
                 name = {
-                    "Joker's Guide",
-                    "to the Galaxy",
+                    "写给小丑的",
+                    "银河漫游指南",
                 },
                 text = {
-                    "Creates a Joker from",
-                    "the {V:2,B:1}#1#{} mod if",
-                    "played hand contains a",
-                    "scoring {C:attention}#2#{} and {C:attention}#3#{}",
-                    "{C:inactive}(Must have room)",
+                    "若出牌包含计分的{C:attention}#2#{}和{C:attention}#3#",
+                    "生成一张{V:2,B:1}#1#{}模组小丑牌",
+                    "{C:inactive}（必须有空位）",
                 }
             }
         },
