@@ -3927,8 +3927,8 @@ return {
                     }
                 },
                 unlock = {
-                    "Play a {C:attention}Full House",
-                    "consisting of {C:attention}5s{} and {C:attention}Jacks"
+                    "打出由{C:attention}5{}和{C:attention}J",
+                    "组成的{C:attention}葫芦"
                 }
 
             },
@@ -3988,10 +3988,10 @@ return {
             j_kino_war_of_the_worlds = {
                 name = "世界大战",
                 text = {
-                    "Destroy owned {C:planet}Planets{}",
-                    "to gain {C:chips}+#1#{} Hand(s)",
-                    "or {C:mult}+#2#{} Discard(s) for each",
-                    "when {C:attention}Blind{} is selected"
+                    "选择{C:attention}盲注{}后",
+                    "摧毁所持的{C:planet}星球牌",
+                    "每摧毁一张，获得",
+                    "{C:chips}#1#{}次出牌或{C:mult}#2#{}次弃牌"
                 }
             },
             j_kino_war_of_the_worlds_2025 = {
@@ -4004,11 +4004,10 @@ return {
                 }
             },
             j_kino_warriors = {
-                name = "The Warriors",
+                name = "战士帮",
                 text = {
-                    "Cards give {C:mult}+#1#{} Mult",
-                    "for each card held in hand that",
-                    "shares a suit"
+                    "每有一张留手的同花色牌",
+                    "计分牌给予{C:mult}+#1#{}倍率"
                 }
             },
             j_kino_waterworld = {
@@ -4028,25 +4027,21 @@ return {
                     "{C:inactive}（当前底注内还可触发#1#次）"
                 },
                 unlock = {
-                    "Win a run without",
-                    "playing or destroying",
-                    "a {C:attention}5 or lower"
+                    "在不打出或摧毁点数{C:attention}≤5{}的牌",
+                    "的情况下赢下一局"
                 }
             },
             j_kino_west_side_story_1 = {
-                name = "West Side Story (1961)",
+                name = "西区故事（1961）",
                 text = {
                     {
-                    "{C:chips}Jets:",    
-                    "{C:chips}+#1#{} Chips if",
-                    "scoring hand has ", 
-                    "more {C:spades}Spades and {C:clubs}Clubs{}",},
-
+                    "{C:chips}喷射机帮：",
+                    "若计分牌多数为{C:spades}黑桃{}和{C:clubs}梅花",
+                    "{C:chips}+#1#{}筹码"},
                     {
-                    "{C:red}Sharks:",
-                    "{C:mult}+#2#{} Mult if",
-                    "scoring hand has",
-                    "more {C:hearts}Hearts{} and {C:diamonds}Diamonds"}
+                    "{C:red}鲨鱼帮：",
+                    "若计分牌多数为{C:hearts}红桃{}和{C:diamonds}方片",
+                    "{C:mult}+#2#{}倍率"}
                 }
             },
             j_kino_what_we_do_in_the_shadows = {
@@ -4074,28 +4069,30 @@ return {
                 }
             },
             j_kino_wizard_of_oz = {
-                name = "The Wizard of Oz",
-                text = { 
-                    "Scored {C:attention}Wild Cards{}",
-                    "give {X:mult,C:white}X#1#{} Mult"
+                name = "绿野仙踪",
+                text = {
+                    "计分的{C:attention}百搭牌",
+                    "给予{X:mult,C:white}X#1#{}倍率"
                 }
             },
             j_kino_wolf_man_1 = {
-                name = "The Wolf Man (1941)",
+                name = "狼人（1941）",
                 text = {
-                    "{X:mult,C:white}X#1#{} Mult when",
-                    "a {C:attention}Horror Card{} awakens",
+                    "{C:attention}恐怖片牌{}觉醒时",
+                    "{X:mult,C:white}X#1#{}倍率",
                 }
             },
             j_kino_wonka = {
-                name = "Wonka",
+                name = "旺卡",
                 text = {
-                    "{C:red}+#1#{} Mult per {C:Confection}Confection{}",
-                    "card used this run",
-                    "{C:inactive}(Currently {C:red}+#2#{C:inactive} Mult)",
+                    "本赛局每使用过一张",
+                    "{C:Confection}甜食零嘴{}牌",
+                    "{C:red}+#1#{}倍率",
+                    "{C:inactive}（当前为{C:red}+#2#{C:inactive}倍率）"
                 },
                 unlock = {
-                    "Use {C:attention}10{C:Confection} Confections"
+                    "单局使用{C:attention}10{}张",
+                    "{C:Confection}甜食零嘴{}牌"
                 }
             },
             j_kino_x = {
@@ -4115,12 +4112,11 @@ return {
                 }
             },
             j_kino_young_frankenstein = {
-                name = "Young Frankenstein",
+                name = "科学怪人奇谭",
                 text = {
-                    "Whenever you solve",
-                    "the {C:attention}Codex{}",
-                    "upgrade every scoring card",
-                    "with {C:mult}+#1#{} Mult"
+                    "{C:attention}解谜{}后",
+                    "每张计分牌",
+                    "获得{C:mult}+#1#{}倍率"
                 }
             },
             j_kino_your_highness = {
@@ -4132,8 +4128,7 @@ return {
                     "{C:inactive}（获得{C:attention}#4#{C:inactive}张后触发）"
                 },
                 unlock = {
-                    "Use {C:attention}50{} consumables",
-                    "in a single run"
+                    "单局使用{C:attention}50{}张消耗牌"
                 }
             },
             j_kino_zardoz = {
@@ -4147,18 +4142,17 @@ return {
                 }
             },
             j_kino_zodiac = {
-                name = "Zodiac",
+                name = "十二宫",
                 text = {
-                    "Whenever you solve",
-                    "the {C:attention}Codex{}",
-                    "gain a {C:attention}Charge",
-                    "Lower {C:attention}Boss Blind{} requirement",
-                    "to {C:attention}#1#%{} per {C:attention}Charge{} used",
-                    "{C:inactive}(Currently: {C:attention}#2#{C:inactive} Stacks)"
+                    "{C:attention}解谜{}后，蓄能{C:attention}1{}层",
+                    "每释放一层蓄能",
+                    "使{C:attention}Boss盲注{}的得分需求",
+                    "削减至{C:attention}#1#%",
+                    "{C:inactive}（当前蓄能层数：{C:attention}#2#{C:inactive}）"
                 },
                 unlock = {
-                    "Win a run with a",
-                    "{C:attention}Fincher{} Joker"
+                    "使用{C:attention}大卫·芬奇{}小丑牌",
+                    "赢下一局"
                 }
             },
             j_kino_zoolander = {
@@ -4170,13 +4164,12 @@ return {
             },
             -- Crossmod: CRYPTID
             j_kino_human_centipede = {
-                name = "The Human Centipede (First Sequence)",
+                name = "人体蜈蚣",
                 text = {
-                    "Each scoring card gives {X:dark_edition,C:white}^#1#{} Mult",
-                    "increased by {X:dark_edition,C:white}#2#{} Mult for each",
-                    "scoring card to the left of it",
-                    "if played hand",
-                    "contains a {C:attention}Straight{}",
+                    "若出牌包含{C:attention}顺子",
+                    "每张计分牌给予{X:dark_edition,C:white}^#1#{}倍率",
+                    "计分牌左侧每有一张计分牌",
+                    "倍率加成{X:dark_edition,C:white}+^#2#",
                 }
             },
             j_kino_shrek_1  = {
