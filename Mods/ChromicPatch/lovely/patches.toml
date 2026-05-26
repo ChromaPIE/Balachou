@@ -694,45 +694,8 @@ pattern = "text = text .. chosen_option.string or get_text(chosen_option)"
 position = "at"
 payload = "text = text .. (chosen_option.string or get_text(chosen_option))"
 
-# Kino Vulcan: fix loc_vars showing stacks count instead of actual upgrade amount
-# Text uses #2#, which was `stacks`; use() actually upgrades by mult * stacks
-# Now #2# = mult * stacks — matches the actual upgrade applied in use()
-# #1# = mult (unused by text, kept for array index stability)
-[[patches]]
-[patches.pattern]
-target = '=[SMODS kino "items/consumables/planets.lua"]'
-match_indent = true
-position = "at"
-pattern = '''    loc_vars = function(self, info_queue, card)
-        return {
-            vars = {
-                card.ability.extra.mult,
-                card.ability.extra.stacks
-            }
-        }
-    end,'''
-payload = '''    loc_vars = function(self, info_queue, card)
-        return {
-            vars = {
-                card.ability.extra.mult,
-                card.ability.extra.mult * card.ability.extra.stacks
-            }
-        }
-    end,'''
-
-# AIJ Fabled sleeve: nil-guard deck_or_sleeve.config.extra when should_increase is false
-# After buying a legendary joker, should_increase=false causes fallback to
-# G.GAME.selected_back.effect (which lacks config.extra), crashing at end_of_round
-[[patches]]
-[patches.pattern]
-target = '=[SMODS allinjest "Items/Crossmod/Sleeves/fabled.lua"]'
-match_indent = true
-pattern = "if context.end_of_round and not context.repetition and not context.individual and deck_or_sleeve.config.extra.should_increase then"
-position = "at"
-payload = "if context.end_of_round and not context.repetition and not context.individual and deck_or_sleeve.config.extra and deck_or_sleeve.config.extra.should_increase then"
-
-# Kino Mr. Glass: nil-guard _target when no jokers exist
-# get_counter_targets({}) → {} → pseudorandom_element({}) → nil → crash at :juice_up()
+# Kino Mr. Glass: nil-guard initial _target when no jokers exist
+# Upstream fixed the scoring path in 0.14.1; this covers the remaining blind setup path.
 [[patches]]
 [patches.regex]
 target = '=[SMODS kino "items/blinds/blind_normal.lua"]'
@@ -744,158 +707,6 @@ if _target then
     _target:juice_up()
     _target:bb_counter_apply("counter_kino_glass", self.debuff.counters_applied)
 end'''
-times = 2
-
-# Kino sleep blinds: nil-guard _target for counter targets
-# get_counter_targets may return an empty table — pseudorandom_element → nil → crash
-[[patches]]
-[patches.pattern]
-target = '=[SMODS kino "items/blinds/blinds_sleep.lua"]'
-match_indent = true
-position = "at"
-pattern = '''_target:bb_counter_apply("counter_drowsy", 1)
-        card_eval_status_text(_target, 'extra', nil, nil, nil,
-        { message = localize("k_kino_rose"), colour = G.C.BLACK})'''
-payload = '''if _target then
-        _target:bb_counter_apply("counter_drowsy", 1)
-        card_eval_status_text(_target, 'extra', nil, nil, nil,
-        { message = localize("k_kino_rose"), colour = G.C.BLACK})
-    end'''
-
-[[patches]]
-[patches.pattern]
-target = '=[SMODS kino "items/blinds/blinds_sleep.lua"]'
-match_indent = true
-position = "at"
-pattern = '''_target:bb_counter_apply("counter_drowsy", 1)
-                    card_eval_status_text(context.hand_drawn[i], 'extra', nil, nil, nil,
-                    { message = localize("k_kino_freddy"), colour = G.C.BLACK})'''
-payload = '''if _target then
-                    _target:bb_counter_apply("counter_drowsy", 1)
-                    card_eval_status_text(context.hand_drawn[i], 'extra', nil, nil, nil,
-                    { message = localize("k_kino_freddy"), colour = G.C.BLACK})
-                end'''
-
-# Kino Pan's Labyrinth: nil-guard card in generate_ui when called without a card context
-# AIJ retrieve_joker_text passes nil as card to generate_card_ui during pool building
-[[patches]]
-[patches.pattern]
-target = '=[SMODS kino "items/jokers/pans_labyrinth.lua"]'
-match_indent = true
-position = "at"
-pattern = '''generate_ui = function(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
-        local _desc_nodes_dummy = {}'''
-payload = '''generate_ui = function(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
-        if not card then return end
-        local _desc_nodes_dummy = {}'''
-
-# Kino Count Rugen discard: skip forced deselect when ≤1 card highlighted
-# Otherwise the discard becomes a no-op (harmless but pointless)
-[[patches]]
-[patches.regex]
-target = '=[SMODS kino "src/kinofunctions.lua"]'
-pattern = '''(?<discard_indent>[\t ]*)if G\.GAME\.current_round\.count_rugen then\s*local _target = pseudorandom_element\(G\.hand\.highlighted, pseudoseed\("kino_count_rugen"\)\)\s*G\.hand:remove_from_highlighted\(_target, true\)\s*card_eval_status_text\(_target, 'extra', nil, nil, nil,\s*\{ message = localize\('k_kino_rugen'\), colour = G\.C\.BLACK\}\)\s*end\s*local _ret = _o_discard'''
-position = "at"
-line_prepend = "$discard_indent"
-payload = '''if G.GAME.current_round.count_rugen and #G.hand.highlighted > 1 then
-    local _target = pseudorandom_element(G.hand.highlighted, pseudoseed("kino_count_rugen"))
-    G.hand:remove_from_highlighted(_target, true)
-    card_eval_status_text(_target, 'extra', nil, nil, nil,
-        { message = localize('k_kino_rugen'), colour = G.C.BLACK})
-end
-
-local _ret = _o_discard'''
-
-# Kino Count Rugen play: when ≤1 card highlighted, treat as NOT ALLOWED instead of
-# deselecting the last card (which would empty G.play and crash at NULL hand)
-[[patches]]
-[patches.pattern]
-target = '=[SMODS kino "src/kinofunctions.lua"]'
-match_indent = true
-position = "at"
-pattern = '''local _o_play = G.FUNCS.play_cards_from_highlighted
-G.FUNCS.play_cards_from_highlighted = function(e)
-    if G.GAME.current_round.count_rugen then
-        local _target = pseudorandom_element(G.hand.highlighted, pseudoseed("kino_count_rugen"))
-        G.hand:remove_from_highlighted(_target, true)
-        card_eval_status_text(_target, 'extra', nil, nil, nil,
-            { message = localize('k_kino_rugen'), colour = G.C.BLACK})
-    end
-
-    local _ret = _o_play(e)
-    return _ret
-end'''
-payload = '''local _o_play = G.FUNCS.play_cards_from_highlighted
-G.FUNCS.play_cards_from_highlighted = function(e)
-    if G.GAME.current_round.count_rugen then
-        if #G.hand.highlighted <= 1 then
-            play_area_status_text(localize('k_chromicpatch_no_card_played'))
-            G.hand:unhighlight_all()
-            ease_hands_played(-1)
-            G.STATE = G.STATES.DRAW_TO_HAND
-            G.STATE_COMPLETE = false
-            return
-        end
-        local _target = pseudorandom_element(G.hand.highlighted, pseudoseed("kino_count_rugen"))
-        G.hand:remove_from_highlighted(_target, true)
-        card_eval_status_text(_target, 'extra', nil, nil, nil,
-            { message = localize('k_kino_rugen'), colour = G.C.BLACK})
-    end
-
-    local _ret = _o_play(e)
-    return _ret
-end'''
-
-# Kino j_kino_x: fix draw-4 effect — G.FUNCS.draw_from_deck_to_hand ignores
-# its count argument and recalculates limit internally.  Since hand is already
-# full after first_hand_drawn, limit=0 and nothing gets drawn.
-# SMODS's CardArea:draw_card_from bypasses the hand limit for G.hand, so
-# direct draw_card() calls actually draw cards regardless of current hand size.
-[[patches]]
-[patches.pattern]
-target = '=[SMODS kino "items/jokers/x.lua"]'
-match_indent = true
-position = "at"
-pattern = "G.FUNCS.draw_from_deck_to_hand(card.ability.extra.cards_drawn)"
-payload = '''for i = 1, card.ability.extra.cards_drawn do
-                    if #G.deck.cards > 0 then
-                        draw_card(G.deck, G.hand, i*100/card.ability.extra.cards_drawn, 'up', true)
-                    end
-                end'''
-
-# Kino is_genre: nil-guard joker.config when checking cross-mod jokers
-# scream_1's post_trigger iterates individual card areas which may include
-# joker objects from other mods (e.g. Wormhole) lacking a config field.
-[[patches]]
-[patches.pattern]
-target = '=[SMODS kino "src/kinofunctions.lua"]'
-match_indent = true
-position = "at"
-pattern = "if joker.config.center.k_genre then"
-payload = "if joker.config and joker.config.center and joker.config.center.k_genre then"
-
-# Kino Annie Wilkes: restrict dissolve to main_eval to prevent multiple triggers
-# context.end_of_round fires multiple times per round (main pass + per-card gold
-# card/blue seal passes).  Without context.main_eval, the blind dissolves a joker
-# on every pass, destroying 2+ jokers on a first-hand beat.
-[[patches]]
-[patches.pattern]
-target = '=[SMODS kino "items/blinds/blind_normal.lua"]'
-match_indent = true
-position = "at"
-pattern = "if context.end_of_round and G.GAME.current_round.hands_played <= 2 and"
-payload = "if context.end_of_round and context.main_eval and G.GAME.current_round.hands_played <= 2 and"
-
-# Kino fabricated monster: skip delayed cleanse if enhancement state is gone
-# The scoring event runs asynchronously; cross-mod effects may replace/reset the
-# card before it executes, leaving ability.extra nil.
-[[patches]]
-[patches.pattern]
-target = '=[SMODS kino "items/blinds/blinds_halloween.lua"]'
-match_indent = true
-position = "before"
-pattern = "card.ability.extra.level_non = card.ability.extra.level_non -1"
-payload = "if not (card.ability and card.ability.extra and card.ability.extra.level_non) then return true end"
 
 # localize type='name': direct loc_target tables must use their own parsed name
 # Wormhole spacetart menu passes loc_target directly instead of set/key.
@@ -1002,20 +813,15 @@ payload = '''SMODS.Keybind{
     end
 }'''
 
-# Kino Zeus: only react to real Joker post-trigger events.
-# The broad post_trigger listener also catches non-Joker card evaluations, causing
-# selected/held cards to repeatedly feed the event queue with shock applications.
+# Kino Zeus: use paralysis counter when selecting targets
+# Upstream fixed the listener scope in 0.14.1; this preserves the remaining counter mismatch fix.
 [[patches]]
 [patches.pattern]
 target = '=[SMODS kino "items/blinds/blinds_shock.lua"]'
 match_indent = true
 position = "at"
-pattern = '''if context.post_trigger and
-        not context.other_context.destroying_card then
-            local _valid_targets = Blockbuster.Counters.get_counter_targets(G.deck.cards, {"none", "match", "no_match_class"}, "counter_frost", {"beneficial"})'''
-payload = '''if context.post_trigger and context.other_context and context.other_context.cardarea == G.jokers and
-        context.other_card and context.other_card.area == G.jokers and not context.other_context.destroying_card then
-            local _valid_targets = Blockbuster.Counters.get_counter_targets(G.deck.cards, {"none", "match", "no_match_class"}, "counter_paralysis", {"beneficial"})'''
+pattern = 'local _valid_targets = Blockbuster.Counters.get_counter_targets(G.deck.cards, {"none", "match", "no_match_class"}, "counter_frost", {"beneficial"})'
+payload = 'local _valid_targets = Blockbuster.Counters.get_counter_targets(G.deck.cards, {"none", "match", "no_match_class"}, "counter_paralysis", {"beneficial"})'
 
 # AIJ upgrade_poker_hands: accept SMODS string-form hands
 # SMODS normalizes args.hands internally, but AIJ reads the original argument after delegation.
@@ -1049,38 +855,5 @@ match_indent = true
 position = "at"
 pattern = "_card.playing_card = true"
 payload = "_card.playing_card = #G.playing_cards + 1"
-
-# Kino Rupert Pupkin: retrigger only the actual leftmost Joker
-# The blind was listening to every retrigger_joker_check target, including selected cards.
-[[patches]]
-[patches.pattern]
-target = '=[SMODS kino "items/blinds/blind_normal.lua"]'
-match_indent = true
-position = "at"
-pattern = '''    calculate = function(self, blind, context)
-        if context.retrigger_joker_check and
-        context.other_card and
-        context.other_card ~= self then
-            for _index, _joker in ipairs(G.jokers.cards) do
-                if _index == 1 and #G.jokers.cards > 1 then
-                    return {
-                        message = localize("k_again_ex"),
-                        repetitions = #G.jokers.cards - 1
-                    }
-                end
-            end
-        end
-    end,'''
-payload = '''    calculate = function(self, blind, context)
-        if context.retrigger_joker_check and
-        context.other_card == G.jokers.cards[1] and
-        not context.other_context.retrigger_joker and
-        #G.jokers.cards > 1 then
-            return {
-                message = localize("k_again_ex"),
-                repetitions = #G.jokers.cards - 1
-            }
-        end
-    end,'''
 
 
