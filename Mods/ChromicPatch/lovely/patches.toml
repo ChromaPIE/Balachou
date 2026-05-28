@@ -694,6 +694,57 @@ pattern = "text = text .. chosen_option.string or get_text(chosen_option)"
 position = "at"
 payload = "text = text .. (chosen_option.string or get_text(chosen_option))"
 
+# Kino Treasure Planet: normalize bignum-derived upgrade count
+# Amulet/Talisman can make kino_ease_dollars and math.floor return Big objects;
+# Lua numeric for loops require a native number.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "items/consumables/planets.lua"]'
+match_indent = true
+pattern = "card.ability.extra.money_seen_non = card.ability.extra.money_seen_non + (-1 * context.kino_ease_dollars)"
+position = "at"
+payload = "card.ability.extra.money_seen_non = to_number(card.ability.extra.money_seen_non + (-1 * context.kino_ease_dollars)) or 0"
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "items/consumables/planets.lua"]'
+match_indent = true
+pattern = '''    loc_vars = function(self, info_queue, card)
+         local _count = math.floor((card.ability.extra.money_seen_non / card.ability.extra.money_threshold) + 0.5)
+
+        return {
+            vars = {
+                card.ability.extra.money_threshold,
+                card.ability.extra.money_seen_non,
+                _count,
+            }
+        }
+    end,'''
+position = "at"
+payload = '''    loc_vars = function(self, info_queue, card)
+         local _count = to_number(math.floor((card.ability.extra.money_seen_non / card.ability.extra.money_threshold) + 0.5)) or 0
+        if _count ~= _count or _count == math.huge or _count == -math.huge then _count = 0 end
+
+        return {
+            vars = {
+                card.ability.extra.money_threshold,
+                card.ability.extra.money_seen_non,
+                _count,
+            }
+        }
+    end,'''
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS kino "items/consumables/planets.lua"]'
+pattern = '''(?<indent>[\t ]*)use = function\(self, card, area, copier\)\s*local _count = math\.floor\(\(card\.ability\.extra\.money_seen_non / card\.ability\.extra\.money_threshold\) \+ 0\.5\)'''
+position = "at"
+line_prepend = "$indent"
+payload = '''use = function(self, card, area, copier)
+
+    local _count = to_number(math.floor((card.ability.extra.money_seen_non / card.ability.extra.money_threshold) + 0.5)) or 0
+    if _count ~= _count or _count == math.huge or _count == -math.huge then _count = 0 end'''
+
 # Kino Mr. Glass: nil-guard initial _target when no jokers exist
 # Upstream fixed the scoring path in 0.14.1; this covers the remaining blind setup path.
 [[patches]]
@@ -823,6 +874,18 @@ position = "at"
 pattern = 'local _valid_targets = Blockbuster.Counters.get_counter_targets(G.deck.cards, {"none", "match", "no_match_class"}, "counter_frost", {"beneficial"})'
 payload = 'local _valid_targets = Blockbuster.Counters.get_counter_targets(G.deck.cards, {"none", "match", "no_match_class"}, "counter_paralysis", {"beneficial"})'
 
+# Kino Cryptid confection acclimator: pass native Kino confection colour
+# G.C.SECONDARY_SET.Mult is nil, so Cryptid logs an improper call on startup.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/crossmod/cryptid.lua"]'
+match_indent = true
+position = "at"
+pattern = '''    Cryptid.setup_voucher_rate_adjuster("v_kino_confection_acclimator", "b_confection_rate", "confection", G.C.SECONDARY_SET.Mult)
+'''
+payload = '''    Cryptid.setup_voucher_rate_adjuster("v_kino_confection_acclimator", "b_confection_rate", "confection", G.C.KINO.CONFECTION)
+'''
+
 # AIJ upgrade_poker_hands: accept SMODS string-form hands
 # SMODS normalizes args.hands internally, but AIJ reads the original argument after delegation.
 [[patches]]
@@ -855,5 +918,3 @@ match_indent = true
 position = "at"
 pattern = "_card.playing_card = true"
 payload = "_card.playing_card = #G.playing_cards + 1"
-
-
