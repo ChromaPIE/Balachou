@@ -330,11 +330,11 @@ return {
         },
         Tag = {
             tag_worm_lfc_laser = {
-                name = "Laser Tag",
+                name = "激光标签",
                 text = {
-                    "{C:red}Destroy{} every",
-                    "{C:attention}#1#{} in {C:attention}full deck{}",
-                    "{C:inactive,s:0.8}(Chosen rank is random)"
+                    "{C:red}摧毁{C:attention}完整牌组{}中的",
+                    "所有{C:attention}#1#",
+                    "{C:inactive,s:0.8}（指定点数随机）"
                 },
             },
         },

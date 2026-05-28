@@ -340,11 +340,11 @@ return {
                 k_worm_euda_specificcolony_receive_title = "Release from Colony ",
 
 
-                k_worm_euda_cometplanet = "Comet",
+                k_worm_euda_cometplanet = "彗星",
       
-                k_euda_fate = "Fate",
-                b_euda_fate_cards = "Fate Cards",
-                k_euda_avadon_pack = "Avadon Pack",
+                k_euda_fate = "命运",
+                b_euda_fate_cards = "命运牌",
+                k_euda_avadon_pack = "终焉包",
                 k_worm_euda_lunarcheese_message = "Cheesy!",
 
                 ph_LittleLight = "Saved by Little Light"

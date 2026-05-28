@@ -3058,22 +3058,22 @@ return {
                 }
             },
             j_kino_scarface_1 = {
-                name = "Scarface (1932)",
+                name = "疤面人",
                 text = {
-                    "When a {C:attention}Consumable{} is sold",
-                    "{C:money}Steal Money{} equal to its {C:attention}sell value"
+                    "售出{C:attention}消耗牌{}后，{C:money}盗取",
+                    "等同于其{C:attention}售价{}的资金"
                 }
             },
             j_kino_scarface_2 = {
-                name = "Scarface (1983)",
+                name = "疤面煞星",
                 text = {
-                    "When a {C:attention}consumable{} is used",
-                    "turn a random card",
-                    "in deck into a {C:attention}Crime Card"
+                    "使用{C:attention}消耗牌{}后",
+                    "将牌组中随机一张牌",
+                    "转换为{C:attention}犯罪片牌"
                 },
                 unlock = {
-                    "Use the {C:attention}Gangster{} #2# times",
-                    "{C:inactive}(#1#)"
+                    "使用#2#次{C:attention}黑帮",
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_school_of_rock = {
@@ -6706,10 +6706,9 @@ return {
                 }
             },
             kino_choco = {
-                name = "Choco",
+                name = "巧酱风味",
                 text = {
-                    "Increases potency",
-                    "of this {C:Confection}Confection"
+                    "{C:Confection}效力{}提升"
                 }
             },
             kino_goldleaf = {
@@ -6892,11 +6891,11 @@ return {
                 }
             },
             v_kino_awardsbait = {
-                name = "Awards Bait",
+                name = "冲奥片",
                 text = {
-                    "{C:attention}Movie Joker{} have a",
-                    "{C:green}1 in 100{} chance",
-                    "to spawn with an {C:money}Award"
+                    "{C:attention}电影小丑牌",
+                    "有{C:green}1/100{}的几率",
+                    "生成时自带{C:money}奖项"
                 }
             },
             v_kino_awardsshow = {
@@ -8259,7 +8258,7 @@ return {
             k_kino_evil_dead_1 = "Soon all of you will be like me",
             k_kino_pirates_1 = "Pirate's Gold",
             k_kino_paulblart_1 = "Low Blood Sugar :(",
-            k_kino_annihilation = "Changed...",
+            k_kino_annihilation = "变化……",
             k_kino_waterworld = "Value Trickled Down",
             k_kino_muppets_caper = "Hi-ho!",
             k_kino_muppets_treasure_island = "Treasure!",
