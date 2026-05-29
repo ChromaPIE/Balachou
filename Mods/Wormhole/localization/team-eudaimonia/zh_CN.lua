@@ -211,8 +211,8 @@ return {
             c_worm_euda_crunch = {
                 name = {"大挤压"},
                 text = {
-                    "Sets each card in {C:attention}deck",
-                    "to {C:attention}1{} of {C:attention}2{} random {C:attention}suits"
+                    "将{C:attention}牌组{}中每张牌的",
+                    "{C:attention}花色{}随机变为{C:attention}两{}种{C:attention}之一"
                 }
             },
             c_worm_euda_freeze = {

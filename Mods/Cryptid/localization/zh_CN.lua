@@ -806,11 +806,10 @@ return {
 				},
 			},
 			set_cry_epic = {
-				name = "Epic Jokers",
+				name = "史诗小丑牌",
 				text = {
-					"Jokers with",
-					"{C:cry_epic}Epic{} rarity",
-					"{C:inactive,s:0.8}(Between Rare and Legendary)",
+					"稀有度为{C:cry_epic}史诗{}的小丑牌",
+					"{C:inactive,s:0.8}（介于稀有和传奇之间）",
 				},
 			},
 			set_cry_exotic = {
@@ -945,10 +944,9 @@ return {
 			e_cry_glitched = {
 				name = "故障",
 				text = {
-					"All values on this card",
-					"are {C:dark_edition}randomized{}",
-					"between {C:attention}X0.1{} and {C:attention}X10{}",
-					"{C:inactive}(If possible){}",
+					"本牌的所有数值",
+					"{C:dark_edition}随机{C:attention}X0.1{} - {C:attention}X10",
+					"{C:inactive}（若可能）"
 				},
 			},
 			e_cry_gold = {
@@ -1952,14 +1950,13 @@ return {
 				},
 			},
 			j_cry_googol_play = {
-				name = "Googol Play Card",
+				name = "谷哥商店礼品卡",
 				text = {
-					"{C:green}#1# in #2#{} chance for",
-					"{X:red,C:white} X#3# {} Mult",
+					"有{C:green}#1#/#2#{}的几率",
+					"给予{X:red,C:white}X#3#{}倍率"
 				},
 				unlock = {
-					"Score {C:attention}1.0e100{} Chips",
-					"in a single hand",
+					"单次出牌得分{C:attention}1.0e100",
 				},
 			},
 			j_cry_happy = {
@@ -2109,12 +2106,12 @@ return {
 				},
 			},
 			j_cry_lebaron_james = {
-				name = "LeBaron James",
+				name = "乐邦爵士",
 				text = {
-					"Played and scoring {C:attention}Kings{} give",
-					"{C:attention}+#1#{} hand size for the round",
-					"and trigger {C:attention}held in hand{} effects",
-					"{C:inactive}(Currently {}{C:attention}+#2#{}{C:inactive})",
+					"打出{C:attention}K{}并计分时",
+					"触发其{C:attention}留手{}效果",
+					"且回合内手牌上限{C:attention}+#1#",
+					"{C:inactive}（当前手牌上限{C:attention}+#2#{C:inactive}）",
 				},
 			},
 			j_cry_lightupthenight = {
@@ -2499,13 +2496,13 @@ return {
 				},
 			},
 			j_cry_pirate_dagger = {
-				name = "Pirate Dagger",
+				name = "海盗匕首",
 				text = {
-					"When {C:attention}Blind{} is selected,",
-					"destroy Joker to the right",
-					"and gain {C:attention}one-fourth{} of",
-					"its sell value as {X:chips,C:white} XChips {}",
-					"{C:inactive}(Currently {X:chips,C:white} X#1# {C:inactive} Chips)",
+					"选择{C:attention}盲注{}后",
+					"摧毁右侧的小丑牌",
+					"并获得等同于",
+					"其售价{C:attention}1/4{}的{X:chips,C:white}X筹码",
+					"{C:inactive}（当前为{X:chips,C:white}X#1#{C:inactive}筹码）",
 				},
 			},
 			j_cry_pity_prize = {
@@ -3895,11 +3892,11 @@ return {
 				},
 			},
 			tag_cry_bundle = {
-				name = "Bundle Tag",
+				name = "大礼包标签",
 				text = {
-					"Create a {C:attention}Standard Tag{}, {C:tarot}Charm Tag{},",
-					"{C:attention}Buffoon Tag{}, and {C:planet}Meteor Tag",
-				},
+					"生成{C:attention}标准标签{}、{C:tarot}魔符标签{}、",
+					"{C:attention}丑角标签{}和{C:planet}流星标签{}各一个"
+				}
 			},
 			tag_cry_cat = {
 				name = "小猫标签",
@@ -3927,10 +3924,10 @@ return {
 				},
 			},
 			tag_cry_epic = {
-				name = "Epic Tag",
+				name = "史诗标签",
 				text = {
-					"Shop has a half-price",
-					"{C:cry_epic}Epic Joker",
+					"商店内将出现一张",
+            		"半价的{C:cry_epic}史诗小丑牌"
 				},
 			},
 			tag_cry_gambler = {
@@ -5117,47 +5114,47 @@ return {
 		},
 		dictionary = {
 			--Settings Menu
-			cry_set_features = "Features",
-			cry_set_music = "Music",
+			cry_set_features = "特性",
+			cry_set_music = "音乐",
 			cry_set_enable_features = "Use this section to enable or disable entire Thematic Sets.",
-			cry_feat_achievements = "Achievements",
-			["cry_feat_antimatter deck"] = "Antimatter Deck",
-			cry_feat_blinds = "Blinds",
-			cry_feat_challenges = "Challenges",
-			["cry_feat_code cards"] = "Code Cards",
-			["cry_feat_misc. decks"] = "Misc. Decks",
-			["cry_feat_https module"] = "HTTPS Module",
-			["cry_feat_timer mechanics"] = "Timer Mechanics",
-			["cry_feat_enhanced decks"] = "Enhanced Decks",
-			["cry_feat_epic jokers"] = "Epic Jokers",
-			["cry_feat_exotic jokers"] = "Exotic Jokers",
-			["cry_feat_m jokers"] = "M Jokers",
-			cry_feat_menu = "Custom Main Menu",
-			["cry_feat_misc."] = "Misc.",
-			["cry_feat_misc. jokers"] = "Misc. Jokers",
-			cry_feat_planets = "Planets",
-			cry_feat_jokerdisplay = "JokerDisplay (Does Nothing)",
-			cry_feat_tags = "Tags",
-			cry_feat_sleeves = "Sleeves",
-			cry_feat_spectrals = "Spectrals",
-			cry_feat_spooky = "Spooky Update",
-			["cry_feat_more stakes"] = "Stakes",
-			cry_feat_vouchers = "Vouchers",
+			cry_feat_achievements = "成就",
+			["cry_feat_antimatter deck"] = "反物质牌组",
+			cry_feat_blinds = "盲注",
+			cry_feat_challenges = "挑战",
+			["cry_feat_code cards"] = "代码卡",
+			["cry_feat_misc. decks"] = "杂项牌组",
+			["cry_feat_https module"] = "HTTPS模块",
+			["cry_feat_timer mechanics"] = "计时机制",
+			["cry_feat_enhanced decks"] = "增强牌组",
+			["cry_feat_epic jokers"] = "史诗小丑牌",
+			["cry_feat_exotic jokers"] = "异界小丑牌",
+			["cry_feat_m jokers"] = "M小丑牌",
+			cry_feat_menu = "自定义主菜单",
+			["cry_feat_misc."] = "杂项",
+			["cry_feat_misc. jokers"] = "杂项小丑牌",
+			cry_feat_planets = "星球牌",
+			cry_feat_jokerdisplay = "JokerDisplay（无作用）",
+			cry_feat_tags = "标签",
+			cry_feat_sleeves = "牌套",
+			cry_feat_spectrals = "幻灵牌",
+			cry_feat_spooky = "骇人更新",
+			["cry_feat_more stakes"] = "底注",
+			cry_feat_vouchers = "奖券",
 			cry_mus_jimball = "Jimball (Funkytown by Lipps Inc. - Copyrighted)",
 			cry_mus_code = "Code Cards (://LETS_BREAK_THE_GAME by HexaCryonic)",
 			cry_mus_exotic = "Exotic Jokers (Joker in Latin by AlexZGreat)",
 			cry_mus_high_score = "High Score (Final Boss [For Your Computer] by AlexZGreat)",
 			cry_mus_alt_bg = "Background Music (by MathIsFun_)",
 			cry_force_tooltips = "Force Tooltips",
-			cry_family = "Family Friendly Mode",
-			cry_experimental = "Experimental Mode",
+			cry_family = "老少咸宜模式",
+			cry_experimental = "实验性模式",
 
-			k_cry_program_pack = "Program Pack",
+			k_cry_program_pack = "程序包",
 			k_cry_meme_pack = "Meme Pack",
 			k_cry_baneful_pack = "Baneful Buffoon Pack",
 			cry_baneful_warning = "Skipping will Banish rightmost Joker",
 
-			cry_critical_hit_ex = "Critical Hit!",
+			cry_critical_hit_ex = "暴击！",
 			cry_critical_miss_ex = "Critical Miss!",
 
 			cry_potion1 = "-1 to all Hand Levels",
@@ -5175,13 +5172,13 @@ return {
 			cry_tax_placeholder = "(X0.4 blind requirement)",
 			cry_joke_placeholder = "(multiple of 8)",
 
-			k_code = "Code",
-			k_chips = "Chips",
+			k_code = "代码",
+			k_chips = "筹码",
 			k_content_set = "Thematic Set",
 			b_content_sets = "Thematic Sets",
 			--Why aren't these in vanilla?
-			b_tag = "Tag",
-			b_blind = "Blind",
+			b_tag = "标签",
+			b_blind = "盲注",
 			rush_hour_reminder = "Enable the Clock and Lavender loop to play Rush Hour",
 
 			b_tarot_rate = "Tarot Rate",

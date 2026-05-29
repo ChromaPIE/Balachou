@@ -245,9 +245,10 @@ return {    -- yo it's GHOSTSALT here look at me TYPING before i SUBMIT THIS THI
 				}
 			},
 			tag_worm_dum_timcurry = {
-				name = "Tim Curry Tag",
+				name = "蒂姆·克里标签",
 				text = {
-					"Shop has {C:worm_dum_timcurry}Tim Curry{}?!",
+					"商店里有",
+                    "{C:worm_dum_timcurry}蒂姆·克里{}？！",
 				},
 			},
         },

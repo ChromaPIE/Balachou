@@ -172,14 +172,14 @@ return {
 	},
 	Voucher = {
 	    v_worm_util_better_craftmanship = {
-		name = "Better Craftmanship",
+		name = "巧手精工",
 		text = {
-		    "{C:util_spaces}Space Pods{} start with",
-		    "twice as many uses",
+		    "{C:util_spaces}太空舱{}初始带有",
+			"双倍使用次数",
 		}
 	    },
 	    v_worm_util_dealer_contact = {
-		name = "Dealer Contact",
+		name = "客户经销",
 		text = {
 		    "{C:attention}Space Pod Packs{} always",
 		    "contain a {C:util_spaces}Space Pod",

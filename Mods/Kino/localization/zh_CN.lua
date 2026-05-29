@@ -62,13 +62,12 @@ return {
                 },
             },
             j_kino_12_monkeys = {
-                name = "Twelve Monkeys",
+                name = "十二猴子",
                 text = {
-                    "{C:green}#1# in #2#{} chance to create",
-                    "card of the same {C:attention}type",
-                    "as first one sold last {C:attention}Blind",
-                    "when {C:attention}Blind{} is selected",
-                    "{C:inactive}(will create a {C:attention}#3#{C:inactive})"
+                    "选择{C:attention}盲注{}后，有{C:green}#1#/#2#{}的几率",
+                    "生成一张与上个{C:attention}盲注{}内",
+                    "售出的首张牌{C:attention}类型{}相同的卡牌",
+                    "{C:inactive}（将生成{C:attention}#3#{C:inactive}）"
                 }
             },
             j_kino_30_days_of_night = {
@@ -1191,14 +1190,14 @@ return {
                 }
             },
             j_kino_dracula_bram_stoker = {
-                name = "Bram Stoker's Dracula",
+                name = "吸血惊情四百年",
                 text = {
-                    "When a {C:attention}Queen{} scores",
-                    "put {C:attention}#1#{} {C:Drain}Blood Counters",
-                    "on random cards in deck"
+                    "{C:attention}Q{}计分时",
+                    "对牌组中随机一张牌",
+                    "施加{C:attention}#1#{}位{C:Drain}鲜血计数标"
                 },
                 unlock = {
-                    "Defeat {C:attention}Dracula{}"
+                    "击败{C:attention}德古拉"
                 }
             },
             j_kino_duel = {
@@ -1882,16 +1881,16 @@ return {
                 }
             },
             j_kino_insidious = {
-                name = "Insidious",
+                name = "潜伏",
                 text = {
-                    "{C:green}#1# in #2#{} chance to create",
-                    "the {C:tarot}Demon{} when",
-                    "a {C:attention}Booster Pack{} is opened",
-                    "{C:inactive}(Must have room)",
+                    "开启{C:attention}补充包{}时",
+                    "有{C:green}#1#/#2#{}的几率",
+                    "生成一张{C:tarot}邪魔",
+                    "{C:inactive}（必须有空位）",
                 },
                 unlock = {
-                    "Use the {C:attention}Demon{} #2# times",
-                    "{C:inactive}(#1#)"
+                    "使用#2#次{C:attention}邪魔",
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_insomnia = {
@@ -7845,11 +7844,11 @@ return {
                 }
             },
             counter_kino_blood = {
-                name = "Blood Counter",
+                name = "鲜血计数标",
                 text = {
-                    "When this card is {C:Drain}Drained",
-                    "{C:attention}Ticks Down 1",
-                    "and do not lose {C:Drain}Drained Property"
+                    "本牌遭到{C:Drain}耗竭{}时",
+                    "{C:attention}步退1位",
+                    "并阻止{C:Drain}耗竭影响"
                 }
             },
             counter_kino_heartbreak = {

@@ -20,8 +20,8 @@ return {
         },
         Edition = {
             e_worm_bap_void = {
-                name = '虚空牌',
-                label = '虚空',
+                name = '虚空',
+                label = '虚空牌',
                 text = {
                     "{C:attention}留手{}时，{C:chips}#1#{}筹码",
                     "永不计分"
@@ -30,11 +30,10 @@ return {
         },
         Tarot = {
             c_worm_bap_abyss = {
-                name = 'The Abyss',
+                name = '深渊',
                 text = {
-                    "Gives {C:money}$#1#{} and",
-                    "creates {C:attention}#2#{} random cards",
-                    "with {T:e_worm_bap_void}Void{} edition",
+                    "给予{C:money}$#1#{}并随机生成",
+                    "{C:attention}#2#{}张带有{T:e_worm_bap_void}虚空{}版本的扑克牌",
                 }
             }
         },
