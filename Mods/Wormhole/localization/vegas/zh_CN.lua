@@ -11,12 +11,13 @@ return {
 		        }
             },
             j_worm_spaghettification = {
-                name = "Spaghettification",
+                name = "面条化",
 		        text = {
-			        "{C:green}#1# in #2#{} chance to {C:attention}downgrade",
-			        "level of played {C:attention}poker hand",
-			        "Gains {C:attention}double{} the Mult lost",
-			        "{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)"
+			        "有{C:green}#1#/#2#{}的几率",
+					"使所出{C:attention}牌型降级",
+			        "并使本牌获得",
+					"其损失倍率的{C:attention}双倍",
+			        "{C:inactive}（当前为{C:mult}+#3#{C:inactive}倍率）"
 		        }
             },
             j_worm_hubble = {

@@ -460,7 +460,7 @@ return {
 				name = '昂首瞻星',
 				text = {
 					'商店内可能出现',
-					'{C:attention}21{}级{C:worm_tlr_constellation}星座'
+					'{C:attention}2{}级{C:worm_tlr_constellation}星座'
 				}
 			}
 		},

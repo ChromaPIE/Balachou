@@ -199,10 +199,10 @@ return {
         },
         Enhanced = {
             m_worm_riverboat_stardust = {
-                name = "Stardust Card",
+                name = "星尘牌",
                 text = {
-                    "Adds {C:chips}+#1#{} Chips or {C:mult}+#2#{} Mult",
-                    "to played hand if scored"
+                    "计分时，使所出牌型",
+                    "{C:chips}+#1#{}筹码或{C:mult}+#2#{}倍率"
                 }
             }
         }

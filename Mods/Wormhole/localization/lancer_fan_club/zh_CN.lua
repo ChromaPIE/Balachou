@@ -133,11 +133,10 @@ return {
                 },
             },
             bl_worm_lfc_eigengrau = {
-                name = "Eigengrau Emptiness",
+                name = "本我虚黯",
                 text = {
-                    "Each modified card drawn",
-                    "has a #1# in #2# chance",
-                    "to become a Stone Card"
+                    "抽到的每张非白板牌",
+                    "均有#1#/#2#的几率变为石头牌"
                 },
             }
         },

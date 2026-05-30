@@ -191,11 +191,11 @@ return {
 
             }, 
             j_worm_euda_roadsidepicnic = {
-                name = "Roadside Picnic",
+                name = "路边野餐",
                 text = {
-                    "{C:green}Rerolls{} cost {C:money}$#1#{} more",
-                    "Shop cards cost {C:money}$#1#{} less",
-                    "Increase both values by {C:money}$1{} per {C:green}reroll"
+                    "{C:green}重掷{}花费{C:money}+$#1#",
+                    "商店内卡牌售价{C:money}-$#1#",
+                    "每次{C:green}重掷{}后，两项数额皆{C:money}+$1"
                 }
             },
             j_worm_euda_csaber = {

@@ -207,11 +207,10 @@ return {
 		},
 		Tarot = {
 			c_worm_jtem2_shadow = {
-				name = "The Shadow",
+				name = "影子",
 				text = {
-					"{C:attention}Steals{} the levels of a",
-					"{C:attention}random{} poker hand and applies",
-					"it to your {C:attention}most played{} hand",
+					"将{C:attention}随机{}牌型的等级",
+					"{C:attention}窃取{}至{C:attention}最常出{}牌型",
 				},
 			},
 		},

@@ -637,9 +637,9 @@ return {
 			c_cry_assemble = {
 				name = "://ASSEMBLE",
 				text = {
-					"Add {C:cry_code}Mult{} to the",
-					"{C:cry_code}selected hand{} equal to",
-					"how many Jokers are owned",
+					"{C:inactive,s:0.8}-- 汇编",
+					"使{C:cry_code}选定牌型{}获得等同于",
+					"所持小丑牌张数的{C:cry_code}倍率"
 				},
 			},
 			c_cry_inst = {
@@ -682,8 +682,9 @@ return {
 			c_cry_global = {
 				name = "://GLOBAL",
 				text = {
-					"Select a playing card",
-					"to become {C:cry_code}Global{}",
+					"{C:inactive,s:0.8}-- 全局",
+					"选定一张扑克牌",
+					"并设其为{C:cry_code}GLOBAL",
 				},
 			},
 			c_cry_variable = {
@@ -958,17 +959,16 @@ return {
 				},
 			},
 			e_cry_m = {
-				name = "Jolly",
+				name = "开心",
 				text = {
-					"{C:mult}+#1#{} Mult",
-					"This card is feeling",
-					"rather {C:attention}jolly{}",
+					"{C:mult}+#1#{}倍率",
+					"本牌感觉相当{C:attention}开心",
 				},
 			},
 			e_cry_mosaic = {
-				name = "Mosaic",
+				name = "拼花",
 				text = {
-					"{X:chips,C:white} X#1# {} Chips",
+					"{X:chips,C:white}X#1#{}筹码",
 				},
 			},
 			e_cry_noisy = {
@@ -978,12 +978,10 @@ return {
 				},
 			},
 			e_cry_oversat = {
-				name = "Oversaturated",
+				name = "过饱和",
 				text = {
-					"All values",
-					"on this card",
-					"are {C:attention}doubled{}",
-					"{C:inactive}(If possible)",
+					"本牌的所有数值{C:attention}翻倍",
+            		"{C:inactive}（若可能）"
 				},
 			},
 		},
@@ -1203,17 +1201,14 @@ return {
 				},
 			},
 			j_cry_boredom = {
-				name = "Boredom",
+				name = '无聊乱画',
 				text = {
-					"{C:green}#1# in #2#{} chance to",
-					"{C:attention}retrigger{} each {C:attention}Joker{}",
-					"or {C:attention}played card{}",
-					"{C:inactive,s:0.8}Does not affect other Boredom{}",
+					"每张{C:attention}小丑牌{}和{C:attention}扑克牌",
+					"均有{C:green}#1#/#2#{}的几率{C:attention}重新触发",
+					"{C:inactive,s:0.8}不包括其他“无聊乱画”"
 				},
 				unlock = {
-					"AFK in the title",
-					"screen for",
-					"{C:attention}10 minutes",
+					"在标题画面挂机{C:attention}10分钟",
 				},
 			},
 			j_cry_broken_sync_catalyst = {
@@ -1666,11 +1661,10 @@ return {
 				},
 			},
 			j_cry_dubious = {
-				name = "Dubious Joker",
+				name = "可疑小丑",
 				text = {
-					"{C:chips}+#1#{} Chips if played",
-					"hand contains",
-					"a {C:attention}#2#",
+					"若出牌包含{C:attention}#2#",
+					"{C:chips}+#1#{}筹码"
 				},
 			},
 			j_cry_duos = {
@@ -2909,11 +2903,10 @@ return {
 			j_cry_sus = {
 				name = "SUS",
 				text = {
-					"At end of round, create",
-					"a {C:attention}copy{} of a random",
-					"card {C:attention}held in hand{},",
-					"destroy all others",
-					"{C:attention,s:0.8}Kings{s:0.8} of {C:hearts,s:0.8}Hearts{s:0.8} are prioritized",
+					"回合结束时",
+					"随机{C:attention}复制{}一张{C:attention}留手{}牌",
+					"并摧毁其余所有卡牌",
+					"{s:0.8}若有{C:hearts,s:0.8}红桃{C:attention,s:0.8}K{s:0.8}，则优先复制之",
 				},
 			},
 			j_cry_swarm = {
@@ -2951,12 +2944,12 @@ return {
 				},
 			},
 			j_cry_translucent = {
-				name = "Translucent Joker",
+				name = "透明小丑",
 				text = {
-					"Sell this card to create",
-					"a {C:attention}Banana Perishable{} copy",
-					"of a random {C:attention}Joker{}",
-					"{s:0.8,C:inactive}(Copy bypasses perish compat)",
+					"售出本牌后",
+					"复制随机一张所持{C:attention}小丑牌",
+					"并使其带有{C:attention}香蕉{}和{C:attention}易腐",
+					"{s:0.8,C:inactive}（复制品无视兼容易腐与否）",
 				},
 			},
 			j_cry_treacherous = {
@@ -3291,41 +3284,29 @@ return {
 			c_cry_Klubi = {
 				name = "Risti",
 				text = {
-					"({V:1}lvl.#4#{})({V:2}lvl.#5#{})({V:3}lvl.#6#{})",
-					"Level up",
-					"{C:attention}#1#{},",
-					"{C:attention}#2#{},",
-					"and {C:attention}#3#{}",
+					"（{V:1}等级#4#{}|{V:2}#5#{}|{V:3}#6#{}）",
+					"升级{C:attention}#1#{}、{C:attention}#2#{}、{C:attention}#3#",
 				},
 			},
 			c_cry_Sydan = {
 				name = "Hertta",
 				text = {
-					"({V:1}lvl.#4#{})({V:2}lvl.#5#{})({V:3}lvl.#6#{})",
-					"Level up",
-					"{C:attention}#1#{},",
-					"{C:attention}#2#{},",
-					"and {C:attention}#3#{}",
+					"（{V:1}等级#4#{}|{V:2}#5#{}|{V:3}#6#{}）",
+					"升级{C:attention}#1#{}、{C:attention}#2#{}、{C:attention}#3#",
 				},
 			},
 			c_cry_Lapio = {
 				name = "Pata",
 				text = {
-					"({V:1}lvl.#4#{})({V:2}lvl.#5#{})({V:3}lvl.#6#{})",
-					"Level up",
-					"{C:attention}#1#{},",
-					"{C:attention}#2#{},",
-					"and {C:attention}#3#{}",
+					"（{V:1}等级#4#{}|{V:2}#5#{}|{V:3}#6#{}）",
+					"升级{C:attention}#1#{}、{C:attention}#2#{}、{C:attention}#3#",
 				},
 			},
 			c_cry_Kaikki = {
 				name = "Kaikki",
 				text = {
-					"({V:1}lvl.#4#{})({V:2}lvl.#5#{})({V:3}lvl.#6#{})",
-					"Level up",
-					"{C:attention}#1#{},",
-					"{C:attention}#2#{},",
-					"and {C:attention}#3#{}",
+					"（{V:1}等级#4#{}|{V:2}#5#{}|{V:3}#6#{}）",
+					"升级{C:attention}#1#{}、{C:attention}#2#{}、{C:attention}#3#",
 				},
 			},
 			c_cry_perkele = {
@@ -3946,11 +3927,11 @@ return {
 				},
 			},
 			tag_cry_glitched = {
-				name = "Glitched Tag",
+				name = "故障标签",
 				text = {
-					"Next base edition shop",
-					"Joker is free and",
-					"becomes {C:dark_edition}Glitched{}",
+					"商店内的下一张",
+					"无版本小丑牌",
+					"将变为{C:dark_edition}故障{}且售价为{C:money}$0",
 				},
 			},
 			tag_cry_gold = {
@@ -3976,11 +3957,11 @@ return {
 				},
 			},
 			tag_cry_m = {
-				name = "Jolly Tag",
+				name = "开心标签",
 				text = {
-					"Next base edition shop",
-					"Joker is free and",
-					"becomes {C:dark_edition}Jolly{}",
+					"商店内的下一张",
+					"无版本小丑牌",
+					"将变为{C:dark_edition}开心{}且售价为{C:money}$0",
 				},
 			},
 			tag_cry_memory = {
@@ -3993,19 +3974,19 @@ return {
 				}
 			},
 			tag_cry_mosaic = {
-				name = "Mosaic Tag",
+				name = "拼花标签",
 				text = {
-					"Next base edition shop",
-					"Joker is free and",
-					"becomes {C:dark_edition}Mosaic{}",
+					"商店内的下一张",
+					"无版本小丑牌",
+					"将变为{C:dark_edition}拼花{}且售价为{C:money}$0",
 				},
 			},
 			tag_cry_oversat = {
-				name = "Oversaturated Tag",
+				name = "过饱和标签",
 				text = {
-					"Next base edition shop",
-					"Joker is free and",
-					"becomes {C:dark_edition}Oversaturated{}",
+					"商店内的下一张",
+					"无版本小丑牌",
+					"将变为{C:dark_edition}过饱和{}且售价为{C:money}$0",
 				},
 			},
 			tag_cry_quadruple = {
@@ -4149,14 +4130,14 @@ return {
 				},
 			},
 			v_cry_double_vision = {
-				name = "Double Vision",
+				name = "重影",
 				text = {
-					"{C:dark_edition}Double-Sided{} cards appear",
-					"{C:attention}4X{} more frequently",
+					"{C:dark_edition}双面{}牌",
+					"出现频率{C:attention}X4",
 				},
 			},
 			v_cry_double_slit = {
-				name = "Double Slit",
+				name = "双缝",
 				text = {
 					"{C:attention}Meld{} can appear",
 					"in {C:spectral}Spectral{} Packs",
@@ -4501,11 +4482,10 @@ return {
 				},
 			},
 			cry_global_sticker = {
-				name = "Global",
+				name = "GLOBAL",
 				text = {
-					"Draw this card",
-					"{C:cry_code}Before other cards{},",
-					"if possible",
+					"若可能，本牌",
+					"{C:cry_code}先于其他牌{}抽取"
 				},
 			},
 			cry_flickering = {
@@ -5140,7 +5120,7 @@ return {
 			cry_feat_spooky = "骇人更新",
 			["cry_feat_more stakes"] = "底注",
 			cry_feat_vouchers = "奖券",
-			cry_mus_jimball = "Jimball (Funkytown by Lipps Inc. - Copyrighted)",
+			cry_mus_jimball = "金宝滚滚球（Funkytown by Lipps Inc. - 受版权保护）",
 			cry_mus_code = "Code Cards (://LETS_BREAK_THE_GAME by HexaCryonic)",
 			cry_mus_exotic = "Exotic Jokers (Joker in Latin by AlexZGreat)",
 			cry_mus_high_score = "High Score (Final Boss [For Your Computer] by AlexZGreat)",
@@ -5236,7 +5216,7 @@ return {
 			cry_gaming_ex = "Gaming!",
 			cry_good_luck_ex = "Good luck!",
 			cry_sus_ex = "Impostor!",
-			cry_jolly_ex = "Jolly Up!",
+			cry_jolly_ex = "开心起来！",
 			cry_highfive_ex = "High Five!",
 			cry_m_minus = "m",
 			cry_m = "M",
@@ -5266,11 +5246,11 @@ return {
 			k_planet_universe = Cryptid_config.family_mode and "Universe" or "The Actual Fucking Universe",
 			k_planet_nibiru = "Nothing",
 
-			cry_notif_jimball_1 = "Jimball",
-			cry_notif_jimball_2 = "Copyright Notice",
-			cry_notif_jimball_d1 = 'Jimball plays the song "Funkytown",',
-			cry_notif_jimball_d2 = "which is copyrighted and can't be",
-			cry_notif_jimball_d3 = "used for streams and videos.",
+			cry_notif_jimball_1 = "金宝滚滚球",
+			cry_notif_jimball_2 = "版权提醒",
+			cry_notif_jimball_d1 = '“金宝滚滚球”会播放音乐“Funkytown”',
+			cry_notif_jimball_d2 = "该音乐受版权保护",
+			cry_notif_jimball_d3 = "无法用于直播或视频",
 
 			cry_gameset_explanation = {
 				"Select a gameset config option",
@@ -5312,41 +5292,41 @@ return {
 			cry_possessed = "Possessed",
 			cry_function_sticker = "Function",
 
-			cry_green_seal = "Green Seal",
+			cry_green_seal = "绿色蜡封",
 			cry_azure_seal = "Azure Seal",
 
-			cry_astral = "Astral",
-			cry_blur = "Blurred",
-			cry_double_sided = "Double-Sided",
-			cry_glass = "Fragile",
-			cry_glitched = "Glitched",
+			cry_astral = "玄星",
+			cry_blur = "模糊",
+			cry_double_sided = "双面",
+			cry_glass = "易碎",
+			cry_glitched = "故障",
 			cry_gold = "Golden",
-			cry_m = "Jolly",
-			cry_mosaic = "Mosaic",
+			cry_m = "开心",
+			cry_mosaic = "拼花",
 			cry_noisy = "Noisy",
-			cry_oversat = "Oversaturated",
+			cry_oversat = "过饱和",
 
-			k_cry_epic = "Epic",
-			k_cry_exotic = "Exotic",
-			k_cry_candy = "Candy",
-			k_cry_cursed = "Cursed",
+			k_cry_epic = "史诗",
+			k_cry_exotic = "异界",
+			k_cry_candy = "糖果",
+			k_cry_cursed = "受诅",
 		},
 		rnj_loc_txts = {
 			stats = {
-				plus_mult = { "{C:red}+#2#{} Mult" },
-				plus_chips = { "{C:blue}+#2#{} Chip(s)" },
-				x_mult = { "{X:red,C:white} X#2#{} Mult" },
-				x_chips = { "{X:blue,C:white} X#2#{} Chips" },
-				h_size = { "{C:attention}+#2#{} Hand Size" },
-				money = { "{C:money}+$#2#{} at payout" },
+				plus_mult = { "{C:red}+#2#{}倍率" },
+				plus_chips = { "{C:blue}+#2#{}筹码" },
+				x_mult = { "{X:red,C:white}X#2#{}倍率" },
+				x_chips = { "{X:blue,C:white}X#2#{}筹码" },
+				h_size = { "手牌上限{C:attention}+#2#" },
+				money = { "结算阶段赚取{C:money}$#2#" },
 			},
 			stats_inactive = {
-				plus_mult = { "{C:inactive}(Currently {C:red}+#1#{C:inactive} Mult)" },
-				plus_chips = { "{C:inactive}(Currently {C:blue}+#1#{C:inactive} Chip(s))" },
-				x_mult = { "{C:inactive}(Currently {X:red,C:white} X#1# {C:inactive} Mult)" },
-				x_chips = { "{C:inactive}(Currently {X:blue,C:white} X#1# {C:inactive} Chips)" },
-				h_size = { "{C:inactive}(Currently {C:attention}+#1#{C:inactive} Hand Size)" },
-				money = { "{C:inactive}(Currently {C:money}+$#1#{C:inactive})" },
+				plus_mult = { "{C:inactive}（当前为{C:red}+#1#{C:inactive}倍率）" },
+				plus_chips = { "{C:inactive}（当前为{C:blue}+#1#{C:inactive}筹码）" },
+				x_mult = { "{C:inactive}（当前为{X:red,C:white} X#1# {C:inactive}倍率）" },
+				x_chips = { "{C:inactive}（当前为{X:blue,C:white} X#1# {C:inactive}筹码）" },
+				h_size = { "{C:inactive}（当前手牌上限{C:attention}+#1#{C:inactive}）" },
+				money = { "{C:inactive}（当前为{C:money}+$#1#{C:inactive}）" },
 			},
 			actions = {
 				make_joker = { "Create {C:attention}#2# Joker(s){}" },

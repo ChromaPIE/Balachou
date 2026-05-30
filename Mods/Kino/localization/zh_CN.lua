@@ -451,7 +451,7 @@ return {
                 }
             },
             j_kino_beetlejuice_1988 = {
-                name = "Beetlejuice",
+                name = "阴间大法师",
                 text = {
                     "{X:mult,C:white}X#1#{} Mult if {C:attention}poker hand",
                     "has been played",
@@ -1510,12 +1510,12 @@ return {
                 }
             },
             j_kino_get_out = {
-                name = "Get Out",
+                name = "逃出绝命镇",
                 text = {
-                    "If played hand has only {C:attention}1{} card,",
-                    "turn {C:attention}#1# random cards{} in hand",
-                    "into exact copies of it",
-                    "and {C:mult}Self-Destruct"
+                    "若出牌仅有{C:attention}1{}张",
+                    "则将{C:attention}随机#1#张{}手牌",
+                    "变为其一比一复制",
+                    "并{C:mult}自毁"
                 }
             },
             j_kino_ghost_rider_1 = {
@@ -2820,21 +2820,22 @@ return {
                 }
             },
             j_kino_pitch_black = {
-                name = "Pitch Black",
+                name = "星际传奇",
                 text = {
-                    {"{C:mult}+#1#{} Mult on {C:attention}final hand",
-                "and reset stacked Mult"},
-                    {"Increase stacked Mult by {C:mult}+#2#{} Mult",
-                "when a card scores on a {C:attention}non-final hand{}"},
+                    {"打出{C:attention}最后一手牌{}时",
+                    "{C:mult}+#1#{}倍率并重置积攒倍率"},
+                    {
+                    "{C:attention}非最后一手出牌",
+                    "每有一张计分牌",
+                    "积攒{C:mult}+#2#{}倍率"},
                 }
             },
             j_kino_point_break = {
-                name = "Point Break",
+                name = "惊爆点",
                 text = {
-                    "Destroy a {C:attention}random{} card in",
-                    "hand to give all",
-                    "scoring cards {C:mult}+#1#{} Mult",
-                    "if played hand is a {C:attention}Pair"
+                    "若出牌为{C:attention}对子",
+                    "{C:attention}随机{}摧毁一张手牌",
+                    "并给予所有计分牌{C:mult}+#1#{}倍率"
                 }
             },
             j_kino_polar_express = {
@@ -3048,12 +3049,11 @@ return {
                 }
             },
             j_kino_sausage_party = {
-                name = "Sausage Party",
+                name = "香肠派对",
                 text = {
-                    "{C:green}#1# in #2#{} Chance to upgrade",
-                    "a random poker hand",
-                    "whenever a {C:Confection}Confection{} triggers",
-                    
+                    "{C:Confection}甜食零嘴{}牌触发时",
+                    "有{C:green}#1#/#2#{}的几率",
+                    "随机升级一种牌型"
                 }
             },
             j_kino_scarface_1 = {
@@ -3076,13 +3076,13 @@ return {
                 }
             },
             j_kino_school_of_rock = {
-                name = "School of Rock",
+                name = "摇滚校园",
                 text = {
-                    "Scoring {C:attention}5s or lower{}",
-                    "become {C:attention}Stone Cards"
+                    "点数{C:attention}≤5{}的计分牌",
+                    "变为{C:attention}石头牌"
                 },
                 unlock = {
-                    "Have 5 {C:attention}Stone Cards{} in hand"
+                    "手牌中包含5张{C:attention}石头牌"
                 }
             },
             j_kino_scream_1 = {
@@ -3733,14 +3733,13 @@ return {
                 }
             },
             j_kino_tmnt_1 = {
-                name = "Teenage Mutant Ninja Turtles (1990)",
+                name = "忍者神龟（1990）",
                 text = {
-                    "Retrigger the first",
-                    "scoring card of",
-                    "each suit {C:attention}#1# times{}"
+                    "每种花色的首张计分牌",
+                    "重新触发{C:attention}#1#次"
                 },
                 unlock = {
-                    "Consume {C:Confection}Slice of Pizza {C:attention}10{} times"
+                    "食用{C:Confection}披萨片{C:attention}10{}次"
                 }
             },
             j_kino_to_kill_a_mockingbird = {
@@ -3751,8 +3750,8 @@ return {
                     "转而变为{C:dark_edition}负片"
                 },
                 unlock = {
-                    "Destroy {C:attention}#2#{} Jokers",
-                    "{C:inactive}(#1#)"
+                    "摧毁{C:attention}#2#{}张小丑牌",
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_tower_heist = {
@@ -6711,11 +6710,11 @@ return {
                 }
             },
             kino_goldleaf = {
-                name = "Goldleaf",
+                name = "金箔",
                 text = {
-                    "Earn {C:money}$1{} for each",
-                    "goldleaf {C:Confection}Confection{} used",
-                    "when this {C:Confection}Confection{} activates"
+                    "{C:Confection}本牌{}激活时，每使用过",
+                    "一张金箔{C:Confection}甜食零嘴{}牌",
+                    "赚取{C:money}$1"
                 }
             },
             kino_extra_large = {
@@ -8749,7 +8748,7 @@ return {
         labels = {
             kino_award = "获奖",
             kino_choco = "蘸巧克力酱",
-            kino_goldleaf = "Goldleaf",
+            kino_goldleaf = "金箔",
             kino_extra_large = "Extra Large",
             kino_robin = "罗宾",
             kino_spilled_beans = "Spilled Beans",

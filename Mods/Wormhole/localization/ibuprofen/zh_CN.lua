@@ -27,11 +27,10 @@ return {
         },
         Tarot = {
             c_worm_ibu_mountain = {
-                name = 'The Mountain',
+                name = '冰山',
                 text = {
-                    "Enhances {C:attention}#1#{}",
-                    "selected cards to",
-                    "{C:attention}#2#{}"
+                    "将{C:attention}#1#{}张选定卡牌",
+                    "增强为{C:attention}#2#"
                 }
             }
         },
@@ -71,11 +70,11 @@ return {
         },
         Enhanced = {
             m_worm_ibu_frozen = {
-                name = 'Frozen Card',
+                name = '结冰牌',
                 text = {
-                    "{C:attention}Once{} per round,",
-                    "{C:attention}returns to hand{}",
-                    "if played or discarded",
+                    "一回合{C:attention}一次",
+                    "打出或弃掉后",
+                    "{C:attention}退回手牌"
                 }
             }
         },
