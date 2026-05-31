@@ -2,13 +2,11 @@ return {
 	descriptions = {
 		Back = {
 			b_worm_jtem2_schwarzschild_deck = {
-				name = "Schwarzschild Deck",
+				name = "史瓦西牌组",
 				text = {
-					"{C:spectral}Spectral Cards{} may",
-					"appear in the shop,",
-					"{C:tarot}Tarot Cards{} {C:attention}cannot{}",
-					"appear in the shop,",
-					"Start with {C:attention}2{} {C:spectral,T:c_worm_jtem2_kilonovae}Kilonovae{}",
+					"商店内可能出现{C:spectral}幻灵牌",
+					"商店内{C:attention}不会{}出现{C:tarot}塔罗牌",
+					"开局即拥有{C:attention}2{}张{C:spectral,T:c_worm_jtem2_kilonovae}千新星",
 				},
 			},
 		},

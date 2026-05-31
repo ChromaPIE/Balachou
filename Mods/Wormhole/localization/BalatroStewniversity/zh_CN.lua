@@ -57,11 +57,11 @@ return {
             },
 
             j_worm_stew_stardust = {
-                name = 'Stardust',
+                name = '星尘',
                 text = {
-                    'This Joker gains {C:money}$#1#{} of',
-                    '{C:attention}sell value{} for every {C:attention}#2#{C:inactive} [#3#]',
-                    'scoring {C:diamonds}Diamond{} cards played'
+                    '每打出{C:attention}#2#{C:inactive} [#3#]{}张',
+                    '计分的{C:diamonds}方片{}牌',
+                    '本牌{C:attention}售价{}提升{C:money}$#1#'
                 }
             },
 

@@ -1943,11 +1943,11 @@ return {
                 }
             },
             j_kino_james_bond_dr_no = {
-                name = "Dr. No",
+                name = "诺博士",
                 text = {
-                    "Put {C:mult}#1# Mult Counters",
-                    "on every {C:attention}7th{} card drawn",
-                    "{C:inactive}(#2# Remaining)"
+                    "对抽到的每{C:attention}第7张{}牌",
+                    "施加{C:attention}#1#{}位{C:mult}倍率计数标",
+                    "{C:inactive}（剩余#2#张）"
                 }
             },
             j_kino_jaws = {
@@ -2318,7 +2318,7 @@ return {
                 }
             },
             j_kino_megalopolis = {
-                name = "大都会",
+                name = { "大都会", "{s:0.7,C:inactive}Megalopolis" },
                 text = {
                     "每另有一张",
                     "计分的{C:clubs}梅花{}牌",
@@ -2354,45 +2354,39 @@ return {
                 }
             },
             j_kino_metropolis = {
-                name = "Metropolis",
+                name = { "大都会", "{s:0.7,C:inactive}Metropolis" },
                 text = {
-                    "{C:attention}Sci-Fi Cards{} upgrade",
-                    "{C:attention}#1#{} additional time for each",
-                    "{C:Silent}Silent{} movie joker"
+                    "每有一张{C:Silent}默片{}电影小丑牌",
+                    "{C:attention}科幻片牌{}额外升级{C:attention}#1#{}次",
                 },
                 unlock = {
-                    "Use {C:attention}The Droid{} on",
-                    "a {C:attention}Gold Card"
+                    "对{C:attention}黄金牌{}使用{C:attention}机器人"
                 }
             },
             j_kino_minecraft = {
-                name = "A Minecraft Movie",
+                name = "我的世界大电影",
                 text = {
-                    "Scoring {C:attention}Stone Cards",
-                    "turn into {C:attention}Steel",
-                    "or {C:attention}Gold Cards"
+                    "计分的{C:attention}石头牌",
+                    "变为{C:attention}钢铁牌{}或{C:attention}黄金牌"
                 },
                 unlock = {
-                    "Have three {C:attention}Steel Cards{},",
-                    "three {C:attention}Gold Cards{}, and",
-                    "three {C:attention}Stone Cards{} in your deck"
+                    "牌组中包含{C:attention}钢铁牌{}、",
+                    "{C:attention}黄金牌{}、{C:attention}石头牌{}各三张"
                 }
             },
             j_kino_modern_times = {
-                name = "Modern Times",
+                name = "摩登时代",
                 text = {
-                    "Scored cards have a {C:green}#2# in #3#{} chance",
-                    "to retrigger {C:attention}#1#{} times",
-                    "and a {C:green}#4# in #5#{} chance to",
-                    "be destroyed"
+                    "计分牌有{C:green}#2#/#3#{}的几率",
+                    "重新触发{C:attention}#1#{}次",
+                    "有{C:green}#4#/#5#{}的几率被摧毁"
                 }
             },
             j_kino_moneyball = {
-                name = "Moneyball",
+                name = "点球成金",
                 text = {
-                    "Earn {C:money}money{}",
-                    "equal to {C:attention}level",
-                    "of {C:attention}first{} hand played",
+                    "赚取等同于回合{C:attention}第一手{}出牌的",
+                    "牌型之{C:attention}等级{}的{C:money}资金"
                 }
             },
             j_kino_monster_house = {
@@ -3449,10 +3443,9 @@ return {
             j_kino_star_wars_iv = {
                 name = "星球大战",
                 text = {
-                    "Once cards adding up to {C:attention}#2#",
-                    "have scored",
-                    "level a random hand {C:attention}#3#{} times",
-                    "{C:inactive}(Currently: {C:attention}#1#{C:inactive} value scored)"
+                    "每次计分牌点数总计达{C:attention}#2#",
+                    "随机升级一种牌型{C:attention}#3#{}次",
+                    "{C:inactive}（当前点数总计：{C:attention}#1#{C:inactive}）"
                 }
             },
             j_kino_star_wars_v = {
@@ -4345,11 +4338,11 @@ return {
                 }
             },
             m_kino_sci_fi = {
-                name = "Sci-Fi Card",
+                name = "科幻片牌",
                 text = {
-                    "Gains {C:mult}+#1#{} Mult and {C:chips}+#2#{} Chips",
-                    "when scored",
-                    "{C:inactive}(Upgraded {C:attention}#6#{C:inactive} times)",
+                    "计分时，获得",
+                    "{C:mult}+#1#{}倍率及{C:chips}+#2#{}筹码",
+                    "{C:inactive}（已升级{C:attention}#6#{C:inactive}次）",
                 }
             },
             m_kino_demonic = {
@@ -7020,15 +7013,15 @@ return {
             -- Hearts (4 entries)
 
             spell_Hearts_Hearts = {
-                name = "Double Hearts",
+                name = "双红桃",
                 text = {
-                    "Gives {C:mult}+#1#{} Mult"
+                    "给予{C:mult}+#1#{}倍率"
                 }
             },
             spell_Hearts_Diamonds = {
-                name = "Diamond Heart",
+                name = "方片红桃",
                 text = {
-                    "Gives {X:mult,C:white}X#1#{}"
+                    "给予{X:mult,C:white}X#1#{}倍率"
                 }
             },
             spell_Hearts_Clubs = {
@@ -7039,10 +7032,10 @@ return {
                 }
             },
             spell_Hearts_Spades = {
-                name = "Spade Heart",
+                name = "黑桃红桃",
                 text = {
-                    "Upgrade a random card",
-                    "in hand with {C:mult}+#1#{} Mult"
+                    "使随机一张手牌",
+                    "获得{C:mult}+#1#{}倍率"
                 }
             },
 
@@ -7054,16 +7047,16 @@ return {
                 }
             },
             spell_Diamonds_Clubs = {
-                name = "Diamond Club",
+                name = "方片梅花",
                 text = {
-                    "Gives {X:chips,C:white}X#1#{}"
+                    "给予{X:chips,C:white}X#1#{}倍率"
                 }
             },
             spell_Diamonds_Spades = {
-                name = "Diamond Spade",
+                name = "方片黑桃",
                 text = {
-                    "Create a {C:attention}#1#{}",
-                    "{C:inactive}(Must have room)"
+                    "生成一张{C:attention}#1#",
+                    "{C:inactive}（必须有空位）"
                 }
             },
 
@@ -7697,12 +7690,12 @@ return {
         Counter = {
             -- Score counters
             counter_mult = {
-                name = "Mult Counter",
+                name = "倍率计数标",
                 text = {
-                    "{C:attention}Ticks Down 1",
+                    "{C:attention}步退1位",
                     "{s:0.15} ",
-                    "Gives {C:mult}+#1#{} Mult",
-                    "per Counter",
+                    "每有1位",
+                    "{C:mult}+#1#{}倍率"
                 }
             },
             counter_chip = {
@@ -7715,12 +7708,12 @@ return {
                 }
             },
             counter_xmult = {
-                name = "xMult Counter",
+                name = "X倍率计数标",
                 text = {
-                    "{C:attention}Ticks Down 1",
+                    "{C:attention}步退1位",
                     "{s:0.3} ",
-                    "Gives {X:mult,C:white}x#1#{} Mult",
-                    "per Counter",
+                    "每有1位",
+                    "{X:mult,C:white}X#1#{}倍率"
                 }
             },
 

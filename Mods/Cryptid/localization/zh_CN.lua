@@ -660,9 +660,10 @@ return {
 			c_cry_cryfunction = {
 				name = "FUNCTION://",
 				text = {
-					"Saves the {C:cry_code}Last Three{} consumables used,",
-					"using this card again creates a copy of",
-					"the first with a {C:cry_code}Function://{} sticker",
+					"{C:inactive,s:0.8}-- 函数",
+					"保存{C:cry_code}上3张{}使用的消耗牌",
+					"使用本卡以生成其中首张的复制",
+					"且使其带有{C:cry_code}Function://{}贴纸",
 				},
 			},
 			c_cry_run = {
@@ -987,11 +988,11 @@ return {
 		},
 		Enhanced = {
 			m_cry_echo = {
-				name = "Echo Card",
+				name = "回响牌",
 				text = {
-					"{C:green}#2# in #3#{} chance to",
-					"{C:attention}retrigger{} #1# additional",
-					"time#<s>1# when scored",
+					"计分时",
+					"有{C:green}#2#/#3#{}的几率",
+					"额外{C:attention}重新触发{}#1#次"
 				},
 			},
 			m_cry_light = {
@@ -1469,11 +1470,10 @@ return {
 				},
 			},
 			j_cry_coin = {
-				name = "Crypto Coin",
+				name = "神秘生币",
 				text = {
-					"Earn between",
-					"{C:money}$#1#{} and {C:money}$#2#{} for",
-					"each Joker {C:attention}sold{}",
+					"{C:attention}售出{}小丑牌时",
+					"赚取{C:money}$#1#{}-{C:money}$#2#"
 				},
 			},
 			j_cry_compound_interest = {
@@ -2846,10 +2846,10 @@ return {
 				},
 			},
 			j_cry_stardust = {
-				name = "Stardust",
+				name = "星尘",
 				text = {
-					"Other {C:dark_edition}Polychrome{} cards",
-					"each give {X:mult,C:white}X#1#{} Mult",
+					"每另有一张{C:dark_edition}炫彩{}牌",
+					"给予{X:mult,C:white}X#1#{}倍率",
 				},
 			},
 			j_cry_stella_mortis = {
@@ -3234,10 +3234,9 @@ return {
 			c_cry_planetlua = {
 				name = "Planet.lua",
 				text = {
-					"{C:green}#1# in #2#{} chance to",
-					"upgrade every",
-					"{C:legendary,E:1}poker hand{}",
-					"by {C:attention}1{} level",
+					"有{C:green}#1#/#2#{}的几率",
+					"使每种{C:legendary,E:1}牌型",
+					"提升{C:attention}1{}级",
 				},
 			},
 			c_cry_nstar = {
@@ -3274,11 +3273,8 @@ return {
 			c_cry_Timantii = {
 				name = "Ruutu",
 				text = {
-					"({V:1}lvl.#4#{})({V:2}lvl.#5#{})({V:3}lvl.#6#{})",
-					"Level up",
-					"{C:attention}#1#{},",
-					"{C:attention}#2#{},",
-					"and {C:attention}#3#{}",
+					"（{V:1}等级#4#{}|{V:2}#5#{}|{V:3}#6#{}）",
+					"升级{C:attention}#1#{}、{C:attention}#2#{}、{C:attention}#3#",
 				},
 			},
 			c_cry_Klubi = {
@@ -4506,16 +4502,15 @@ return {
 			cry_function_sticker = {
 				name = "Function://",
 				text = {
-					"Creates {C:cry_code}#1#{}",
-					"when used",
+					"使用后",
+					"生成{C:cry_code}#1#"
 				},
 			},
 			cry_function_sticker_desc = { --for function:// card
 				name = "Function://",
 				text = {
-					"Creates the next",
-					"{C:cry_code}Function://{} consumable",
-					"{C:inactive}Currently #1#, #2# and #3#{}",
+					"生成下一张{C:cry_code}Function://{}消耗牌",
+					"{C:inactive}当前为#1#、#2#、#3#",
 				},
 			},
 			cry_possessed = {
@@ -4990,7 +4985,7 @@ return {
 			["cry_UltPair"] = "Ultimate Pair",
 			["cry_WholeDeck"] = Cryptid_config.family_mode and "The Entire Deck" or "The Entire Fucking Deck",
 			["cry-Cluster Bulwark"] = "Clusterwark",
-			["cry_None"] = "None",
+			["cry_None"] = "空手",
 		},
 		poker_hand_descriptions = {
 			["cry_Bulwark"] = {
@@ -5010,7 +5005,7 @@ return {
 				"card found in a 52-card deck.",
 				"Are you insane?",
 			},
-			["cry_None"] = { "A hand containing 0 cards" },
+			["cry_None"] = { "不含牌的“出牌”" },
 
 			["cry_Declare0"] = { "Always counts as a Straight" },
 			["cry_Declare1"] = { "Always counts as a Flush" },
