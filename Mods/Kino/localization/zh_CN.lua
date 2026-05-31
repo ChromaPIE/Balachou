@@ -134,15 +134,16 @@ return {
                 }
             },
             j_kino_ai_artificial = {
-                name = "A.I.: Artificial Intelligence",
+                name = "人工智能",
                 text = {
-                    "{C:mult}+#1#{} Mult for every",
-                    "{C:attention}Sci-Fi Card{} upgraded",
-                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
+                    "本赛局内，每有",
+                    "{C:attention}科幻片牌{}升级过一次",
+                    "本牌获得{C:mult}+#1#{}倍率",
+                    "{C:inactive}（当前为{C:mult}+#2#{C:inactive}倍率）"
                 },
                 unlock = {
-                    "Upgrade #2# {C:attention}Sci-Fi Cards{}",
-                    "{C:inactive}(#1#)"
+                    "升级#2#次{C:attention}科幻片牌",
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_alien_1 = {
@@ -162,17 +163,16 @@ return {
                 }
             },
             j_kino_alien_3 = {
-                name = "Alien 3",
+                name = "异形3",
                 text = {
-                    "Create {C:attention}LV426{} if",
-                    "hand contains only",
-                    "{C:attention}debuffed{} cards"
+                    "若出牌仅包含{C:attention}失效{}牌",
+                    "生成一张{C:attention}LV426"
                 },
                 unlock = {
-                    "Win a run with",
-                    "at least 1 {C:attention}Alien Joker",
-                    "or use five {C:attention}LV426{}",
-                    "{C:inactive}(#1#)"
+                    "携带至少1张{C:attention}异形小丑牌",
+                    "赢下一局",
+                    "或使用5张{C:attention}LV426",
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_aliens = {
@@ -214,13 +214,11 @@ return {
                 }
             },
             j_kino_annabelle = {
-                name = "Annabelle",
+                name = "安娜贝尔",
                 text = {
-                    "Each {C:attention}5 or lower{}",
-                    "held in hand has",
-                    "a {C:green}X in #2#{} chance",
-                    "to {C:Jumpscare}Jumpscare{}",
-                    "with X being equal to its rank"
+                    "每张点数{C:attention}≤5{}的留手牌",
+                    "均有{C:green}X/#2#{}的几率{C:Jumpscare}跳脸杀",
+                    "X为留手牌点数"
                 }
             },
             j_kino_annihilation = {
@@ -398,12 +396,13 @@ return {
                 }
             },
             j_kino_batman_killing_joke = {
-                name = "Batman: The Killing Joke",
+                name = "蝙蝠侠：致命玩笑",
                 text = {
-                    "{C:chips}+#1#{} Chips",
-                    "Doubled for each empty {C:attention}Joker{} slot",
-                    "(Batman jokers count as empty)",
-                    "{C:inactive}(Currently: {C:chips}+#2#{C:inactive} Chips)"
+                    "{C:chips}+#1#{}筹码",
+                    "每空余一个{C:attention}小丑牌{}槽位",
+                    "筹码加成翻倍",
+                    "（蝙蝠侠小丑牌均计入空余）",
+                    "{C:inactive}（当前为{C:chips}+#2#{C:inactive}筹码）"
 
                 },
                 unlock = {
@@ -518,9 +517,9 @@ return {
                 text = {
                     {
                         "{X:attention,C:white}激发{}：出牌得分将用以",
-                        "对抗本牌而非盲注",
-                        "底注结束时，提升盲注",
-                        "并失去所存分数"
+                        "对抗{C:attention}本牌{}而非盲注",
+                        "底注结束时，{C:attention}提升盲注",
+                        "并{C:attention}失去{}所存分数"
                     },
                     {
                         "达到本牌得分需求时",
@@ -608,6 +607,7 @@ return {
                 text = {
                     "每个商店内的",
                     "{C:attention}首次{}购买花费{C:money}$0",
+                    "{s:0.2} ",
                     "每以此法减免{C:money}$1",
                     "对牌组中的牌施加",
                     "{C:attention}#1#{}位{C:red}债务计数标"
@@ -694,17 +694,16 @@ return {
                     "{C:inactive}（当前蓄能层数：{C:attention}#1#{C:inactive}）"
                 },
                 unlock = {
-                    "Lose a run",
-                    "in {C:attention}Round 7"
+                    "在{C:attention}第7回合{}输掉赛局"
                 }
             },
             j_kino_captain_blood = {
-                name = "Captain Blood",
+                name = "铁血船长",
                 text = {
-                    "{C:mult}+#1#{} Mult for",
-                    "each {C:money}$1{} earned since",
-                    "last round",
-                    "{C:inactive}(Currently: {C:mult}+#2#{C:inactive} Mult)"
+                    "自上回合起",
+                    "每赚取过{C:money}$1",
+                    "{C:mult}+#1#{}倍率",
+                    "{C:inactive}（当前为{C:mult}+#2#{C:inactive}倍率）"
                 }
             },
             j_kino_cars_1 = {
@@ -747,17 +746,16 @@ return {
                     "{C:attention}重新触发计数标"
                 },
                 unlock = {
-                    "Win a run with",
-                    "{C:attention}Lucky Cat",
-                    "or {C:attention}10{} Lucky Cards",
-                    "in your deck"
+                    "携带{C:attention}招财猫",
+                    "或{C:attention}10{}张幸运牌",
+                    "赢下一局"
                 }
             },
             j_kino_catch_me_if_you_can = {
-                name = "Catch Me If You Can",
+                name = "猫鼠游戏",
                 text = {
-                    "Played {C:attention}Wild Cards{} give",
-                    "{C:money}$#1#{} when scored",
+                    "打出的{C:attention}百搭牌",
+                    "计分时给予{C:money}$#1#",
                 }
             },
             j_kino_charlie_and_the_chocolate_factory = {
@@ -768,11 +766,11 @@ return {
                 }
             },
             j_kino_chef = {
-                name = "Chef",
+                name = "落魄大厨",
                 text = {
-                    "Create a {C:Confection}Confection{}",
-                    "when {C:attention}Blind{} is selected",
-                    "{C:inactive}(Must have room)"
+                    "选择{C:attention}盲注{}后",
+                    "生成一张{C:Confection}甜食零嘴{}牌",
+                    "{C:inactive}（必须有空位）"
                 }
             },
             j_kino_children_of_the_corn = {
@@ -805,16 +803,14 @@ return {
                 }
             },
             j_kino_clerks_1 = {
-                name = "Clerks",
+                name = "疯狂店员",
                 text = {
-                    "{C:mult}+#3#{} Mult when",
-                    "cards adding up to {C:attention}#2#",
-                    "have scored",
-                    "{C:inactive}(Current rank: {C:attention}#1#{C:inactive})"
+                    "若出牌总点数{C:attention}≥#2#",
+                    "{C:mult}+#3#{}倍率",
+                    "{C:inactive}（当前点数：{C:attention}#1#{C:inactive}）"
                 },
                 unlock = {
-                    "Play a hand with",
-                    "ranks adding up to {C:attention}37"
+                    "单次出牌总点数为{C:attention}37"
                 }
             },
             j_kino_clockwork_orange = {
@@ -871,11 +867,10 @@ return {
                 }
             },
             j_kino_commando = {
-                name = "Commando",
+                name = "突击队员",
                 text = {
-                    "Each {C:attention}Wild Card{}",
-                    "held in hand",
-                    "gives {C:mult}+#1#{} Mult"
+                    "每张留手的{C:attention}百搭牌",
+                    "给予{C:mult}+#1#{}倍率"
                 }
             },
             j_kino_con_air = {
@@ -3851,31 +3846,29 @@ return {
                 }
             },
             j_kino_twilight_1 = {
-                name = "Twilight",
+                name = "暮光之城",
                 text = {
-                    {"{C:Drain}Drain{} the {C:attention}Enhancement{} from",
-                    "any non-romance cards played",},
-                    {"{C:attention}Romance Cards{} have an",
-                    "additional {X:legendary,C:white}X#2#{} when they trigger",
-                    "for each card drained",
-                    "{C:inactive}(Currently: {X:legendary,C:white}X#1#{C:inactive})"}
+                    {"非爱情片牌被打出时",
+                    "{C:Drain}耗竭{}其{C:attention}增强"},
+                    {"每耗竭一张牌",
+                    "{C:attention}爱情片牌{}触发时",
+                    "两项加成额外{X:legendary,C:white}+X#2#",
+                    "{C:inactive}（当前为{X:legendary,C:white}+X#1#{C:inactive}）"}
                 },
                 unlock = {
-                    "Use the {C:attention}Sun{} and the {C:attention}Moon",
-                    "twice in a run"
+                    "单局内使用{C:attention}太阳",
+                    "和{C:attention}月亮各两次"
                 }
             },
             j_kino_twins = {
-                name = "Twins",
+                name = "龙兄鼠弟",
                 text = {
-                    "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult",
-                    "if played hand contains",
-                    "exactly {C:attention}2{} cards"
+                    "若出牌恰有{C:attention}2{}张",
+                    "{C:chips}+#1#{}筹码，{C:mult}+#2#{}倍率"
                 },
                 unlock = {
-                    "Win a run with",
-                    "two copies of the",
-                    "same Joker"
+                    "携带两张同名小丑",
+                    "赢下一局"
                 }
             },
             j_kino_up = {
@@ -4287,16 +4280,16 @@ return {
                 },
             },
             j_kino_avengers_endgame = {
-                name = "Avengers: Endgame",
+                name = "复仇者联盟4：终局之战",
                 text = {
-                    {"For each {C:Superhero}Superhero{} Joker you have",
-                    "put #1# {C:attention}Retrigger Counter{}",
-                    "on it and another random joker",
-                    "when you select a blind"},
-                    {"For each {C:Superhero}Superhero Card{} in your deck",
-                    "put #1# {C:attention}Retrigger Counter{}",
-                    "on it and another random card in deck",
-                    "when you select a blind"},
+                    {"每持有一张{C:Superhero}超英片{}小丑牌",
+                    "选择{C:attention}盲注{}后",
+                    "对该牌及随机另一张{C:attention}小丑牌",
+                    "施加#1#位{C:attention}重新触发计数标{}"},
+                    {"牌组中每有一张{C:Superhero}超英片{}牌",
+                    "选择{C:attention}盲注{}后",
+                    "对该牌及随机另一张{C:attention}扑克牌",
+                    "施加#1#位{C:attention}重新触发计数标{}"},
                 },
                 unlock={
                     "{E:1,s:1.3}?????",
@@ -4933,14 +4926,14 @@ return {
                 }
             },
             c_kino_icecream = {
-                name = "冰淇淋零食",
+                name = "零嘴冰淇淋",
                 text = {
                     "使下一手出牌的",
                     "对应牌型{C:chips}+#1#{}筹码"
                 }
             },
             c_kino_candy = {
-                name = "糖果零食",
+                name = "零嘴糖果",
                 text = {
                     "下回合",
                     "手牌上限{C:attention}+#1#"
@@ -8190,7 +8183,7 @@ return {
             k_benjamin_button = "Aged",
             k_mars_attacks = "Invaded",
             k_mars_attacks_2 = "DESTROYED!!!!",
-            k_chef = "There Ya Go",
+            k_chef = "给！",
             k_jaws = "CHOMP",
             k_gone_girl_male = "Gone Girl'd",
             k_gone_girl_female = "Good For Her",
@@ -8594,27 +8587,27 @@ return {
 
             -- Avengers Endgame Quests
             k_kino_avengers_endgame_quest_1 = {
-                "Possess 3 Superhero jokers"
+                "持有3张超英片小丑牌"
             },
             k_kino_avengers_endgame_quest_2 = {
                 "持有一张发行于",
                 "2010年代的电影小丑牌"
             },
             k_kino_avengers_endgame_quest_3 = {
-                "Possess 2 Movie Jokers",
-                "that share an actor"
+                "持有两张与本片",
+                "有相同演员的电影小丑牌"
             },
             k_kino_avengers_endgame_quest_4 = {
-                "Have 5 or more", 
-                "Superhero Cards in your deck"
+                "牌组中至少包含",
+                "5张超英片牌"
             },
             k_kino_avengers_endgame_quest_5 = {
-                "Have half or less of",
-                "your starting deck remaining"
+                "牌组现存卡牌张数",
+                "不高于开局的一半"
             },
             k_kino_avengers_endgame_quest_6 = {
-                "Have the Superhero, Ego,",
-                "and Krypton in your inventory"
+                "同时持有超级英雄、",
+                "伊戈、氪星"
             },
 
             -- Singing in the Rain Quests
