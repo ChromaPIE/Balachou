@@ -1,0 +1,348 @@
+[manifest]
+version = "1.0.0"
+dump_lua = false
+priority = 9999
+
+# zh_CN font fallback: prefer m6x11 glyphs, fall back to NotoSansSC.
+# Keep this as a single runtime hook because SMODS rewrites engine/text.lua
+# and engine/ui.lua before ChromicPatch sees them.
+
+[[patches]]
+[patches.regex]
+target = "game.lua"
+pattern = '''(?<indent>[\t ]*)self\.LANG = self\.LANGUAGES\[self\.SETTINGS\.(?:real_language or self\.SETTINGS\.)?language\] or self\.LANGUAGES\['en-us'\]'''
+position = "after"
+line_prepend = "$indent"
+payload = '''
+CHROMICPATCH_FontFallback = CHROMICPATCH_FontFallback or {}
+local _cp = CHROMICPATCH_FontFallback
+
+if not _cp.initialized then
+    _cp.drawable_fonts = setmetatable({}, {__mode = 'k'})
+
+    function _cp.supports(font, text)
+        if not (font and font.FONT and text) then return false end
+        if font.FONT.hasGlyphs then
+            local ok, has = pcall(function() return font.FONT:hasGlyphs(text) end)
+            if ok then return has end
+        end
+        local b = string.byte(text)
+        return b ~= nil and b < 128
+    end
+
+    function _cp.is_fallback(font)
+        return font and font.CP_FONT_FALLBACK
+    end
+
+    function _cp.choose(font, text)
+        if not _cp.is_fallback(font) then return font end
+        if _cp.supports(font.CP_PRIMARY_FONT, text) then return font.CP_PRIMARY_FONT end
+        return font.CP_FALLBACK_FONT or font
+    end
+
+    function _cp.runs(font, text)
+        text = text or ''
+        if not _cp.is_fallback(font) then return {{font = font, text = text}} end
+
+        local runs = {}
+        local active_font = nil
+        local active_text = {}
+        for _, c in utf8.chars(text) do
+            local char_font = _cp.choose(font, c)
+            if active_font ~= char_font then
+                if active_font then
+                    runs[#runs + 1] = {font = active_font, text = table.concat(active_text)}
+                end
+                active_font = char_font
+                active_text = {}
+            end
+            active_text[#active_text + 1] = c
+        end
+        if active_font then
+            runs[#runs + 1] = {font = active_font, text = table.concat(active_text)}
+        end
+        if #runs == 0 then
+            runs[1] = {font = font.CP_FALLBACK_FONT or font, text = ''}
+        end
+        return runs
+    end
+
+    function _cp.width(font, text, scale)
+        local width = 0
+        for _, run in ipairs(_cp.runs(font, text)) do
+            local run_font = run.font
+            width = width + run_font.FONT:getWidth(run.text)*(run_font.squish or 1)*(run_font.FONTSCALE or font.FONTSCALE)
+        end
+        return width*(scale or 1)*G.TILESCALE
+    end
+
+    function _cp.height(font, text, scale)
+        local height = 0
+        for _, run in ipairs(_cp.runs(font, text)) do
+            local run_font = run.font
+            height = math.max(height, run_font.FONT:getHeight()*(run_font.FONTSCALE or font.FONTSCALE)*(run_font.TEXT_HEIGHT_SCALE or font.TEXT_HEIGHT_SCALE))
+        end
+        return height*(scale or 1)*G.TILESCALE
+    end
+
+    function _cp.new_text(font, text, colour)
+        if not _cp.is_fallback(font) then
+            return love.graphics.newText(font.FONT, {colour or G.C.WHITE, text or ''})
+        end
+
+        local drawable = {CP_FONT_FALLBACK = true, base_font = font, runs = _cp.runs(font, text)}
+        for _, run in ipairs(drawable.runs) do
+            run.drawable = love.graphics.newText(run.font.FONT, {colour or G.C.WHITE, run.text})
+            run.width = run.font.FONT:getWidth(run.text)*(run.font.squish or 1)*(run.font.FONTSCALE or font.FONTSCALE)
+        end
+        return drawable
+    end
+
+    function _cp.baseline_y_offset(base_font, run_font, scale)
+        if not (_cp.is_fallback(base_font) and run_font and run_font ~= base_font) then return 0 end
+
+        local base_scale = base_font.FONTSCALE or 1
+        local run_scale = run_font.FONTSCALE or base_scale
+        local base_offset = base_font.TEXT_OFFSET and base_font.TEXT_OFFSET.y or 0
+        local run_offset = run_font.TEXT_OFFSET and run_font.TEXT_OFFSET.y or base_offset
+        local manual_offset = base_font.CP_BASELINE_OFFSET and base_font.CP_BASELINE_OFFSET.y or 0
+
+        return ((run_offset*run_scale) - (base_offset*base_scale) + manual_offset)*(scale or 1)/G.TILESIZE
+    end
+
+    function _cp.draw_text(drawable, x, y, r, sx, sy, ox, oy, kx, ky)
+        local base_font = drawable.base_font
+        if not base_font then return end
+
+        local scale = 1
+        if sx and base_font.FONTSCALE and base_font.FONTSCALE ~= 0 then
+            scale = sx*G.TILESIZE/((base_font.squish or 1)*base_font.FONTSCALE)
+        end
+
+        local offset = 0
+        for _, run in ipairs(drawable.runs) do
+            local run_font = run.font
+            local y_offset = _cp.baseline_y_offset(base_font, run_font, scale)
+            _cp.original_lg_draw(
+                run.drawable,
+                (x or 0) + offset,
+                (y or 0) + y_offset,
+                r or 0,
+                scale*(run_font.squish or 1)*run_font.FONTSCALE/G.TILESIZE,
+                scale*run_font.FONTSCALE/G.TILESIZE,
+                ox,
+                oy,
+                kx,
+                ky
+            )
+            offset = offset + (run.width or 0)*scale/G.TILESIZE
+        end
+    end
+
+    function _cp.install_draw_hook()
+        if _cp.draw_hooked then return end
+        _cp.original_lg_draw = love.graphics.draw
+        love.graphics.draw = function(drawable, x, y, r, sx, sy, ox, oy, kx, ky)
+            if type(drawable) == 'table' and drawable.CP_FONT_FALLBACK then
+                return _cp.draw_text(drawable, x, y, r, sx, sy, ox, oy, kx, ky)
+            end
+
+            local mapped = _cp.drawable_fonts and _cp.drawable_fonts[drawable]
+            if mapped and mapped.font and mapped.base and mapped.font ~= mapped.base then
+                local base_scale = mapped.base.FONTSCALE or mapped.font.FONTSCALE
+                local ratio = base_scale ~= 0 and (mapped.font.FONTSCALE or base_scale)/base_scale or 1
+                local draw_scale = 1
+                if sx and base_scale and base_scale ~= 0 then
+                    draw_scale = sx*G.TILESIZE/((mapped.base.squish or 1)*base_scale)
+                end
+                y = (y or 0) + _cp.baseline_y_offset(mapped.base, mapped.font, draw_scale)
+                sx = sx and sx*ratio or sx
+                sy = sy and sy*ratio or sy
+                ox = ox and ox/ratio or ox
+                oy = oy and oy/ratio or oy
+            end
+
+            return _cp.original_lg_draw(drawable, x, y, r, sx, sy, ox, oy, kx, ky)
+        end
+        _cp.draw_hooked = true
+    end
+
+    function _cp.rebuild_dynatext(text)
+        if not (text and text.strings) then return end
+
+        local old_w, old_h = text.config.W, text.config.H
+        text.config.W = 0
+        text.config.H = 0
+
+        for k, str in ipairs(text.strings) do
+            local base_font = str.font or text.font or G.LANG.font
+            if _cp.is_fallback(base_font) and str.letters then
+                local tempW = 0
+                local tempH = 0
+                for _, letter in ipairs(str.letters) do
+                    local char_font = _cp.choose(base_font, letter.char)
+                    local base_scale = base_font.FONTSCALE or char_font.FONTSCALE
+                    local char_scale = char_font.FONTSCALE or base_scale
+                    local ratio = base_scale ~= 0 and char_scale/base_scale or 1
+                    local part_scale = letter.scale or 1
+
+                    if letter.CP_FONT ~= char_font or letter.CP_CHAR ~= letter.char then
+                        letter.letter = love.graphics.newText(char_font.FONT, letter.char)
+                        _cp.drawable_fonts[letter.letter] = {font = char_font, base = base_font}
+                        letter.CP_FONT = char_font
+                        letter.CP_CHAR = letter.char
+                    end
+
+                    letter.font = char_font
+                    letter.base_font = base_font
+                    local tx = char_font.FONT:getWidth(letter.char)*text.scale*part_scale*G.TILESCALE*char_scale + 2.7*(text.config.spacing or 0)*G.TILESCALE*char_scale
+                    local ty = char_font.FONT:getHeight(letter.char)*text.scale*part_scale*G.TILESCALE*char_scale*(char_font.TEXT_HEIGHT_SCALE or base_font.TEXT_HEIGHT_SCALE)
+                    letter.dims = {x = tx/(base_scale*G.TILESCALE), y = ty/(base_scale*G.TILESCALE)}
+                    letter.CP_SCALE_RATIO = ratio
+                    tempW = tempW + tx/(G.TILESIZE*G.TILESCALE)
+                    tempH = math.max(ty/(G.TILESIZE*G.TILESCALE), tempH)
+                end
+                str.W = tempW
+                str.H = tempH
+            end
+
+            if str.W and str.W > text.config.W then
+                text.config.W = str.W
+                str.W_offset = 0
+                if text.config.marquee and text.config.maxw then
+                    if text.config.W > text.config.maxw then
+                        text.config.marquee_width = text.config.W/text.config.maxw
+                        text.config.W = text.config.maxw
+                    else
+                        text.config.marquee = 'no'
+                    end
+                end
+            end
+            if str.H and str.H > text.config.H then text.config.H = str.H; str.H_offset = 0 end
+        end
+
+        if text.T then
+            if text.T.w ~= text.config.W or text.T.h ~= text.config.H then
+                text.ui_object_updated = true
+                text.non_recalc = text.config.non_recalc
+            end
+            text.T.w = text.config.W
+            text.T.h = text.config.H
+        end
+
+        for _, str in ipairs(text.strings) do
+            if str.W and str.H then
+                str.W_offset = 0.5*(text.config.W - (text.config.marquee and text.config.maxw and text.config.maxw < str.W and text.config.maxw or str.W))
+                str.H_offset = 0.5*(text.config.H - str.H + (text.config.offset_y or 0))
+            end
+        end
+
+        if old_w == text.config.W and old_h == text.config.H then
+            text.ui_object_updated = text.ui_object_updated
+        end
+    end
+
+    function _cp.install_wrappers()
+        if _cp.wrappers_installed then return end
+
+        if DynaText and DynaText.update_text then
+            _cp.original_dynatext_update_text = DynaText.update_text
+            DynaText.update_text = function(self, first_pass)
+                _cp.original_dynatext_update_text(self, first_pass)
+                _cp.rebuild_dynatext(self)
+            end
+        end
+
+        if UIBox and UIBox.calculate_xywh then
+            _cp.original_uibox_calculate_xywh = UIBox.calculate_xywh
+            UIBox.calculate_xywh = function(self, node, _T, recalculate, _scale)
+                local ret_w, ret_h = _cp.original_uibox_calculate_xywh(self, node, _T, recalculate, _scale)
+                if node and node.UIT == G.UIT.T and node.config then
+                    node.config.lang = node.config.lang or G.LANG
+                    if node.config.ref_table and node.config.ref_value then
+                        node.config.text = tostring(node.config.ref_table[node.config.ref_value])
+                    end
+                    if not node.config.text then node.config.text = '[UI ERROR]' end
+                    if type(node.config.text) ~= 'string' then node.config.text = tostring(node.config.text) end
+
+                    local font = node.config.font or node.config.lang.font
+                    if _cp.is_fallback(font) then
+                        local scale = node.config.scale or 1
+                        local tx = _cp.width(font, node.config.text, scale)
+                        local ty = _cp.height(font, node.config.text, scale)
+                        if node.config.vert then local thunk = tx; tx = ty; ty = thunk end
+
+                        local new_w = tx/(G.TILESIZE*G.TILESCALE)
+                        local new_h = ty/(G.TILESIZE*G.TILESCALE)
+                        if node.ARGS and node.ARGS.xywh_node_trans then
+                            node.ARGS.xywh_node_trans.w = new_w
+                            node.ARGS.xywh_node_trans.h = new_h
+                        end
+                        if node.T then
+                            node.T.w = new_w
+                            node.T.h = new_h
+                        end
+                        return new_w, new_h
+                    end
+                end
+                return ret_w, ret_h
+            end
+        end
+
+        if UIElement then
+            UIElement.update_text = function(self)
+                if self.config and self.config.text and not self.config.text_drawable then
+                    self.config.lang = self.config.lang or G.LANG
+                    local font = self.config.font or self.config.lang.font
+                    if _cp.is_fallback(font) then
+                        self.config.text_drawable = _cp.new_text(font, self.config.text, G.C.WHITE)
+                    else
+                        self.config.text_drawable = love.graphics.newText(font.FONT, {G.C.WHITE,self.config.text})
+                    end
+                end
+
+                if self.config.ref_table and self.config.ref_table[self.config.ref_value] ~= self.config.prev_value then
+                    self.config.lang = self.config.lang or G.LANG
+                    local prev_value = self.config.prev_value
+                    self.config.text = tostring(self.config.ref_table[self.config.ref_value])
+                    local font = self.config.font or self.config.lang.font
+                    if _cp.is_fallback(font) then
+                        self.config.text_drawable = _cp.new_text(font, self.config.text, G.C.WHITE)
+                    elseif self.config.text_drawable and self.config.text_drawable.set then
+                        self.config.text_drawable:set(self.config.text)
+                    else
+                        self.config.text_drawable = love.graphics.newText(font.FONT, {G.C.WHITE,self.config.text})
+                    end
+
+                    local prev_len = string.len(tostring(to_number and to_number(prev_value) or prev_value))
+                    local text_len = string.len(tostring(to_number and to_number(self.config.text) or self.config.text))
+                    if not self.config.no_recalc and prev_value and prev_len ~= text_len then self.UIBox:recalculate() end
+                    self.config.prev_value = self.config.ref_table[self.config.ref_value]
+                end
+            end
+        end
+
+        _cp.wrappers_installed = true
+    end
+
+    _cp.install_draw_hook()
+    _cp.install_wrappers()
+    _cp.initialized = true
+end
+
+if G and G.FONTS and G.FONTS[1] and G.FONTS[2] and (self.LANG and self.LANG.key == 'zh_CN') then
+    local primary_font = G.FONTS[1]
+    local fallback_font = G.FONTS[2]
+    if primary_font.FONT and fallback_font.FONT then
+        G.CHROMICPATCH_ZH_CN_FONT = G.CHROMICPATCH_ZH_CN_FONT or {}
+        local mixed_font = G.CHROMICPATCH_ZH_CN_FONT
+        for k, v in pairs(fallback_font) do mixed_font[k] = v end
+        mixed_font.FONT = fallback_font.FONT
+        mixed_font.CP_FONT_FALLBACK = true
+        mixed_font.CP_PRIMARY_FONT = primary_font
+        mixed_font.CP_FALLBACK_FONT = fallback_font
+        mixed_font.CP_BASELINE_OFFSET = {x = 0, y = 0}
+        self.LANG.font = mixed_font
+    end
+end
+'''
