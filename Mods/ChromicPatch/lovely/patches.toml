@@ -799,6 +799,15 @@ position = "after"
 pattern = 'local loc = G.localization.PotatoPatch.Info_Menu["worm_meow_tarts"]'
 payload = 'if loc then PotatoPatchUtils.LOC.recursive_parse(loc) end'
 
+# Wormhole spaceship/module draw: DrawStep receives `card`, not method `self`
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "/content/taxes_back_pain/modules_drawsteps.lua"]'
+match_indent = true
+position = "at"
+pattern = "card.children.front:draw_shader(_shader, card, self.ARGS.send_to_shader)"
+payload = "card.children.front:draw_shader(_shader, nil, card.ARGS.send_to_shader)"
+
 # SOE redfabric: replace triple-click with I hotkey
 # Adds an SMODS.Keybind that opens the copied-jokers view when I is pressed
 # while hovering/focusing redfabric
