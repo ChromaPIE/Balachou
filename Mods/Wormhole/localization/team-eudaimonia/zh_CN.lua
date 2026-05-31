@@ -218,8 +218,8 @@ return {
             c_worm_euda_freeze = {
                 name = {"大冻结"},
                 text = {
-                    "Sets each card in {C:attention}deck",
-                    "to {C:attention}1{} of {C:attention}4{} random {C:attention}ranks"
+                    "将{C:attention}牌组{}中每张牌的{C:attention}点数",
+                    "设为随机{C:attention}4{}种{C:attention}之一"
                 }
             },
             c_worm_euda_rip = {
@@ -325,11 +325,11 @@ return {
     misc = {
             poker_hand_descriptions = {
                 worm_pkr_euda_nova = {
-                    "5 cards that are {C:attention}Wild{}",
+                    "5张百搭牌",
                 },
             },
             poker_hands = {
-                worm_pkr_euda_nova = 'Stardust'
+                worm_pkr_euda_nova = '星尘'
             },
             dictionary = {
                 k_worm_euda_jokecolony_ship_button = "SHIP",

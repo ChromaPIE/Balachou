@@ -47,12 +47,11 @@ return {    -- yo it's GHOSTSALT here look at me TYPING before i SUBMIT THIS THI
         },
         Back = {
             b_worm_dum_starstudded = {
-                name = "Star-Studded Deck",
+                name = "星点牌组",
                 text = {
-                    "{C:red}-1{} {C:attention}Joker slot{}, gain",
-                    "{C:attention}+2 Joker slots{} once {C:attention}9{} unique",
-                    "{C:planet}Planet{} cards have",
-                    "been used this run"
+                    "{C:attention}小丑牌槽位{C:red}-1",
+                    "赛局内每使用{C:attention}9{}种{C:planet}星球{}牌",
+                    "{C:attention}小丑牌槽位+2"
                 }
             }
         },

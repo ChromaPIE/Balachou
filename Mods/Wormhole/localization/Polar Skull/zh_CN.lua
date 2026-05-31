@@ -94,11 +94,11 @@ return {
 				text = rocket_text,
 			},
 			c_worm_polarskull_spaceshuttle = {
-				name = "Space Shuttle",
+				name = "航天飞机",
 				text = rocket_text,
 			},
 			c_worm_polarskull_sls = {
-				name = "Space Launch System",
+				name = "太空发射系统",
 				text = rocket_text,
 			},
 			c_worm_polarskull_titanieee = {
@@ -106,15 +106,15 @@ return {
 				text = rocket_text,
 			},
 			c_worm_polarskull_saturnv = {
-				name = "Saturn V",
+				name = "土星5号",
 				text = rocket_text,
 			},
 			c_worm_polarskull_deltaii = {
-				name = "Delta II",
+				name = "德尔塔2号",
 				text = rocket_text,
 			},
 			c_worm_polarskull_ariane5 = {
-				name = "Ariane 5",
+				name = "阿丽亚娜5号",
 				text = rocket_text,
 			},
 		},
