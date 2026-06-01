@@ -123,11 +123,11 @@ return {
                 },
             },
             j_worm_euda_lunarcheese = {
-                name = "Lunar Cheese",
+                name = "月酪",
                 text = {
-                    "When sold, debuffs the {C:attention}Joker",
-                    "to its right for #1# rounds",
-                    "It {C:attention}permanently{} gains a retrigger"
+                    "售出本牌后",
+                    "使右侧{C:attention}小丑牌{}失效#1#回合",
+                    "且{C:attention}永久{}获得一次重新触发"
                 },
             },
             j_worm_euda_extraevidence = {

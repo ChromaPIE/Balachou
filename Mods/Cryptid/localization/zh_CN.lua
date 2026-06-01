@@ -294,24 +294,22 @@ return {
 				},
 			},
 			bl_cry_hammer = {
-				name = "The Hammer",
+				name = "锤",
 				text = {
-					"All cards with odd",
-					"rank are debuffed",
+					'奇数点卡牌全部失效'
 				},
 			},
 			bl_cry_joke = {
-				name = "The Joke",
+				name = "乐",
 				text = {
-					"If score is >2X requirements,",
-					"set ante to #2#",
+					"若得分超出要求两倍",
+					"设底注为#2#",
 				},
 			},
 			bl_cry_magic = {
-				name = "The Magic",
+				name = "魔法",
 				text = {
-					"All cards with even",
-					"rank are debuffed",
+					'偶数点卡牌全部失效'
 				},
 			},
 			bl_cry_lavender_loop = {
@@ -996,12 +994,12 @@ return {
 				},
 			},
 			m_cry_light = {
-				name = "Light Card",
+				name = "圣光牌",
 				text = {
-					"When triggered with {C:attention}#4#{} {C:inactive}(#3#){} other",
-					"scoring card#<s>4#, gain {X:mult,C:white}X#1#{} Mult and",
-					"increase requirement by {C:attention}5{}",
-					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
+					"每与另{C:attention}#4#{C:inactive}(#3#){}张计分牌",
+					"一同触发后，获得{X:mult,C:white}X#1#{}倍率",
+					"并使需求张数提升{C:attention}5{",
+					"{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）",
 				},
 			},
 			m_cry_abstract = {
@@ -1238,11 +1236,11 @@ return {
 				},
 			},
 			j_cry_brittle = {
-				name = "Brittle Candy",
+				name = "脆酥糖",
 				text = {
-					"For the next {C:attention}#1#{} hand#<s>1#,",
-					"add {C:attention}Stone{}, {C:attention}Gold{}, or {C:attention}Steel{} to",
-					"the rightmost scoring card",
+					"将下{C:attention}#1#{}手出牌中",
+					"最右侧的计分牌增强为",
+					"{C:attention}石头牌{}，{C:attention}黄金牌{}或{C:attention}钢铁牌"
 				},
 			},
 			j_cry_bubblem = {
@@ -1288,10 +1286,10 @@ return {
 				},
 			},
 			j_cry_candy_buttons = {
-				name = "Candy Buttons",
+				name = "纽扣糖",
 				text = {
-					"The next {C:attention}#1#{} reroll#<s>1#",
-					"cost {C:money}$1{}",
+					"下{C:attention}#1#{}次重掷",
+					"花费{C:money}$1"
 				},
 			},
 			j_cry_candy_cane = {
@@ -1369,12 +1367,12 @@ return {
 				},
 			},
 			j_cry_chili_pepper = {
-				name = "Chili Pepper",
+				name = "红辣椒",
 				text = {
-					"This Joker gains {X:mult,C:white} X#2# {} Mult",
-					"at end of round,",
-					"{C:red,E:2}self destructs{} after {C:attention}#3#{} round#<s>3#",
-					"{C:inactive}(Currently{} {X:mult,C:white} X#1# {} {C:inactive}Mult){}",
+					"回合结束时",
+					"获得{X:mult,C:white}X#2#{}倍率",
+					"{C:attention}#3#{}回合后{C:red,E:2}自毁",
+					"{C:inactive}（当前为{X:mult,C:white}X#1#{C:inactive}倍率）",
 				},
 			},
 			j_cry_chocolate_dice = {
@@ -1511,10 +1509,10 @@ return {
 				},
 			},
 			j_cry_cotton_candy = {
-				name = "Cotton Candy",
+				name = "棉花糖",
 				text = {
-					"When sold, adjacent",
-					"{C:attention}Jokers{} become {C:dark_edition}Negative{}",
+					"售出本牌后",
+					"紧邻{C:attention}小丑牌{}变为{C:dark_edition}负片",
 				},
 			},
 			j_cry_crustulum = {
@@ -1699,12 +1697,12 @@ return {
 				},
 			},
 			j_cry_emergencychips = {
-				name = "Emergency Chips",
+				name = "应急筹码",
 				text = {
-					"Immediately gain",
-					"{C:chips}#1#%{} of blind requirement",
-					"as score when sold",
-					"{C:inactive}(Currently {}{C:chips}#2#{}{C:inactive}){}",
+					"售出本牌后，立即获得",
+					"等同于盲注要求",
+					"{C:chips}#1#%{}的分数",
+					"{C:inactive}（当前为{C:chips}#2#{C:inactive}）",
 				},
 			},
 			j_cry_energia = {
@@ -1867,12 +1865,12 @@ return {
 				},
 			},
 			j_cry_formidiulosus = {
-				name = "Formidiulosus",
+				name = "慑诅圣所",
 				text = {
-					"When a {X:cry_cursed,C:white}Cursed{} Joker is obtained, destroy it",
-					"Creates {C:attention}#1#{} {C:dark_edition}Negative {C:cry_candy}Cand#<ies,y>1#{} at end of shop",
-					"Gains {X:dark_edition,C:white}^#2#{} Mult for each {C:cry_candy}Candy{} in possession",
-					"{C:inactive}(Currently {X:dark_edition,C:white}^#3#{C:inactive} Mult)",
+					"获取{X:cry_cursed,C:white}受诅{}小丑牌时，摧毁之",
+					"退出商店时，生成{C:attention}#1#{}张{C:dark_edition}负片{C:cry_candy}糖果",
+					"每持有一张{C:cry_candy}糖果{}，{X:dark_edition,C:white}^#2#{}倍率",
+					"{C:inactive}（当前为{X:dark_edition,C:white}^#3#{C:inactive倍率）"
 				},
 			},
 			j_cry_foxy = {
@@ -1964,12 +1962,12 @@ return {
 				},
 			},
 			j_cry_happyhouse = {
-				name = "Happy House",
+				name = "快乐老家",
 				text = {
-					"{X:dark_edition,C:white}^#1#{} Mult only after",
-					"playing {C:attention}#3#{} hands{}",
-					"{C:inactive}(Currently #2#/#3#){}",
-					"{C:inactive,s:0.8}There is no place like home!{}",
+					"{X:dark_edition,C:white}^#1#{}倍率",
+					"出牌{C:attention}#3#{}次后激活",
+					"{C:inactive}（当前进度：#2#/#3#）",
+					"{C:inactive,s:0.8}有一个地方 那是快乐老家！",
 				},
 			},
 			j_cry_home = {
@@ -2229,11 +2227,12 @@ return {
 				},
 			},
 			j_cry_megg = {
-				name = "Megg",
+				name = "M蛋",
 				text = {
-					"Sell this card to create",
-					"{C:attention}#2#{} Jolly #3#, increase", -- huh
-					"by {C:attention}#1#{} at end of round",
+					"售出本牌后",
+					"生成{C:attention}#2#{}张开心小丑", -- huh
+					"回合结束时",
+					"可生成张数{C:attention}+#1#",
 				},
 			},
 			j_cry_mellowcreme = {
@@ -2316,11 +2315,11 @@ return {
 				},
 			},
 			j_cry_morse = {
-				name = "Morse Code",
+				name = "Mo尔斯电码",
 				text = {
-					"Earn {C:money}$#2#{} at end of round",
-					"Increase payout by {C:money}$#1#{} when",
-					"a card with an {C:attention}Edition{} is sold",
+					"回合结束时赚取{C:money}$#2#",
+					"每售出一张带{C:attention}版本{}牌",
+					"可赚取资金提升{C:money}$#1#"
 				},
 			},
 			j_cry_mprime = {
@@ -2632,13 +2631,13 @@ return {
 				},
 			},
 			j_cry_sacrifice = {
-				name = "Sacrifice",
+				name = "壮烈牺牲",
 				text = {
-					"Create #3# {C:green}Uncommon{} Joker#<s>3#",
-					"and #2# {C:attention}Jolly Joker#<s>2#{} when",
-					"a {C:spectral}Spectral{} card is used",
-					"{C:red}Works once per round{}",
-					"{C:inactive}#1#{}",
+					"{C:red}一回合一次",
+					"使用{C:spectral}幻灵{}牌后",
+					"生成#3#张{C:green}罕见{}小丑牌",
+					"和#2#张{C:attention}开心小丑",
+					"{C:inactive}#1#"
 				},
 			},
 			j_cry_sapling = {
@@ -2787,11 +2786,11 @@ return {
 				},
 			},
 			j_cry_paved_joker = {
-				name = "Paved Joker",
+				name = "铺路小丑",
 				text = {
-					"Stone Cards may fill",
-					"gaps of {C:attention}#1#{} in",
-					"{C:attention}Straights{} and {C:attention}Flushes{}",
+					"石头牌可用于凑齐",
+					"{C:attention}顺子{}和{C:attention}同花",
+					"{C:inactive}（点数间隔至多为{C:attention}#1#{C:inactive}）"
 				},
 			},
 			j_cry_fading_joker = {
@@ -3128,12 +3127,11 @@ return {
 				},
 			},
 			j_cry_wheelhope = {
-				name = "Wheel of Hope",
+				name = "希望之轮",
 				text = {
-					"This Joker gains",
-					"{X:mult,C:white} X#1# {} Mult when failing",
-					"a {C:attention}Wheel of Fortune{}",
-					"{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+					"{C:attention}命运之轮{}判定失败时",
+					"本牌获得{X:mult,C:white}X#1#{}倍率",
+					"{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）",
 				},
 			},
 			j_cry_whip = {
@@ -3146,11 +3144,10 @@ return {
 				},
 			},
 			j_cry_wonka_bar = {
-				name = "Wonka Bar",
+				name = "威利·旺卡的巧克力条",
 				text = {
-					"Sell this card to",
-					"permanently gain {C:attention}+#1#{}",
-					"card selection limit",
+					"售出本牌后",
+					"选牌上限永久{C:attention}+#1#"
 				},
 			},
 			j_cry_wrapped = {
@@ -3861,11 +3858,10 @@ return {
 				},
 			},
 			tag_cry_booster = {
-				name = "Booster Tag",
+				name = "补充标签",
 				text = {
-					"Next {C:cry_code}Booster Pack{} has",
-					"{C:attention}double{} cards and",
-					"{C:attention}double{} choices",
+					"打开的下一个{C:cry_code}补充包",
+                    "提供的可选项和选择次数{C:attention}翻倍"
 				},
 			},
 			tag_cry_bundle = {
@@ -3880,17 +3876,17 @@ return {
 				text = { "喵。", "{C:dark_edition}#1#{C:inactive}级" },
 			},
 			tag_cry_console = {
-				name = "Console Tag",
+				name = "控制台标签",
 				text = {
-					"Gives a free",
-					"{C:cry_code}Program Pack",
+					"免费获得一个",
+					"{C:cry_code}程序包",
 				},
 			},
 			tag_cry_double_m = {
-				name = "Double M Tag",
+				name = "双M标签",
 				text = {
-					"Shop has a",
-					"{C:dark_edition}Jolly {C:legendary}M Joker{}",
+					"商店内提供一张",
+					"{C:dark_edition}开心{C:legendary}M小丑",
 				},
 			},
 			tag_cry_empowered = {
@@ -3908,10 +3904,10 @@ return {
 				},
 			},
 			tag_cry_gambler = {
-				name = "Gambler's Tag",
+				name = "赌狗标签",
 				text = {
-					"{C:green}#1# in #2#{} chance to create",
-					"an {C:cry_exotic,E:1}Empowered Tag",
+					"有{C:green}#1#/#2#{}的几率",
+					"生成一个{C:cry_exotic,E:1}赋能标签",
 				},
 			},
 			tag_cry_glass = {
@@ -4064,11 +4060,11 @@ return {
 				},
 			},
 			c_cry_eclipse = {
-				name = "The Eclipse",
+				name = '蚀',
 				text = {
-					"Enhances {C:attention}#1#{} selected card#<s>1#",
-					"into an {C:attention}Echo Card",
-				},
+					"将{C:attention}#1#{}张选定卡牌",
+					"增强为{C:attention}回响牌"
+				}
 			},
 			c_cry_instability = {
 				name = "Instability",
@@ -4086,10 +4082,10 @@ return {
 				},
 			},
 			c_cry_seraph = {
-				name = "The Seraph",
+				name = "炽天使",
 				text = {
-					"Enhances {C:attention}#1#{} selected card#<s>1#",
-					"into {C:attention}Light Cards",
+					"将{C:attention}#1#{}张选定卡牌",
+					"增强为{C:attention}圣光牌",
 				},
 			},
 		},
@@ -4321,12 +4317,12 @@ return {
 			},
 			-- RESERVATION FOR MAGIC TRICK T3
 			v_cry_asteroglyph = {
-				name = "Asteroglyph",
+				name = "星象文字",
 				text = {
-					"Set Ante to {C:attention}#1#{}",
+					"设底注为{C:attention}#1#",
 				},
 				unlock = {
-					"Reach Ante {C:attention}36",
+					"抵达底注{C:attention}36",
 				},
 			},
 			-- RESERVATION FOR DIRECTOR'S CUT T3
@@ -4375,21 +4371,21 @@ return {
 				},
 			},
 			v_cry_quantum_computing = {
-				name = "Quantum Computing",
+				name = "量子计算",
 				text = {
-					"All future {C:cry_code}Code{} cards each",
-					"have {C:cry_code}+#1#{} Multiuse",
+					"后续所有{C:cry_code}代码{}卡",
+					"使用次数{C:cry_code}+#1#",
 				},
 			},
 		},
 		Other = {
 			alt_wheel_of_fortune = {
-				name = "The Wheel of Fortune",
-				text = {
-					"{C:green}#1# in #2#{} chance to add",
-					"{C:dark_edition}Foil{}, {C:dark_edition}Holographic{}, or",
-					"{C:dark_edition}Polychrome{} edition",
-					"to a random {C:attention}Joker",
+				name="命运之轮",
+                text={
+                    "有{C:green}#1#/#2#{}的几率",
+                    "为随机一张{C:attention}小丑牌",
+                    "添加{C:dark_edition}闪箔{}、{C:dark_edition}全息{}",
+                    "或{C:dark_edition}炫彩{}版本",
 				},
 			},
 			asc_misc = {
@@ -4443,11 +4439,11 @@ return {
 				},
 			},
 			cry_absolute = {
-				name = "Absolute",
+				name = "绝对",
 				text = {
-					"Can't be sold",
-					"or destroyed",
-					"{C:attention}Unremovable{}",
+					"无法售出",
+					"无法摧毁",
+					"{C:attention}无法移除",
 				},
 			},
 			cry_rigged = {
@@ -5160,12 +5156,12 @@ return {
 			b_planet_rate = "Planet Rate",
 
 			k_unique = "Unique",
-			b_code_cards = "Code Cards",
+			b_code_cards = "代码卡",
 			b_unique_cards = "Unique Cards",
 			b_pull = "拉取",
-			b_playing_cards = "Playing Cards",
+			b_playing_cards = "扑克牌",
 			cry_hooked_ex = "Hooked!",
-			k_end_blind = "End Blind",
+			k_end_blind = "结束盲注",
 			k_cry_shiny = "Shiny",
 
 			cry_code_rank = "ENTER RANK",
@@ -5229,12 +5225,12 @@ return {
 
 			k_disable_music = "Disable Music",
 
-			k_cry_epic = "Epic",
-			k_cry_exotic = "Exotic",
-			k_cry_candy = "Candy",
-			k_cry_cursed = "Cursed",
+			k_cry_epic = "史诗",
+			k_cry_exotic = "异界",
+			k_cry_candy = "糖果",
+			k_cry_cursed = "受诅",
 
-			k_downgraded_ex = "Downgraded!",
+			k_downgraded_ex = "降级！",
 
 			k_planet_disc = "Circumstellar Disc",
 			k_planet_satellite = "Natural Satellites",

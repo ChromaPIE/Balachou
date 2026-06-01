@@ -50,12 +50,11 @@ return {
         },
         Joker = {
             j_worm_bap_milky_way = {
-                name = 'Milky Way',
+                name = '银河奶白',
                 text = {
-                    "Create a {C:planet}Planet{} card",
-                    "at the end of the",
-                    "next {C:attention}#1#{} rounds",
-                    "{C:inactive}(Must have room)",
+                    "下{C:attention}#1#{}个回合结束时",
+                    "生成一张{C:planet}星球{}牌",
+                    "{C:inactive}（必须有空位）"
                 }
             },
             j_worm_bap_andromeda = {

@@ -903,8 +903,8 @@ return {
                 name = "传染病",
                 text = {
                     "卡牌计分时",
-                    "it gains {C:attention}upgrades{} equal",
-                    "to those of {C:attention}first{} scoring card"
+                    "获得与{C:attention}首张{}计分牌",
+                    "相同的{C:attention}升级"
                 },
                 unlock = {
                     "单次出牌的{C:attention}额外筹码",
@@ -1104,10 +1104,9 @@ return {
                 }
             },
             j_kino_doctor_strange_2 = {
-                name = "Doctor Strange in the Multiverse of Madness",
+                name = "奇异博士2：疯狂多元宇宙",
                 text = {
-                    "{C:white,X:attention}Active:{} Redraw hand",
-                    "when hand is played"
+                    "{C:white,X:attention}激发{}：出牌后，重新抽取手牌"
                 }
             },
             j_kino_doctor_who = {
@@ -2506,15 +2505,15 @@ return {
                 }
             },
             j_kino_nightmare_before_christmas = {
-                name = "The Nightmare Before Christmas",
+                name = "圣诞夜惊魂",
                 text = {
-                    "{C:Horror}Horror Jokers{} adjacent",
-                    "to {C:Christmas}Christmas Jokers{}",
-                    "retrigger {C:attention}#1#{} time(s)"
+                    "紧邻{C:Christmas}圣诞片小丑牌{}的",
+                    "{C:Horror}恐怖片小丑牌",
+                    "重新触发{C:attention}#1#{}次"
                 },
                 unlock = {
-                    "Win a run with both",
-                    "a {C:Horror}Horror{} and a {C:Christmas}Christmas{} Joker"
+                    "同时携带{C:Horror}恐怖片{}和{C:Christmas}圣诞片{}小丑牌",
+                    "赢下一局"
                 }
             },
             j_kino_nightmare_on_elm_street = {
@@ -2583,22 +2582,22 @@ return {
                 }
             },
             j_kino_number_23 = {
-                name = "The Number 23",
+                name = "灵数23",
                 text = {
-                    "{C:mult}+#1#{} Mult if played",
-                    "cards have a combined",
-                    "rank of {C:attention}23"
+                    "若计分牌点数",
+                    "总计达{C:attention}23",
+                    "{C:mult}+#1#{}倍率"
                 }
             },
             j_kino_oceans_11 = {
-                name = "Ocean's 11 (2001)",
+                name = "十一罗汉（2001）",
                 text = {
-                    "{C:attention}Booster Packs{} in the shop", 
-                    "are free"
+                    "商店内的{C:attention}补充包",
+                    "全部免费"
                 }
             },
             j_kino_oceans_11_2 = {
-                name = "Ocean's 11 (1960)",
+                name = "十一罗汉（1960）",
                 text = {
                     "When any {C:money}money{} is",
                     "lost, instead lower the",
@@ -2843,11 +2842,11 @@ return {
                         "{B:4,C:white}2件善行{}：{C:chips}+#1#{}筹码，以及：",
                         "{B:5,C:white}0件善行{}：{X:dark_edition,C:white,E:1}无",
                     },
-                    {"Gain {C:attention}Goodness{} equal to",
-                    "{C:red}Discards{} remaining and",
-                    "lose a {C:attention}Goodness{} when",
-                    "a discard is used",
-                    "{C:inactive}(Currently: {C:attention}#5#{C:inactive}/{C:attention}10{C:inactive} Goodness)"}
+                    {"每剩余一次{C:red}弃牌",
+                    "积累一件{C:attention}善行",
+                    "每{C:red}弃牌{}一次",
+                    "折损一件{C:attention}善行",
+                    "{C:inactive}（当前已积累{C:attention}#5#{C:inactive}/{C:attention}10{C:inactive}件善行）"}
                 }
             },
             j_kino_poltergeist = {
@@ -3310,8 +3309,8 @@ return {
                     "若出牌包含{C:attention}#2#",
                     "获得{C:mult}+#6#{}临时倍率，点数需求+1",
                     "若出牌不含{C:attention}#2#",
-                    "则重置临时倍率加成",
-                    "每唱完一遍，使临时倍率转为永久",
+                    "则{C:attention}重置{}临时倍率加成",
+                    "每{C:attention}唱完{}一遍，将临时倍率转为{C:attention}永久",
                     "{C:inactive}（当前为{C:mult}+#4#{C:inactive}临时倍率 || {C:mult}+#5#{C:inactive}永久倍率）"
                 }
             },
@@ -4940,17 +4939,16 @@ return {
                 }
             },
             c_kino_peanuts = {
-                name = "Peanut Snack",
+                name = "零嘴花生",
                 text = {
-                    "Increase interest by {C:money}$#1#{}",
-                    "next round"
+                    "下回合可获资金{C:money}+$#1#"
                 }
             },
             c_kino_pizza = {
                 name = "披萨片",
                 text = {
                     "{C:inactive}Quatro Formaggi",
-                    "{C:inactive}四重奶香，齐聚一堂",
+                    "{s:0.7,C:inactive}四重奶香，齐聚一堂",
                     "下一手出牌中",
                     "每种花色的首张计分牌",
                     "重新触发{C:attention}#1#{}次"
@@ -5079,8 +5077,8 @@ return {
             c_kino_beans = {
                 name = "焗豆罐头",
                 text = {
-                    "Put {C:attention}+#1#{} Beneficial Counters",
-                    "on next {C:attention}#2#{} cards drawn"
+                    "对下{C:attention}#2#{}张抽到的牌",
+                    "施加{C:attention}#1#{}位正面{C:attention}计数标"
                 }
             },
             c_kino_beans_spilled = {
@@ -6036,8 +6034,8 @@ return {
             bl_kino_scorpionking = {
                 name = "蝎子王",
                 text = {
-                    "施加{C:attention}3{}位{C:Drought}荒旱计数标",
-                    "对每张不计分牌"
+                    "对每张不计分牌",
+                    "施加{C:attention}3{}位{C:Drought}荒旱计数标"
                 }
             },
             bl_kino_imhotep = {
@@ -7062,63 +7060,62 @@ return {
                 }
             },
             spell_Clubs_Clubs = {
-                name = "Double Clubs",
+                name = "双重梅花",
                 text = {
-                    "Gives {C:chips}+#1#{} Chips"
+                    "给予{C:chips}+#1#{}筹码"
                 }
             },
 
             -- Spades (1 entry)
             spell_Spades_Spades = {
-                name = "Double Spades",
+                name = "双重黑桃",
                 text = {
-                    "Lower the {C:attention}Blind",
-                    "by {C:attention}#1#%"
+                    "{C:attention}盲注{}得分要求",
+                    "削减{C:attention}#1#%"
                 }
             },
 
             -- Generic
             spell_EyeOfAgamoto = {
-                name = "The Eye of Agamotto",
+                name = "阿戈摩托之眼",
                 text = {
-                    "Gain {C:chips}2 Hands{}"
+                    "获得{C:chips}2次出牌"
                 }
             },
 
             -- Evil Spells
             spell_kino_evil_Hearts = {
-                name = "Dark Heart",
+                name = "暗·红桃",
                 text = {
-                    "{X:mult,C:white}X#1#{} Mult"
+                    "{X:mult,C:white}X#1#{}倍率"
                 }
             },
 
             spell_kino_evil_Diamonds = {
-                name = "Dark Diamond",
+                name = "暗·方片",
                 text = {
-                    "Lose {X:money,C:white}#1#%{} of {C:money}money"
+                    "失去{X:money,C:white}#1#%{C:money}资金"
                 }
             },
 
             spell_kino_evil_Clubs = {
-                name = "Dark Club",
+                name = "暗·梅花",
                 text = {
-                    "{X:chips,C:white}X#1#{} Chips"
+                    "{X:chips,C:white}X#1#{}筹码"
                 }
             },
             
             spell_kino_evil_Spades = {
-                name = "Dark Spade",
+                name = "暗·黑桃",
                 text = {
-                    "Raise {C:attention}blind{} requirement",
-                    "by {C:attention}#1#%{}"
+                    "{C:attention}盲注{}得分要求",
+                    "提升{C:attention}#1#%"
                 }
             },
             spell_kino_evil_Wild = {
-                name = "Dark Wild",
+                name = "暗·百搭",
                 text = {
-                    "Cast a random {C:attention}EVIL",
-                    "spell"
+                    "随机施放一道{C:attention}恶咒",
                 }
             }
         },

@@ -138,21 +138,21 @@ return {
                 }
             },
             c_worm_kartana = {
-                name = "Kartana",
+                name = "纸御剑",
                 text = {
-                    "Destroy {C:attention}1{} selected card,",
-                    "add {C:attention}#1#{} permanent copies to your deck",
-                    "with their ranks reduced by {C:attention}#2#",
-                    "and draw them to hand",
-                    "{C:inactive,s:0.8}(Ranks cannot go below 2)"
+                    "摧毁{C:attention}1{}张选定卡牌",
+                    "将其{C:attention}#1#{}张点数{C:attention}-#2#{}的",
+                    "永久复制添加至牌组",
+                    "并抽取至手中",
+                    "{C:inactive,s:0.8}（点数最小为2）"
                 }
             },
             c_worm_blacephalon = {
-                name = "Blacephalon",
+                name = "砰头小丑",
                 text = {
-                    "Add {C:dark_edition}Polychrome{} to a",
-                    "random {C:attention}card held in hand{},",
-                    "then destroy all the others"
+                    "为随机一张{C:attention}手牌",
+                    "添加{C:dark_edition}炫彩",
+                    "并摧毁其余所有卡牌"
                 }
             },
             c_worm_celesteela = {

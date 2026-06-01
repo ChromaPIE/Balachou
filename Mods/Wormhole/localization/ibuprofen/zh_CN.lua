@@ -87,12 +87,11 @@ return {
                 }
             },
             j_worm_ibu_dyson = {
-                name = 'Dyson Sphere',
+                name = '戴森球',
                 text = {
-                    "Each {C:tarot}The Sun{} or",
-                    "{C:tarot}The Star{} cards in",
-                    "your {C:attention}consumables{} area",
-                    "give {X:mult,C:white}X#1#{} Mult",
+                    "{C:attention}消耗牌{}槽位中的",
+                    "每张{C:tarot}太阳{}和{C:tarot}星星",
+                    "给予{X:mult,C:white}X#1#{}倍率",
                 },
             },
             j_worm_ibu_horizon = {
