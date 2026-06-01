@@ -927,3 +927,13 @@ match_indent = true
 position = "at"
 pattern = "_card.playing_card = true"
 payload = "_card.playing_card = #G.playing_cards + 1"
+
+# nuGC: raise full-GC safety ceiling to reduce periodic stutter from forced collect()
+# Incremental per-frame GC still runs; this only delays the expensive full collection.
+[[patches]]
+[patches.pattern]
+target = "functions/misc_functions.lua"
+match_indent = true
+position = "at"
+pattern = "memory_ceiling = memory_ceiling or 300"
+payload = "memory_ceiling = memory_ceiling or 1024"
