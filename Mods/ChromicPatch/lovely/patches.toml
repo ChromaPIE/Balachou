@@ -808,6 +808,39 @@ position = "at"
 pattern = "card.children.front:draw_shader(_shader, card, self.ARGS.send_to_shader)"
 payload = "card.children.front:draw_shader(_shader, nil, card.ARGS.send_to_shader)"
 
+# Wormhole Black Hole seals: double-sided blank sides can lack copied seal odds
+[[patches]]
+[patches.regex]
+target = '=[SMODS Wormhole "/content/Jtem 2/2_content/seals/black_hole_seal.lua"]'
+times = 2
+position = "at"
+pattern = 'card\.ability\.seal\.levelup_odds'
+payload = "((card.ability.seal or {}).levelup_odds or self.config.levelup_odds)"
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS Wormhole "/content/Jtem 2/2_content/seals/black_hole_seal.lua"]'
+times = 2
+position = "at"
+pattern = 'card\.ability\.seal\.destroy_odds'
+payload = "((card.ability.seal or {}).destroy_odds or self.config.destroy_odds)"
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS Wormhole "/content/Jtem 2/2_content/seals/supermassive_black_hole.lua"]'
+times = 2
+position = "at"
+pattern = 'card\.ability\.seal\.levelup_odds'
+payload = "((card.ability.seal or {}).levelup_odds or self.config.levelup_odds)"
+
+[[patches]]
+[patches.regex]
+target = '=[SMODS Wormhole "/content/Jtem 2/2_content/seals/supermassive_black_hole.lua"]'
+times = 2
+position = "at"
+pattern = 'card\.ability\.seal\.destroy_odds'
+payload = "((card.ability.seal or {}).destroy_odds or self.config.destroy_odds)"
+
 # SOE redfabric: replace triple-click with I hotkey
 # Adds an SMODS.Keybind that opens the copied-jokers view when I is pressed
 # while hovering/focusing redfabric
