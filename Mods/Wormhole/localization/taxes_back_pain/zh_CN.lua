@@ -372,7 +372,7 @@ local descriptions = {
         salvo = {
             name = '过充能齐射飞弹',
             text = {
-                '若打出{C:attention}5{}张牌',
+                '若打出{C:attention}5{}张计分牌',
                 '每搭载有一个{C:tbp_module}模块{}，{X:mult,C:white}X#1#{}倍率',
                 '{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）',
                 '{s:0.8,C:inactive}（触发时，消耗所有模块的耐久度）'

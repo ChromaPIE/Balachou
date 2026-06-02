@@ -2690,13 +2690,14 @@ return {
                 },
             },
             j_kino_party_people = {
-                name = "24 Hour Party People",
+                name = "24小时狂欢派对",
                 text = {
-                    "Put {C:attention}#1#{} {C:green}Money Counters{}", 
-                    "on cards in your deck", 
-                    "when a {C:clubs}Clubs{} scores,", 
-                    "if {C:money}interest{} cap is reached",
-                    "double counters applied" 
+                    "{C:clubs}梅花{}牌计分时",
+                    "对牌组中的卡牌",
+                    "施加{C:attention}#1#{}位{C:green}金钱计数标",
+                    "{s:0.2} ",
+                    "若当前可获{C:money}利息{}达到上限",
+                    "则使施加位数翻倍"
                 }
             },
             j_kino_paul = {

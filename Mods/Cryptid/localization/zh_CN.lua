@@ -1165,12 +1165,12 @@ return {
 				},
 			},
 			j_cry_bonk = {
-				name = "Bonk",
+				name = "嘣",
 				text = {
-					"Each {C:attention}Joker{} gives {C:chips}+#1#{} Chip#<s>1#",
-					"Increase amount by {C:chips}+#2#{} if",
-					"{C:attention} poker hand{} is a {C:attention}#3#{}",
-					"{C:inactive,s:0.8}Jolly Jokers give{} {C:chips,s:0.8}+#4#{} {C:inactive,s:0.8}Chip#<s>4# instead{}",
+					"每张{C:attention}小丑牌{}给予{C:chips}+#1#{}筹码",
+					"若所出{C:attention}牌型{}为{C:attention}#3#",
+					"筹码加成{C:chips}+#2#",
+					"{C:inactive,s:0.8}开心小丑改为给予{C:chips,s:0.8}+#4#{C:inactive,s:0.8}筹码",
 				},
 			},
 			j_cry_bonkers = {
@@ -2366,11 +2366,11 @@ return {
 				},
 			},
 			j_cry_nice = {
-				name = "Nice",
+				name = "吼吼",
 				text = {
-					"{C:chips}+#1#{} Chip#<s>1# if played hand",
-					"contains a {C:attention}6{} and a {C:attention}9",
-					"{C:inactive,s:0.8}Nice.{}",
+					"若出牌包含{C:attention}6{}和{C:attention}9",
+					"{C:chips}+#1#{}筹码",
+					"{C:inactive,s:0.8}吼吼。"
 				},
 			},
 			j_cry_night = {
