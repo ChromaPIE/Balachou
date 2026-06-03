@@ -359,11 +359,10 @@ return {
                 }
             },
             j_worm_abs_water_world = {
-                name = 'Water World',
+                name = '水漫坤舆',
                 text = {
-                    "{C:attention}+#1#{} Consumable Slots",
-                    "This Joker occupies",
-                    "{C:red}#2#{} Joker Slots",
+                    "消耗牌槽位{C:attention}+#1#",
+                    "本牌占用{C:red}#2#{}个小丑牌槽位",
                 }
             },
             j_worm_abs_gravity_well = {

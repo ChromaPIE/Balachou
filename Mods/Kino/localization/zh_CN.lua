@@ -277,18 +277,17 @@ return {
                 }
             },
             j_kino_asteroid_city = {
-                name = "Asteroid City",
+                name = "小行星城",
                 text = {
                     {
-                        "{C:Alien}Abduct{} {C:attention}Joker{} to the right",
-                        "if no {C:attention}Joker{} is abducted",
-                        "when a hand is played"
+                        "出牌后，若尚无{C:attention}小丑牌{}遭劫持",
+                        "则{C:Alien}劫持{}右侧的{C:attention}小丑牌"
                     },
-                    {"{C:white,X:Alien}Release:{} Return {C:dark_edition}Negative"}
+                    {"{C:white,X:Alien}释放{}：以{C:dark_edition}负片{}回归"}
                 },
                 unlock = {
-                    "{C:Alien}Abduct{} {C:attention}100 cards",
-                    "{C:inactive}(#1#)"
+                    "{C:Alien}劫持{C:attention}100{}张牌",
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_avatar = {
@@ -3671,18 +3670,17 @@ return {
                 }
             },
             j_kino_they_live = {
-                name = "They Live",
+                name = "极度空间",
                 text = {
-                    {"{C:Alien}Abduct{} every {C:mult}discarded {} card",
-                    "on {C:attention}first discard",},
+                    {"{C:Alien}劫持{}回合{C:attention}首次{C:red}弃牌",
+                    "中的每张牌",},
                     {
-                    "Earn {C:money}$#3#{} for each card",
-                    "this joker has {C:Alien}Abducted",
-                    "{C:inactive}(Currently: {C:money}$#4#{C:inactive})"}
+                    "本牌每{C:Alien}劫持{}一张牌",
+                    "回合结束时赚取{C:money}$#3#",
+                    "{C:inactive}（当前为{C:money}$#4#{C:inactive}）"}
                 },
                 unlock = {
-                    "{C:Alien}Abduct{} {C:attention}5{} cards",
-                    "in a single hand"
+                    "一次性{C:Alien}劫持{C:attention}5{}张牌"
                 }
             },
             j_kino_thing = {
@@ -5162,77 +5160,68 @@ return {
            c_kino_rot_slasher = {
                 name = "The Slasher!",
                 text = {
-                    "Enhances {C:attention}#1#",
-                    "selected cards to",
-                    "{C:attention}#2#s"
+                    "将{C:attention}#1#{}张选定卡牌",
+                    "增强为#2#"
                 }   
             },
             c_kino_rot_droid = {
                 name = "The Droid!",
                 text = {
-                    "Enhances {C:attention}#1#",
-                    "selected cards to",
-                    "{C:attention}#2#s"
+                    "将{C:attention}#1#{}张选定卡牌",
+                    "增强为#2#"
                 }   
             },            
             c_kino_rot_demon = {
-                name = "The Demon!",
+                name = "邪魔！",
                 text = {
-                    "Enhances {C:attention}#1#",
-                    "selected cards to",
-                    "{C:attention}#2#s"
+                    "将{C:attention}#1#{}张选定卡牌",
+                    "增强为#2#"
                 }   
             },
             c_kino_rot_meetcute = {
-                name = "The Meetcute!",
+                name = "浪漫邂逅！",
                 text = {
-                    "Enhances {C:attention}#1#",
-                    "selected cards to",
-                    "{C:attention}#2#s"
+                    "将{C:attention}#1#{}张选定卡牌",
+                    "增强为#2#"
                 }   
             },
             c_kino_rot_detective = {
-                name = "The Detective!",
+                name = "警探！",
                 text = {
-                    "Enhances {C:attention}#1#",
-                    "selected cards to",
-                    "{C:attention}#2#s"
+                    "将{C:attention}#1#{}张选定卡牌",
+                    "增强为#2#"
                 }   
             },
             c_kino_rot_witch = {
-                name = "The Witch!",
+                name = "女巫！",
                 text = {
-                    "Enhances {C:attention}#1#",
-                    "selected cards to",
-                    "{C:attention}#2#s"
+                    "将{C:attention}#1#{}张选定卡牌",
+                    "增强为#2#"
                 }   
             },
             c_kino_rot_gangster = {
-                name = "The Gangster!",
+                name = "黑帮！",
                 text = {
-                    "Enhances {C:attention}#1#",
-                    "selected cards to",
-                    "{C:attention}#2#s"
+                    "将{C:attention}#1#{}张选定卡牌",
+                    "增强为#2#"
                 }   
             },
             c_kino_rot_soldier = {
-                name = "The Soldier!",
+                name = "士兵！",
                 text = {
-                    "Enhances {C:attention}#1#",
-                    "selected cards to",
-                    "{C:attention}#2#s"
+                    "将{C:attention}#1#{}张选定卡牌",
+                    "增强为#2#"
                 }   
             },
             c_kino_rot_superhero = {
-                name = "The Superhero!",
+                name = "超级英雄！",
                 text = {
-                    "Enhances {C:attention}#1#",
-                    "selected cards to",
-                    "{C:attention}#2#s"
+                    "将{C:attention}#1#{}张选定卡牌",
+                    "增强为#2#"
                 }   
             },
             c_kino_rot_investor = {
-                name = "The Investor!",
+                name = "投资者！",
                 text = {
                     'Gain {C:money}$#1#{} and',
                     "add a {C:red}Debt Counter{}",
@@ -5241,7 +5230,7 @@ return {
                 }
             },
             c_kino_rot_producer = {
-                name = "The Producer!",
+                name = "制片人！",
                 text = {
                     "Set your money equal",
                     "to the Box Office of",
@@ -5250,9 +5239,10 @@ return {
                 }   
             },
             c_kino_rot_chef = {
-                name = "The chef!",
+                name = "大厨！",
                 text = {
-                    "Strengthen all {C:Confection}Confections{}"
+                    "加强所有",
+                    "{C:Confection}甜食零嘴{}牌"
                 }   
             },
 
@@ -5273,53 +5263,49 @@ return {
             b_kino_tech = {
                 name = "Tech_Deck",
                 text = {
-                    "{C:attention}Sci-Fi Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
-                    "Start with 2 copies of ",
-                    "{C:attention}The Droid{}"
+                    "{C:attention}科幻片小丑牌{}加强{C:attention}50%",
+                    "且出现频率{C:attention}X#1#",
+                    "开局即拥有2张{C:attention}机器人"
                 },
                 unlock = {
-                    "Win a run with at least",
-                    "{C:attention}#2#{} {V:1}#1#{} Jokers"
+                    "携带至少{C:attention}#2#{}张{V:1}#1#{}小丑牌",
+                    "赢下一局"
                 }
             },
             b_kino_flirty = {
-                name = "Flirty Deck",
+                name = "调情牌组",
                 text = {
-                    "{C:attention}Romance Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
-                    "Start with 2 copies of ",
-                    "{C:attention}The Meetcute{}"
+                    "{C:attention}爱情片小丑牌{}加强{C:attention}50%",
+                    "且出现频率{C:attention}X#1#",
+                    "开局即拥有2张{C:attention}浪漫邂逅"
                 },
                 unlock = {
-                    "Win a run with at least",
-                    "{C:attention}#2#{} {V:1}#1#{} Jokers"
+                    "携带至少{C:attention}#2#{}张{V:1}#1#{}小丑牌",
+                    "赢下一局"
                 }
             },
             b_kino_questionable = {
-                name = "Questionable Deck",
+                name = "可疑牌组",
                 text = {
-                    "{C:attention}Mystery Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}X#1#{} as common",
-                    "Start with 2 copies of ",
-                    "{C:attention}The Detective{}"
+                    "{C:attention}悬疑片小丑牌{}加强{C:attention}50%",
+                    "且出现频率{C:attention}X#1#",
+                    "开局即拥有2张{C:attention}警探"
                 },
                 unlock = {
-                    "Win a run with at least",
-                    "{C:attention}#2#{} {V:1}#1#{} Jokers"
+                    "携带至少{C:attention}#2#{}张{V:1}#1#{}小丑牌",
+                    "赢下一局"
                 }
             },
             b_kino_enchanted = {
-                name = "Enchanted Deck",
+                name = "附魔牌组",
                 text = {
-                    "{C:attention}Fantasy Jokers{} are",
-                    "{C:attention}50%{} stronger and {C:attention}X#1#{} times as common",
-                    "Start with 2 copies of ",
-                    "{C:attention}The Witch{}"
+                    "{C:attention}奇幻片小丑牌{}加强{C:attention}50%",
+                    "且出现频率{C:attention}X#1#",
+                    "开局即拥有2张{C:attention}女巫"
                 },
                 unlock = {
-                    "Win a run with at least",
-                    "{C:attention}#2#{} {V:1}#1#{} Jokers"
+                    "携带至少{C:attention}#2#{}张{V:1}#1#{}小丑牌",
+                    "赢下一局"
                 }
             },
             b_kino_illicit = {
@@ -5331,8 +5317,8 @@ return {
                     "{C:attention}The Gangster{}"
                 },
                 unlock = {
-                    "Win a run with at least",
-                    "{C:attention}#2#{} {V:1}#1#{} Jokers"
+                    "携带至少{C:attention}#2#{}张{V:1}#1#{}小丑牌",
+                    "赢下一局"
                 }
             },
             b_kino_dangerous = {
@@ -5344,8 +5330,8 @@ return {
                     "{C:attention}The Soldier{}"
                 },
                 unlock = {
-                    "Win a run with at least",
-                    "{C:attention}#2#{} {V:1}#1#{} Jokers"
+                    "携带至少{C:attention}#2#{}张{V:1}#1#{}小丑牌",
+                    "赢下一局"
                 }
             },
             b_kino_heroic = {
@@ -5357,8 +5343,8 @@ return {
                     "{C:attention}The Superhero{}"
                 },
                 unlock = {
-                    "Win a run with at least",
-                    "{C:attention}#2#{} {V:1}#1#{} Jokers"
+                    "携带至少{C:attention}#2#{}张{V:1}#1#{}小丑牌",
+                    "赢下一局"
                 }
             },
 
@@ -5371,8 +5357,8 @@ return {
                     "{C:attention}Homerun{}"
                 },
                 unlock = {
-                    "Win a run with at least",
-                    "{C:attention}#2#{} {V:1}#1#{} Jokers"
+                    "携带至少{C:attention}#2#{}张{V:1}#1#{}小丑牌",
+                    "赢下一局"
                 }
             },
             b_kino_childlike = {
@@ -5384,8 +5370,8 @@ return {
                     "{C:attention}Gathering{}"
                 },
                 unlock = {
-                    "Win a run with at least",
-                    "{C:attention}#2#{} {V:1}#1#{} Jokers"
+                    "携带至少{C:attention}#2#{}张{V:1}#1#{}小丑牌",
+                    "赢下一局"
                 }
             },
             b_kino_adventurous = {
@@ -5397,8 +5383,8 @@ return {
                     "{C:attention}Artifact{}"
                 },
                 unlock = {
-                    "Win a run with at least",
-                    "{C:attention}#2#{} {V:1}#1#{} Jokers"
+                    "携带至少{C:attention}#2#{}张{V:1}#1#{}小丑牌",
+                    "赢下一局"
                 }
             },
             b_kino_highpressure = {
@@ -5410,8 +5396,8 @@ return {
                     "{C:attention}Fright{}"
                 },
                 unlock = {
-                    "Win a run with at least",
-                    "{C:attention}#2#{} {V:1}#1#{} Jokers"
+                    "携带至少{C:attention}#2#{}张{V:1}#1#{}小丑牌",
+                    "赢下一局"
                 }
             },
             b_kino_funny = {
@@ -5423,8 +5409,8 @@ return {
                     "{C:attention}Whimsy{}"
                 },
                 unlock = {
-                    "Win a run with at least",
-                    "{C:attention}#2#{} {V:1}#1#{} Jokers"
+                    "携带至少{C:attention}#2#{}张{V:1}#1#{}小丑牌",
+                    "赢下一局"
                 }
             },
 

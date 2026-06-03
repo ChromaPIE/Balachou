@@ -619,8 +619,9 @@ return {
 			c_cry_hook = {
 				name = "HOOK://",
 				text = {
-					"Apply {C:cry_code}Hooked{} to",
-					"2 selected Jokers",
+					"{C:inactive,s:0.8}-- 钩子",
+					"对2张选定小丑牌",
+					"应用{C:cry_code}钩子程序"
 				},
 			},
 			c_cry_oboe = {
@@ -643,16 +644,19 @@ return {
 			c_cry_inst = {
 				name = "://INSTANTIATE",
 				text = {
-					"Draw a card with selected card's {C:cry_code}rank{}",
-					"and one with selected card's {C:cry_code}suit{}",
-					"{C:inactive}(if possible){}",
+					"{C:inactive,s:0.8}-- 实例化",
+					"抽取与选定卡牌",
+					"同{C:cry_code}点数{}的卡牌一张",
+					"同{C:cry_code}花色{}的卡牌一张",
+					"{C:inactive}（若可能）"
 				},
 			},
 			c_cry_revert = {
 				name = "://REVERT",
 				text = {
-					"Set {C:cry_code}game state{} to",
-					"start of {C:cry_code}this Ante{}",
+					"{C:inactive,s:0.8}-- 回退",
+					"将{C:cry_code}游戏状态{}回退至",
+					"{C:cry_code}当前底注{}的起始",
 				},
 			},
 			c_cry_cryfunction = {
@@ -667,8 +671,9 @@ return {
 			c_cry_run = {
 				name = "://RUN",
 				text = {
-					"Visit a {C:cry_code}shop",
-					"during a {C:cry_code}Blind",
+					"{C:inactive,s:0.8}-- 运行",
+					"在{C:cry_code}盲注{}中",
+					"进入{C:cry_code}商店"
 				},
 			},
 			c_cry_class = {
@@ -1270,11 +1275,12 @@ return {
 				},
 			},
 			j_cry_caeruleum = {
-				name = "Caeruleum",
+				name = "靛藍",
 				text = {
-					"Adjacent {C:chips}chips{}-modifying jokers",
-					"use the next highest {C:attention}operator{} for scoring",
-					"{C:inactive}(Caps at exponentiation)",
+					"紧邻的{C:chips}筹码{}小丑牌",
+					"改为使用下一个最高的",
+					"{C:attention}运算符{}进行计分",
+					"{C:inactive}（上限为幂运算）",
 				},
 			},
 			j_cry_candy_basket = {
@@ -1444,27 +1450,23 @@ return {
 				},
 			},
 			j_cry_CodeJoker = {
-				name = "Code Joker",
+				name = "代码小丑",
 				text = {
-					"Create a {C:dark_edition}Negative{}",
-					"{C:cry_code}Code Card{} when",
-					"{C:attention}Blind{} is selected",
+					"选择{C:attention}盲注{}后",
+					"生成一张{C:dark_edition}负片{C:cry_code}代码卡"
 				},
 				unlock = {
-					"Discover {C:attention}every",
-					"{C:cry_code}Code Card",
+					"发现{C:attention}每张{C:cry_code}代码卡",
 				},
 			},
 			j_cry_CodeJoker_modest = {
-				name = "Code Joker",
+				name = "代码小丑",
 				text = {
-					"Create a {C:dark_edition}Negative{}",
-					"{C:cry_code}Code Card{} when",
-					"{C:attention}Boss Blind{} is selected",
+					"选择{C:attention}Boss盲注{}后",
+					"生成一张{C:dark_edition}负片{C:cry_code}代码卡"
 				},
 				unlock = {
-					"Discover {C:attention}every",
-					"{C:cry_code}Code Card",
+					"发现{C:attention}每张{C:cry_code}代码卡",
 				},
 			},
 			j_cry_coin = {
@@ -1865,7 +1867,7 @@ return {
 				},
 			},
 			j_cry_formidiulosus = {
-				name = "慑诅圣所",
+				name = "懾詛聖所",
 				text = {
 					"获取{X:cry_cursed,C:white}受诅{}小丑牌时，摧毁之",
 					"退出商店时，生成{C:attention}#1#{}张{C:dark_edition}负片{C:cry_candy}糖果",
@@ -3049,12 +3051,11 @@ return {
 				},
 			},
 			j_cry_universum = {
-				name = "Universum",
+				name = '歸一',
 				text = {
-					"{C:attention}Poker hands{} gain",
-					"{X:red,C:white} X#1# {} Mult and {X:blue,C:white} X#1# {} Chips",
-					"when leveled up",
-				},
+					"{C:attention}牌型{}升级时",
+					"其倍率和筹码{X:red,C:white}X#1#"
+				}
 			},
 			j_cry_unjust_dagger = {
 				name = "Unjust Dagger",
@@ -4455,22 +4456,22 @@ return {
 				},
 			},
 			cry_hooked = {
-				name = "Hooked",
+				name = "钩子程序",
 				text = {
-					"When this Joker is {C:cry_code}triggered{},",
-					"trigger {C:cry_code}#1#",
-					"{C:inactive}Not all cards can be triggered this way{}",
-					"{C:inactive}but all Jokers can trigger the other{}",
-					"Removed at end of round",
+					"本牌{C:cry_code}触发{}时",
+					"触发{C:cry_code}#1#",
+					"{C:inactive}并非所有卡牌均可以此法触发",
+					"{C:inactive}但所有小丑牌均可触发另一张",
+					"回合结束时移除"
 				},
 			},
 			cry_hooked_2 = {
-				name = "Hooked",
+				name = "钩子程序",
 				text = {
-					"When this Joker is {C:cry_code}triggered{},",
-					"trigger {C:cry_code}#1#",
-					"{C:inactive}Not all cards can be triggered this way{}",
-					"{C:inactive}but all Jokers can trigger the other{}",
+					"本牌{C:cry_code}触发{}时",
+					"触发{C:cry_code}#1#",
+					"{C:inactive}并非所有卡牌均可以此法触发",
+					"{C:inactive}但所有小丑牌均可触发另一张"
 				},
 			},
 			cry_global_sticker = {
