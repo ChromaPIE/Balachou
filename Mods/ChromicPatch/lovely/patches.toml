@@ -928,18 +928,6 @@ pattern = '''    Cryptid.setup_voucher_rate_adjuster("v_kino_confection_acclimat
 payload = '''    Cryptid.setup_voucher_rate_adjuster("v_kino_confection_acclimator", "b_confection_rate", "confection", G.C.KINO.CONFECTION)
 '''
 
-# AIJ upgrade_poker_hands: accept SMODS string-form hands
-# SMODS normalizes args.hands internally, but AIJ reads the original argument after delegation.
-[[patches]]
-[patches.pattern]
-target = '=[SMODS allinjest "Utils/hooks.lua"]'
-match_indent = true
-position = "at"
-pattern = "for _, hand in ipairs(args.hands) do"
-payload = '''local aij_hands = args.hands or G.handlist
-    if type(aij_hands) == 'string' then aij_hands = {aij_hands} end
-    for _, hand in ipairs(aij_hands) do'''
-
 # Game:start_run save load: tolerate malformed playing_card values from mods
 # Kino abduction can reinsert saved playing cards with playing_card=true, which crashes
 # vanilla's numeric descending sort when mixed with normal numeric indices.
@@ -960,6 +948,50 @@ match_indent = true
 position = "at"
 pattern = "_card.playing_card = true"
 payload = "_card.playing_card = #G.playing_cards + 1"
+
+# Kino abduction: do not persist CardArea refs in joker abilities
+# _abducted_from is a live CardArea object; storing it under ability.extra can
+# make autosave recurse through the whole area graph after entering a blind.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/abduction.lua"]'
+match_indent = true
+position = "at"
+pattern = "abducted_from = _abducted_from"
+payload = "-- abducted_from omitted; CardArea references are not save-safe"
+
+# Kino Asteroid City: enter-blind trigger, but defer the actual abduction
+# until after the setting_blind joker evaluation finishes. Moving G.jokers.cards
+# while SMODS is iterating jokers can crash without a Lua traceback.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "items/jokers/asteroid_city.lua"]'
+match_indent = true
+position = "at"
+pattern = "if context.before and card.ability.extra.num_cards_abducted == 0 and not card.getting_sliced then"
+payload = "if context.setting_blind and card.ability.extra.num_cards_abducted == 0 and not card.getting_sliced and not context.blueprint then"
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "items/jokers/asteroid_city.lua"]'
+match_indent = true
+position = "at"
+pattern = "Kino.abduct_card(card, G.jokers.cards[_mypos + 1])"
+payload = '''
+local _abductor = card
+local _abductee = G.jokers.cards[_mypos + 1]
+G.E_MANAGER:add_event(Event({
+    trigger = 'after',
+    delay = 0.1,
+    func = function()
+        if _abductor and _abductor.area and _abductee and _abductee.area and not _abductee.getting_sliced and not _abductee.abducted then
+            Kino.abduct_card(_abductor, _abductee)
+            G.FUNCS.draw_from_area_to_abduction()
+        end
+        return true
+    end
+}))
+'''
 
 # nuGC: raise full-GC safety ceiling to reduce periodic stutter from forced collect()
 # Incremental per-frame GC still runs; this only delays the expensive full collection.
