@@ -754,7 +754,7 @@ return {
                 },
             },
             j_diet_cola={
-                name="零糖可乐",
+                name="健怡可乐",
                 text={
                     "售出本牌即可",
                     "免费生成一个",
@@ -1441,7 +1441,7 @@ return {
                 },
             },
             j_selzer={
-                name="苏打水",
+                name="气泡水",
                 text={
                     "在接下来的{C:attention}#1#{}次出牌中",
                     "重新触发所有",
