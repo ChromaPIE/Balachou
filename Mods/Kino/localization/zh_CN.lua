@@ -1033,25 +1033,26 @@ return {
                 }
             },
             j_kino_dick_tracy = {
-                name = "Dick Tracy",
+                name = "至尊神探",
                 text = {
-                    "Gain {C:mult}Mult{} equal to",
-                    "{C:attention}x#2#{} the current {C:money}Money Stolen",
-                    "when a {C:attention}Crime Card{} is destroyed",
-                    "{C:inactive}(Currently: {C:mult}#1#{} Mult &",
-                    "{C:inactive}{C:money}$#3#{C:inactive} stolen)"
+                    "摧毁{C:attention}犯罪片牌{}后",
+                    "获得等同于当前{C:money}被盗资金",
+                    "之{C:attention}双倍{}的{C:mult}倍率",
+                    "{C:inactive}（当前为{C:mult}#1#{}倍率）",
+                    "{C:inactive}（当前被盗资金：{C:money}$#3#{C:inactive}）"
                 },
                 unlock = {
-                    "Find a {C:attention}Mystery Card{}'s Suspect"
+                    "寻获{C:attention}悬疑片牌{}的嫌犯"
                 }
             },
             j_kino_dickie_roberts = {
-                name = "Dickie Roberts: Child Star",
+                name = "过气童星",
                 text = {
-                    "{C:mult}+#1#{} Mult",
-                    "{C:attention}Doubled{} for each {C:attention}#2#{} {C:spades}Spades",
-                    "in your full deck",
-                    "{C:inactive}(Currently: {C:spades}#3#{C:inactive} Spades in deck)"
+                    "{C:mult}+#1#{}倍率",
+                    "完整牌组中每有",
+                    "{C:attention}#2#{}张{C:spades}黑桃{}牌",
+                    "倍率加成{C:attention}翻倍",
+                    "{C:inactive}（当前黑桃牌张数：{C:spades}#3#{C:inactive}）"
                 }
             },
             j_kino_die_hard_1 = {
@@ -2784,19 +2785,19 @@ return {
                 }
             },
             j_kino_pirates_of_the_caribbean_2 = {
-                name = "Pirates of the Caribbean: Dead Man's Chest",
+                name = "加勒比海盗2：聚魂棺",
                 text = {
-                    "Cards give {X:mult,C:white}X1{} Mult",
-                    "increased by {X:mult,C:white}X#1#{} mult",
-                    "for each {C:money}$1{} of {C:money}sell value{}"
+                    "给予{X:mult,C:white}X1{}倍率",
+                    "{C:money}售价{}每有{C:money}$1",
+                    "提升{X:mult,C:white}X#1#{}倍率"
                 },
                 unlock = {
-                    "Play {C:attention}#2#{} unscoring cards",
-                    "{C:inactive}(#1#)"
+                    "打出{C:attention}#2#{}张不计分牌",
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_pirates_of_the_caribbean_3 = {
-                name = "加勒比海盗：世界的尽头",
+                name = "加勒比海盗3：世界的尽头",
                 text = {
                     "小丑牌给予等同于",
                     "其{C:money}售价{C:attention}#1#倍{}的{C:chips}筹码"
@@ -3233,12 +3234,12 @@ return {
                 }
             },
             j_kino_smurfs_1 = {
-                name = "Smurfs",
+                name = "蓝精灵",
                 text = {
-                    "Scoring {C:attention}2s{} and {C:attention}3s{}",
-                    "give {C:chips}+#1#{} Chips for",
-                    "each {C:Magic}Spell Cast",
-                    "{C:inactive}(Currently: {C:chips}+#2#{C:inactive} Chips)"
+                    "每{C:Magic}施咒{}过一次",
+                    "计分的{C:attention}2{}和{C:attention}3",
+                    "给予{C:chips}+#1#{}筹码",
+                    "{C:inactive}（当前为{C:chips}+#2#{C:inactive}筹码）"
                 }
             },
             j_kino_snakes_on_a_plane = {
@@ -4382,7 +4383,7 @@ return {
             },
             
             m_kino_mystery = {
-                name = "谜团牌",
+                name = "悬疑片牌",
                 text = {
                     {
                         "{X:mult,C:white}X#1#{}倍率",
@@ -4659,7 +4660,7 @@ return {
                 name = "警探",
                 text = {
                     "将{C:attention}#1#{}张选定卡牌",
-                    "增强为{C:attention}谜团牌"
+                    "增强为{C:attention}悬疑片牌"
                 }
             },
             c_kino_witch = {
@@ -4853,12 +4854,11 @@ return {
                 }
             },
             c_kino_death_star= {
-                name = "Death Star",
+                name = "死星",
                 text = {
-                    "Destroy a random {C:attention}Joker",
-                    "to {C:attention}Level Up",
-                    "every hand",
-                    "{C:inactive}(Cannot target the left-most joker)"
+                    "随机摧毁一张{C:attention}小丑牌",
+                    "并{C:attention}升级{}所有牌型",
+                    "{C:inactive}（不会摧毁最左侧小丑牌）"
                 }
             },
             c_kino_treasure_planet = {
@@ -5019,13 +5019,13 @@ return {
                 }
             },
             c_kino_candycorn = {
-                name = "Candy Corn",
+                name = "粟米糖",
                 text = {
-                    "Cards held in hand have",
-                    "a {C:green}#1# in #2#{} chance to",
-                    "{C:Jumpscare}Jumpscare",
-                    "{C:inactive}(Does not get eaten if",
-                    "{C:inactive}no cards {C:Jumpscare}Jumpscare{C:inactive})"
+                    "留手牌",
+                    "有{C:green}#1#/#2#{}的几率",
+                    "{C:Jumpscare}跳脸杀",
+                    "{C:inactive,s:0.8}若无卡牌{C:Jumpscare,s:0.8}跳脸杀",
+                    "{C:inactive,s:0.8}则不触发"
                 }
             },
             c_kino_dno_nugget = {
@@ -8162,7 +8162,7 @@ return {
             k_blade_vamp = "Vampire Killed",
             k_narrated_ex = "And then they played the #1#",
             k_10_things_ex = "Flirted With",
-            k_jump_scare = "呔！",
+            k_jump_scare = "哇嗷！",
             k_shining = "Here's Jack!",
             k_benjamin_button = "Aged",
             k_mars_attacks = "Invaded",
@@ -8310,7 +8310,7 @@ return {
             k_blind_gekko_1 = "Greed. Is. Good!",
             k_blind_gekko_2 = "You win a few, you lose a few",
             k_blind_pazuzu_1 = "Have you come to save God's servant?",
-            k_blind_pazuzu_2 = "What an excellent day for an exorcism",
+            k_blind_pazuzu_2 = "上佳之日，正宜驱魔除凶！",
             k_blind_dracula_1 = "I don't drink... Wine",
             k_blind_joker_1 = "Ha Ha Ha Ha",
             k_blind_joker_2 = "HAHAHAHAHA",

@@ -279,10 +279,9 @@ return {
 		},
 		Blind = {
 			bl_cry_box = {
-				name = "The Box",
+				name = "盒",
 				text = {
-					"All Common Jokers",
-					"are debuffed",
+					"普通小丑牌全部失效",
 				},
 			},
 			bl_cry_clock = {
@@ -1216,11 +1215,11 @@ return {
 				},
 			},
 			j_cry_broken_sync_catalyst = {
-				name = "Broken Sync Catalyst",
+				name = "损坏的同步触媒",
 				text = {
-					"Swaps {C:attention}#1#%{} of {C:chips}Chips{} with {C:attention}#1#%{} of {C:mult}Mult{}",
-					"{C:inactive,s:0.8}I've seen this one before...",
-					"{C:inactive,s:0.8}...it's seen better days.",
+					"互换{C:chips}筹码{}和{C:mult}倍率{}的{C:attention}#1#%",
+					"{C:inactive,s:0.8}我曾见识过它……",
+					"{C:inactive,s:0.8}……只可惜荣光不再。",
 				},
 			},
 			j_cry_thalia = {
@@ -4520,12 +4519,12 @@ return {
 			},
 			--todo? add candy jokers to list
 			food_jokers = {
-				name = "Food Jokers",
+				name = "食物小丑牌",
 				text = {
-					"{s:0.8}Gros Michel, Egg, Ice Cream, Cavendish,",
-					"{s:0.8}Turtle Bean, Diet Cola, Popcorn, Ramen,",
-					"{s:0.8}Seltzer, Pickle, Chili Pepper, Caramel,",
-					"{s:0.8}Nostalgic Candy, Fast Food M, etc.",
+					"{s:0.8}大麦克香蕉、鸡蛋、冰激凌、香芽蕉、",
+					"{s:0.8}黑龟豆、健怡可乐、爆米花、拉面、",
+					"{s:0.8}气泡水、酸黄瓜、红辣椒、焦糖块、",
+					"{s:0.8}割绳糖、M记快餐、……等等",
 				},
 			},
 			ev_cry_choco0 = {

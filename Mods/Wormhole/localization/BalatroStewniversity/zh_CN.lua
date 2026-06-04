@@ -141,9 +141,9 @@ return {
             },
 
             j_worm_stew_sputnik = {
-                name = 'Space Probe',
+                name = '航天探测器',
                 text = {
-                    "{C:inactive}[Receiving transmission...]"
+                    "{C:inactive}[正在接收传输讯息……]"
                 }
             },
 

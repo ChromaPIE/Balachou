@@ -56,11 +56,11 @@ return {
                 name = "The Witless"
             },
             j_worm_ct_quantum_tunneling = {
-                name = "Quantum Tunnelling",
+                name = "量子隧穿",
                 text = {
-                    "{C:green}#1#{} to all {C:attention}listed{} {C:green,E:1,S:1.1}probabilities{}",
-                    "When you {C:attention}Clean-up{}, increase this by",
-                    "{C:green}#2#{} for each card cleaned-up",
+                    "使所有{C:attention}标注出{}的{C:green,E:1,S:1.1}几率{C:green}#1#",
+                    "每{C:attention}清理{}一张牌",
+                    "使几率修正值{C:green}+#2#",
                 }
             },
             j_worm_ct_tesla_in_space = {
@@ -330,10 +330,10 @@ return {
                 }
             },
             worm_clean_up_reminder = {
-                name = "Clean-up",
+                name = "清理",
                 text = {
-                    "To {C:attention}Clean-up{}, use {C:worm_c3_junkset}Derelict{}",
-                    "cards on {C:attention}Junk Cards{}"
+                    "对{C:attention}垃圾牌{}使用{C:worm_c3_junkset}废品{}牌",
+                    "以{C:attention}清除{}其{C:attention}垃圾{}增强"
                 }
             },
 

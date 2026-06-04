@@ -79,14 +79,14 @@ return {
                 text = {
                     {
                         "{C:inactive,s:0.8}空杯",
-                        "{C:attention}计分#3#张{C:diamonds}亮{C:hearts}色{}牌",
-                        "以{C:abs_drinks}续满",
-                        "{C:inactive,s:0.8}（#2#/#3#）",
+                        "{C:abs_drinks}续满{}：{C:attention}计分",
+                        "#3#张{C:diamonds}亮{C:hearts}色{}牌",
+                        "{C:inactive,s:0.8}（#2#/#3#）"
                     },
                     {
                         "{C:inactive,s:0.8}续满后：",
-                        "{C:attention}调制{}完成后，打出的",
-                        "{C:spades}暗{C:clubs}色{}牌给予{C:chips}+#1#{}筹码",
+                        "打出的{C:spades}暗{C:clubs}色{}牌",
+                        "给予{C:chips}+#1#{}筹码",
                         "并{C:abs_drinks}一饮而尽"
                     },
                 }
@@ -111,8 +111,8 @@ return {
                 text = {
                     {
                         "{C:inactive,s:0.8}空杯",
-                        "{C:attention}计分#3#张",
-                        "{C:spades}暗{C:clubs}色{}牌以{C:abs_drinks}续满",
+                        "{C:abs_drinks}续满{}：{C:attention}计分",
+                        "#3#张{C:spades}暗{C:clubs}色{}牌",
                         "{C:inactive,s:0.8}（#2#/#3#）",
                     },
                     {
@@ -178,7 +178,7 @@ return {
                 text = {
                     {
                         "{C:inactive,s:0.8}空杯",
-                        "使用{C:attention}#3#{}张{C:planet}星球{}牌以{C:abs_drinks}续满",
+                        "{C:abs_drinks}续满{}：使用{C:attention}#3#{}张{C:planet}星球{}牌",
                         "{C:inactive,s:0.8}（#2#/#3#）",
                     },
                     {
@@ -222,34 +222,31 @@ return {
                 }
             },
             c_worm_abs_big_bang_brandy = {
-                name = 'Big Bang Brandy',
+                name = '大爆炸白兰地',
                 text = {
                     {
-                        "When {C:attention}primed{}, create a",
-                        "{C:spectral}Spectral{} card when next",
-                        "hand is played, then is {C:abs_drinks}drank{}",
-                        "{C:inactive}(Must have space!)",
+                        "下次出牌后",
+                        "生成一张{C:spectral}幻灵{}牌",
+                        "并{C:abs_drinks}一饮而尽",
+                        "{C:inactive}（必须有空位）",
                     },
                     {
-                        "{C:abs_drinks}Refill{} by skipping",
-                        "a {C:attention}Booster Pack{}",
+                        "{C:abs_drinks}续满{}：跳过{C:attention}补充包"
                     }
                 }
             },
             c_worm_abs_big_bang_brandy_empty = {
-                name = 'Big Bang Brandy',
+                name = '大爆炸白兰地',
                 text = {
                     {
-                        "{C:inactive,s:0.8}Currently Empty{}",
-                        "{C:abs_drinks}Refill{} by skipping",
-                        "a {C:attention}Booster Pack{}",
+                        "{C:inactive,s:0.8}空杯",
+                        "{C:abs_drinks}续满{}：跳过{C:attention}补充包"
                     },
                     {
-                        "{C:inactive,s:0.8}After being Refilled:{}",
-                        "When {C:attention}primed{}, create a",
-                        "{C:spectral}Spectral{} card when next",
-                        "hand is played, then is {C:abs_drinks}drank{}",
-                        "{C:inactive}(Must have space!)",
+                        "{C:inactive,s:0.8}续满后：",
+                        "生成一张{C:spectral}幻灵{}牌",
+                        "并{C:abs_drinks}一饮而尽",
+                        "{C:inactive}（必须有空位）",
                     }
                 }
             },
@@ -300,11 +297,10 @@ return {
                 text = {
                     {
                         "{C:inactive,s:0.8}空杯",
-                        "使用{C:tarot}塔罗{}牌以{C:abs_drinks}续满",
+                        "{C:abs_drinks}续满{}：使用{C:tarot}塔罗{}牌",
                     },
                     {
                         "{C:inactive,s:0.8}续满后：",
-                        "{C:attention}调制{}完成后",
                         "额外抽{C:attention}#1#{}张牌",
                         "并{C:abs_drinks}一饮而尽"
                     }

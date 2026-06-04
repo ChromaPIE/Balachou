@@ -120,17 +120,16 @@ return {
         }
       },
       sat_worm_voyager_2 = {
-        name = "Voyager 2",
+        name = "旅行者2号",
         text = {
           {
             "升级{C:attention}#2#{}的",
             "{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
           },
           {
-            "If played hand",
-            "is a {C:attention}#2#{},",
-            "cards in scoring hand",
-            "permanently gain {C:white,X:mult}X#3#{} Mult"
+            "若出牌为{C:attention}#2#",
+            "所有计分牌",
+            "永久获得{C:white,X:mult}X#3#{}倍率"
           }
         }
       },
