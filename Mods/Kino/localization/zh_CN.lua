@@ -130,7 +130,7 @@ return {
                 },
                 unlock = {
                     "Load {C:attention}#2# {C:Bullet}Bullets{}",
-                    "{C:inactive}(#1#)"
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_ai_artificial = {
@@ -368,7 +368,7 @@ return {
                 unlock = {
                     "Use {C:attention}The Superhero{}",
                     "{C:attention}#2#{} times",
-                    "{C:inactive}(#1#)"
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_batman_begins = {
@@ -1100,7 +1100,7 @@ return {
                 unlock = {
                     "{C:Magic}Cast {C:attention}#2#{C:Magic} Spells{}",
                     "at maximum Spell Level",
-                    "{C:inactive}(#1#)"
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_doctor_strange_2 = {
@@ -1364,7 +1364,7 @@ return {
                 },
                 unlock = {
                     "Sacrifice {C:attention}#2#{} cards",
-                    "{C:inactive}(#1#)"
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_fantasia = {
@@ -1376,7 +1376,7 @@ return {
                 unlock = {
                     "{C:Magic}Cast{C:attention} 10{C:Magic} Spells",
                     "at spell level 1",
-                    "{C:inactive}(#1#)"
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_fargo = {
@@ -1443,11 +1443,11 @@ return {
                 },
                 unlock = {
                     "Use {C:Confection}Fries{C:attention} 10{} times",
-                    "{C:inactive}(#1#)"
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_frankenstein = {
-                name = "Frankenstein",
+                name = "科学怪人",
                 -- text = {
                 --     "When you destroy a playing card",
                 --     "upgrade this joker #6# times", 
@@ -1456,10 +1456,10 @@ return {
                 --     "{C:inactive}({X:mult,C:white}x#3#{C:inactive} Mult, {C:money}$#4#{C:inactive}, {X:chips,C:white}X#5#{C:inactive} Chips)"
                 -- },
                 text = {
-                    "When the {C:attention}first{} playing card",
-                    "is destroyed each round",
-                    "add a permanent copy to deck",
-                    "with a random permanent upgrade"
+                    "每回合{C:attention}首次",
+                    "有扑克牌被摧毁后",
+                    "将其带有{C:attention}版本{}的",
+                    "{C:attention}复制{}加入牌组"
                 }
             },
             j_kino_freaky_friday_3 = {
@@ -1490,7 +1490,7 @@ return {
                 },
                 unlock = {
                     "{C:Drain}Drain{} {C:attention}#2#{} Blood Counters",
-                    "{C:inactive}(#1#)"
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_gentlemen_prefer_blondes = {
@@ -1710,7 +1710,7 @@ return {
                 },
                 unlock = {
                     "Open {C:attention}#2#{} Action Packs",
-                    "{C:inactive}(#1#)"
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_heart_eyes = {
@@ -1956,8 +1956,8 @@ return {
                 name = "乔迪尔特历险记",
                 text = {
                     "回合内每弃掉一张{C:attention}非黑桃{}牌",
-                    "{C:spades}黑桃{}牌计分时给予{C:chips}+#1#{}筹码",
-                    "{C:inactive}（当前给予{C:chips}+#2#{C:inactive}筹码）"
+                    "{C:spades}黑桃{}牌计分时给予{C:chips}+#2#{}筹码",
+                    "{C:inactive}（当前给予{C:chips}+#1#{C:inactive}筹码）"
                 }
             },
             j_kino_john_wick_1 = {
@@ -2946,7 +2946,7 @@ return {
                 },
                 unlock = {
                     "Use {C:attention}100{} consumables",
-                    "{C:inactive}(#1#)"
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_quick_and_the_dead = {
@@ -3002,9 +3002,10 @@ return {
                 }
             },
             j_kino_rock = {
-                name = "The Rock",
+                name = "勇闯夺命岛",
                 text = {
-                    "{C:attention}Stone cards{} give {C:mult}+#1#{} Mult",
+                    "{C:attention}石头牌",
+                    "给予{C:mult}+#1#{}倍率"
                 }
             },
             j_kino_rocky_1 = {
@@ -3018,14 +3019,14 @@ return {
                 }
             },
             j_kino_rogue_one = {
-                name = "Rogue One",
+                name = "星球大战外传：侠盗一号",
                 text = {
-                    "Create a {C:StrangePlanet}Death Star",
-                    "when a {C:attention}Joker{} is destroyed"
+                    "摧毁{C:attention}小丑牌{}后",
+                    "生成一张{C:StrangePlanet}死星"
                 },
                 unlock = {
-                    "Use {C:attention}Death Star{} ten times",
-                    "{C:inactive}(#1#)"
+                    "使用10次{C:attention}死星",
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_rush_hour = {
@@ -3088,10 +3089,10 @@ return {
                 }
             },
             j_kino_se7en = {
-                name = "Se7en",
+                name = "七宗罪",
                 text = {
-                    "Each scored {C:attention}7",
-                    "gives {C:mult}+#1#{} Mult"
+                    "每张计分的{C:attention}7",
+                    "给予{C:mult}+#1#{}倍率"
                 }
             },  
             j_kino_secretary = {
@@ -3103,18 +3104,18 @@ return {
                 }
             },
             j_kino_seven_brides_for_seven_brothers = {
-                name = "7 Brides for 7 Brothers",
+                name = "七对佳偶",
                 text = {
-                    "{X:mult,C:white}X#1#{} Mult if deck",
-                    "contains equal number of",
-                    "{C:attention}Kings{} and {C:attention}Queens"
+                    "若牌组中存在",
+                    "等量的{C:attention}K{}和{C:attention}Q",
+                    "{X:mult,C:white}X#1#{}倍率"
                 }
             },
             j_kino_shang_chi = {
                 name = "尚气与十环传奇",
                 text = {
-                    "{C:Magic}Cast the next Spell",
-                    "of the {C:attention}10"
+                    "{C:Magic}施放{C:attention}10{}种{C:Magic}咒术",
+                    "中的{C:Magic}下一种"
                 }
             },
             j_kino_shawshank_redemption = {
@@ -3126,15 +3127,15 @@ return {
                 }
             },
             j_kino_shazam_1 = {
-                name = "Shazam",
+                name = "雷霆沙赞！",
                 text = {
-                    "When you {C:Magic}Cast a Spell",
-                    "transform a random",
-                    "{c:attention}non-face{} card into a {C:attention}Jack"
+                    "{C:Magic}施咒{}时",
+                    "将随机一张{c:attention}非人头{}牌",
+                    "变为{C:attention}J"
                 },
                 unlock = {
-                    "Use {C:attention}Death{} to turn",
-                    "a {C:attention}2{} into a {C:attention}face{} card"
+                    "使用{C:attention}死神",
+                    "将{C:attention}2{}变为{C:attention}人头{}牌"
                 }
             },
             j_kino_shining = {
@@ -3158,7 +3159,7 @@ return {
                 },
                 unlock = {
                     "Defeat {C:attention}#2#{} Boss Blinds",
-                    "{C:inactive}(#1#)"
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_shopaholic = {
@@ -3377,24 +3378,24 @@ return {
                 }
             },
             j_kino_star_wars_holiday = {
-                name = "The Star Wars Holiday Special",
+                name = "星球大战：假日特辑",
                 text = {
                     {
-                        "Gain #2# {C:attention}Charg{e} when",
-                        "a {C:planet}Planet{} is used",
-                        "or a {C:attention}Blind{} is defeated",
-                        "{C:inactive}(Currently: #1# Charges)"
+                        "使用{C:planet}星球牌",
+                        "或击败{C:attention}盲注{}后",
+                        "{C:attention}蓄能{}#2#层",
+                        "{C:inactive}（当前蓄能层数：#1#）"
                     },
                     {
-                        "Create a {C:attention}Star Wars Joker",
-                        "for each {C:attention}#3#{} Charges",
-                        "when this {C:attention}Joker{} is sold",
-                        "{C:inactive}(Must have room)"
+                        "每有{C:attention}#3#{}层蓄能，售出{C:attention}本牌{}后",
+                        "生成一张{C:attention}星球大战小丑牌",
+                        "{C:inactive}（必须有空位）"
                     }
                 },
                 unlock = {
-                    "Win a run with a",
-                    "{C:attention}Star Wars{} and a {C:Christmas}Christmas{} Joker"
+                    "携带{C:attention}星球大战{}小丑牌",
+                    "及{C:Christmas}圣诞片{}小丑牌",
+                    "赢下一局"
                 }
             },
             j_kino_star_wars_i = {
@@ -3467,15 +3468,14 @@ return {
                 }
             },
             j_kino_star_wars_vii = {
-                name = "Star Wars Episode VII: The Force Awakens",
+                name = "星球大战VII：原力觉醒",
                 text = {
-                    "Scoring cards give {C:mult}+#1#{} mult",
-                    "for each level of the scoring poker hand"
+                    "所出牌型每有一级",
+                    "每张计分牌给予{C:mult}+#1#{}倍率"
                 },
                 unlock = {
-                    "Have at least 1",
-                    "{C:attention}Star Wars{} Joker",
-                    "with an edition"
+                    "持有至少一张带版本的",
+                    "{C:attention}星球大战{}小丑牌"
                 }
             },
             j_kino_star_wars_viii = {
@@ -3594,7 +3594,7 @@ return {
                 },
                 unlock = {
                     "Destroy {C:attention}10{} Sci-Fi Cards",
-                    "{C:inactive}(#1#)"
+                    "{C:inactive}（#1#）"
                 }
             },
             j_kino_terminator_2 = {
@@ -5507,7 +5507,7 @@ return {
                 },
                 unlock = {
                     "Give {C:attention}20{} Awards",
-                    "{C:inactive}(#1#)"
+                    "{C:inactive}（#1#）"
                 }
             },
             b_kino_investment = {
@@ -6801,17 +6801,17 @@ return {
             -- Sci-Fi Cards
             kino_scifi_card_extra_chips={
                 text={
-                    "{C:chips}#1#{} chips from upgrades",
+                    "科幻片牌升级：{C:chips}#1#{}筹码",
                 },
             },
             kino_scifi_card_extra_mult={
                 text={
-                    "{C:mult}#1#{} mult from upgrades",
+                    "科幻片牌升级：{C:mult}#1#{}倍率",
                 },
             },
             kino_scifi_card_extra_xmult={
                 text={
-                    "{X:mult,C:white}x#1#{} mult from upgrades",
+                    "科幻片牌升级：{X:mult,C:white}X#1#{}倍率",
                 },
             },
         },
@@ -6835,7 +6835,7 @@ return {
                     "Buy a total of",
                     "{C:attention}#2#{C:Confection} Confection{} cards",
                     "from the shop",
-                    "{C:inactive}(#1#)",
+                    "{C:inactive}（#1#）",
                 }
             },
             v_kino_special_treats = {
@@ -6856,7 +6856,7 @@ return {
                 unlock = {
                     "Consume {C:attention}25 {C:Confection}Confections",
                     "with additional treats",
-                    "{C:inactive}(#1#)"
+                    "{C:inactive}（#1#）"
                 }
             },
             v_kino_awardsbait = {
@@ -6878,7 +6878,7 @@ return {
                 },
                 unlock = {
                     "Give {C:attention}5{} Awards",
-                    "{C:inactive}(#1#)"
+                    "{C:inactive}（#1#）"
                 }
             },
             v_kino_media_collection = {
@@ -6899,7 +6899,7 @@ return {
                 unlock = {
                     "Buy {C:attention}Media Collection{} ",
                     "{C:attention}5{} times",
-                    "{C:inactive}(#1#)"
+                    "{C:inactive}（#1#）"
                 }
             },
             -- Cryptid crossmod Vouchers

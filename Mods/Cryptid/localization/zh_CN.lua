@@ -743,9 +743,10 @@ return {
 			c_cry_alttab = {
 				name = "://ALTTAB",
 				text = {
-					"Create the {C:cry_code}current{}",
-					"blind's skip tag",
-					"{C:inactive}(Current: {C:cry_code}#1#{C:inactive})",
+					"{C:inactive,s:0.8}-- 快捷切窗",
+					"生成{C:cry_code}当前{}盲注的",
+					"跳过奖励标签",
+					"{C:inactive}（当前为{C:cry_code}#1#{C:inactive}）",
 				},
 			},
 			c_cry_ctrl_v = {
@@ -954,11 +955,11 @@ return {
 				},
 			},
 			e_cry_gold = {
-				name = "Golden",
-				label = "Golden",
+				name = "璨金",
+				label = "璨金",
 				text = {
-					"Earn {C:money}$#1#{} when used",
-					"or triggered",
+					"使用或触发时",
+					"赚取{C:money}$#1#"
 				},
 			},
 			e_cry_m = {
@@ -1390,11 +1391,10 @@ return {
 				},
 			},
 			j_cry_circulus_pistoris = {
-				name = "Circulus Pistoris",
+				name = "餅師圓周",
 				text = {
-					"{X:dark_edition,C:white}^#1#{} Chips and {X:dark_edition,C:white}^#1#{} Mult",
-					"if {C:attention}exactly{} #2#",
-					"hand#<s>2# remaining",
+					"剩余出牌次数{C:attention}恰为{}#2#时",
+					"{X:dark_edition,C:white}^#1#{}筹码，{X:dark_edition,C:white}^#1#{}倍率"
 				},
 			},
 			j_cry_circus = {
@@ -3135,12 +3135,12 @@ return {
 				},
 			},
 			j_cry_whip = {
-				name = "The WHIP",
+				name = "长鞭之末",
 				text = {
-					"This Joker gains {X:mult,C:white} X#1# {} Mult",
-					"if {C:attention}played hand{} contains a",
-					"{C:attention}2{} and {C:attention}7{} of different suits",
-					"{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+					"若{C:attention}出牌{}包含",
+					"花色不同的{C:attention}2{}和{C:attention}7",
+					"本牌获得{X:mult,C:white}X#1#{}倍率",
+					"{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）",
 				},
 			},
 			j_cry_wonka_bar = {
@@ -3820,11 +3820,11 @@ return {
 		},
 		Tag = {
 			tag_cry_astral = {
-				name = "Astral Tag",
+				name = "玄星标签",
 				text = {
-					"Next base edition shop",
-					"Joker is free and",
-					"becomes {C:dark_edition}Astral{}",
+					"商店内的下一张",
+					"无版本小丑牌",
+					"将变为{C:dark_edition}玄星{}且售价为{C:money}$0",
 				},
 			},
 			tag_cry_banana = {
@@ -4235,16 +4235,13 @@ return {
 			-- 	},
 			-- },
 			v_cry_dexterity = {
-				name = "Dexterity",
+				name = "灵指天成",
 				text = {
-					"Permanently",
-					"gain {C:blue}+#1#{} hand#<s>1#",
-					"each round",
+					"每回合永久获得",
+					"{C:blue}#1#{}次出牌"
 				},
 				unlock = {
-					"Play {C:attention}5000{}",
-					"{C:attention}Playing Cards{}",
-					"in total",
+					"总计打出{C:attention}5000{}张{C:attention}扑克牌"
 				},
 			},
 			v_cry_threers = {
@@ -5291,7 +5288,7 @@ return {
 			cry_double_sided = "双面",
 			cry_glass = "易碎",
 			cry_glitched = "故障",
-			cry_gold = "Golden",
+			cry_gold = "璨金",
 			cry_m = "开心",
 			cry_mosaic = "拼花",
 			cry_noisy = "Noisy",

@@ -185,12 +185,11 @@ return {
 		},
 		Voucher = {
 			v_worm_polarskull_gravitational_slingshot = {
-				name = "Gravitational Slingshot",
+				name = "引力弹弓",
 				text = {
-					"{C:attention}Active {C:polarskull_rocket}Rocket{} cards",
-					"last for {C:attention}+1{} extra round each",
-					"time you use the {C:planet}Planet{} card",
-					"for their related hands",
+					"每次使用{C:planet}星球{}牌后",
+					"对应牌型的{C:attention}激活{C:polarskull_rocket}火箭{}牌",
+					"额外持续{C:attention}1{}回合"
 				},
 			},
 			v_worm_polarskull_prepetual_motion_machine = {

@@ -151,13 +151,13 @@ return {
                 }
             },
             j_worm_riverboat_event_horizon = {
-                name = "Event Horizon",
+                name = "事件视界",
                 text = {
-                    "This Joker gains {X:mult,C:white} X#2# {} Mult",
-                    "if the {C:attention}first hand{} of the round",
-                    "scores more than {C:attention}100%{} of the {C:attention}Blind{}",
-                    "Resets if score is less",
-                    "{C:inactive}(Currently {X:mult,C:white} X#1# {C:inactive} Mult)"
+                    "若回合{C:attention}首次出牌{}得分",
+                    "超出{C:attention}盲注{}要求的{C:attention}100%",
+                    "本牌获得{X:mult,C:white}X#2#{}倍率",
+                    "若不达标，重置",
+                    "{C:inactive}（当前为{X:mult,C:white}X#1#{C:inactive}倍率）"
                 }
             },
             j_worm_riverboat_hawking = {

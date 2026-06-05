@@ -66,13 +66,13 @@ return {
             },
 
             j_worm_stew_8_ball_earth = {
-                name = '8 Ball Earth',
+                name = '8号地球',
                 text = {
-                    '{C:attention}Fill{} consumable slots with random',
-                    '{C:tarot}Tarot{}, {C:planet}Planet{}, or {C:inactive,s:0.8}(rarely){} {C:spectral}Spectral',
-                    'cards if played hand',
-                    'contains a {C:attention}#1#',
-                    '{C:inactive}(Must have room)'
+                    '若出牌包含{C:attention}#1#',
+                    '以随机{C:tarot}塔罗{}，{C:planet}星球',
+                    '或{C:inactive,s:0.8}（小几率）{C:spectral}幻灵{}牌',
+                    '{C:attention}填满{}消耗牌槽位',
+                    '{C:inactive}（必须有空位）'
                 }
             },
 

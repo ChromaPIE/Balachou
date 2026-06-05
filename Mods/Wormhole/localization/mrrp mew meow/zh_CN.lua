@@ -3,11 +3,11 @@ descriptions={
 	Joker={
 		j_worm_mrrp_alien_cat ={
 			name=
-				"Alien Cat"
-			, text={
-				"{C:green}#1# in #2#{} chance for each",
-				"played {C:attention}#3#{} to create a",
-				"{C:planet}#4#{} card when scored"
+				"外星猫",
+			text={
+				"打出的{C:attention}#3#{}计分时",
+				"有{C:green}#1#/#2#{}的几率",
+				"生成一张{C:planet}#4#"
 			}
 		},
 		j_worm_mrrp_pallasite ={

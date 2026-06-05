@@ -142,9 +142,8 @@ return {
             j_worm_euda_ton618 = {
                 name = "Ton 618",
                 text = {
-                    "If at least two {C:attention}Enhanced{} cards",
-                    "are scored, {X:mult,C:white}X#1#{} Mult and destroy",
-                    "the scored {C:attention}Enhanced{} cards"
+                    "若有至少2张{C:attention}增强牌{}计分",
+                    "{X:mult,C:white}X#1#{}倍率并摧毁计分的{C:attention}增强{}牌"
                 },
             },
             j_worm_euda_cometwild = {
