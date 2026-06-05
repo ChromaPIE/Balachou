@@ -1,0 +1,202 @@
+[manifest]
+version = "1.0.0"
+dump_lua = false
+priority = 214748366
+
+# Cryptid inserts a replacement hand-info calculation immediately after the
+# vanilla call. Remove the discarded first pass while preserving the inserted
+# branch that computes the final values.
+[[patches]]
+[patches.pattern]
+target = "cardarea.lua"
+match_indent = true
+position = "at"
+pattern = '''local text,disp_text,poker_hands = G.FUNCS.get_poker_hand_info(self.highlighted)
+    local text,disp_text,poker_hands'''
+payload = "local text,disp_text,poker_hands"
+
+# Wormhole Space Manager polls selected-hand text every frame. Cache the full
+# get_poker_hand_info result while the selected/game-relevant state is stable.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "/content/util-modders/space-manager.lua"]'
+match_indent = true
+position = "before"
+pattern = "function manager:update(dt)"
+payload = '''local function cp_selected_optimization_space_manager_scalar_table(_table, _depth)
+    if type(_table) ~= "table" then return tostring(_table) end
+    _depth = _depth or 0
+    local _keys = {}
+    for _key, _value in pairs(_table) do
+        local _type = type(_value)
+        if _type ~= "function" and _type ~= "userdata" and _type ~= "thread" then
+            _keys[#_keys + 1] = _key
+        end
+        if #_keys >= 32 then break end
+    end
+    table.sort(_keys, function(a, b) return tostring(a) < tostring(b) end)
+
+    local _parts = {tostring(_table)}
+    for _, _key in ipairs(_keys) do
+        local _value = _table[_key]
+        _parts[#_parts + 1] = tostring(_key)
+        if type(_value) == "table" and _depth > 0 then
+            _parts[#_parts + 1] = cp_selected_optimization_space_manager_scalar_table(_value, _depth - 1)
+        else
+            _parts[#_parts + 1] = tostring(_value)
+        end
+    end
+    return table.concat(_parts, "|")
+end
+
+local function cp_selected_optimization_space_manager_card_fingerprint(_card, _depth)
+    if not _card then return "nil" end
+    local _config = _card.config or {}
+    local _center = _config.center or {}
+    local _ability = _card.ability or {}
+    local _base = _card.base or {}
+    local _edition = _card.edition
+    local _edition_key = type(_edition) == "table" and (_edition.key or _edition.type or cp_selected_optimization_space_manager_scalar_table(_edition, 0)) or _edition
+    return table.concat({
+        tostring(_card),
+        tostring(_card.area),
+        tostring(_card.facing),
+        tostring(_card.debuff),
+        tostring(_config.center_key or _center.key),
+        tostring(_center.key),
+        tostring(_center.set),
+        tostring(_center.rarity),
+        tostring(_ability.name),
+        tostring(_ability.set),
+        tostring(_base.suit),
+        tostring(_base.value),
+        tostring(_base.id),
+        tostring(_base.nominal),
+        tostring(_card.seal),
+        tostring(_edition_key),
+        cp_selected_optimization_space_manager_scalar_table(_ability.extra, _depth or 1),
+        cp_selected_optimization_space_manager_scalar_table(_ability, 0),
+    }, "\29")
+end
+
+local function cp_selected_optimization_space_manager_area_fingerprint(_area, _depth)
+    local _cards = (_area and _area.cards) or {}
+    local _parts = {tostring(#_cards)}
+    for _i = 1, #_cards do
+        _parts[#_parts + 1] = cp_selected_optimization_space_manager_card_fingerprint(_cards[_i], _depth or 1)
+    end
+    return table.concat(_parts, "\30")
+end
+
+local function cp_selected_optimization_space_manager_append_hand_state(_parts)
+    local _hands = G.GAME and G.GAME.hands or {}
+    local _names = {}
+    for _name, _ in pairs(_hands) do _names[#_names + 1] = _name end
+    table.sort(_names, function(a, b) return tostring(a) < tostring(b) end)
+    for _, _name in ipairs(_names) do
+        local _hand = _hands[_name] or {}
+        _parts[#_parts + 1] = table.concat({
+            tostring(_name),
+            tostring(_hand.visible),
+            tostring(_hand.level),
+            tostring(_hand.chips),
+            tostring(_hand.mult),
+            tostring(_hand.played),
+            tostring(_hand.played_this_round),
+        }, ":")
+    end
+end
+
+local function cp_selected_optimization_space_manager_selected_fingerprint()
+    local _game = G.GAME or {}
+    local _round = _game.current_round or {}
+    local _blind = _game.blind or {}
+    local _blind_obj = _blind.config and _blind.config.blind or {}
+    local _back = _game.selected_back and _game.selected_back.effect and _game.selected_back.effect.center
+    local _cards = G.hand and G.hand.highlighted or {}
+    local _parts = {
+        tostring(G.STATE),
+        tostring(_game.cry_exploit_override),
+        tostring(_game.round),
+        tostring(_round.hands_left),
+        tostring(_round.discards_left),
+        tostring(_round.hands_played),
+        tostring(_round.discards_used),
+        tostring(_blind_obj.key),
+        tostring(_blind.disabled),
+        tostring(_blind.block_play),
+        tostring(_back and _back.key),
+        tostring(#_cards),
+    }
+    for _i = 1, #_cards do
+        _parts[#_parts + 1] = cp_selected_optimization_space_manager_card_fingerprint(_cards[_i], 2)
+    end
+    _parts[#_parts + 1] = cp_selected_optimization_space_manager_area_fingerprint(G.hand, 1)
+    _parts[#_parts + 1] = cp_selected_optimization_space_manager_area_fingerprint(G.jokers, 1)
+    _parts[#_parts + 1] = cp_selected_optimization_space_manager_area_fingerprint(G.consumeables, 1)
+    cp_selected_optimization_space_manager_append_hand_state(_parts)
+    return table.concat(_parts, "\31")
+end
+
+local function cp_selected_optimization_space_manager_selected_hand(_manager)
+    local _cards = G.hand and G.hand.highlighted
+    if not _cards or #_cards <= 0 then return nil end
+    local _fingerprint = cp_selected_optimization_space_manager_selected_fingerprint()
+    local _cache = _manager._cp_selected_optimization_selected_hand_cache
+    if _cache and _cache.fingerprint == _fingerprint then
+        return _cache.text, _cache.disp_text, _cache.poker_hands, _cache.scoring_hand, _cache.non_loc_disp_text
+    end
+
+    local _text, _disp_text, _poker_hands, _scoring_hand, _non_loc_disp_text = G.FUNCS.get_poker_hand_info(_cards)
+    _manager._cp_selected_optimization_selected_hand_cache = {
+        fingerprint = _fingerprint,
+        text = _text,
+        disp_text = _disp_text,
+        poker_hands = _poker_hands,
+        scoring_hand = _scoring_hand,
+        non_loc_disp_text = _non_loc_disp_text,
+    }
+    return _text, _disp_text, _poker_hands, _scoring_hand, _non_loc_disp_text
+end
+
+Wormhole.cp_selected_optimization_space_manager_selected_hand = cp_selected_optimization_space_manager_selected_hand
+
+'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "/content/util-modders/space-manager.lua"]'
+match_indent = true
+position = "at"
+pattern = "hand = G.FUNCS.get_poker_hand_info(G.hand.highlighted)"
+payload = "hand = cp_selected_optimization_space_manager_selected_hand(self)"
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "content/colon_three/junk/junk_hands.lua"]'
+match_indent = true
+position = "at"
+pattern = "local text,disp_text,poker_hands,scoring = G.FUNCS.get_poker_hand_info(self.highlighted)"
+payload = '''local text,disp_text,poker_hands,scoring
+        if Wormhole.cp_selected_optimization_space_manager_selected_hand and Wormhole.util_space_manager then
+            text,disp_text,poker_hands,scoring = Wormhole.cp_selected_optimization_space_manager_selected_hand(Wormhole.util_space_manager)
+        else
+            text,disp_text,poker_hands,scoring = G.FUNCS.get_poker_hand_info(self.highlighted)
+        end'''
+
+# Kino Death Star can_use only needs to know whether at least one target exists.
+[[patches]]
+[patches.regex]
+target = '=[SMODS kino "items/consumables/planets.lua"]'
+position = "at"
+line_prepend = "$indent"
+pattern = '''(?<indent>[\t ]*)can_use = function\(self, card\)\s*local _eligible_targets = \{}\s*for _, _joker in ipairs\(G\.jokers\.cards\) do\s*if _ > 1 and not SMODS\.is_eternal\(_joker, \{death_star = true\}\) then\s*_eligible_targets\[#_eligible_targets \+ 1\] = _joker\s*end\s*end\s*if #_eligible_targets > 0 then return true end\s*return false\s*end,'''
+payload = '''can_use = function(self, card)
+    for _, _joker in ipairs(G.jokers.cards) do
+        if _ > 1 and not SMODS.is_eternal(_joker, {death_star = true}) then
+            return true
+        end
+    end
+
+    return false
+end,'''
