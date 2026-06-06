@@ -1748,24 +1748,22 @@ return {
                 }
             },
             j_kino_her = {
-                name = "Her",
+                name = "她",
                 text = {
                      {
-                        "Whenever a {C:attention}Sci-Fi Card{} upgrades",
-                        "put {C:attention}#1# {C:Heartache}Heartbreak Counter",
-                        "on every {C:attention} Sci-Fi Card{}",
-                        "in your deck"
+                        "每有{C:attention}科幻片牌{}升级后",
+                        "对牌组中所有{C:attention}科幻片牌",
+                        "施加{C:attention}#1#{}位{C:Heartache}心碎计数标"
                     },
                     {
-                        "Gain {C:chips}+#2#{} Chips when",
-                        "a {C:Heartache}Heartbreak Counter",
-                        "is removed",
-                        "{C:inactive}(Currently: {C:chips}+#3#{C:inactive} Chips)"
+                        "每有1位{C:Heartache}心碎计数标{}被移除",
+                        "本牌获得{C:chips}+#2#{}筹码",
+                        "{C:inactive}（当前为{C:chips}+#3#{C:inactive}筹码）"
                     }
                 },
                 unlock = {
-                    "Put a {C:Heartache}Heartbreak Counter{}",
-                    "on a {C:attention}Sci-Fi Card"
+                    "对{C:attention}科幻片牌",
+                    "施加{C:Heartache}心碎计数标"
                 }
             },
             j_kino_hitman = {
@@ -6045,11 +6043,11 @@ return {
 
             -- Shock Counter
             bl_kino_zeus = {
-                name = "Zeus",
+                name = "宙斯",
                 text = {
-                    "When a {C:attention}Joker{} triggers",
-                    "put {C:attention}1{C:attention} Shock Counter{}",
-                    "on a card in deck"
+                    "有{C:attention}小丑牌{}触发时",
+                    "对牌组中的一张牌",
+                    "施加{C:attention}1{}位{C:attention}震击计数标"
                 }
             },
             bl_kino_cable_guy = {
@@ -7714,13 +7712,12 @@ return {
                 }
             },
             counter_investment = {
-                name = "Investment Counter",
+                name = "投资计数标",
                 text = {
-                    "{C:attention}Ticks Down 1",
+                    "{C:attention}步退1位",
                     " ",
-                    "Lose $1 per Counter applied",
-                    "Gain {C:money}$#1#{}",
-                    "per Counter"
+                    "每施加1位，损失$1",
+                    "每有1位，获得{C:money}$#1#"
                 }
             },
 
@@ -7772,13 +7769,13 @@ return {
                 }
             },
             counter_paralysis = {
-                name = "Shock Counter",
+                name = "震击计数标",
                 text = {
-                    "{C:attention}Ticks Down 1",
+                    "{C:attention}步退1位",
                     " ",
-                    "Has a {C:green}1 in 10{} chance",
-                    "to not trigger",
-                    "per Counter"
+                    "每有1位",
+                    "有{C:green}1/10{}的几率",
+                    "无法触发"
                 }
             },
             counter_sleep = {
@@ -8179,7 +8176,7 @@ return {
             k_et = "Go Home",
             k_ocean_11_2 = "Heisted",
             k_nowyouseeme = "Abra Cadabra",
-            k_cocktail = "Thanks for the tip!",
+            k_cocktail = "谢谢小费！",
             k_exorcist_1 = "The Power of Christ compells you",
             k_menu = "Bon appetit",
             k_m3gan = "Beep. Boop",
@@ -8206,14 +8203,14 @@ return {
             k_insomnia = "No rest",
             k_sugarland = "Stolen",
             k_drstrange = "By the Eye of Agamoto!",
-            k_gremlins = "Bwehehehe",
+            k_gremlins = "木嘿嘿嘿！",
             k_raiders = "This belongs in a Museum!",
             k_odyssey = "Everything is going extremely well",
             k_contagion = "阿嚏！",
             k_lalaland = "For the Fools who dream",
             k_cruella = "That card will make a great coat",
             k_hellboy = "Hell held back",
-            k_minecraft_1 = "Flint & Steel!",
+            k_minecraft_1 = "打火石！",
             k_minecraft_2 = "Chicken Jockey!",
             k_kino_fast_and_furious_5 = 'Heisted',
             k_kino_star_wars_i = "Now this is pod racing", 
@@ -8328,7 +8325,7 @@ return {
             k_blind_fabrication_machine = "The machine whirrs. Your deck feels U N S A F E",
             k_kino_xeno_queen = "Hatch",
             k_kino_bartel = "I burned them...",
-            k_kino_evilqueen = "Mirror, Mirror...",
+            k_kino_evilqueen = "魔镜，魔镜……",
             k_kino_freddy = "Nightmare",
             k_kino_rose = "Shine",
             k_kino_flatline = "Beeeeeeep",
@@ -8372,7 +8369,7 @@ return {
                 "directed by Kubrick"
             },
             k_odyssey_quest_2 = {
-                "Possess 2 Sci-Fi Jokers"
+                "持有2张科幻片小丑牌"
             },
             k_odyssey_quest_3 = {
                 "Possess a Movie Joker",
@@ -8434,8 +8431,8 @@ return {
                 "that shares an actor"
             },
             k_barbie_quest_5 = {
-                "Have more Queens than Jacks",
-                "and Kings in your deck"
+                "牌组中Q的张数",
+                "多于J和K的总张数"
             },
             k_barbie_quest_6 = {
                 "Have a The Lovers, The Empress,",
@@ -8470,8 +8467,8 @@ return {
 
             -- Citizen Kane Quests
             k_citizen_kane_quest_1 = {
-                "Possess 2 Mystery",
-                "or Drama Jokers"
+                "持有2张奇幻片",
+                "或剧情片小丑牌"
             },
             k_citizen_kane_quest_2 = {
                 "持有一张发行于",
@@ -8596,8 +8593,8 @@ return {
 
             -- Singing in the Rain Quests
             k_kino_singing_in_the_rain_quest_1 = {
-                "Possess 2 Musical", 
-                "or Romance Jokers"
+                "持有2张音乐片",
+                "或爱情片小丑牌"
             },
             k_kino_singing_in_the_rain_quest_2 = {
                 "Possess a Movie Joker",
@@ -8636,7 +8633,7 @@ return {
             blockbuster_config_header = "Blockbuster: Value Manipulation"
         },
         challenge_names = {
-            c_kino_minc = "Monsters Inc.",
+            c_kino_minc = "怪兽公司",
             c_kino_bacon = "Six Degrees of Kevin",
             c_kino_yeager = "Cade Yeager Cosplay",
             c_kino_xenomorph = "Xenomorph Invasion",

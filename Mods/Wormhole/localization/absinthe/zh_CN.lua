@@ -362,11 +362,11 @@ return {
                 }
             },
             j_worm_abs_gravity_well = {
-                name = "Gravity Well",
+                name = "重力井",
                 text = {
-                    "This Joker gains {C:chips}+#1#{} Chips",
-                    "when a {C:abs_drinks}Drink{} is {C:abs_drinks}drank{}",
-                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
+                    "{C:abs_drinks}酒饮{}被{C:abs_drinks}一饮而尽{}后",
+                    "本牌获得{C:chips}+#1#{}筹码",
+                    "{C:inactive}（当前为{C:chips}+#2#{C:inactive}筹码）",
                 }
             },
             j_worm_abs_binary_system = {

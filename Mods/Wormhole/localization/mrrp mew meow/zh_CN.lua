@@ -151,12 +151,12 @@ descriptions={
 			}
 		},
 		j_worm_mrrp_cats_eye_nebula = {
-			name = "Cat's Eye Nebula",
+			name = "猫眼星云",
 			text = {
-				"{C:chips}#1#{} Chips",
-				"{C:chips}#2#{} per {C:attention}card{} scored",
-				"Upon collapse, upgrade all",
-				"{C:attention}poker hand{} levels by {C:attention}#3#{}"
+				"{C:chips}#1#{}筹码",
+				"每计分一张{C:attention}牌{}，{C:chips}#2#{}筹码",
+				"崩解时，使所有{C:attention}牌型",
+				"提升{C:attention}#3#{}级"
 			}
 		}
 	},

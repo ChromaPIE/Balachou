@@ -514,8 +514,9 @@ return {
 			c_cry_crash = {
 				name = "://CRASH",
 				text = {
-					"{C:cry_code,E:1}Don't.",
-				},
+					"{C:inactive,s:0.8}-- 崩溃",
+					"{C:cry_code,E:1}别搞。"
+				}
 			},
 			c_cry_keygen = {
 				name = "://KEYGEN",
@@ -551,8 +552,9 @@ return {
 			c_cry_nperror = {
 				name = "://NPERROR",
 				text = {
-					"Returns the {C:cry_code}last played hand{}",
-					"to your hand",
+					"{C:inactive,s:0.8}-- 空指针错误",
+					"将{C:cry_code}上一手出牌",
+					"退回手中",
 				},
 			},
 			c_cry_rework = {
@@ -1820,14 +1822,13 @@ return {
 				},
 			},
 			j_cry_fractal = {
-				name = "Fractal Fingers",
+				name = "分形手指",
 				text = {
-					"{C:attention}+#1#{} card selection limit",
+					"选牌上限{C:attention}+#1#",
 				},
 				unlock = {
-					"Play a {C:attention}Straight Flush{}",
-					"without the {C:attention}Straight",
-					"being a {C:attention}Flush",
+					"打出{C:attention}顺子{}并不为{C:attention}同花",
+					"的{C:attention}同花顺"
 				},
 			},
 			j_cry_flip_side = {
@@ -1859,10 +1860,10 @@ return {
 				},
 			},
 			j_cry_undefined = {
-				name = "Undefined Joker",
+				name = "未定义小丑",
 				text = {
-					"{C:red}+#1#{} Mult if played",
-					"hand is {C:attention}#2#",
+					"若出牌牌型为{C:attention}#2#",
+					"{C:red}+#1#{}倍率"
 				},
 			},
 			j_cry_formidiulosus = {
@@ -3327,10 +3328,9 @@ return {
 		},
 		Sleeve = {
 			sleeve_cry_beige_sleeve = {
-				name = "Beige Sleeve",
+				name = "米色牌套",
 				text = {
-					"{C:attention}Common{} Jokers have",
-					"{C:attention}quadrupled{} values",
+					"{C:attention}普通{}小丑牌数值{C:attention}X4",
 				},
 			},
 			sleeve_cry_beige_sleeve_alt = {

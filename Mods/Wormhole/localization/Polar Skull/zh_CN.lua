@@ -33,12 +33,12 @@ return {
 				},
 			},
 			j_worm_polarskull_launchpad = {
-				name = "Launch Pad",
+				name = "发射台",
 				text = {
-					"When {C:attention}Boss Blind{} is defeated,",
-					"create the {C:polarskull_rocket}Rocket{} Card for",
-					"final played {C:attention}poker hand{} that round",
-					"{C:inactive}(Must have room)"
+					"击败{C:attention}Boss盲注{}后",
+					"生成上一手出牌{C:attention}牌型",
+					"对应的{C:polarskull_rocket}火箭{}牌",
+					"{C:inactive}（必须有空位）"
 				},
 			},
 			j_worm_polarskull_rocket_science = {

@@ -65,12 +65,12 @@ return {    -- yo it's GHOSTSALT here look at me TYPING before i SUBMIT THIS THI
                 },
             },
             j_worm_dum_greg = {
-                name = "Greg the Muncher",
+                name = "贪吃龙格雷格",
                 text = {
-                    "{C:red}Eats{} the {C:attention}rightmost{} card and",
-                    "adds {C:blue}Celestial{} to the {C:attention}leftmost{}",
-                    "card after a hand has scored",
-                    "{C:red}Can't be sold",
+                    "出牌计分后",
+                    "{C:red}吃掉{C:attention}最右侧{}小丑牌",
+                    "并为{C:attention}最左侧{}小丑牌添加{C:blue}天体",
+                    "{C:red}无法售出"
                 },
             },
             j_worm_dum_carnivore = {

@@ -11,12 +11,12 @@ return {
             },
 
             j_worm_stew_flat_earth = {
-                name = 'Flat Earth',
+                name = '地平',
                 text = {
-                    "{C:chips}+#2#{} Chips for each",
-                    "non-{C:spades}Spade{} card",
-                    "in your {C:attention}full deck{}",
-                    "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
+                    "{C:attention}完整牌组{}中",
+                    "每有一张非{C:spades}黑桃{}牌",
+                    "{C:chips}+#2#{}筹码",
+                    "{C:inactive}（当前为{C:chips}+#1#{C:inactive}筹码）",
                 } 
             },
 
