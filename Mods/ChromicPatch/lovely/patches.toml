@@ -137,6 +137,63 @@ for i = 1, #SUITS[visible_suit[j]] do
     end
 end'''
 
+# Cartomancer compact deck: restore current cardarea deck pile replacement
+[[patches]]
+[patches.pattern]
+target = "cardarea.lua"
+match_indent = true
+position = "at"
+pattern = '''
+            local deck_height = (self.config.deck_height or 0.15)/52
+            for k, card in ipairs(self.cards) do
+                if card.facing == 'front' then card:flip() end
+
+                if not card.states.drag.is and not card.disable_align then
+                    card.T.x = self.T.x + 0.5*(self.T.w - card.T.w) + self.shadow_parrallax.x*deck_height*(#self.cards/(self == G.deck and 1 or 2) - k) + 0.9*self.shuffle_amt*(1 - k*0.01)*(k%2 == 1 and 1 or -0)
+                    card.T.y = self.T.y + 0.5*(self.T.h - card.T.h) + self.shadow_parrallax.y*deck_height*(#self.cards/(self == G.deck and 1 or 2) - k)
+                    card.T.r = 0 + 0.3*self.shuffle_amt*(1 + k*0.05)*(k%2 == 1 and 1 or -0)
+                    card.T.x = card.T.x + card.shadow_parrallax.x/30
+                end
+            end'''
+payload = '''
+            local display_limit
+            if not Cartomancer.SETTINGS.compact_deck_enabled then
+                display_limit = 999999
+            else
+                display_limit = Cartomancer.SETTINGS.compact_deck_visible_cards
+            end
+
+            local deck_height = (self.config.deck_height or 0.15)/52
+            local total_cards = #self.cards <= display_limit and #self.cards or display_limit
+            local fixedX, fixedY, fixedR = nil, nil, nil
+
+            local height_multiplier = total_cards/((self == G.deck or self.draw_uibox) and 1 or 2)
+
+            for k, card in ipairs(self.cards) do
+                if card.facing == 'front' then card:flip() end
+
+                if not card.states.drag.is and not card.disable_align then
+                    if fixedX then
+                        card.T.x = fixedX
+                        card.T.y = fixedY
+                        card.T.r = fixedR
+                        card.states.visible = false
+                    else
+                        card.T.x = self.T.x + 0.5*(self.T.w - card.T.w) + self.shadow_parrallax.x*deck_height*(height_multiplier - k) + 0.9*self.shuffle_amt*(1 - k*0.01)*(k%2 == 1 and 1 or -0)
+                        card.T.y = self.T.y + 0.5*(self.T.h - card.T.h) + self.shadow_parrallax.y*deck_height*(height_multiplier - k)
+                        card.T.r = 0 + 0.3*self.shuffle_amt*(1 + k*0.05)*(k%2 == 1 and 1 or -0)
+                        card.T.x = card.T.x + card.shadow_parrallax.x/30
+                        card.states.visible = true
+
+                        if k >= display_limit then
+                            fixedX = card.T.x
+                            fixedY = card.T.y
+                            fixedR = card.T.r
+                        end
+                    end
+                end
+            end'''
+
 # SMODS: nil-guard self.edition.key — Incantation sets edition={} on uneditioned cards
 [[patches]]
 [patches.pattern]
@@ -149,6 +206,15 @@ position = "at"
 payload = '''            if self.edition then
                 local edition = self.edition.key and G.P_CENTERS[self.edition.key]
                 if edition and edition.apply_to_float and self.children.floating_sprite then'''
+
+# Wormhole animated decks: nil-guard viewed_back origin key
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/overrides.lua"]'
+match_indent = true
+pattern = "self.wormhole_origin_deck_key = self.playing_card and G.GAME[self.back].name or 'b_red'"
+position = "at"
+payload = "self.wormhole_origin_deck_key = self.playing_card and G.GAME[self.back] and G.GAME[self.back].name or 'b_red'"
 
 [[patches]]
 [patches.pattern]
