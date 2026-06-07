@@ -65,7 +65,7 @@ return {
                     {
                         "打出的{C:spades}暗{C:clubs}色{}牌",
                         "给予{C:chips}+#1#{}筹码",
-                        "并{C:abs_drinks}一饮而尽"
+                        "随后{C:abs_drinks}喝下"
                     },
                     {
                         "{C:abs_drinks}续满{}：{C:attention}计分",
@@ -87,7 +87,7 @@ return {
                         "{C:inactive,s:0.8}续满后：",
                         "打出的{C:spades}暗{C:clubs}色{}牌",
                         "给予{C:chips}+#1#{}筹码",
-                        "并{C:abs_drinks}一饮而尽"
+                        "随后{C:abs_drinks}喝下"
                     },
                 }
             },
@@ -97,7 +97,7 @@ return {
                     {
                         "若出牌包含{C:diamonds}亮{C:hearts}色{}牌",
                         "{X:mult,C:white}X#1#{}倍率",
-                        "并{C:abs_drinks}一饮而尽"
+                        "随后{C:abs_drinks}喝下"
                     },
                     {
                         "{C:abs_drinks}续满{}：{C:attention}计分",
@@ -119,7 +119,7 @@ return {
                         "{C:inactive,s:0.8}续满后：",
                         "若出牌包含{C:diamonds}亮{C:hearts}色{}牌",
                         "{X:mult,C:white}X#1#{}倍率",
-                        "并{C:abs_drinks}一饮而尽"
+                        "随后{C:abs_drinks}喝下"
                     },
                 }
             },
@@ -163,7 +163,7 @@ return {
                     {
                         "选择{C:attention}盲注{}后，随机生成一张",
                         "来自{V:1}#1#{}的卡牌",
-                        "并{C:abs_drinks}一饮而尽",
+                        "随后{C:abs_drinks}喝下",
                         "{C:inactive,s:0.8}每次{C:abs_drinks,s:0.8}续满{C:inactive,s:0.8}后变更{C:attention,s:0.8}队伍",
                         "{C:inactive}（必须有空位）",
                     },
@@ -185,7 +185,7 @@ return {
                         "{C:inactive,s:0.8}续满后：",
                         "选择{C:attention}盲注{}后，随机生成一张",
                         "来自{V:1}#1#{}的卡牌",
-                        "并{C:abs_drinks}一饮而尽",
+                        "随后{C:abs_drinks}喝下",
                         "{C:inactive,s:0.8}每次{C:abs_drinks,s:0.8}续满{C:inactive,s:0.8}后变更{C:attention,s:0.8}队伍",
                         "{C:inactive}（必须有空位）",
                     }
@@ -227,7 +227,7 @@ return {
                     {
                         "下次出牌后",
                         "生成一张{C:spectral}幻灵{}牌",
-                        "并{C:abs_drinks}一饮而尽",
+                        "随后{C:abs_drinks}喝下",
                         "{C:inactive}（必须有空位）",
                     },
                     {
@@ -245,7 +245,7 @@ return {
                     {
                         "{C:inactive,s:0.8}续满后：",
                         "生成一张{C:spectral}幻灵{}牌",
-                        "并{C:abs_drinks}一饮而尽",
+                        "随后{C:abs_drinks}喝下",
                         "{C:inactive}（必须有空位）",
                     }
                 }
@@ -285,7 +285,7 @@ return {
                 text = {
                     {
                         "额外抽{C:attention}#1#{}张牌",
-                        "并{C:abs_drinks}一饮而尽",
+                        "随后{C:abs_drinks}喝下",
                     },
                     {
                         "{C:abs_drinks}续满{}：使用{C:tarot}塔罗{}牌",
@@ -302,7 +302,7 @@ return {
                     {
                         "{C:inactive,s:0.8}续满后：",
                         "额外抽{C:attention}#1#{}张牌",
-                        "并{C:abs_drinks}一饮而尽"
+                        "随后{C:abs_drinks}喝下"
                     }
                 }
             },
@@ -364,7 +364,7 @@ return {
             j_worm_abs_gravity_well = {
                 name = "重力井",
                 text = {
-                    "{C:abs_drinks}酒饮{}被{C:abs_drinks}一饮而尽{}后",
+                    "{C:abs_drinks}喝下酒饮{}后",
                     "本牌获得{C:chips}+#1#{}筹码",
                     "{C:inactive}（当前为{C:chips}+#2#{C:inactive}筹码）",
                 }
@@ -466,18 +466,19 @@ return {
         },
         Voucher = {
             v_worm_abs_happy_hour = {
-                name = 'Happy Hour',
+                name = '欢乐时光',
                 text = {
-                    {'{C:abs_drinks}Drinks{} can now',
-                    'appear in the {C:attention}Shop',},
-                    {"{C:attention}+1{} consumable slot",}
+                    {'{C:attention}商店{}内有',
+                    '{C:abs_drinks}酒饮{}牌',
+                    '可供选购'},
+                    {"消耗牌槽位{C:attention}+1"}
                 }
             },
             v_worm_abs_on_the_house = {
-                name = 'On The House',
+                name = '免单畅饮',
                 text = {
-                    '{C:abs_drinks}Drinks{} can be used {C:attention}twice',
-                    'before needing to be {C:abs_drinks}Refilled'
+                    '{C:abs_drinks}酒饮{}使用{C:attention}两次{}后',
+                    '方需要{C:abs_drinks}续满'
                 }
             },
         },

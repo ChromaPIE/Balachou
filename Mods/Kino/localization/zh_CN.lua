@@ -932,13 +932,12 @@ return {
                 }
             },
             j_kino_cruella = {
-                name = "Cruella",
+                name = "黑白魔女库伊拉",
                 text = {
-                    "Give a card in deck",
-                    "an {C:attention}edition",
-                    "whenever {C:attention}#2#{} cards",
-                    "have been {C:attention}destroyed",
-                    "{C:inactive}#3# remaining"
+                    "每{C:attention}摧毁{C:attention}#2#{}张牌",
+                    "为牌组中的一张牌",
+                    "添加{C:attention}版本",
+                    "{C:inactive}剩余{C:attention}#3#{C:inactive}张"
                 }
             },
             j_kino_da_5_bloods = {
@@ -2454,16 +2453,15 @@ return {
                 }
             },
             j_kino_muppets_treasure_island = {
-                name = "Muppet Treasure Island",
+                name = "布偶金银岛寻宝记",
                 text = {
-                    "Increase {C:money}sell value{} of",
-                    "a random {C:attention}Joker{} by {C:money}$#1#{}",
-                    "each {C:green}Reroll{}"
+                    "每次{C:green}重掷{}后",
+                    "将随机一张{C:attention}小丑牌{}的",
+                    "{C:money}售价{}提升{C:money}$#1#"
                 },
                 unlock = {
-                    "Have a {C:attention}Joker{} with",
-                    "a {C:attention}sell value",
-                    "of {C:money}$30{} or higher"
+                    "持有售价至少为",
+                    "{C:money}$30{}的{C:attention}小丑牌"
                 }
             },
             j_kino_my_neighbor_totoro = {
@@ -2475,12 +2473,11 @@ return {
                 }
             },
             j_kino_nacho_libre = {
-                name = "Nacho Libre",
+                name = "疯狂神父",
                 text = {
-                    {"{C:attention}Boss Blinds{} pay out",
-                    "twice"},
-                    {"{C:attention}Small Blinds{} have a {C:green}1 in 2{} Chance",
-                    "to be a {C:attention}Boss Blind",}
+                    {"{C:attention}Boss盲注{}的奖励金翻倍"},
+                    {"{C:attention}小盲注{}有{C:green}1/2{}的几率",
+                    "变为{C:attention}Boss盲注"}
                     
                 }
             },
@@ -3153,10 +3150,10 @@ return {
                         "本牌获得{X:mult,C:white}X#2#{}倍率",
                         "{C:inactive}（当前为{X:mult,C:white}X#1#{C:inactive}倍率）"},
                     {"{C:attention}大盲注{}有{C:green}1/2{}的几率",
-                    "变为{C:attention}Boss盲注",}
+                    "变为{C:attention}Boss盲注"}
                 },
                 unlock = {
-                    "Defeat {C:attention}#2#{} Boss Blinds",
+                    "击败{C:attention}#2#{}个Boss盲注",
                     "{C:inactive}（#1#）"
                 }
             },
@@ -5675,12 +5672,10 @@ return {
                 }
             },
             bl_kino_cruella = {
-                name = "Cruella De Vil",
+                name = "库伊拉·德维尔",
                 text = {
-                    "Decrease base mult",
-                    "by {C:mult}#1# for",
-                    "each card {C:red}destroyed",
-                    "this run"
+                    "本赛局内每{C:red}摧毁{}过一张牌",
+                    "基础倍率削减{C:mult}#1#"
                 }
             },
             bl_kino_gekko = {
@@ -6823,33 +6818,30 @@ return {
                 }
             },
             v_kino_confection_tycoon = {
-                name = "Confection Tycoon",
+                name = "零食大亨",
                 text = {
-                    "{C:Confection}Confection{} cards appear",
-                    "{C:attention}#1#X{} more frequently",
-                    "in the shop",
+                    "商店内{C:Confection}甜食零嘴{}牌的",
+                    "出现频率{C:attention}X#1#"
                 },
                 unlock = {
-                    "Buy a total of",
-                    "{C:attention}#2#{C:Confection} Confection{} cards",
-                    "from the shop",
-                    "{C:inactive}（#1#）",
+                    "从商店内购买",
+                    "总计{C:attention}#2#{}张{C:Confection}甜食零嘴{}牌",
+                    "{C:inactive}（#1#）"
                 }
             },
             v_kino_special_treats = {
-                name = "Special Treats",
+                name = "甜点加餐",
                 text = {
                     "{C:Confection}Confections{} can appear",
                     "with additional treats"
                 }
             },
             v_kino_snackbag = {
-                name = "Snack Bag",
+                name = "零食大礼包",
                 text = {
-                    "Up to 4 {C:Confection}Confections{}",
-                    "can stack into a {C:mult}Snack Bag",
-                    "which takes up only",
-                    "1 Consumable slot"
+                    "可将至多4张{C:Confection}甜食零嘴{}牌",
+                    "堆叠入{C:mult}零食包",
+                    "仅占1个消耗牌槽位"
                 },
                 unlock = {
                     "Consume {C:attention}25 {C:Confection}Confections",

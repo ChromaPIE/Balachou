@@ -695,8 +695,9 @@ return {
 			c_cry_variable = {
 				name = "://VARIABLE",
 				text = {
-					"Convert {C:cry_code}#1#{} selected card#<s>1#",
-					"to a {C:cry_code}chosen{} rank",
+					"{C:inactive,s:0.8}-- 变量",
+					"将{C:cry_code}#1#{}张选定卡牌的",
+					"点数变为{C:cry_code}选定{}值",
 				},
 			},
 			c_cry_log = {
@@ -1010,13 +1011,12 @@ return {
 				},
 			},
 			m_cry_abstract = {
-				name = "Abstract Card",
+				name = "抽象牌",
 				text = {
-					"{X:dark_edition,C:white}^#1#{} Mult,",
-					"Counts as its {C:attention}own{} rank and suit",
-					"{C:green}#4# in #5#{} chance to",
-					"{C:red,E:2}destroy{} card when held at",
-					"{C:attention}round end{} or {C:attention}hand played{}",
+					"{X:dark_edition,C:white}^#1#{}倍率",
+					"点数和花色均视为{C:attention}抽象",
+					"若{C:attention}回合结束{}或{C:attention}出牌{}时留手",
+					"则有{C:green}#4#/#5#{}的几率被{C:red,E:2}摧毁"
 				},
 			},
 		},
@@ -2086,17 +2086,16 @@ return {
 				},
 			},
 			j_cry_kscope = {
-				name = "Kaleidoscope",
+				name = "万花筒",
 				text = {
-					"Add {C:dark_edition}Polychrome{} to",
-					"a random {C:attention}Joker{} when",
-					"{C:attention}Boss Blind{} is defeated",
+					"击败{C:attention}Boss盲注{}后",
+					"为随机一张{C:attention}小丑牌",
+					"添加{C:dark_edition}多彩"
 				},
 				unlock = {
-					"Defeat a {C:attention}Boss Blind",
-					"with {C:attention}5{} or more",
-					"{C:attention}Editioned Cards{} or",
-					"{C:attention}Jokers",
+					"携带至少{C:attention}5{}张",
+					"{C:attention}带版本扑克牌{}或{C:attention}小丑牌",
+					"击败{C:attention}Boss盲注"
 				},
 			},
 			j_cry_lebaron_james = {
@@ -2440,13 +2439,11 @@ return {
 				},
 			},
 			j_cry_oldblueprint = {
-				name = "Old Blueprint",
+				name = "老蓝图",
 				text = {
-					"Copies ability of",
-					"{C:attention}Joker{} to the right",
-					"{C:green}#1# in #2#{} chance this",
-					"card is destroyed",
-					"at end of round",
+					"复制右侧{C:attention}小丑牌{}的能力",
+					"回合结束时",
+					"有{C:green}#1#/#2#{}的几率被摧毁",
 				},
 			},
 			j_cry_oldcandy = {
@@ -3238,14 +3235,12 @@ return {
 				},
 			},
 			c_cry_nstar = {
-				name = "Neutron Star",
+				name = "中子星",
 				text = {
-					"Upgrade a random",
-					"poker hand by",
-					"{C:attention}1{} level for each",
-					"{C:attention}Neutron Star{} used",
-					"in this run",
-					"{C:inactive}(Currently{C:attention} #1#{C:inactive}){}",
+					"本赛局内",
+					"每使用过一张{C:attention}中子星",
+					"使随机一种牌型提升{C:attention}1{}级",
+					"{C:inactive}（已使用{C:attention}#1#{C:inactive}张）"
 				},
 			},
 			c_cry_sunplanet = {
@@ -4052,11 +4047,11 @@ return {
 		},
 		Tarot = {
 			c_cry_automaton = {
-				name = "The Automaton",
+				name = "自动机",
 				text = {
-					"Creates up to {C:attention}#1#",
-					"random {C:cry_code}Code{} card#<s>1#",
-					"{C:inactive}(Must have room)",
+					"随机生成至多",
+					"{C:attention}#1#{}张{C:cry_code}代码{}卡",
+					"{C:inactive}（必须有空位）",
 				},
 			},
 			c_cry_eclipse = {
@@ -4067,10 +4062,10 @@ return {
 				}
 			},
 			c_cry_instability = {
-				name = "Instability",
+				name = "失稳",
 				text = {
-					"Enhances {C:attention}#1#{} selected card#<s>1#",
-					"into an {C:attention}Abstract Card",
+					"将{C:attention}#1#{}张选定卡牌",
+					"增强为{C:attention}抽象牌",
 				},
 			},
 			c_cry_theblessing = {

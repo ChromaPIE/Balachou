@@ -86,11 +86,10 @@ return {
             },
 
             j_worm_stew_geocentrism = {
-                name = 'Geocentrism',
+                name = '地心说',
                 text = {
-                    "Played cards with",
-                    "{C:hearts}Heart{} suit give",
-                    "{X:mult,C:white} X#1# {} Mult when scored",
+                    "打出的{C:hearts}红桃{}牌计分时",
+                    "给予{X:mult,C:white}X#1#{}倍率"
                 }
             },
 
