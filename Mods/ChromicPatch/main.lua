@@ -19,3 +19,14 @@ SMODS.Font {
 	squish = 1,
 	DESCSCALE = 1
 }
+
+SMODS.Font {
+	key = "vcr",
+	path = "VCR_OSD_MONO.ttf",
+	render_scale = 200,
+	TEXT_HEIGHT_SCALE = 1.0,
+	TEXT_OFFSET = { x = 0, y = 0 },
+	FONTSCALE = 0.1,
+	squish = 1,
+	DESCSCALE = 1
+}

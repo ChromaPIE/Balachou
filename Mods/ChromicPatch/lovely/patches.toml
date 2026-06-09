@@ -1124,6 +1124,60 @@ payload = '''function Card.generate_UIBox_ability_table(self, ...)
     return _ret_1
 end'''
 
+# Kino Blockbuster value manipulation should not treat structural slot fields as effect values.
+# BlindAbility/Unique consumables use extra_slots_used = -1; multiplying and clamping it can save -25.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/blockbuster/value_manipulation/variable_compat.lua"]'
+match_indent = true
+position = "at"
+pattern = '''    if override then
+        compat_standard = override
+    end
+
+    -- Return if it doesn't exist
+    if not compat_standard.variable_conventions then
+        return true
+    end'''
+payload = '''    if override then
+        compat_standard = override
+    end
+
+    local chromicpatch_kino_valmanip_static_fields = {
+        extra_slots_used = true,
+        card_limit = true,
+    }
+    if chromicpatch_kino_valmanip_static_fields[name] then
+        return false
+    end
+
+    -- Return if it doesn't exist
+    if not compat_standard.variable_conventions then
+        return true
+    end'''
+
+# Repair existing saves where Kino Blockbuster already persisted extra_slots_used = -25.
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+match_indent = true
+position = "after"
+pattern = "    self.ability = cardTable.ability"
+payload = '''
+    if self.config and self.config.center_key and self.config.center_key:sub(1, 7) == 'c_kino_' and
+        self.ability and (self.ability.set == 'BlindAbility' or self.ability.set == 'Unique') and
+        self.ability.base_consumeable and self.ability.base_consumeable.extra_slots_used == -1 then
+        local chromicpatch_kino_fix_negative_extra_slots =
+            self.ability.extra_slots_used == -25 or
+            (self.ability.consumeable and self.ability.consumeable.extra_slots_used == -25)
+        if chromicpatch_kino_fix_negative_extra_slots then
+            self.ability.extra_slots_used = -1
+            if self.ability.consumeable then
+                self.ability.consumeable.extra_slots_used = -1
+            end
+        end
+    end'''
+
 [[patches]]
 [patches.pattern]
 target = '=[SMODS kino "src/card_ui.lua"]'
