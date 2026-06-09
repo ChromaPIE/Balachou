@@ -127,11 +127,11 @@ return {
             },
 
             j_worm_stew_capitalism = {
-                name = 'Uncorrupted Joker',
+                name = '未受侵蚀小丑',
                 text = {
-                    "{C:chips}+#2#{} Chips for every {C:money}$#3#{}",
-                    "below the interest cap",
-                    "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
+                    "可获利息每比上限低{C:money}$#3#",
+                    "{C:chips}+#2#{}筹码",
+                    "{C:inactive}（当前为{C:chips}+#1#{C:inactive}筹码）",
                     " {s:0.8,C:inactive}-------",
                     "{s:0.8,C:inactive}\"I am escaping to the",
                     "{s:0.8,C:inactive}one place that hasn't",

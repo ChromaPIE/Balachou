@@ -521,9 +521,10 @@ return {
 			c_cry_keygen = {
 				name = "://KEYGEN",
 				text = {
-					"Create a random {C:cry_code}Perishable Banana{}",
-					"voucher, {C:cry_code}destroy{} previously created",
-					"voucher created this way.",
+					"{C:inactive,s:0.8}-- 注册机",
+					"随机生成一张奖券",
+					"并使其带有{C:attention}香蕉{}和{C:attention}易腐",
+					"{C:cry_code}摧毁{}前一张如此生成的奖券"
 				},
 			},
 			c_cry_payload = {
@@ -1076,12 +1077,11 @@ return {
 				},
 			},
 			j_cry_antennastoheaven = {
-				name = "...Like Antennas to Heaven",
+				name = {"{f:crmpatch_vcr,C:red}...LIKE ANTENNAS","{f:crmpatch_vcr,C:red}TO HEAVEN"},
 				text = {
-					"This Joker gains",
-					"{X:chips,C:white} X#1# {} Chips when each",
-					"played {C:attention}7{} or {C:attention}4{} is scored",
-					"{C:inactive}(Currently {X:chips,C:white}X#2# {C:inactive} Chips)",
+					"打出的{C:attention}7{}或{C:attention}4{}计分时",
+					"本牌获得{X:chips,C:white} X#1# {}筹码",
+					"{C:inactive}（当前为{X:chips,C:white}X#2#{C:inactive}筹码）",
 				},
 			},
 			j_cry_apjoker = {
@@ -2682,11 +2682,10 @@ return {
 				},
 			},
 			j_cry_shrewd = {
-				name = "Shrewd Joker",
+				name = "精明小丑",
 				text = {
-					"{C:chips}+#1#{} Chip#<s>1# if played",
-					"hand contains",
-					"a {C:attention}#2#",
+					"若出牌包含{C:attention}#2#",
+					"{C:chips}+#1#{}筹码"
 				},
 			},
 			j_cry_silly = {

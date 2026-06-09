@@ -628,6 +628,8 @@ return {
             k_worm_abs_emptied_ex = '干了！',
             k_worm_abs_sipped_ex = '喝一口！',
             k_worm_abs_refilled_ex = '满上！',
+            k_worm_abs_primed = 'Primed',
+            k_worm_abs_unprimed = 'Unprimed',
             k_worm_abs_top_shelf_pack = '好酒特调包'
         },
         v_dictionary = {

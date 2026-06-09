@@ -2389,16 +2389,15 @@ return {
                 }
             },
             j_kino_moonfall = {
-                name = "Moonfall",
+                name = "月球陨落",
                 text = {
-                    {"Give {C:chips}+#3#{} Chips for each",
-                    "{C:clubs}Clubs{} in your full deck",
-                    "{C:inactive}(Currently: {C:chips}+#4#{C:inactive} Chips)",},
-                    {"{C:Alien}Abduct{} each scored non-{C:clubs}clubs{} card",
-                    "on the {C:attention}First{} hand each round"},
-                    {"{C:white,X:Alien}Release:{} Return cards", 
-                    "transformed into {C:clubs}Clubs",}
-                    
+                    {"完整牌组中",
+                    "每有一张{C:clubs}梅花{}牌",
+                    "给予{C:chips}+#3#{}筹码",
+                    "{C:inactive}（当前为{C:chips}+#4#{C:inactive}筹码）",},
+                    {"{C:Alien}劫持{}每回合{C:attention}首次{}出牌中",
+                    "每张计分的非{C:clubs}梅花{}牌"},
+                    {"{C:white,X:Alien}释放{}：以{C:clubs}梅花{}花色回归"}
                 }
             },
             j_kino_morbius = {
@@ -6209,14 +6208,14 @@ return {
                 }
             },
             c_kino_eruption = {
-                name = "Eruption",
+                name = "火山爆发",
                 text = {
-                    {"Put {C:attention}1 {C:Burn}Burn Counter{} on",
-                    "selected {C:attention}Joker{} or double Counters if",
-                    "already applied"},
+                    {"对选定{C:attention}小丑牌{}施加",
+                    "{C:attention}1{}位{C:Burn}燃烧计数标",
+                    "若已有，使位数翻倍"},
                     {
-                        "Increase {C:attention}Play{} and {C:attention}Discard{}",
-                        "selection limit by {C:attention}1"
+                        "{C:attention}出牌{}和{C:attention}弃牌{}",
+                        "选牌张数上限{C:attention}+1"
                     }
                 }
             },
