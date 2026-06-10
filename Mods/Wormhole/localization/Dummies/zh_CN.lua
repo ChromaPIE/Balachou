@@ -68,7 +68,7 @@ return {    -- yo it's GHOSTSALT here look at me TYPING before i SUBMIT THIS THI
                 name = "贪吃龙格雷格",
                 text = {
                     "出牌计分后",
-                    "{C:red}吃掉{C:attention}最右侧{}小丑牌",
+                    "{C:red}吃掉{C:attention}最右侧{}的牌",
                     "并为{C:attention}最左侧{}小丑牌添加{C:blue}天体",
                     "{C:red}无法售出"
                 },

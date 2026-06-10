@@ -75,11 +75,10 @@ return {
                 }
             },
             j_worm_bap_artemis_3 = {
-                name = 'Artemis III',
+                name = '阿耳忒弥斯3号',
                 text = {
-                    "When {C:attention}Blind{} is",
-                    "selected, creates a",
-                    "{C:dark_edition}Negative{} {C:tarot}Moon{} card",
+                    "选择{C:attention}盲注{}后",
+                    "生成一张{C:dark_edition}负片{C:tarot}月亮",
                 }
             },
             j_worm_bap_space_walk = {

@@ -254,12 +254,12 @@ return {
                 }
             },
             j_worm_lfc_magical_girl = {
-                name = "Magical Girl",
+                name = "魔法少女",
                 text = {
-                    "This Joker gains {C:chips}+#1#{} Chips",
-                    "each time a playing card",
-                    "gains a new {C:attention}Enhancement{}",
-                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)"
+                    "每次有扑克牌",
+                    "获得新{C:attention}增强",
+                    "本牌获得{C:chips}+#1#{}筹码",
+                    "{C:inactive}（当前为{C:chips}+#2#{C:inactive}筹码）"
                 }
             },
             j_worm_lfc_spacebar = {

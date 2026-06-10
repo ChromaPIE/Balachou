@@ -142,12 +142,11 @@ return {
                 }
             },
             j_worm_riverboat_fractal = {
-                name = "Fractal",
+                name = "分形",
                 text = {
-                    "{C:green}#1# in #2#{} chance for each",
-                    "played card to become",
-                    "{C:attention}Holographic{} when scored",
-                    "{C:inactive}(Only if it has no edition)"
+                    "每张无版本出牌",
+                    "均有{C:green}#1#/#2#{}的几率",
+                    "在计分时变为{C:attention}全息"
                 }
             },
             j_worm_riverboat_event_horizon = {

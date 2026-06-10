@@ -613,27 +613,24 @@ return {
                 }
             },
             j_kino_bloodshot = {
-                name = "Bloodshot",
+                name = "喋血战士",
                 text = {
-                    "{C:white,X:attention}Active:{} Remove {C:mult}Red Seal",
-                    "from random card in deck",
-                    "and put it on {C:attention}first{} scoring card"
+                    "{C:white,X:attention}激发{}：将牌组中随机一张牌的",
+                    "{C:mult}红色蜡封{}转移至{C:attention}首张{}计分牌 "
                 }
             },
             j_kino_blue_velvet = {
-                name = "Blue Velvet",
+                name = "蓝丝绒",
                 text = {
                     {
-                        "{C:chips}+#4#{} Chips per {C:attention}Charge",
-                        "and consume one {C:attention}Charge",
-                        "{C:inactive}(Currently: {C:chips}+#5#{C:inactive} Chips &",
-                        "{C:inactive} +#1# Charges"
+                        "每有一层{C:attention}蓄能{}，{C:chips}+#4#{}筹码",
+                        "并释放一层{C:attention}蓄能",
+                        "{C:inactive}（当前为{C:chips}+#5#{C:inactive}筹码）",
+                        "{C:inactive} （当前蓄能层数：#1#）"
                     },
                     {
-                        "Gain {C:attention}#2#{} Charge when you",
-                        "when you use a {C:attention}Consumable",
-                        "Gain {C:attention}#3#{} Charges when you",
-                        "destroy a card"
+                        "使用{C:attention}消耗牌{}后，蓄能{C:attention}#2#{}层",
+                        "摧毁卡牌后，蓄能{C:attention}#3#{}层"
                     }
                 }
             },
@@ -1308,25 +1305,24 @@ return {
                 }
             },
             j_kino_eternal_sunshine_of_the_spotless_mind = {
-                name = "Eternal Sunshine of the Spotless Mind",
+                name = "暖暖内含光",
                 text = {
                     {
-                        "When a card is destroyed",
-                        "put {C:Heartache}#1# Heartbreak Counters",
-                        "on every card in deck",
-                        "that shares a {C:attention}rank"
+                        "有卡牌被摧毁后",
+                        "对牌组中每张",
+                        "与之{C:attention}点数{}相同的牌",
+                        "施加{C:Heartache}#1#{}位{C:Heartache}心碎计数标"
                     },
                     {
-                        "Gain {X:mult,C:white}X#2#{} Mult when",
-                        "a {C:Heartache}Heartbreak Counter",
-                        "is removed",
-                        "{C:inactive}(Currently: {X:mult,C:white}X#3#{C:inactive} Mult)"
+                        "每移除一位{C:Heartache}心碎计数标",
+                        "本牌获得{X:mult,C:white}X#2#{}倍率",
+                        "{C:inactive}（当前为{X:mult,C:white}X#3#{C:inactive}倍率）"
                     } 
                 },
                 unlock = {
-                    "Have {C:attention}#2#{} Counters",
-                    "in your deck",
-                    "{C:inactive}(#1#/#2#)"
+                    "牌组中的计数标",
+                    "总位数达{C:attention}#2#",
+                    "{C:inactive}（#1#/#2#）"
                 }
             },
             j_kino_evil_dead_1 = {
@@ -1682,12 +1678,11 @@ return {
                 }
             },
             j_kino_halloween = {
-                name = "Halloween (1978)",
+                name = "月光光心慌慌（1978）",
                 text = {
-                    "{C:chips}+#1#{} Chips for every",
-                    "time a {C:attention}Horror Card{} ",
-                    "has awoken",
-                    "{C:inactive}(Currently: {C:chips}+#2#{C:inactive} Chips)"
+                    "{C:attention}恐怖片牌{}每觉醒过一次",
+                    "本牌获得{C:chips}+#1#{}筹码",
+                    "{C:inactive}（当前为{C:chips}+#2#{C:inactive}筹码）"
                 }
             },
             j_kino_hard_eight = {
@@ -6929,11 +6924,10 @@ return {
         Spell = {
             -- None
             spell_None_None = {
-                name = "No Spell",
+                name = "无咒术",
                 text = {
-                    "No spell will",
-                    "be cast based",
-                    "on these cards"
+                    "要素不成立",
+                    "无法施放咒术",
                 }
             },
 

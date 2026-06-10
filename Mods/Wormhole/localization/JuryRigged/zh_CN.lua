@@ -42,35 +42,33 @@ return {
         }
       },
       sat_worm_venera_9 = {
-        name = "Venera 9",
+        name = "金星9号",
         text = {
           {
             "升级{C:attention}#2#{}的",
             "{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
           },
           {
-            "If played hand",
-            "is a {C:attention}#2#{},",
-            "{C:attention}#1#{} card#3# in full deck",
-            "each have a {C:green}#4# in #5#{} chance to",
-            "become the rank of",
-            "the {C:attention}#2#"
+            "若出牌牌型为{C:attention}#2#",
+            "完整牌组中的{C:attention}#1#{}张牌",
+            "每张有{C:green}#4#/#5#{}的几率",
+            "变为该手{C:attention}#2#{}的点数"
           }
         }
       },
       sat_worm_cassini_huygens = {
-        name = "Cassini-Huygens",
+        name = "卡西尼-惠更斯号",
         text = {
           {
             "升级{C:attention}#2#{}的",
             "{C:worm_jr_satellite}人造卫星{}至{S:0.8}（{S:0.8,V:1}等级#1#{S:0.8}）",
           },
           {
-            "If played hand is a {C:attention}#2#{},",
-            "{C:green}#4# in #5#{} chance to destroy a card",
-            "in full deck of rank#3#",
-            "not in the {C:attention}#2#",
-            "{C:attention}#1#{} time#3#"
+            "若出牌牌型为{C:attention}#2#",
+            "有{C:green}#4#/#5#{}的几率",
+            "摧毁完整牌组中点数",
+            "在该手{C:attention}#2#{}之外的牌",
+            "触发{C:attention}#1#{}次"
           }
         }
       },

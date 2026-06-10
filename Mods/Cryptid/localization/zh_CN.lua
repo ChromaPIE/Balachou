@@ -715,9 +715,10 @@ return {
 			c_cry_quantify = {
 				name = "://QUANTIFY",
 				text = {
-					"Transfer {C:attention}#1#{} selected",
-					"{C:attention}Card#<s>1#{}, or {C:attention}Booster#<s>1#{}",
-					"to the {C:attention}Jokers{} tray",
+					"{C:inactive,s:0.8}-- 量化",
+					"将{C:attention}#1#{}张选定的",
+					"{C:attention}卡牌{}或{C:attention}补充包",
+					"转移至{C:attention}小丑牌{}槽位"
 				},
 			},
 			c_cry_divide = {
@@ -1098,26 +1099,28 @@ return {
 				},
 			},
 			j_cry_astral_bottle = {
-				name = "Astral in a Bottle",
+				name = "瓶中玄星",
 				text = {
-					"When sold, apply {C:dark_edition}Astral{}",
-					"and {C:attention}Perishable{} to",
-					"a random {C:attention}Joker{}",
+					"售出后",
+					"使随机一张{C:attention}小丑牌",
+					"变为{C:dark_edition}玄星{}和{C:attention}易腐"
 				},
 			},
 			j_cry_astral_bottle_mainline = {
-				name = "Astral in a Bottle",
+				name = "瓶中玄星",
 				text = {
-					"When sold, apply {C:dark_edition}Astral{}",
-					"and {C:attention}Perishable{} to",
-					"different, random {C:attention}Jokers{}",
+					"售出后",
+					"使随机一张{C:attention}小丑牌",
+					"获得{C:dark_edition}玄星",
+					"另一张获得{C:attention}易腐"
 				},
 			},
 			j_cry_astral_bottle_madness = {
-				name = "Astral in a Bottle",
+				name = "瓶中玄星",
 				text = {
-					"When sold, apply {C:dark_edition}Astral{}",
-					"to a random {C:attention}Joker{}",
+					"售出后",
+					"使随机一张{C:attention}小丑牌",
+					"变为{C:dark_edition}玄星"
 				},
 			},
 			j_cry_big_cube = {
@@ -2324,14 +2327,14 @@ return {
 				},
 			},
 			j_cry_mprime = {
-				name = "Tredecim",
+				name = "叁拾",
 				text = {
-					"Create an {C:legendary}M Joker{} at end of round",
-					"Each {C:attention}Jolly Joker{} or {C:legendary}M Joker",
-					"gives {X:dark_edition,C:white}^#1#{} Mult",
-					"Increase amount by {X:dark_edition,C:white}^#2#{}",
-					"when a {C:attention}Jolly Joker{} is {C:attention}sold",
-					"{C:inactive,s:0.8}(Tredecim excluded)",
+					"回合结束时生成一张{C:legendary}M小丑",
+					"每张{C:attention}开心小丑{}和{C:legendary}M小丑",
+					"给予{X:dark_edition,C:white}^#1#{}倍率",
+					"{C:attention}售出开心小丑{}后",
+					"加成提升{X:dark_edition,C:white}^#2#",
+					"{C:inactive,s:0.8}（不包括叁拾）",
 				},
 			},
 			j_cry_mstack = {
@@ -3478,11 +3481,11 @@ return {
 		},
 		Spectral = {
 			c_cry_adversary = {
-				name = "Adversary",
+				name = "对敌",
 				text = {
-					"{C:red}All{} of your {C:attention}Jokers{} become {C:dark_edition}Negative{},",
-					"{C:red}all{} {C:attention}Jokers{} in the shop cost",
-					"{C:red}double{} for the rest of the run",
+					"使所持{C:red}全部{}{C:attention}小丑牌{}变为{C:dark_edition}负片",
+					"商店内{C:red}所有{C:attention}小丑牌{}售价{C:red}翻倍",
+					"直至赛局结束"
 				},
 			},
 			c_cry_analog = {
@@ -4143,11 +4146,11 @@ return {
 				},
 			},
 			v_cry_command_prompt = {
-				name = "Command Prompt",
+				name = "命令提示符",
 				text = {
-					"{C:cry_code}Code{} cards",
-					"can appear",
-					"in the {C:attention}shop{}",
+					"{C:attention}商店{}内有",
+					"{C:cry_code}代码{}卡",
+					"可供选购"
 				},
 			},
 			v_cry_satellite_uplink = {

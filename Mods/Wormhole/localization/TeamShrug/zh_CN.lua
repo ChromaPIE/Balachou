@@ -254,17 +254,16 @@ return {
             c_worm_shrug_alien_nebulous = {
                 name = "???",
                 text = {
-                    "Each card in hand",
-                    "has a {C:green}#1# in #2#{} chance",
-                    "to become a {C:attention}Nebulous Card{}"
+                    "每张手牌",
+                    "均有{C:green}#1#/#2#{}的几率",
+                    "变为{C:attention}星云牌"
                 },
             },
             c_worm_shrug_alien_destroy = {
-                name = "Zeta Reticulan",
+                name = "齐塔人",
                 text = {
-                    "Select {C:attention}1{} card,",
-                    "{C:red}destroy{} all other",
-                    "cards in hand"
+                    "选定{C:attention}1{}张牌",
+                    "{C:red}摧毁{}所有其他手牌"
                 },
             },
             c_worm_shrug_alien_skyfish = {

@@ -1026,6 +1026,35 @@ position = "at"
 pattern = "abducted_from = _abducted_from"
 payload = "-- abducted_from omitted; CardArea references are not save-safe"
 
+# Kino abduction: skip stale queued abductions after another effect slices/removes the target.
+# The waiting list is processed by a delayed event; by then the queued card can have area=nil.
+[[patches]]
+[patches.regex]
+target = '=[SMODS kino "src/abduction.lua"]'
+pattern = '''(?<indent>[\t ]*)if _abductor and _abductor\.juice_up then\s*_abductor:juice_up\(\)\s*end\s*G\.GAME\.current_round\.cards_abducted = G\.GAME\.current_round\.cards_abducted \+ 1\s*if not _abductee then\s*return\s*end'''
+position = "at"
+line_prepend = "$indent"
+payload = '''-- chromicpatch_kino_abduction_skip_stale_waitinglist
+if not _abductor or not _abductor.area or not _abductor.ability or not _abductor.ability.extra or
+    not _abductee or not _abductee.area or not _abductee.ability or
+    _abductee.getting_sliced or _abductee.shattered or _abductee.destroyed or _abductee.REMOVED then
+    if _abductee then _abductee.abducted = nil end
+else
+    if _abductor.juice_up then
+        _abductor:juice_up()
+    end
+
+    G.GAME.current_round.cards_abducted = G.GAME.current_round.cards_abducted + 1'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS kino "src/abduction.lua"]'
+match_indent = true
+position = "at"
+pattern = "Kino.abduction:emplace(_abductee)"
+payload = '''Kino.abduction:emplace(_abductee)
+end'''
+
 # Kino Asteroid City: enter-blind trigger, but defer the actual abduction
 # until after the setting_blind joker evaluation finishes. Moving G.jokers.cards
 # while SMODS is iterating jokers can crash without a Lua traceback.
