@@ -36,10 +36,11 @@ return {
         },
         Spectral = {
             c_worm_ibu_eclipse = {
-                name = 'Eclipse',
+                name = '日食',
                 text = {
-                    "Add {C:dark_edition}Negative{} to up to",
-                    "{C:attention}#1#{} selected playing card"
+                    "为至多{C:attention}#1#{}张",
+                    "选定扑克牌",
+                    "添加{C:dark_edition}负片"
                 }
             },
             c_worm_ibu_nebula = {

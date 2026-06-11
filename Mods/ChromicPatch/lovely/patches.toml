@@ -1247,3 +1247,100 @@ payload = '''function Card.generate_UIBox_ability_table(self, ...)
 
     return _ret_1
 end'''
+
+# Wormhole TLR constellations: sanitize ability.tier to an integer in [1,4]
+# Cryptid's glitched edition (Machine Code etc.) misprintizes every numeric in
+# ability, so tier can become fractional/out-of-range (e.g. 7.104). Tier-indexed
+# config tables (hands/discards/rerolls/...) then return nil and crash on use,
+# the "_t"..tier localization key stops resolving (blank tooltip), and the
+# sprite offset goes out of the atlas. Normalize at every framework entry point.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "/content/TheLastResort/2_constellation/1_constellation.lua"]'
+match_indent = true
+pattern = "card.config.tier = 1"
+position = "after"
+payload = '''
+local chromicpatch_worm_tlr_sane_tier = function(_card)
+    if not (_card and _card.ability) then return end
+    local t = tonumber(_card.ability.tier) or 1
+    if t ~= t then t = 1 end
+    _card.ability.tier = math.max(1, math.min(math.floor(t), 4))
+end
+'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "/content/TheLastResort/2_constellation/1_constellation.lua"]'
+match_indent = true
+pattern = "card.loc_vars = function(_self, info_queue, _card)"
+position = "after"
+payload = "chromicpatch_worm_tlr_sane_tier(_card)"
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "/content/TheLastResort/2_constellation/1_constellation.lua"]'
+match_indent = true
+pattern = "card.calculate = function(_self, _card, context)"
+position = "after"
+payload = "chromicpatch_worm_tlr_sane_tier(_card)"
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "/content/TheLastResort/2_constellation/1_constellation.lua"]'
+match_indent = true
+pattern = "card.update_sprites = function(_self, _card)"
+position = "after"
+payload = "chromicpatch_worm_tlr_sane_tier(_card)"
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "/content/TheLastResort/2_constellation/1_constellation.lua"]'
+match_indent = true
+pattern = "card.use = function(_self, _card, area, copier)"
+position = "after"
+payload = "chromicpatch_worm_tlr_sane_tier(_card)"
+
+# PPU credits: generate_string is a public API; 1.0.11 added an `obj` param and
+# indexes it unconditionally for the Sleeve padding special case, but Wormhole's
+# taxes_back_pain spaceship_ui still calls it with the old 3-arg signature
+# (hover on tbp module cards) -> "attempt to index local 'obj' (a nil value)".
+# Tolerate nil obj; non-Sleeve callers get the same 0.03 padding either way.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS PotatoPatchUtils "src/credits.lua"]'
+match_indent = true
+pattern = "local padding = obj.set and obj.set == 'Sleeve' and 0 or 0.03"
+position = "at"
+payload = "local padding = obj and obj.set == 'Sleeve' and 0 or 0.03"
+
+# PPU credits: same function indexes the team registry unguarded; an
+# unregistered ppu_team name crashes here. Degrade like the dev lookup
+# below it (`or {}`) instead.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS PotatoPatchUtils "src/credits.lua"]'
+match_indent = true
+pattern = "if PotatoPatchUtils.Teams[mod_prefix .. '_' .. name].short_credit then"
+position = "at"
+payload = "if (PotatoPatchUtils.Teams[mod_prefix .. '_' .. name] or {}).short_credit then"
+
+# Wormhole TBP spaceship popup: drop the manual PPU credit rows
+# PPU 1.0.11 moved credit injection into its SMODS.create_mod_badges wrapper,
+# which this popup already calls right above; the legacy manual inserts written
+# against the old card_h_popup-hook PPU now render every credit twice.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "/content/taxes_back_pain/spaceship_ui.lua"]'
+match_indent = true
+pattern = "local str = PotatoPatchUtils.CREDITS.generate_string(card.config.center.ppu_team, 'ppu_team_credit', card.config.center.mod.prefix)"
+position = "at"
+payload = "local str = nil"
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "/content/taxes_back_pain/spaceship_ui.lua"]'
+match_indent = true
+pattern = "local str = PotatoPatchUtils.CREDITS.generate_string(card.config.center.ppu_artist, 'ppu_art_credit', card.config.center.mod.prefix)"
+position = "at"
+payload = "local str = nil"

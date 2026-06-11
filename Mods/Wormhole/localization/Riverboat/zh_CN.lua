@@ -98,13 +98,12 @@ return {
                 }
             },
             j_worm_riverboat_calignment = {
-                name = "Cosmic Alignment",
+                name = "天星连珠",
                 text = {
-                    "Gives {X:mult,C:white}X#1#{} Mult for",
-                    "every level {C:attention}above 1",
-                    "on all poker hands which",
-                    "are {C:red}not{} the played hand",
-                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)"
+                    "所出牌型{C:red}之外{}的牌型",
+                    "每比{C:attention}1{}高一级",
+                    "给予{X:mult,C:white}X#1#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）"
                 }
             },
             j_worm_riverboat_orbital = {

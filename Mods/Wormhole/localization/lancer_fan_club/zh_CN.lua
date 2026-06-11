@@ -339,12 +339,11 @@ return {
         },
         Other = {
             worm_lfc_meteor_seal = {
-                name = "Meteor Seal",
+                name = "陨石蜡封",
                 text = {
-                    "When scored,",
-                    "creates a {C:attention}clickable",
-                    "{C:lfc_meteor}falling meteor{} that",
-                    "gives {C:money}$#1#{} on hit"
+                    "计分时，生成一颗",
+                    "{C:attention}可点击{}的{C:lfc_meteor}陨石",
+                    "成功点击可赚取{C:money}$#1#"
                 }
             }
         }

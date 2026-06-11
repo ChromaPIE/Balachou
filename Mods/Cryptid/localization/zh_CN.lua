@@ -585,6 +585,7 @@ return {
 			c_cry_machinecode = {
 				name = "://MACHINECODE",
 				text = {
+					"{C:inactive,s:0.8}-- 机器码",
 					"",
 				},
 			},
@@ -614,6 +615,7 @@ return {
 			c_cry_cryupdate = {
 				name = "://UPDATE",
 				text = {
+					"{C:inactive,s:0.8}-- 升级",
 					"To Be {C:cry_code}Determined{}",
 					"in a future {C:cry_code}update{}",
 				},
@@ -724,8 +726,9 @@ return {
 			c_cry_divide = {
 				name = "://DIVIDE",
 				text = {
-					"{C:cry_code}Halve{} all listed prices",
-					"in current shop",
+					"{C:inactive,s:0.8}-- 做除",
+					"使当前商店内",
+					"所有商品的标价{C:cry_code}减半"
 				},
 			},
 			c_cry_multiply = {
@@ -1607,12 +1610,12 @@ return {
 				},
 			},
 			j_cry_digitalhallucinations = {
-				name = "Digital Hallucinations",
+				name = "数字幻觉",
 				text = {
-					"When a {C:attention}Booster Pack{} is opened,",
-					"{C:green}#1# in #2#{} chance to create",
-					"a random {C:dark_edition}Negative{} card",
-					"corresponding to its {C:attention}type{}",
+					"打开{C:attention}补充包{}后",
+					"有{C:green}#1#/#2#{}的几率",
+					"随机生成一张与其",
+					"{C:attention}类型{}相符的{C:dark_edition}负片{}牌"
 				},
 			},
 			j_cry_discreet = {
@@ -2275,10 +2278,10 @@ return {
 				},
 			},
 			j_cry_meteor = {
-				name = "Meteor Shower",
+				name = "流星雨",
 				text = {
-					"Other {C:dark_edition}Foil{} cards each",
-					"give {C:chips}+#1#{} Chip#<s>1#",
+					"每张其他的{C:dark_edition}闪箔{}牌",
+					"给予{C:chips}+#1#{}筹码",
 				},
 			},
 			j_cry_mneon = {
@@ -3572,11 +3575,10 @@ return {
 				},
 			},
 			c_cry_summoning = {
-				name = "Summoning",
+				name = "召唤",
 				text = {
-					"Create a random",
-					"{V:1}#1#{} {C:joker}Joker{}, destroy",
-					"one random {C:joker}Joker{}",
+					"随机生成一张{V:1}#1#{C:joker}小丑牌",
+					"随机摧毁一张{C:joker}小丑牌",
 				},
 			},
 			c_cry_trade = {

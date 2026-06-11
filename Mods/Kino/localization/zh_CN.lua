@@ -1937,11 +1937,11 @@ return {
                 }
             },
             j_kino_jaws = {
-                name = "Jaws",
+                name = "大白鲨",
                 text = {
-                    "Unscored cards give",
-                    "{C:chips}+#1#{} Chips and are",
-                    "{C:attention}debuffed{}"
+                    "不计分牌",
+                    "给予{C:chips}+#1#{}筹码",
+                    "并{C:attention}失效"
                 }
             },
             j_kino_joe_dirt = {
@@ -2484,13 +2484,12 @@ return {
                 }
             },
             j_kino_nightcrawler = {
-                name = "Nightcrawler",
+                name = "夜行者",
                 text = {
-                    
-                    "This {C:attention}Joker{} gains {X:mult,C:white}X#1#{} mult",
-                    "for {C:attention}#2# Rounds{}",
-                    "when a {C:attention}face{} card is destroyed",
-                    "{C:inactive}(Currently: {X:mult,C:white}X#3#{C:inactive} Mult)"
+                    "{C:attention}人头{}牌被摧毁后的",
+                    "{C:attention}#2#回合{}内",
+                    "{C:attention}本牌{}获得{X:mult,C:white}X#1#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#3#{C:inactive}倍率）"
                 }
             },
             j_kino_nightmare_before_christmas = {
@@ -2842,12 +2841,11 @@ return {
             j_kino_poltergeist = {
                 name = "鬼驱人",
                 text = {
-                    "Each {C:attention}Demonic{} card held ",
-                    "in hand gives {X:mult,C:white}X#1#{} Mult"
+                    "留手的每张{C:attention}恶魔{}牌",
+                    "给予{X:mult,C:white}X#1#{}倍率"
                 },
                 unlock = {
-                    "Play {C:attention}3{} Demonic Cards",
-                    "in a single hand"
+                    "单次打出{C:attention}3{}张恶魔牌"
                 }
             },
             j_kino_popeye = {
@@ -5756,11 +5754,10 @@ return {
                 }
             },
             bl_kino_ratched = {
-                name = "Nurse Ratched",
+                name = "护士长拉契特",
                 text = {
-                    "Played hands only score",
-                    "if there are {C:attention}3{} different",
-                    "suits in hand"
+                    "留手牌至少有{C:attention}3{}种花色时",
+                    "出牌方可计分"
                 }
             },
             bl_kino_rico_dynamite = {
