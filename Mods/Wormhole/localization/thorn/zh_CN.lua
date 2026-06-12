@@ -108,7 +108,7 @@ return {
                     text = {
                         "{C:planet}星球{}牌有{C:green}#1#/#2#{}的几率",
                         "{C:attention}额外升级{}一次",
-                        "几率失败时，则{C:red}降低{}一级",
+                        "否则{C:red}降低{}一级",
                         "{C:inactive}（不低于lvl.1）"
                     }
                 },

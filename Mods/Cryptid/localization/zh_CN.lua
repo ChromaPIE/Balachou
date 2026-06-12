@@ -2096,7 +2096,7 @@ return {
 				text = {
 					"击败{C:attention}Boss盲注{}后",
 					"为随机一张{C:attention}小丑牌",
-					"添加{C:dark_edition}多彩"
+					"添加{C:dark_edition}炫彩"
 				},
 				unlock = {
 					"携带至少{C:attention}5{}张",

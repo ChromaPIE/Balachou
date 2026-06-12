@@ -116,10 +116,10 @@ return {
                 },
             },
             j_worm_euda_darkside = {
-                name = "Dark Side of the Moon",
+                name = "月之暗面",
                 text = {
-                    "{C:spades}#1#{} and {C:clubs}#2#{}",
-                    "are always drawn first",
+                    "率先抽取",
+                    "{C:spades}#1#{}和{C:clubs}#2#{}牌"
                 },
             },
             j_worm_euda_lunarcheese = {

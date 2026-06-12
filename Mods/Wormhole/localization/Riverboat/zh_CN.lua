@@ -207,12 +207,12 @@ return {
     },
     misc = {
         dictionary = {
-            k_revolve_ex = "Revolve!",
-            k_disintegrated_ex = "Disintegrated!",
-            k_worm_riverboat_cosmic = 'Cosmic'
+            k_revolve_ex = "进化！",
+            k_disintegrated_ex = "崩解！",
+            k_worm_riverboat_cosmic = '寰宇'
         },
         achievement_names = {
-            ach_worm_riverboat_instaplanet = "Clear Sky Tonight"
+            ach_worm_riverboat_instaplanet = "今夜 晴"
         },
         achievement_descriptions = {
             ach_worm_riverboat_instaplanet = {
