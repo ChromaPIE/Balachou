@@ -352,22 +352,21 @@ return {
                     "{C:inactive}（当前空余#2#个槽位）"
                 },
                 unlock = {
-                    "Win a run with", 
-                    "{C:attention}4{} Empty Joker Slots"
+                    "赢下赛局时",
+                    "空余{C:attention}4{}个小丑牌槽位"
                 }
             },
             j_kino_batman_and_robin = {
-                name = "Batman & Robin",
+                name = "蝙蝠侠与罗宾",
                 text = {
-                    "Upgrade scoring cards with {C:mult}+#1#{} Mult",
-                    "for each empty {C:attention}Joker{} slot",
-                    "if played hand is a {C:attention}Pair",
-                    "(Batman jokers count as empty)",
-                    "{C:inactive}(Gaining {C:mult}+#2#{C:inactive} Mult) "
+                    "若打出{C:attention}对子",
+                    "每空余一个{C:attention}小丑牌{}槽位",
+                    "使计分牌获得{C:mult}+#1#{}倍率",
+                    "（蝙蝠侠小丑牌均计入空余）",
+                    "{C:inactive}（可获得{C:mult}+#2#{C:inactive}倍率）"
                 },
                 unlock = {
-                    "Use {C:attention}The Superhero{}",
-                    "{C:attention}#2#{} times",
+                    "使用{C:attention}#2#{}次{C:attention}超级英雄",
                     "{C:inactive}（#1#）"
                 }
             },
@@ -1429,15 +1428,14 @@ return {
                 }
             },
             j_kino_founder = {
-                name = "The Founder",
+                name = "创始人",
                 text = {
-                    "Fill empty",
-                    "consumable slots",
-                    "with {C:Confection}Fries{}",
-                    "when leaving the {C:attention}shop"
+                    "离开{C:attention}商店{}时",
+                    "以{C:Confection}薯条{}填满",
+                    "消耗牌槽位"
                 },
                 unlock = {
-                    "Use {C:Confection}Fries{C:attention} 10{} times",
+                    "使用{C:attention}10{}次{C:Confection}薯条",
                     "{C:inactive}（#1#）"
                 }
             },
@@ -2701,15 +2699,16 @@ return {
                 }
             },
             j_kino_paulblart_1 = {
-                name = "Paul Blart: Mall Cop",
+                name = "百货战警",
                 text = {
-                    {"Consume a {C:attention}Charge{} to give {C:mult}+#1#{} Mult",
-                    "{C:inactive}(Currently: #3# Charges)"},
-                    {"Gain {C:attention}+#2#{} Charges", 
-                    "when a {C:Confection}Confection{} is eaten"}
+                    {"释放1层{C:attention}蓄能",
+                    "给予{C:mult}+#1#{}倍率",
+                    "{C:inactive}（当前蓄能层数：#3#）"},
+                    {"消耗{C:Confection}甜食零嘴{}牌时",
+                    "蓄能{C:attention}#2#{}层"}
                 },
                 unlock = {
-                    "Consume a {C:attention}Chocolate {C:Confection}Confection"
+                    "消耗一张{C:Confection}巧克力"
                 }
             },
             j_kino_peggy_sue_got_married = {
@@ -3304,7 +3303,7 @@ return {
                 }
             },
             j_kino_source_code = {
-                name = "Source Code",
+                name = "源代码",
                 text = {
                     "Every {V:1}#1#{} gives",
                     "{C:mult}+#2#{} Mult for each {C:Bullet}Bullet,",
@@ -3328,18 +3327,18 @@ return {
                 }
             },
             j_kino_stand_by_me = {
-                name = "Stand By Me",
+                name = "伴我同行",
                 text = {
-                    "Create the {C:tarot}Hangman",
-                    "when played hand is a {C:attention}Straight"
+                    "若出牌牌型为{C:attention}顺子",
+                    "生成一张{C:tarot}倒吊人"
                 }
             },
             j_kino_spirited_away = {
-                name = "Spirited Away",
+                name = "千与千寻",
                 text = {
-                    "Upgrade every card",
-                    "in deck with {C:chips}+#1#{} Chips",
-                    "when {C:attention}Blind{} is selected"
+                    "选择{C:attention}盲注{}后",
+                    "使牌组中的每张牌",
+                    "获得{C:chips}+#1#{}筹码"
                 }
             },
             j_kino_star_wars_clone_wars = {
