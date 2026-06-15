@@ -946,14 +946,13 @@ return {
                 }
             },
             j_kino_dark_crystal = {
-                name = "The Dark Crystal",
+                name = "黑水晶",
                 text = {
-                    {"Consume a {C:attention}Charge{} to",
-                    "{C:Magic}Cast a {C:attention}random{C:Magic} spell",
-                    "{C:inactive}(Currently: {C:attention}#1#{C:inactive} Charges)"},
-                    {"If played hand",
-                    "does not defeat {C:attention}Blind",
-                    "gain {C:attention}#2#{} Charge(s)"},
+                    {"释放一层{C:attention}蓄能",
+                    "以{C:attention}随机{C:Magic}施放{}一道{C:Magic}咒术",
+                    "{C:inactive}（当前蓄能层数：{C:attention}#1#{C:inactive}）"},
+                    {"若出牌未能击败{C:attention}盲注",
+                    "蓄能{C:attention}#2#{}层"},
                 }
             },
             j_kino_dark_knight = {
@@ -2147,14 +2146,13 @@ return {
                 }
             },
             j_kino_lord_of_the_rings_1 = {
-                name = "Lord of the Rings: The Fellowship of the Ring",
+                name = "指环王：护戒使者",
                 text = {
-                    {"{X:mult,C:white}x#1#{} Mult when {C:attention}Joker",
-                    "to the right triggers",},
-                    {"Affected jokers lose {C:money}$#2#{} of {C:attention}sell value",
-                    "at end of round",
-                    "and {C:red}Self-Destructs{} if", 
-                    "{C:attention}sell value{} is {C:money}$0{}"}
+                    {"右侧{C:attention}小丑牌{}触发时",
+                    "给予{X:mult,C:white}X#1#{}倍率",},
+                    {"受影响的小丑牌",
+                    "回合结束时{C:attention}售价{C:red}-$#2#",
+                    "且若{C:attention}售价{}为{C:money}$0{}，{C:red}自毁"}
                 }
             },
             j_kino_lost_in_translation = {
@@ -2584,10 +2582,9 @@ return {
             j_kino_oceans_11_2 = {
                 name = "十一罗汉（1960）",
                 text = {
-                    "When any {C:money}money{} is",
-                    "lost, instead lower the",
-                    "value of this joker",
-                    "{C:inactive}(Max value of {C:money}$#1#{C:inactive})"
+                    "即将损失{C:money}资金{}时，免除之",
+                    "并改为扣除本牌{C:attention}售价",
+                    "{C:inactive}（至多{C:money}$#1#{C:inactive}）"
                 }
             },
             j_kino_oceans_12 = {
@@ -2640,10 +2637,10 @@ return {
                 }
             },
             j_kino_panic_room = {
-                name = "Panic Room",
+                name = "战栗空间",
                 text = {
-                    "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult",
-                    "on {C:attention}final hand"
+                    "回合{C:attention}最后一手出牌",
+                    "{C:chips}+#1#{}筹码，{C:mult}+#2#{}倍率"
                 }
             },
             j_kino_pans_labyrinth = {
@@ -5886,11 +5883,11 @@ return {
                 }
             },
             bl_kino_rupert_pupkin = { -- CHROMIC: Broken
-                name = "Rupert Pupkin",
+                name = "鲁珀特·帕普金",
                 text = {
-                    "{C:red}Debuff{} all but leftmost {C:attention}Joker",
-                    "and {C:attention}retrigger{} leftmost {C:attention}Joker",
-                    "once for each debuffed {C:attention}Joker"
+                    "使最左侧以外的{C:attention}小丑牌{C:red}失效",
+                    "每有一张{C:attention}小丑牌{}失效",
+                    "{C:attention}重新触发{}最左侧{C:attention}小丑牌"
                 }
             },
             bl_kino_saruman = {
@@ -7005,7 +7002,7 @@ return {
             spell_Diamonds_Clubs = {
                 name = "方片梅花",
                 text = {
-                    "给予{X:chips,C:white}X#1#{}倍率"
+                    "给予{X:chips,C:white}X#1#{}筹码"
                 }
             },
             spell_Diamonds_Spades = {
