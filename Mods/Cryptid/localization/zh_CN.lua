@@ -94,8 +94,8 @@ return {
 				name = "Critical Deck",
 				text = {
 					"After each hand played,",
-					"{C:green}#1# in #2#{} chance for {X:dark_edition,C:white} ^2 {} Mult",
-					"{C:green}#1# in #3#{} chance for {X:dark_edition,C:white} ^0.5 {} Mult",
+					"{C:green}#1# in #2#{} chance for {X:talisman_emult,C:white} ^2 {} Mult",
+					"{C:green}#1# in #3#{} chance for {X:talisman_emult,C:white} ^0.5 {} Mult",
 				},
 				unlock = {
 					"Obtain a {C:attention}Rigged Joker",
@@ -104,7 +104,7 @@ return {
 			b_cry_e_deck = {
 				name = "Edition Deck",
 				text = {
-					"All cards are {C:dark_edition}#1#{}",
+					"All cards are {V:1}#1#{}",
 					"Cards cannot change editions",
 					"{C:inactive}(Click to edit)",
 				},
@@ -142,7 +142,7 @@ return {
 				name = "Enhancement Deck",
 				text = {
 					"All {C:attention}playing cards{}",
-					"are {C:attention}#1#{}(s)",
+					"are {V:1}#1#{}(s)",
 					"{C:inactive}(Click to edit)",
 				},
 				unlock = {
@@ -199,7 +199,7 @@ return {
 			b_cry_sk_deck = {
 				name = "Sticker Deck",
 				text = {
-					"All cards are {C:attention}#1#{}",
+					"All cards are {V:1}#1#{}",
 					"{C:inactive}(Click to edit)",
 				},
 				unlock = {
@@ -209,7 +209,7 @@ return {
 			b_cry_sl_deck = {
 				name = "Seal Deck",
 				text = {
-					"All playing cards have a {C:dark_edition}#1#{}",
+					"All playing cards have a {V:1}#1#{}",
 					"Cards cannot change seals",
 					"{C:inactive}(Click to edit)",
 				},
@@ -231,7 +231,7 @@ return {
 			b_cry_st_deck = {
 				name = "Suit Deck",
 				text = {
-					"All playing cards are {C:dark_edition}#1#",
+					"All playing cards are {V:1}#1#",
 					"and cannot change suits",
 					"{C:inactive}(Click to edit)",
 				},
@@ -312,12 +312,12 @@ return {
 				},
 			},
 			bl_cry_lavender_loop = {
-				name = "Lavender Loop",
+				name = '淡紫时环',
 				text = {
-					"1.25X blind requirements every",
-					"6 seconds spent this round,",
-					"multiplied by game speed",
-				},
+					"本回合内每耗时6秒",
+					"本盲注最低要求X1.25",
+					"游戏速度会提升乘数"
+				}
 			},
 			bl_cry_obsidian_orb = {
 				name = "Obsidian Orb",
@@ -418,9 +418,8 @@ return {
 			bl_cry_chromatic = {
 				name = "The Chromatic",
 				text = {
-					"Hand score is",
-					"subtracted on",
-					"odd numbered hands",
+					"X-1 Mult on every",
+					"odd numbered hand",
 				},
 			},
 			bl_cry_landlord = {
@@ -460,10 +459,9 @@ return {
 				},
 			},
 			bl_cry_tax = {
-				name = "The Tax",
+				name = "税",
 				text = {
-					"Score per hand capped",
-					"at #1#",
+					"单次出牌得分上限为#1#"
 				},
 			},
 			bl_cry_tornado = {
@@ -474,10 +472,10 @@ return {
 				},
 			},
 			bl_cry_trick = {
-				name = "The Trick",
+				name = "诡计",
 				text = {
-					"After each hand, flip all",
-					"face-up cards held in hand",
+					"每次出牌后",
+            		"翻转所有正面朝上的手牌"
 				},
 			},
 			bl_cry_trophy = {
@@ -488,17 +486,16 @@ return {
 				},
 			},
 			bl_cry_vermillion_virus = {
-				name = "Vermillion Virus",
+				name = '银朱病毒',
 				text = {
-					"One random Joker",
-					"replaced every hand",
-				},
+					"每次出牌",
+					"随机替换一张小丑牌"
+				}
 			},
 			bl_cry_windmill = {
-				name = "The Windmill",
+				name = "风车",
 				text = {
-					"All Uncommon Jokers",
-					"are debuffed",
+					"罕见小丑牌全部失效",
 				},
 			},
 			bl_cry_decision = {
@@ -530,8 +527,9 @@ return {
 			c_cry_payload = {
 				name = "://PAYLOAD",
 				text = {
-					"Next defeated Blind",
-					"gives {C:cry_code}X#1#{} interest",
+					"{C:inactive,s:0.8}-- 载荷",
+					"击败的下个盲注",
+					"给予{C:cry_code}X#1#{}利息",
 				},
 			},
 			c_cry_exploit = {
@@ -607,9 +605,10 @@ return {
 			c_cry_patch = {
 				name = "://PATCH",
 				text = {
-					"Remove all {C:cry_code}debuffs",
-					"from currently visible items",
-					"{C:cry_code}Resets{} shop state",
+					"{C:inactive,s:0.8}-- 补丁",
+					"复原当前所有",
+					"{C:cry_code}失效{}的可见项目",
+					"{C:cry_code}重置{}商店状态",
 				},
 			},
 			c_cry_cryupdate = {
@@ -683,8 +682,9 @@ return {
 			c_cry_class = {
 				name = "://CLASS",
 				text = {
-					"Convert {C:cry_code}#1#{} selected card#<s>1#",
-					"to a {C:cry_code}chosen{} enhancement",
+					"{C:inactive,s:0.8}-- 类",
+					"将{C:cry_code}#1#{}张选定卡牌",
+					"转换为{C:cry_code}指定{}增强",
 				},
 			},
 			c_cry_global = {
@@ -924,7 +924,7 @@ return {
 			e_cry_astral = {
 				name = "玄星",
 				text = {
-					"{X:dark_edition,C:white}^#1#{}倍率"
+					"{X:talisman_emult,C:white}^#1#{}倍率"
 				},
 			},
 			e_cry_blur = {
@@ -945,13 +945,11 @@ return {
 			},
 			e_cry_glass = {
 				name = "易碎",
-				label = "易碎",
 				text = {
 					"{C:white,X:mult}X#3#{}倍率",
 					"有{C:green}#1#/#2#{}的几率",
-					"card isn't {C:red}destroyed",
-					"when triggered",
-					"{C:inactive}Unriggable{}",
+					"在计分后不被{C:red}摧毁",
+					"{C:inactive}几率固定"
 				},
 			},
 			e_cry_glitched = {
@@ -962,13 +960,30 @@ return {
 					"{C:inactive}（若可能）"
 				},
 			},
-			e_cry_gold = {
+			e_cry_gold = { --description while on jokers
 				name = "璨金",
-				label = "璨金",
 				text = {
-					"使用或触发时",
-					"赚取{C:money}$#1#"
+					"触发后赚取{C:money}$#1#"
 				},
+			},
+			e_cry_gold_ccd = { --description while on ccds
+				name = "璨金",
+				text = {
+					"使用或触发后",
+					"赚取{C:money}$#1#"
+				}
+			},
+			e_cry_gold_playing_card = { --description while on regular playing cards
+				name = "璨金",
+				text = {
+					"触发后赚取{C:money}$#1#"
+				}
+			},
+			e_cry_gold_consumable = { --description while on consumables
+				name = "璨金",
+				text = {
+					"使用后赚取{C:money}$#1#"
+				}
 			},
 			e_cry_m = {
 				name = "开心",
@@ -1018,7 +1033,7 @@ return {
 			m_cry_abstract = {
 				name = "抽象牌",
 				text = {
-					"{X:dark_edition,C:white}^#1#{}倍率",
+					"{X:talisman_emult,C:white}^#1#{}倍率",
 					"点数和花色均视为{C:attention}抽象",
 					"若{C:attention}回合结束{}或{C:attention}出牌{}时留手",
 					"则有{C:green}#4#/#5#{}的几率被{C:red,E:2}摧毁"
@@ -1171,10 +1186,10 @@ return {
 				},
 			},
 			j_cry_blurred = {
-				name = "Blurred Joker",
+				name = "迷蒙小丑",
 				text = {
-					"Gain {C:blue}+#1#{} hand#<s>1# when",
-					"{C:attention}Blind{} is selected",
+					"选择{C:attention}盲注{}后",
+					"出牌次数{C:blue}+#1#"
 				},
 			},
 			j_cry_bonk = {
@@ -1315,11 +1330,11 @@ return {
 				},
 			},
 			j_cry_candy_dagger = {
-				name = "Candy Dagger",
+				name = "硬糖匕首",
 				text = {
-					"When {C:attention}Blind{} is selected,",
-					"destroy Joker to the right",
-					"to create a {C:cry_candy}Candy{}",
+					"选择{C:attention}盲注{}后",
+					"摧毁右侧的小丑牌",
+					"并生成一张{C:cry_candy}糖果",
 				},
 			},
 			j_cry_candy_sticks = {
@@ -1402,7 +1417,7 @@ return {
 				name = "餅師圓周",
 				text = {
 					"剩余出牌次数{C:attention}恰为{}#2#时",
-					"{X:dark_edition,C:white}^#1#{}筹码，{X:dark_edition,C:white}^#1#{}倍率"
+					"{X:talisman_emult,C:white}^#1#{}筹码，{X:talisman_emult,C:white}^#1#{}倍率"
 				},
 			},
 			j_cry_circus = {
@@ -1448,12 +1463,12 @@ return {
 				},
 			},
 			j_cry_clockwork = {
-				name = "Clockwork Joker",
+				name = "发条小丑",
 				text = {
-					"Retrigger held Steel Cards every {C:attention}#9#{} {C:inactive}(#1#){} hands",
-					"This Joker gains {X:mult,C:white}X#6#{} Mult {C:inactive}(X#5#){} every {C:attention}#10#{} {C:inactive}(#2#){} hands",
-					"Turn the first played card Steel every {C:attention}#11#{} {C:inactive}(#3#){} hands",
-					"Held Steel Cards give +{X:mult,C:white}X#8#{} Mult {C:inactive}(X#7#){} every {C:attention}#12#{} {C:inactive}(#4#){} hands",
+					"每{C:attention}#9# {C:inactive}(#1#){}次出牌，重新触发留手的钢铁牌",
+					"每{C:attention}#10# {C:inactive}(#2#){}次出牌，本牌获得{X:mult,C:white}X#6#{}倍率{C:inactive}(X#5#)",
+					"每{C:attention}#11#{} {C:inactive}(#3#){}次出牌，将首张出牌变为钢铁牌",
+					"每{C:attention}#12#{} {C:inactive}(#4#){}次出牌，留手的钢铁牌给予+{X:mult,C:white}X#8#{}倍率{C:inactive}(X#7#)",
 				},
 			},
 			j_cry_CodeJoker = {
@@ -1561,11 +1576,11 @@ return {
 				},
 			},
 			j_cry_cursor = {
-				name = "Cursor",
+				name = "鼠标指针",
 				text = {
-					"This Joker gains {C:chips}+#2#{} Chip#<s>2#",
-					"for each card {C:attention}purchased{}",
-					"{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chip#<s>1#)",
+					"每{C:attention}购买{}一张牌",
+					"本牌获得{C:chips}+#2#{}筹码",
+					"{C:inactive}（当前为{C:chips}+#1#{C:inactive}筹码）"
 				},
 			},
 			j_cry_cut = {
@@ -1594,11 +1609,11 @@ return {
 				},
 			},
 			j_cry_starfruit = {
-				name = "Starfruit",
+				name = "星星杨桃",
 				text = {
-					"{X:dark_edition,C:white}^#1#{} Mult,",
-					"loses {X:dark_edition,C:white}^#2#{} Mult per",
-					"{C:attention}reroll{} in the shop",
+					"{X:talisman_emult,C:white}^#1#{}倍率",
+					"每在商店内{C:attention}重掷{}一次",
+					"损失{X:talisman_emult,C:white}^#2#{}倍率"
 				},
 			},
 			j_cry_sundial = {
@@ -1758,18 +1773,18 @@ return {
 				},
 			},
 			j_cry_exoplanet = {
-				name = "Exoplanet",
+				name = "异星",
 				text = {
-					"Other {C:dark_edition}Holographic{} cards",
-					"each give {C:mult}+#1#{} Mult",
+					"本牌之外的每张",
+					"{C:dark_edition}全息{}牌给予{C:mult}+#1#{}倍率",
 				},
 			},
 			j_cry_exponentia = {
 				name = "Exponentia",
 				text = {
-					"This Joker gains {X:dark_edition,C:white} ^#1# {} Mult",
+					"This Joker gains {X:talisman_emult,C:white} ^#1# {} Mult",
 					"when {X:red,C:white} XMult {} is triggered",
-					"{C:inactive}(Currently {X:dark_edition,C:white} ^#2# {C:inactive} Mult)",
+					"{C:inactive}(Currently {X:talisman_emult,C:white} ^#2# {C:inactive} Mult)",
 				},
 			},
 			j_cry_exposed = {
@@ -1800,7 +1815,7 @@ return {
 			j_cry_facile = {
 				name = "Facile",
 				text = {
-					"{X:dark_edition,C:white}^#1#{} Mult if",
+					"{X:talisman_emult,C:white}^#1#{} Mult if",
 					"played cards are scored",
 					"{C:attention}#2#{} or fewer times",
 				},
@@ -1877,8 +1892,8 @@ return {
 				text = {
 					"获取{X:cry_cursed,C:white}受诅{}小丑牌时，摧毁之",
 					"退出商店时，生成{C:attention}#1#{}张{C:dark_edition}负片{C:cry_candy}糖果",
-					"每持有一张{C:cry_candy}糖果{}，{X:dark_edition,C:white}^#2#{}倍率",
-					"{C:inactive}（当前为{X:dark_edition,C:white}^#3#{C:inactive倍率）"
+					"每持有一张{C:cry_candy}糖果{}，{X:talisman_emult,C:white}^#2#{}倍率",
+					"{C:inactive}（当前为{X:talisman_emult,C:white}^#3#{C:inactive倍率）"
 				},
 			},
 			j_cry_foxy = {
@@ -1972,7 +1987,7 @@ return {
 			j_cry_happyhouse = {
 				name = "快乐老家",
 				text = {
-					"{X:dark_edition,C:white}^#1#{}倍率",
+					"{X:talisman_emult,C:white}^#1#{}倍率",
 					"出牌{C:attention}#3#{}次后激活",
 					"{C:inactive}（当前进度：#2#/#3#）",
 					"{C:inactive,s:0.8}有一个地方 那是快乐老家！",
@@ -2040,21 +2055,21 @@ return {
 				},
 			},
 			j_cry_jollysus = {
-				name = "Jolly Joker?",
+				name = "开心小丑？",
 				text = {
-					"Create a {C:dark_edition}Jolly{} Joker",
-					"when a Joker is {C:attention}sold{}",
-					"{C:red}Works once per round{}",
-					"{C:inactive}#1#{}",
-					"{C:inactive,s:0.8}Seems legit...{}",
+					"{C:red}每回合一次",
+					"{C:attention}售出{}小丑牌后",
+					"生成一张{C:dark_edition}开心{}小丑牌",
+					"{C:inactive}#1#",
+					"{C:inactive,s:0.8}没那么过分吧……",
 				},
 			},
 			j_cry_jtron = {
 				name = "Jimbo-tron 9000",
 				text = {
-					"This Joker gains {X:dark_edition,C:white} ^#1# {} Mult",
+					"This Joker gains {X:talisman_emult,C:white} ^#1# {} Mult",
 					"for each default {C:attention}Joker{}",
-					"{C:inactive}(Currently {X:dark_edition,C:white}^#2#{C:inactive} Mult)",
+					"{C:inactive}(Currently {X:talisman_emult,C:white}^#2#{C:inactive} Mult)",
 				},
 			},
 			j_cry_kidnap = {
@@ -2130,13 +2145,13 @@ return {
 				},
 			},
 			j_cry_loopy = {
-				name = "Loopy",
+				name = "循环M",
 				text = {
-					"{C:attention}Retrigger{} all Jokers",
-					"once for each {C:attention}Jolly{}",
-					"{C:attention}Joker{} sold this round",
-					"{C:inactive}(Currently{}{C:attention:} #1#{}{C:inactive} retrigger#<s>1#){}",
-					"{C:inactive,s:0.8}There wasn't enough room...{}",
+					"本赛局内每售出过",
+					"一张{C:attention}开心小丑",
+					"所有小丑牌{C:attention}重新触发{}一次",
+					"{C:inactive}（当前可重新触发{C:attention}#1#{C:inactive}次）",
+					"{C:inactive,s:0.8}哪里还有空位啊……",
 				},
 			},
 			j_cry_lucky_joker = {
@@ -2251,12 +2266,16 @@ return {
 				},
 			},
 			j_cry_membershipcard = {
-				name = "Membership Card",
+				name = "会员卡",
 				text = {
-					"{X:mult,C:white}X#1#{} Mult for each member",
-					"in the {C:attention}Cryptid Discord{}",
-					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
-					"{C:blue,s:0.7}https://discord.gg/eUf9Ur6RyB{}",
+					"{C:attention}Cryptid Discord",
+					"社群中每有一名成员",
+					"{X:mult,C:white}X#1#{}倍率",
+					"{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）",
+					"{C:blue,s:0.7}https://discord.gg/eUf9Ur6RyB",
+					"{C:inactive,s:0.7}通过Cryptid配置",
+					"{C:inactive,s:0.7}重新启动游戏前",
+					"{C:inactive,s:0.7}无法更新数据"
 				},
 			},
 			j_cry_membershipcardtwo = {
@@ -2266,6 +2285,8 @@ return {
 					"in the {C:attention}Cryptid Discord{}",
 					"{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chip#<s>2#)",
 					"{C:blue,s:0.7}https://discord.gg/eUf9Ur6RyB{}",
+					"{C:inactive,s:0.7}Can be updated without relaunching",
+					"{C:inactive,s:0.7}via the Cryptid config",
 				},
 			},
 			j_cry_membershipcardtwo_balanced = {
@@ -2275,6 +2296,8 @@ return {
 					"in the {C:attention}Cryptid Discord{}",
 					"{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chip#<s>2#)",
 					"{C:blue,s:0.7}https://discord.gg/eUf9Ur6RyB{}",
+					"{C:inactive,s:0.7}Can be updated without relaunching",
+					"{C:inactive,s:0.7}via the Cryptid config",
 				},
 			},
 			j_cry_meteor = {
@@ -2334,9 +2357,9 @@ return {
 				text = {
 					"回合结束时生成一张{C:legendary}M小丑",
 					"每张{C:attention}开心小丑{}和{C:legendary}M小丑",
-					"给予{X:dark_edition,C:white}^#1#{}倍率",
+					"给予{X:talisman_emult,C:white}^#1#{}倍率",
 					"{C:attention}售出开心小丑{}后",
-					"加成提升{X:dark_edition,C:white}^#2#",
+					"加成提升{X:talisman_emult,C:white}^#2#",
 					"{C:inactive,s:0.8}（不包括叁拾）",
 				},
 			},
@@ -2383,7 +2406,7 @@ return {
 			j_cry_night = {
 				name = "Night",
 				text = {
-					"{X:dark_edition,C:white}^#1#{} Mult on final",
+					"{X:talisman_emult,C:white}^#1#{} Mult on final",
 					"hand of round",
 					"{E:2,C:red}self destructs{} on",
 					"final hand of round",
@@ -2430,11 +2453,10 @@ return {
 				},
 			},
 			j_cry_nutty = {
-				name = "Nutty Joker",
+				name = "发癫小丑",
 				text = {
-					"{C:red}+#1#{} Mult if played",
-					"hand contains",
-					"a {C:attention}#2#",
+					"若出牌包含{C:attention}#2#",
+					"{C:red}+#1#{}倍率"
 				},
 			},
 			j_cry_oil_lamp = {
@@ -2471,7 +2493,7 @@ return {
 				},
 			},
 			j_cry_panopticon = {
-				name = "Panopticon",
+				name = "全景监狱",
 				text = {
 					"All hands are considered the",
 					"{C:attention}last hand{} of each round", -- +$4
@@ -2534,10 +2556,10 @@ return {
 			j_cry_primus = {
 				name = "Primus",
 				text = {
-					"This Joker gains {X:dark_edition,C:white} ^#1# {} Mult",
+					"This Joker gains {X:talisman_emult,C:white} ^#1# {} Mult",
 					"if all cards in played hand are",
 					"{C:attention}Aces{}, {C:attention}2s{}, {C:attention}3s{}, {C:attention}5s{}, or {C:attention}7s{}",
-					"{C:inactive}(Currently {X:dark_edition,C:white} ^#2# {C:inactive} Mult)",
+					"{C:inactive}(Currently {X:talisman_emult,C:white} ^#2# {C:inactive} Mult)",
 				},
 			},
 			j_cry_pumpkin = {
@@ -2567,13 +2589,12 @@ return {
 				},
 			},
 			j_cry_queens_gambit = {
-				name = "Queen's Gambit",
+				name = "后翼弃兵",
 				text = {
-					"If {C:attention}poker hand{} is a",
-					"{C:attention}Royal Flush{}, destroy scored",
-					"{C:attention}Queen{} and create a",
-					"{C:dark_edition}Negative {}{C:red}Rare{}{C:attention} Joker{}",
-				},
+					"若出牌{C:attention}牌型{}为{C:attention}皇家同花顺",
+					"摧毁计分的{C:attention}Q{}并生成一张",
+					"{C:dark_edition}负片{C:red}稀有{C:attention}小丑牌"
+				}
 			},
 			j_cry_quintet = {
 				name = "The Quintet",
@@ -2615,13 +2636,14 @@ return {
 				},
 			},
 			j_cry_reverse = {
-				name = "Reverse Card",
+				name = "反转牌",
 				text = {
-					"Fill all empty Joker slots {C:inactive}(Max 100){}",
-					"with {C:dark_edition}Holographic{} {C:attention}Jolly Jokers{} if",
-					"{C:attention}discarded poker hand{} is a {C:attention}#1#{}",
-					"{C:red,E:2}self destructs{}",
-					"{C:inactive,s:0.8}The ULTIMATE comeback{}",
+					"{C:attention}弃掉{C:attention}#1#{}后",
+					"以{C:dark_edition}全息{C:attention}开心小丑",
+					"填满小丑牌槽位",
+					"{C:inactive}（至多100个）",
+					"并{C:red,E:2}自毁",
+					"{C:inactive}终极{C:inactive,s:0.8}回归"
 				},
 			},
 			j_cry_rnjoker = {
@@ -2860,9 +2882,9 @@ return {
 				text = {
 					"This Joker destroys a",
 					"random {C:planet}Planet{} card",
-					"to gain {X:dark_edition,C:white} ^#1# {} Mult",
+					"to gain {X:talisman_emult,C:white} ^#1# {} Mult",
 					"at the end of the {C:attention}shop{}",
-					"{C:inactive}(Currently {X:dark_edition,C:white} ^#2# {C:inactive} Mult)",
+					"{C:inactive}(Currently {X:talisman_emult,C:white} ^#2# {C:inactive} Mult)",
 				},
 			},
 			j_cry_stronghold = {
@@ -2990,7 +3012,7 @@ return {
 			j_cry_annihalation = {
 				name = "The Complete and Utter Annihilation of Everything That Makes Balatro Sacred",
 				text = {
-					"{X:dark_edition,C:white}^#1#{} Mult if played",
+					"{X:talisman_emult,C:white}^#1#{} Mult if played",
 					"hand contains",
 					"a {C:attention}#2#",
 				},
@@ -3049,7 +3071,7 @@ return {
 				name = "Universe",
 				text = {
 					"Other {C:dark_edition}Astral{} cards",
-					"each give {X:dark_edition,C:white}^#1#{} Mult",
+					"each give {X:talisman_emult,C:white}^#1#{} Mult",
 				},
 			},
 			j_cry_universum = {
@@ -3376,8 +3398,8 @@ return {
 				name = "Critical Sleeve",
 				text = {
 					"After each hand played,",
-					"{C:green}1 in 4{} chance for {X:dark_edition,C:white} ^2 {} Mult",
-					"{C:green}1 in 8{} chance for {X:dark_edition,C:white} ^0.5 {} Mult",
+					"{C:green}1 in 4{} chance for {X:talisman_emult,C:white} ^2 {} Mult",
+					"{C:green}1 in 8{} chance for {X:talisman_emult,C:white} ^0.5 {} Mult",
 				},
 			},
 			sleeve_cry_encoded_sleeve = {
@@ -3545,7 +3567,7 @@ return {
 				name = "POINTER://",
 				text = {
 					"Create a card",
-					"of {C:cry_code}your choice",
+					"of {C:cry_code,E:1}your choice",
 					"{C:inactive,s:0.8}(Exotic Jokers excluded)",
 				},
 			},
@@ -3582,10 +3604,10 @@ return {
 				},
 			},
 			c_cry_trade = {
-				name = "Trade",
+				name = "交易",
 				text = {
-					"{C:attention}Lose{} a random Voucher,",
-					"gain {C:attention}2{} random Vouchers",
+					"随机{C:attention}失去{}1张奖券",
+					"随机获得{C:attention}2{}张奖券",
 				},
 			},
 			c_cry_typhoon = {
@@ -3659,7 +3681,7 @@ return {
 				name = "Jade Stake",
 				colour = "Jade",
 				text = {
-					"Cards can be drawn {C:attention}face down{}",
+					"{C:green}#1# in #2#{} cards are drawn {C:attention}face down{}",
 				},
 			},
 			stake_cry_cyan = {
@@ -3725,7 +3747,7 @@ return {
 				name = "Glass Stake",
 				colour = "Glass",
 				text = {
-					"Cards can {C:attention}shatter{} when scored",
+					"{C:green}#1# in #2#{} cards {C:attention}shatter{} when scored",
 				},
 			},
 			stake_cry_sapphire = {
@@ -4006,8 +4028,8 @@ return {
 			tag_cry_schematic = {
 				name = "草图标签",
 				text = {
-					"商店内将出现一张",
-					"免费的{C:attention}头脑风暴",
+					"商店内将出现",
+					"一张{C:attention}头脑风暴",
 				},
 			},
 			tag_cry_scope = {
@@ -4041,11 +4063,11 @@ return {
 				},
 			},
 			tag_cry_palette_cleanser = {
-				name = "Palette Cleanser Tag",
+				name = "画盘清洁标签",
 				text = {
-					"Remove a {C:attention}random{}",
-					"sticker from a {C:attention}random{}",
-					"Joker or playing card",
+					"去除{C:attention}随机{}一张",
+					"小丑牌或扑克牌的",
+					"{C:attention}随机{}一个贴纸"
 				},
 			},
 		},
@@ -4073,11 +4095,11 @@ return {
 				},
 			},
 			c_cry_theblessing = {
-				name = "The Blessing",
+				name = "祝佑",
 				text = {
-					"Creates {C:attention}1{}",
-					"random {C:attention}consumable{}",
-					"{C:inactive}(Must have room){}",
+					"随机生成",
+					"{C:attention}1{}张{C:attention}消耗牌",
+					"{C:inactive}（必须有空位）"
 				},
 			},
 			c_cry_seraph = {
@@ -4135,9 +4157,9 @@ return {
 				},
 			},
 			v_cry_stickyhand = {
-				name = "Sticky Hand",
+				name = "黏胶手",
 				text = {
-					"{C:attention}+#1#{} card selection limit",
+					"选牌张数{C:attention}+#1#",
 				},
 			},
 			v_cry_grapplinghook = {
@@ -4192,28 +4214,22 @@ return {
 				},
 			},
 			v_cry_curate = {
-				name = "Curate",
+				name = "策展狂人",
 				text = {
-					"All cards",
-					"appear with",
-					"an {C:dark_edition}Edition{}",
+					"所有卡牌出现时",
+					"均带有{C:dark_edition}版本",
 				},
 				unlock = {
-					"Discover",
-					"all {C:attention}Editions",
+					"发现所有{C:attention}版本",
 				},
 			},
 			v_cry_rerollexchange = {
-				name = "Reroll Exchange",
+				name = "重掷互换",
 				text = {
-					"All rerolls",
-					"cost {C:attention}$2{}",
+					"重掷花费恒为{C:attention}$2",
 				},
 				unlock = {
-					"{C:attention}Reroll{} the shop",
-					"a total of",
-					"{C:attention}250 times{}",
-					"in one run",
+					"单赛局内{C:attention}重掷{C:attention}250次"
 				},
 			},
 			-- RESERVATION FOR CRYSTAL BALL T3
@@ -4323,13 +4339,12 @@ return {
 			},
 			-- RESERVATION FOR DIRECTOR'S CUT T3
 			v_cry_blankcanvas = {
-				name = "Blank Canvas",
+				name = "空白画布",
 				text = {
-					"{C:attention}+#1#{} hand size",
+					"手牌上限{C:attention}+#1#",
 				},
 				unlock = {
-					"Reduce your {C:attention}handsize",
-					"to {C:attention}0",
+					"{C:attention}手牌上限{}减至{C:attention}0",
 				},
 			},
 			-- Cryptid Voucher T3
@@ -4763,7 +4778,7 @@ return {
 			o_perkele = {
 				name = "Observatory Effect",
 				text = {
-					"{X:dark_edition,C:white}^#2#{} mult if played hand is a",
+					"{X:talisman_emult,C:white}^#2#{} mult if played hand is a",
 					"{C:attention}#4#{}",
 					"{X:mult,C:white}X#2#{} mult if played hand is a {C:attention}#3#{}",
 					"Held {C:attention}Sol{} and {C:attention}Perkele{} Cards",
@@ -5212,7 +5227,7 @@ return {
 			cry_plus_cryptid = "+1 Cryptid",
 			cry_plus_card = "+1 Card",
 			cry_plus_code = "+1 Code",
-			cry_no_triggers = "No triggers left!",
+			cry_no_triggers = "触发次数耗尽！",
 			cry_unredeemed = "Unredeemed...",
 			cry_active = "Active",
 			cry_inactive = "Inactive",
@@ -5262,6 +5277,8 @@ return {
 			b_reset_gameset_modest = "Reset Gameset Config (Modest)",
 			b_reset_gameset_mainline = "Reset Gameset Config (Mainline)",
 			b_reset_gameset_madness = "Reset Gameset Config (Madness)",
+
+			b_update_membership_cards = "Update Membership Card jokers",
 
 			cry_circus_generic = "{V:#1#}#2#{} Jokers each give {X:mult,C:white} X#3# {} Mult",
 		},
