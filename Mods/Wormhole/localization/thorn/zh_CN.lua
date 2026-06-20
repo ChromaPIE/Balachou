@@ -113,21 +113,23 @@ return {
                     }
                 },
                 j_worm_thorn_derse = {
-                    name = "Derse Joker",
+                    name = "Derse小丑",
                     text = {
-                        "Gains {C:white,X:mult}X#1#{} Mult per",
-                        "percent of {C:spades}Dark Suits{}",
-                        "in {C:attention}full deck{} above {C:attention}#3#%{}",
-                        "{C:inactive}(Currently {C:white,X:mult}X#2#{}{C:inactive} Mult, {C:attention}#4#%{}{C:inactive})"
+                        "{C:attention}完整牌组{}中",
+                        "{C:spades}暗色{}牌的占比",
+                        "每比{C:attention}#3#%{}大{C:attention}1%",
+                        "本牌给予{C:white,X:mult}X#1#{}倍率",
+                        "{C:inactive}（当前为{C:white,X:mult}X#2#{C:inactive}倍率，占比{C:attention}#4#%{C:inactive}）"
                     }
                 },
                 j_worm_thorn_derse_collection = {
-                    name = "Derse Joker",
+                    name = "Derse小丑",
                     text = {
-                        "Gains {C:white,X:mult}X#1#{} Mult per",
-                        "percent of {C:spades}Dark Suits{}",
-                        "in {C:attention}full deck{} above {C:attention}#3#%{}",
-                        "{C:inactive}(Currently {C:white,X:mult}X#2#{}{C:inactive} Mult)"
+                        "{C:attention}完整牌组{}中",
+                        "{C:spades}暗色{}牌的占比",
+                        "每比{C:attention}#3#%{}大{C:attention}1%",
+                        "本牌给予{C:white,X:mult}X#1#{}倍率",
+                        "{C:inactive}（当前为{C:white,X:mult}X#2#{C:inactive}倍率）"
                     }
                 },
                 j_worm_thorn_mars_face = {

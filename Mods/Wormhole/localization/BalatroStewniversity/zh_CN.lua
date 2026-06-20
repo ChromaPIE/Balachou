@@ -47,12 +47,11 @@ return {
             },
 
             j_worm_stew_staged_landing = {
-                name = 'Staged Landing',
+                name = '摆拍登月',
                 text = {
-                    'This Joker gains {C:mult}+#2#{} Mult',
-                    'for every {C:clubs}Club{} card',
-                    'discarded this round',
-                    '{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)'
+                    '本回合每弃掉一张{C:clubs}梅花{}牌',
+                    '本牌获得{C:mult}+#2#{}倍率',
+                    '{C:inactive}（当前为{C:mult}+#1#{C:inactive}倍率）'
                 }
             },
 
@@ -77,11 +76,12 @@ return {
             },
 
             j_worm_stew_stargazer = {
-                name = 'Stargazer',
+                name = '观星者',
                 text = {
-                    'Gains {X:mult,C:white}X#1#{} Mult for each',
-                    'owned {C:tarot}The Star{} or {C:planet}Planet{} card',
-                    '{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)'
+                    '每持有一张',
+                    '{C:tarot}星星{}或{C:planet}星球{}牌',
+                    '给予{X:mult,C:white}X#1#{}倍率',
+                    '{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）'
                 }
             },
 

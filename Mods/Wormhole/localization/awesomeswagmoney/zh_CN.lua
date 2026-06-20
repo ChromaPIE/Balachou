@@ -156,11 +156,11 @@ return {
                 }
             },
             c_worm_celesteela = {
-                name = "Celesteela",
+                name = "铁火辉夜",
                 text = {
-                    "Earn {C:attention}+#1#{} hand size for one round, then",
-                    "permanently increase the amount gained to",
-                    "the next {C:spectral}prime number{}"
+                    "单回合内手牌上限{C:attention}+#1#",
+                    "并永久提升后续本牌的",
+                    "{C:spectral}手牌上限加成"
                 }
             },
             c_worm_guzzlord = {
@@ -172,10 +172,10 @@ return {
                 }
             },
             c_worm_stakataka = {
-                name = "Stakataka",
+                name = "垒磊石",
                 text = {
-                    "Turn up to {C:attention}#1#{} selected cards",
-                    "into {C:dark_edition}Polychrome{} {C:attention}Stone{} cards",
+                    "将至多{C:attention}#1#{}张选定卡牌",
+                    "变为{C:dark_edition}炫彩{C:attention}石头{}牌",
                 }
             },
             c_worm_naganadel = {
@@ -186,19 +186,17 @@ return {
                 }
             },
             c_worm_poipole = {
-                name = "Poipole",
+                name = "毒贝比",
                 text = {
-                    "Turn a random {C:attention}Joker{} {C:dark_edition}Eternal{},",
-                    "then turn {C:attention}3{} random cards",
-                    "held in hand {C:dark_edition}Holographic{}",
+                    "使随机一张{C:attention}小丑牌{}变为{C:dark_edition}永恒",
+                    "并将随机{C:attention}3{}张卡牌变为{C:dark_edition}全息",
                 }
             },
             c_worm_nihilego = {
-                name = "Nihilego",
+                name = "虚吾伊德",
                 text = {
-                    "{X:mult,C:white} X#1# {} Mult for the next {C:attention}2{} rounds,",
-                    "forces {C:attention}1{} card to {C:red}always be",
-                    "{C:red}selected{} while active"
+                    "下{C:attention}2{}回合内，{X:mult,C:white}X#1#{}倍率",
+                    "期间使{C:attention}1{}张牌{C:red}强制选中"
                 }
             }
         }

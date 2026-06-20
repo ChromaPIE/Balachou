@@ -15,15 +15,14 @@ return {
                 name = '赌场酒保',
                 text = {
                     {
-                        'Played {C:edition}{E:2}Tipsy{}, {C:edition}{E:1}Drunk{}, {C:dark_edition}{E:1}Very Drunk{},',
-                        'and {C:dark_edition}Blackout{} cards have',
-                        'a {C:green}#1# in #2#{} chance to become',
-                        '{C:attention}Lucky Cards{} when scored',
+                        '打出的{C:edition,E:2}微醺{}、{C:edition,E:1}醉酒{}、{C:dark_edition,E:1}烂醉',
+                        '及{C:dark_edition}醉倒{}牌有{C:green}#1#/#2#{}的几率',
+                        '在计分后变为{C:attention}幸运牌',
                     },
                     {
-                        'Create a {C:attention}Drink{} {C:worm_hedonia_menu}Menu Item{}',
-                        'when {C:attention}Blind{} is selected',
-                        '{C:inactive}(Must have room)',
+                        '选择{C:attention}盲注{}后',
+                        '生成一道{C:worm_hedonia_menu}菜单{}中的{C:attention}酒品',
+                        '{C:inactive}（必须有空位）',
                     },            
                 }
             },

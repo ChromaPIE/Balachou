@@ -173,11 +173,11 @@ descriptions={
 	Stake={
 		stake_worm_mrrp_cosmic ={
 			name=
-				'Cosmic Stake'
+				'宇宙注'
 			, text={
-				"Shop can have {C:attention}Meteoric{} Jokers",
-				"{C:inactive,s:0.8}(Halve all poker hand levels when bought){}",
-				"{s:0.8}Applies {C:money,s:0.8}Gold Stake{}"
+				"商店内可能出现{C:attention}陨星{}小丑牌",
+				"{C:inactive,s:0.8}（购买后，所有牌型等级减半）",
+				"{C:money,s:0.8}金注{s:0.8}限制起效"
 			}
 		}
 	},

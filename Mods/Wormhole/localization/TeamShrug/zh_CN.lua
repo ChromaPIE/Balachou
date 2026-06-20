@@ -67,22 +67,22 @@ return {
 
             -- SPACEWALK
             j_worm_shrug_spacewalk = {
-                name = "Spacewalk",
+                name = "太空漫步",
                 text = {
-                    "Creates a {C:planet}Meteor Tag{}",
-                    "at {C:attention}end of round{} if no",
-                    "{C:planet}Planet{} cards have been used",
-                    "since last round"
+                    "若上回合起",
+                    "未使用过{C:planet}星球{}牌",
+                    "回合结束时",
+                    "生成一个{C:planet}流星标签"
                 }
             },
 
             -- OKAY WITH IT
             j_worm_shrug_okay_with_it = {
-                name = "Okay With It",
+                name = "无所谓",
                 text = {
-                    "Enhance {C:attention}1{} random played",
-                    "and unscored card into a",
-                    "{C:attention}Nebulous Card{} before scoring"
+                    "将随机{C:attention}1{}张",
+                    "打出的不计分牌",
+                    "增强为{C:attention}星云牌"
                 }
             },
 
@@ -99,15 +99,13 @@ return {
 
             -- DARK MATTER
             j_worm_shrug_dark_matter = {
-                name = "Dark Matter",
+                name = "暗物质",
                 text = {
-                    "{X:red,C:white}X#1#{} Mult for each",
-                    "card in your {C:attention}full deck{}",
-                    "with your most numerous {C:attention}suit{}",
-                    "{X:red,C:white}-X#1#{} Mult for each",
-                    "card in your {C:attention}full deck{} with your",
-                    "second-most numerous {C:attention}suit{}",
-                    "{C:inactive}(Currently {}{X:red,C:white}X#2#{}{C:inactive} Mult){}"
+                    "{C:attention}完整牌组{}中占多数的",
+                    "{C:attention}花色{}牌每有一张，{X:red,C:white}X#1#{}倍率",
+                    "占次多数的{C:attention}花色{}牌",
+                    "每有一张，{X:red,C:white}-X#1#{}倍率",
+                    "{C:inactive}（当前为{X:red,C:white}X#2#{C:inactive}倍率）"
                 }
             },
         },
