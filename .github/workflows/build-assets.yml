@@ -50,9 +50,13 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add assets/sarasa-mono-slab-sc.woff2 assets/char-set.txt
-            git commit -m "update font subset [skip ci]"
-            git push
-            echo "Font committed"
+            if git diff --cached --quiet; then
+              echo "Font files unchanged, nothing to commit"
+            else
+              git commit -m "update font subset [skip ci]"
+              git push
+              echo "Font committed"
+            fi
           else
             echo "Character set unchanged, nothing to commit"
           fi

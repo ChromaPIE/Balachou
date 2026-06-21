@@ -54,11 +54,13 @@ WOFF2_PATH = "sarasa-mono-slab-sc.woff2"
 old_chars = ""
 try:
     with open(CHARSET_PATH, encoding="utf-8") as f:
-        old_chars = f.read().strip()
+        old_chars = f.read()
 except FileNotFoundError:
     pass
 
-if char_string == old_chars:
+new_chars = char_string + "\n"
+
+if new_chars == old_chars:
     print("Character set unchanged, skipping font subset")
     with open("font-updated.flag", "w") as f:
         f.write("false")
@@ -74,7 +76,7 @@ else:
     woff2_size = os.path.getsize(WOFF2_PATH)
     print(f"  WOFF2: {woff2_size / 1024:.0f} KB")
     with open(CHARSET_PATH, "w", encoding="utf-8") as f:
-        f.write(char_string + "\n")
+        f.write(new_chars)
     print(f"  Saved character set ({len(char_string)} chars)")
     with open("font-updated.flag", "w") as f:
         f.write("true")
