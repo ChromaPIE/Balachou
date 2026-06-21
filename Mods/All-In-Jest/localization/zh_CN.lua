@@ -99,7 +99,7 @@ return {
             a_aij_joker_slots = '+#1#小丑牌槽位',
             a_aij_joker_slots_minus = '-#1#小丑牌槽位',
 
-            a_aij_odds = "+#1# Odds",
+            a_aij_odds = "+#1#几率",
 
             a_aij_jokers = "+#1#小丑",
         },
@@ -152,9 +152,9 @@ return {
             aij_silver = "银幕",
             aij_stellar = "星辰",
             aij_aureate = "鎏金",
-            aij_torn = "Torn",
+            aij_torn = "撕损",
             -- Stickers
-            aij_marked = "Marked",
+            aij_marked = "标记",
             aij_unusual_doubled = "翻倍",
             aij_recherche_doubled = "翻倍",
             -- Seals
@@ -2180,8 +2180,7 @@ return {
                 text = {
                     '每出一次牌，赚取{C:money}$#1#',
                     '若{C:attention}出牌{}仅包含{C:diamonds}方片{C:attention}K',
-                    '提升{C:money}$#2#',
-                    
+                    '提升{C:money}$#2#'
                 },
             },
             j_aij_alexandre = {
@@ -2213,7 +2212,7 @@ return {
             },
             j_aij_enraging_photo = { name = "Enraging Photo", text = { "" } },
             j_aij_infuriating_note = {
-                name = "Infuriating Note",
+                name = "令人气愤的纸条",
                 text = { {
                     "{X:mult,C:white}X#1#{}倍率",
                     "本牌的{C:dark_edition}负片{}复制",
@@ -2221,14 +2220,15 @@ return {
                     "{C:attention}商店{}及{C:attention}丑角包",
                 },
                     {
-                        "{C:inactive}\"I've taken your stuff,",
-                        "{C:inactive}but you keep pushing through;",
-                        "{C:inactive}I'll have to try harder,",
-                        "{C:inactive}so rats off to you!\" -R. R.",
+                        "{C:inactive}我拿走了你的货，",
+                        "{C:inactive}你却奈何不了我；",
+                        "{C:inactive}下回我再努把力，",
+                        "{C:inactive}向你致敬我的哥！",
+                        "——机智·大鼠",
                     }
                 }
             },
-            j_aij_magic_hat = { name = "Magic hat", text = { "" } },
+            j_aij_magic_hat = { name = "魔法帽", text = { "" } },
             j_aij_anagraph = {
                 name = "Anagraph",
                 text = {
@@ -2496,12 +2496,12 @@ return {
                 }
             },
             j_aij_morio = {
-                name = "Morio",
+                name = "痴愚弄臣",
                 text = {
-                    "When {C:attention}Boss Blind{} is",
-                    "defeated, choose {C:attention}any{}",
-                    "{C:tarot}Tarot{} card to create",
-                    "{C:inactive}(Must have room)"
+                    "击败{C:attention}Boss盲注{}后",
+                    "{C:attention}任选{}并生成",
+                    "一张{C:tarot}塔罗{}牌",
+                    "{C:inactive}（必须有空位）"
                 }
             },
             j_aij_visage = {
@@ -3435,11 +3435,10 @@ return {
             j_aij_historian = {
                 name = "历史学家",
                 text = {
-                    "",
-                    "给予等同于{C:attention}三倍{}于",
+                    "给予等同于{C:attention}#1#倍{}于",
                     "最近售出的小丑牌",
                     "之{C:money}售价{}的{C:mult}倍率",
-                    "{C:inactive}（当前为{C:mult}+#1#{C:inactive}倍率）"
+                    "{C:inactive}（当前为{C:mult}+#2#{C:inactive}倍率）"
                 }
             },
             j_aij_baddata = {
@@ -3465,7 +3464,7 @@ return {
                 }
             },
             j_aij_elder = {
-                name = "Elder",
+                name = "古神",
                 text = {
                     '复制拥有时间{C:attention}最长{}的',
                     '另一个{C:attention}小丑牌{}的能力',
@@ -4320,7 +4319,7 @@ return {
                 }
             },
             tag_aij_overstuffed = {
-                name = '鼓囊标签',
+                name = '填塞标签',
                 text = {
                     "打开的下一个{C:attention}补充包",
                     "提供的可选项和选择次数{C:attention}翻倍"
@@ -4380,12 +4379,10 @@ return {
                 }
             },
             tag_aij_iridescent = {
-                name = 'Iridescent Tag',
+                name = '虹彩标签',
                 text = {
-                    'Apply {C:dark_edition}Holographic{}',
-                    'to a {C:attention}random{} Joker',
-                    'and {C:attention}#1#{} cards in the deck',
-                    'that have no edition'
+                    '为{C:attention}随机{}一张无版本的小丑牌',
+                    '及牌组中的{C:attention}#1#{}张牌添加{C:dark_edition}全息'
                 }
             },
             tag_aij_omnichrome = {
@@ -4480,12 +4477,11 @@ return {
                 }
             },
             tag_aij_ignoramus = {
-                name = 'Ignoramus Tag',
+                name = '蠢汉标签',
                 text = {
-                    'Choose {C:attention}any{} {C:common}Common',
-                    'or {C:uncommon}Uncommon{} Joker',
-                    'to create',
-                    '{C:inactive}(Must have room)'
+                    '{C:attention}任选{}并生成一张',
+                    '{C:common}普通{}或{C:uncommon}罕见{}小丑牌',
+                    '{C:inactive}（必须有空位）'
                 }
             },
             tag_aij_occult = {
@@ -4514,11 +4510,12 @@ return {
                 }
             },
             tag_aij_landfill = {
-                name = 'Landfill Tag',
+                name = '填埋标签',
                 text = {
-                    'Gives {C:money}$1{} per card',
-                    '{C:red}discarded{} this run',
-                    '{C:inactive}(Will give {C:money}$#1#{C:inactive})',
+                    '本赛局内',
+                    '每{C:red}弃{}过一张牌',
+                    '给予{C:money}$1',
+                    '{C:inactive}（将给予{C:money}$#1#{C:inactive}）',
                 }
             },
             tag_aij_cinema = {
@@ -4530,11 +4527,11 @@ return {
                 }
             },
             tag_aij_ventripotent = {
-                name = 'Ventripotent Tag',
+                name = '鼓胀标签',
                 text = {
-                    "Next {C:attention}Booster Pack{} opened",
-                    "contains {C:attention}twice{} the number of",
-                    "options and {C:attention}unlimited{} picks"
+                    "打开的下一个{C:attention}补充包",
+                    "提供的可选项{C:attention}翻倍",
+                    "且{C:attention}不限{}选择次数"
                 }
             },
             tag_aij_timelost = {
@@ -4553,11 +4550,11 @@ return {
                 }
             },
             tag_aij_glamour = {
-                name = 'Glamour Tag',
+                name = '魅力标签',
                 text = {
-                    'Apply {C:aij_plasma}Glimmer{} to',
-                    '{C:attention}2 random{} Jokers',
-                    'that have no edition'
+                    '为{C:attention}随机2{}张',
+                    '无版本小丑牌',
+                    '添加{C:aij_plasma}晶莹'
                 }
             },
             tag_aij_superlunary = {
