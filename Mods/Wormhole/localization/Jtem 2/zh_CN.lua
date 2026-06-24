@@ -22,17 +22,17 @@ return {
 				},
 			},
 			j_worm_jtem2_quantum_rock = {
-				name = "Quantum Rock",
+				name = "量子岩石",
 				text = {
 					{
-						"{X:mult,C:white}X#1#{} Mult",
-						"{C:attention}#2#{} of {V:1}#3#{}",
+						"{X:mult,C:white}X#1#{}倍率",
+						"{V:1}#3#{C:attention}#2#",
 					},
 					{
-						"Exist in all places at the same time",
-						"Only one can be observed",
-						"{C:inactive}(Cannot be Enhanced or",
-						"{C:inactive}retain permanent effects){}"
+						"同时存在于各处",
+						"仅可观测到其中之一",
+						"{C:inactive}无法被增强",
+						"{C:inactive}或保有永久效果"
 					},
 				},
 			},

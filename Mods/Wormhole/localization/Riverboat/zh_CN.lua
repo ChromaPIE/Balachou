@@ -185,13 +185,11 @@ return {
                 }
             },
             j_worm_riverboat_abandoned = {
-                name = "Abandoned Joker",
+                name = "太空弃子",
                 text = {
-                    "{C:green}#1# in #2#{} chance to",
-                    "{C:red}downgrade{} level of",
-                    "played {C:attention}poker hand",
-                    "and convert scoring cards",
-                    "into {C:attention}Stardust Cards"
+                    "有{C:green}#1#/#2#{}的几率",
+                    "使所出{C:attention}牌型{C:red}降级",
+                    "并将计分牌变为{C:attention}星尘牌"
                 }
             }
         },

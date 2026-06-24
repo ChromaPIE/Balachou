@@ -319,11 +319,10 @@ return {
                 },
             },
             c_worm_lfc_wish = {
-                name = "Wish",
+                name = "许愿",
                 text = {
-                    "Add a {C:lfc_meteor}Meteor Seal{}",
-                    "to {C:attention}1{} selected",
-                    "card in your hand",
+                    "为选定的{C:attention}1{}张手牌",
+                    '打上{C:lfc_meteor}陨石蜡封'
                 },
             }
         },

@@ -1290,11 +1290,11 @@ return {
 				},
 			},
 			j_cry_buttercup = {
-				name = "Buttercup",
+				name = "花生酱夹心巧克力",
 				text = {
-					"Can store {C:attention}#1#{} selected shop item#<s>1#",
-					"When sold: Add the stored item#<s>1#",
-					"to the next shop",
+					"可存储{C:attention}#1#{}张选定的商品",
+					"售出本牌后，将所存储的商品",
+					"添加至下个商店"
 				},
 			},
 			j_cry_caeruleum = {
@@ -1322,11 +1322,11 @@ return {
 				},
 			},
 			j_cry_candy_cane = {
-				name = "Candy Cane",
+				name = "拐杖糖",
 				text = {
-					"For the next {C:attention}#1#{} round#<s>1#,",
-					"playing cards give {C:money}$#2#",
-					"when {C:attention}retriggered",
+					"下{C:attention}#1#{}个回合内",
+					"扑克牌{C:attention}重新触发{}时",
+					"给予{C:money}$#2#"
 				},
 			},
 			j_cry_candy_dagger = {
@@ -1338,10 +1338,10 @@ return {
 				},
 			},
 			j_cry_candy_sticks = {
-				name = "Candy Sticks",
+				name = "糖果棒",
 				text = {
-					"Next boss blind's effect isn't active",
-					"until you've played {C:attention}#1#{} hand#<s>1#",
+					"出牌#1#{}次前",
+					"抑制{C:attention}Boss盲注{}的限制",
 				},
 			},
 			j_cry_canvas = {
@@ -1730,23 +1730,20 @@ return {
 				},
 			},
 			j_cry_energia = {
-				name = "Energia",
+				name = "元能",
 				text = {
-					"When a {C:attention}Tag{} is acquired,",
-					"create up to {C:attention}#1#{} cop#<ies,y>1# of it",
-					"and {C:attention}increase{} the number of",
-					"copies by {C:attention}#2#",
+					"获得{C:attention}标签{}时",
+					"生成至多{C:attention}#1#{}个该标签的复制",
+					"并使可复制数量{C:attention}提升#2#",
 				},
 			},
 			j_cry_equilib = {
-				name = "Ace Aequilibrium",
+				name = "王牌均勢",
 				text = {
-					"Jokers appear using the",
-					"order from the {C:attention}Collection{}",
-					"Create {C:attention}#1#{} {C:dark_edition}Negative{} Joker#<s>1#",
-					"when hand is played",
-					"{C:cry_exotic,s:0.8}Exotic {C:inactive,s:0.8}or better Jokers cannot appear",
-					"{s:0.8}Last Joker Generated: {C:attention,s:0.8}#2#",
+					"小丑牌依照{C:attention}收藏{}中的顺序出现",
+					"出牌后，生成{C:attention}#1#{}张{C:dark_edition}负片{}小丑牌",
+					"{C:cry_exotic,s:0.8}异界{C:inactive,s:0.8}及更高稀有度的小丑牌无法出现",
+					"{s:0.8}生成的上一张小丑牌：{C:attention,s:0.8}#2#",
 				},
 			},
 			j_cry_error = {
@@ -1780,11 +1777,11 @@ return {
 				},
 			},
 			j_cry_exponentia = {
-				name = "Exponentia",
+				name = "冪",
 				text = {
-					"This Joker gains {X:talisman_emult,C:white} ^#1# {} Mult",
-					"when {X:red,C:white} XMult {} is triggered",
-					"{C:inactive}(Currently {X:talisman_emult,C:white} ^#2# {C:inactive} Mult)",
+					"有{X:red,C:white}乘倍{}效果触发时",
+					"本牌获得{X:talisman_emult,C:white}^#1#{}倍率",
+					"{C:inactive}（当前为{X:talisman_emult,C:white}^#2#{C:inactive}倍率）"
 				},
 			},
 			j_cry_exposed = {
@@ -1862,14 +1859,14 @@ return {
 				},
 			},
 			j_cry_foodm = {
-				name = "Fast Food M",
+				name = "M记",
 				text = {
-					"{C:mult}+#1#{} Mult",
-					"{C:red,E:2}self destructs{} in {C:attention}#2#{} round#<s>2#",
-					"Increases by {C:attention}#3#{} round when",
-					"{C:attention}Jolly Joker{} is {C:attention}sold{}",
-					"{C:inactive,s:0.8}2 McDoubles, 2 McChickens{}",
-					"{C:inactive,s:0.8}Large Fries, 20 Piece & Large Cake{}",
+					"{C:mult}+#1#{}倍率",
+					"{C:attention}#2#{}回合后{C:red,E:2}自毁",
+					"{C:attention}售出{C:attention}开心小丑{}后",
+					"延长{C:attention}#3#{}回合",
+					"{C:inactive,s:0.8}两个双吉、两个麦香鸡、一份大薯、",
+					"{C:inactive,s:0.8}20个鸡块，再加一个大蛋糕",
 				},
 			},
 			j_cry_foolhardy = {
@@ -1893,7 +1890,7 @@ return {
 					"获取{X:cry_cursed,C:white}受诅{}小丑牌时，摧毁之",
 					"退出商店时，生成{C:attention}#1#{}张{C:dark_edition}负片{C:cry_candy}糖果",
 					"每持有一张{C:cry_candy}糖果{}，{X:talisman_emult,C:white}^#2#{}倍率",
-					"{C:inactive}（当前为{X:talisman_emult,C:white}^#3#{C:inactive倍率）"
+					"{C:inactive}（当前为{X:talisman_emult,C:white}^#3#{C:inactive}倍率）"
 				},
 			},
 			j_cry_foxy = {
@@ -1947,11 +1944,10 @@ return {
 				},
 			},
 			j_cry_giggly = {
-				name = "Absurd Joker",
+				name = "荒诞小丑",
 				text = {
-					"{C:red}+#1#{} Mult if played",
-					"hand contains",
-					"a {C:attention}#2#",
+					"若出牌包含{C:attention}#2#",
+					"{C:red}+#1#{}倍率",
 				},
 			},
 			j_cry_goldjoker = {
@@ -1977,12 +1973,12 @@ return {
 			j_cry_happy = {
 				name = ":D",
 				text = {
-					"Create a random {C:attention}Joker{}",
-					"at end of round",
-					"Sell this card to",
-					"create a random {C:attention}Joker{}",
-					"{C:inactive}(Must have room){}",
-				},
+					"回合结束时",
+					"随机生成一张{C:attention}小丑牌",
+					"售出本牌后",
+					"随机生成一张{C:attention}小丑牌",
+					"{C:inactive}（必须有空位）"
+        		}
 			},
 			j_cry_happyhouse = {
 				name = "快乐老家",
@@ -2073,12 +2069,12 @@ return {
 				},
 			},
 			j_cry_kidnap = {
-				name = "Kidnapping",
+				name = "拐卖",
 				text = {
-					"Earn {C:money}$#1#{} at end of round",
-					"per unique {C:attention}Type Mult{} or",
-					"{C:attention}Type Chips{} Joker sold this run",
-					"{C:inactive}(Currently {C:money}$#2#{C:inactive})",
+					"本赛局每售出过一种",
+					"{C:attention}牌型倍率{}或{C:attention}牌型筹码{}类小丑牌",
+					"回合结束时赚取{C:money}$#1#",
+					"{C:inactive}（当前可赚取{C:money}$#2#{C:inactive}）",
 				},
 			},
 			j_cry_kittyprinter = {
@@ -2258,11 +2254,10 @@ return {
 				},
 			},
 			j_cry_mellowcreme = {
-				name = "Mellowcreme",
+				name = "南瓜奶油糖",
 				text = {
-					"Sell this card to {C:attention}multiply",
-					"the sell value of all",
-					"{C:attention}consumables{} by {C:attention}X#1#",
+					"售出本牌以使所有",
+					"{C:attention}消耗牌{}的售价{C:attention}X#1#",
 				},
 			},
 			j_cry_membershipcard = {
@@ -2526,18 +2521,18 @@ return {
 				},
 			},
 			j_cry_pity_prize = {
-				name = "Pity Prize",
+				name = "安慰奖",
 				text = {
-					"On skipping a {C:attention}Booster Pack{},",
-					"gain a random {C:attention}Tag{}",
+					"跳过{C:attention}补充包{}后",
+					"随机获得一个{C:attention}标签",
 				},
 			},
 			j_cry_pity_prize_modest = {
-				name = "Pity Prize",
+				name = "安慰奖",
 				text = {
-					"On skipping a {C:attention}Booster Pack{},",
-					"gain a random {C:attention}Tag{}",
-					"{C:red,E:2}Self destructs{}",
+					"跳过{C:attention}补充包{}后",
+					"随机获得一个{C:attention}标签",
+					"并{C:red,E:2}自毁",
 				},
 			},
 			j_cry_pot_of_jokes = {
@@ -2878,13 +2873,12 @@ return {
 				},
 			},
 			j_cry_stella_mortis = {
-				name = "Stella Mortis",
+				name = "DS-1軌道戰鬥太空站",
 				text = {
-					"This Joker destroys a",
-					"random {C:planet}Planet{} card",
-					"to gain {X:talisman_emult,C:white} ^#1# {} Mult",
-					"at the end of the {C:attention}shop{}",
-					"{C:inactive}(Currently {X:talisman_emult,C:white} ^#2# {C:inactive} Mult)",
+					"退出{C:attention}商店{}时",
+					"随机摧毁一张{C:planet}星球{}牌",
+					"并获得{X:talisman_emult,C:white}^#1#{}倍率",
+					"{C:inactive}（当前为{X:talisman_emult,C:white}^#2#{C:inactive}倍率）",
 				},
 			},
 			j_cry_stronghold = {
@@ -3589,11 +3583,10 @@ return {
 				},
 			},
 			c_cry_source = {
-				name = "Source",
+				name = "源码",
 				text = {
-					"Add a {C:cry_code}Green Seal{}",
-					"to {C:attention}#1#{} selected",
-					"card#<s>1# in your hand",
+					"为选定的{C:attention}#1#{}张手牌",
+                    '打上{C:cry_code}绿色蜡封'
 				},
 			},
 			c_cry_summoning = {
@@ -3948,11 +3941,11 @@ return {
 				},
 			},
 			tag_cry_gold = {
-				name = "Golden Tag",
+				name = "黄金标签",
 				text = {
-					"Next base edition shop",
-					"Joker is free and",
-					"becomes {C:dark_edition}Golden{}",
+					"商店内的下一张",
+					"无版本小丑牌",
+					"将变为{C:dark_edition}璨金{}且售价为{C:money}$0",
 				},
 			},
 			tag_cry_gourmand = {
@@ -4040,12 +4033,12 @@ return {
 				},
 			},
 			tag_cry_triple = {
-				name = "Triple Tag",
+				name = "三倍标签",
 				text = {
-					"Gives {C:attention}#1#{} cop#<ies,y>1# of the",
-					"next selected {C:attention}Tag",
-					"{s:0.8,C:inactive}Copying Tags excluded",
-				},
+					"为下一个获得的{C:attention}标签",
+					"额外生成{C:attention}#1#{}个复制品",
+					"{s:0.8,C:inactive}复制型标签除外"
+				}
 			},
 			tag_cry_clone = {
 				name = "Clone Tag",
@@ -4113,12 +4106,11 @@ return {
 		Voucher = {
 			-- Standard Vouchers
 			v_cry_copies = {
-				name = "Copies",
+				name = '三重复制',
 				text = {
-					"Double Tags become",
-					"{C:attention}Triple Tags{} and are",
-					"{C:attention}2X{} as common",
-				},
+					"双倍标签变为{C:attention}三倍标签",
+					"且出现频率{C:attention}X2"
+				}
 			},
 			v_cry_tag_printer = {
 				name = "Tag Printer",

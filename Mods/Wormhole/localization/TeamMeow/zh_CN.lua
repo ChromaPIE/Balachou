@@ -335,8 +335,8 @@ return {
 			j_worm_meow_feli = {
 				name = "Félicette",
 				text = {
-					"{C:mult}+#1#{} Mult",
-					"per {C:attention}Cat{} Joker",
+					"每有一张{C:attention}猫{}小丑牌",
+					"{C:mult}+#1#{}倍率"
 				}
 			},
 		},

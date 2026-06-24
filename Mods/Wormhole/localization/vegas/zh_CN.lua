@@ -81,12 +81,12 @@ return {
 		        }
             },
             j_worm_inthesky = {
-                name = "Diamonds in the Sky",
+                name = "片片繁星",
 		        text = {
-			        "If first hand of round", 
-              "contains {C:attention}#1#{} {V:1}Diamonds{},",
-			        "a random card held in hand",
-              "becomes {C:dark_edition}Negative{}"
+			        "若回合首次出牌",
+					"包含{C:attention}#1#{}张{V:1}方片",
+			        "使随机一张手牌",
+					"变为{C:dark_edition}负片"
 		        }
             },
             j_worm_observable = {

@@ -134,11 +134,11 @@ return {
                 }
             },
             j_worm_ibu_terraforming = {
-                name = 'Terraforming',
+                name = '行星地球化',
                 text = {
-                    "Create an {C:planet}Earth{} whenever",
-                    "a {C:planet}#1#{} is used",
-                    "{C:inactive,s:0.8}required planet changes each round",
+                    "使用{C:planet}#1#{}后",
+                    "生成一张{C:planet}地球",
+                    "{C:inactive,s:0.8}每回合变更需求星球牌类型",
                 }
             },
             j_worm_ibu_jettison = {
@@ -157,11 +157,11 @@ return {
                 }
             },
             j_worm_ibu_warpgate = {
-                name = 'Warp Gate',
+                name = '跃迁门',
                 text = {
-                    "Sell this card after {C:attention}#2# round{}",
-                    "to give {C:Legendary}Eternal{} to a random joker",
-                    "{C:inactive}(Currently: {C:attention}#1#/#2# {C:inactive}round)"
+                    "{C:attention}#2#回合{}后售出本牌",
+                    "以使随机一张小丑牌获得{C:Legendary}永恒",
+                    "{C:inactive}（当前为{C:attention}#1#/#2#{C:inactive}回合）"
                 }
             },
             j_worm_ibu_heater = {

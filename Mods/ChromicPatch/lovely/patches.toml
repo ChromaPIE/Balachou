@@ -92,6 +92,23 @@ pattern = 'if not val then'
 position = "at"
 payload = 'if not val and card.ability[self.key] then'
 
+# AIJ Royal Flush: preserve SMODS default hand upgrade path when caller omits args.func
+[[patches]]
+[patches.pattern]
+target = '=[SMODS allinjest "Utils/hooks.lua"]'
+match_indent = true
+pattern = '''
+            func = function(base, hand, parameter, level_up)
+                return args.func(base, "Straight Flush", parameter, level_up)
+            end,
+'''
+position = "at"
+payload = '''
+            func = args.func and function(base, hand, parameter, level_up)
+                return args.func(base, "Straight Flush", parameter, level_up)
+            end or nil,
+'''
+
 # Cartomancer: revert SUITS_SORTED to SUITS — population-loop patch fails under SOE
 [[patches]]
 [patches.pattern]
@@ -215,6 +232,30 @@ match_indent = true
 pattern = "self.wormhole_origin_deck_key = self.playing_card and G.GAME[self.back].name or 'b_red'"
 position = "at"
 payload = "self.wormhole_origin_deck_key = self.playing_card and G.GAME[self.back] and G.GAME[self.back].name or 'b_red'"
+
+# SMODS Blind:stay_flipped: preserve scored_card for self eval effects.
+# Enhancement/seal effects can return modify.to_area here; without the card
+# argument, downstream calculate_individual_effect wrappers receive nil.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/overrides.lua"]'
+match_indent = true
+pattern = "local self_flags = SMODS.trigger_effects({ self_eval, self_post })"
+position = "at"
+payload = "local self_flags = SMODS.trigger_effects({ self_eval, self_post }, card)"
+
+# SMODS calculate_individual_effect: modify effects can be resolved after
+# eval_card has popped context_stack, such as Blind:stay_flipped self effects.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/utils.lua"]'
+match_indent = true
+pattern = '''    if key == 'modify' then
+        if SMODS.context_stack[#SMODS.context_stack].context.modify_final_cashout then'''
+position = "at"
+payload = '''    if key == 'modify' then
+        local chromicpatch_context = SMODS.context_stack[#SMODS.context_stack]
+        if chromicpatch_context and chromicpatch_context.context.modify_final_cashout then'''
 
 [[patches]]
 [patches.pattern]
@@ -744,9 +785,9 @@ payload = "local _card = create_card(t.set or t.type, t.area, t.legendary, t.rar
 [patches.pattern]
 target = '=[SMODS _ "src/utils/weights.lua"]'
 match_indent = true
-pattern = "if eligible_bosses[k] > min_use then"
+pattern = "if eligible_bosses[k] > min_use and not G.P_BLINDS[k][blind_type].allow_duplicates then"
 position = "at"
-payload = "if type(eligible_bosses[k]) == 'number' and eligible_bosses[k] > min_use then"
+payload = "if type(eligible_bosses[k]) == 'number' and eligible_bosses[k] > min_use and not G.P_BLINDS[k][blind_type].allow_duplicates then"
 
 # AIJ retrieve_joker_text get_text(): fix operator precedence for Dynatext fallback
 # `text .. chosen_option.string or get_text(...)` parses as `(text .. string) or get_text(...)`
@@ -1088,15 +1129,197 @@ G.E_MANAGER:add_event(Event({
 }))
 '''
 
-# nuGC: raise full-GC safety ceiling to reduce periodic stutter from forced collect()
-# Incremental per-frame GC still runs; this only delays the expensive full collection.
+# CP_GC: replace fixed nuGC ceiling with a modded-run GC policy.
+# The policy keeps incremental GC active, raises pressure budgets when Lua heap is
+# high, and only runs full collection in idle windows unless the panic ceiling is hit.
+[[patches]]
+[patches.regex]
+target = "functions/misc_functions.lua"
+position = "at"
+pattern = '''function nuGC\(time_budget, memory_ceiling, disable_otherwise\)\s*time_budget = time_budget or 3e-4\s*memory_ceiling = memory_ceiling or [0-9]+\s*local max_steps = 1000\s*local steps = 0\s*local start_time = love\.timer\.getTime\(\)\s*while\s*love\.timer\.getTime\(\) - start_time < time_budget and\s*steps < max_steps\s*do\s*collectgarbage\("step", 1\)\s*steps = steps \+ 1\s*end\s*--safety net\s*if collectgarbage\("count"\) / 1024 > memory_ceiling then\s*collectgarbage\("collect"\)\s*end\s*--don't collect gc outside this margin\s*if disable_otherwise then\s*collectgarbage\("stop"\)\s*end\s*end'''
+payload = '''CP_GC = CP_GC or {}
+CP_GC.config = CP_GC.config or {
+    soft_ceiling = 1536,
+    hard_ceiling = 2048,
+    panic_ceiling = 3072,
+    normal_budget = 3e-4,
+    pressure_budget = 8e-4,
+    idle_budget = 2e-3,
+    max_steps = 1800,
+    step_size = 1,
+    pressure_step_size = 8,
+    full_cooldown = 20,
+    long_dt = 0.05,
+    debug = false,
+}
+
+function CP_GC.now()
+    if love and love.timer and love.timer.getTime then
+        return love.timer.getTime()
+    end
+    return os.clock()
+end
+
+function CP_GC.queue_size()
+    local queues = G and G.E_MANAGER and G.E_MANAGER.queues
+    if not queues then return 0 end
+    local count = 0
+    for _, queue in pairs(queues) do
+        count = count + #queue
+    end
+    return count
+end
+
+function CP_GC.is_idle_window()
+    if not G then return false end
+    if CP_GC.queue_size() > 8 then return false end
+    if G.SETTINGS and G.SETTINGS.paused then return true end
+
+    local state = G.STATE
+    local states = G.STATES or {}
+    return state == states.MENU or
+        state == states.SPLASH or
+        state == states.SHOP or
+        state == states.BLIND_SELECT or
+        state == states.ROUND_EVAL or
+        state == states.GAME_OVER
+end
+
+function CP_GC.request(reason, pressure)
+    CP_GC.pending_reason = reason or "external"
+    CP_GC.pending_pressure = math.max(CP_GC.pending_pressure or 0, pressure or 1)
+end
+
+function CP_GC.choose_budget(mem_mb, soft_ceiling, time_budget)
+    if time_budget then return time_budget end
+
+    local config = CP_GC.config
+    local budget = config.normal_budget
+    if mem_mb >= soft_ceiling or (CP_GC.pending_pressure or 0) > 0 then
+        budget = config.pressure_budget
+    end
+    if CP_GC.is_idle_window() then
+        budget = math.max(budget, config.idle_budget)
+    elseif G and G.real_dt and G.real_dt > config.long_dt then
+        budget = math.min(budget, config.normal_budget)
+    end
+    return budget
+end
+
+function CP_GC.full_collect(reason, mem_before)
+    local start_time = CP_GC.now()
+    collectgarbage("collect")
+    local elapsed = CP_GC.now() - start_time
+    local mem_after = collectgarbage("count") / 1024
+
+    CP_GC.last_full_at = CP_GC.now()
+    CP_GC.last_full_reason = reason
+    CP_GC.last_full_cost = elapsed
+    CP_GC.last_mem_before = mem_before
+    CP_GC.last_mem_after = mem_after
+    CP_GC.full_count = (CP_GC.full_count or 0) + 1
+
+    if CP_GC.config.debug then
+        print(string.format(
+            "CP_GC full reason=%s before=%.1fMB after=%.1fMB cost=%.1fms queue=%d state=%s",
+            tostring(reason),
+            mem_before or -1,
+            mem_after,
+            elapsed * 1000,
+            CP_GC.queue_size(),
+            tostring(G and G.STATE)
+        ))
+    end
+end
+
+function CP_GC.run(time_budget, memory_ceiling, disable_otherwise)
+    local config = CP_GC.config
+    local hard_ceiling = memory_ceiling or config.hard_ceiling
+    local soft_ceiling = math.min(config.soft_ceiling, hard_ceiling)
+    if soft_ceiling >= hard_ceiling then
+        soft_ceiling = hard_ceiling * 0.75
+    end
+    local panic_ceiling = math.max(config.panic_ceiling, hard_ceiling)
+
+    local mem_mb = collectgarbage("count") / 1024
+    local budget = CP_GC.choose_budget(mem_mb, soft_ceiling, time_budget)
+    local step_size = (mem_mb >= soft_ceiling or (CP_GC.pending_pressure or 0) > 0) and
+        config.pressure_step_size or
+        config.step_size
+
+    local start_time = CP_GC.now()
+    local steps = 0
+    while CP_GC.now() - start_time < budget and steps < config.max_steps do
+        collectgarbage("step", step_size)
+        steps = steps + 1
+    end
+
+    CP_GC.last_step_cost = CP_GC.now() - start_time
+    CP_GC.last_steps = steps
+    CP_GC.last_mem = collectgarbage("count") / 1024
+    CP_GC.peak_mem = math.max(CP_GC.peak_mem or 0, CP_GC.last_mem)
+
+    local now = CP_GC.now()
+    local cooldown_ok = not CP_GC.last_full_at or now - CP_GC.last_full_at >= config.full_cooldown
+    local idle = CP_GC.is_idle_window()
+    local pending_pressure = CP_GC.pending_pressure or 0
+
+    if CP_GC.last_mem >= panic_ceiling then
+        CP_GC.full_collect("panic_ceiling", CP_GC.last_mem)
+    elseif CP_GC.last_mem >= hard_ceiling and idle and cooldown_ok then
+        CP_GC.full_collect("idle_hard_ceiling", CP_GC.last_mem)
+    elseif pending_pressure >= 3 and idle and cooldown_ok then
+        CP_GC.full_collect(CP_GC.pending_reason or "requested_idle", CP_GC.last_mem)
+    end
+
+    if pending_pressure > 0 then
+        CP_GC.pending_pressure = math.max(0, pending_pressure - 0.25)
+    end
+    if disable_otherwise then
+        collectgarbage("stop")
+    end
+end
+
+function nuGC(time_budget, memory_ceiling, disable_otherwise)
+    return CP_GC.run(time_budget, memory_ceiling, disable_otherwise)
+end'''
+
+# Amulet/Talisman scoring coroutine has its own 1GB full-GC gate. Replace that
+# hot-path full collect with a CP_GC pressure request while preserving coroutine flow.
 [[patches]]
 [patches.pattern]
-target = "functions/misc_functions.lua"
+target = "main.lua"
 match_indent = true
-position = "at"
-pattern = "memory_ceiling = memory_ceiling or 300"
-payload = "memory_ceiling = memory_ceiling or 1024"
+position = "after"
+pattern = 'require("talisman.coroutine")'
+payload = '''if Talisman and Talisman.coroutine and Talisman.coroutine.update then
+    local _cp_talisman_coroutine = Talisman.coroutine
+    function _cp_talisman_coroutine.update(dt)
+        if not Talisman.scoring_coroutine then return end
+
+        if collectgarbage("count") > 1024 * 1024 then
+            if CP_GC and CP_GC.request then
+                CP_GC.request("talisman_scoring_coroutine", 2)
+            else
+                collectgarbage("step", 64)
+            end
+        end
+
+        if coroutine.status(Talisman.scoring_coroutine.coroutine) == "dead" or _cp_talisman_coroutine.aborted then
+            _cp_talisman_coroutine.forcestop()
+            return
+        end
+
+        _cp_talisman_coroutine.resume()
+
+        if not G.OVERLAY_MENU then
+            _cp_talisman_coroutine.overlay()
+        else
+            Talisman.scoring_coroutine.time = Talisman.scoring_coroutine.time + dt
+            _cp_talisman_coroutine.update_text()
+        end
+    end
+end'''
 
 # Kino Card.generate_UIBox_ability_table wrappers: preserve vars_only returns.
 # All-In-Jest calls joker:generate_UIBox_ability_table(true) while scanning

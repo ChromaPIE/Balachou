@@ -424,14 +424,15 @@ return {
                 }
             },
             j_kino_batman_returns = {
-                name = "Batman Returns",
+                name = "蝙蝠侠归来",
                 text = {
-                    "{C:attention}+#1#{} Joker slot",
-                    "for each {C:attention}#2#{} Batman {C:attention}Jokers{}"
+                    "每拥有{C:attention}#2#{}张",
+                    "{C:attention}蝙蝠侠小丑牌",
+                    "小丑牌槽位{C:attention}+#1#"
                 },
                 unlock = {
-                    "Win a run with",
-                    "{C:attention}eight{} Joker slots"
+                    "以{C:attention}8{}个小丑牌槽位",
+                    "赢下一局"
                 }
             },
             j_kino_batmanvsuperman = {
@@ -479,7 +480,7 @@ return {
                 text = {
                     "若出牌包含{C:attention}K",
                     "打出的每张{C:attention}非人头{}牌",
-                    "计分时变为{C:attention}2"
+                    "在出牌计分后变为{C:attention}2"
                 },
                 unlock = {
                     "单独弃掉一张{C:attention}2{}和一张{C:attention}K"
@@ -496,18 +497,18 @@ return {
                 }
             },
             j_kino_big_trouble_little_china = {
-                name = "Big Trouble in Little China",
+                name = "妖魔大闹唐人街",
                 text = {
                     {
-                        "Gain {C:attention}1{} Charge",
-                        "when you {C:Magic}Cast a Spell"
+                        "{C:Magic}施咒{}后，蓄能{C:attention}1{}层"
                     },
-                    {"Lower {C:attention}Boss Blind{}", 
-                    "by {C:attention}#3#%{} per {C:attention}Charge{} consumed",
-                    "{C:inactive}(Currently: {C:attention}#4#%{C:inactive})"}
+                    {"每释放一层{C:attention}蓄能",
+                    "使{C:attention}Boss盲注{}的", 
+                    "得分要求削减{C:attention}#3#%",
+                    "{C:inactive}（当前可削减{C:attention}#4#%{C:inactive}）"}
                 },
                 unlock = {
-                    "{C:Magic}Cast a Spell"
+                    "{C:Magic}施放一道咒术"
                 }
             },
             j_kino_black_panther = {
@@ -1154,27 +1155,27 @@ return {
                 }
             },
             j_kino_dracula_1931 = {
-                name = "Dracula (1931)",
+                name = { "吸血鬼（1931）", "{s:0.7,C:inactive}英语版" },
                 text = {
-                    "Gain {C:white,X:mult}X#2#{} Mult",
-                    "when a card is {C:Drain}Drained",
-                    "{C:inactive}(Currently {X:mult,C:white} X#1# {C:inactive} Mult)",
+                    "有卡牌被{C:Drain}耗竭{}后",
+                    "获得{C:white,X:mult}X#2#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#1#{C:inactive}倍率）",
                 },
                 unlock = {
-                    "Defeat {C:attention}Dracula{}"
+                    "击败{C:attention}德古拉伯爵"
                 }
             },
             j_kino_dracula_1931_2 = {
-                name = "Drácula (1931)",
+                name = { "吸血鬼（1931）", "{s:0.7,C:inactive}西班牙语版" },
                 text = {
-                    "{C:Drain}Drain{} scoring {C:attention}Enhancements",
-                    "and gain {C:white,X:mult}X#3#{} Mult",
-                    "{C:Drain}Drain-Debuff{} {C:attention}unenhanced{} scoring cards",
-                    "and gain {C:white,X:mult}X#2#{} Mult",
-                    "{C:inactive}(Currently {X:mult,C:white} X#1# {C:inactive} Mult)",
+                    "{C:Drain}耗竭{}计分牌的{C:attention}增强",
+                    "并获得{C:white,X:mult}X#3#{}倍率",
+                    "{C:Drain}失效耗竭{}计分的{C:attention}无增强{}牌",
+                    "并获得{C:white,X:mult}X#2#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#1#{C:inactive}倍率）",
                 },
                 unlock = {
-                    "Defeat {C:attention}Dracula{}"
+                    "击败{C:attention}德古拉伯爵"
                 }
             },
             j_kino_dracula_bram_stoker = {
@@ -1472,15 +1473,14 @@ return {
                 }
             },
             j_kino_fright_night = {
-                name = "Fright Night",
+                name = "天师斗僵尸",
                 text = {
-                    "{C:Drain}Drain{} scoring {C:attention}seal",
-                    "and gain {X:mult,C:white}x#1#{} Mult",
-                    "for each {C:attention}seal{} drained",
-                    "{C:inactive}(Currently {X:mult,C:white}x#2#{C:inactive} Mult)",
+                    "{C:Drain}耗竭{}计分的{C:attention}蜡封",
+                    "每耗竭一个，获得{X:mult,C:white}X#1#{}倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）",
                 },
                 unlock = {
-                    "{C:Drain}Drain{} {C:attention}#2#{} Blood Counters",
+                    "{C:Drain}耗竭{C:attention}#2#{}位鲜血计数标",
                     "{C:inactive}（#1#）"
                 }
             },
@@ -2252,12 +2252,12 @@ return {
                 }
             },
             j_kino_marty_supreme = {
-                name = "Marty Supreme",
+                name = "至尊马蒂",
                 text = {
-                    "If {C:attention}first{} hand of round",
-                    "contains exactly {C:attention}2{} cards",
-                    "increase rank of leftmost card by 1",
-                    "and lower rank of rightmost card by 1"
+                    "若回合{C:attention}首次{}出牌",
+                    "恰包含{C:attention}2{}张牌",
+                    "使左侧牌点数{C:attention}+1",
+                    "使右侧牌点数{C:attention}-1"
                 }
             },
             j_kino_marty = {
@@ -2471,11 +2471,11 @@ return {
                 }
             },
             j_kino_ponyo = {
-                name = "Ponyo",
+                name = "崖上的波妞",
                 text = {
-                    {"{C:white,X:attention}Active:{} {X:mult,C:white}X#2#{} Mult",},
-                    {"{C:white,X:attention}Inactive:{} Gain {X:mult,C:white}X#1#{} Mult",
-                    "for each unscored card"}
+                    {"{C:white,X:attention}激发{}：{X:mult,C:white}X#2#{}倍率",},
+                    {"{C:white,X:attention}未激发{}：每有一张",
+                    "不计分牌，获得{X:mult,C:white}X#1#{}倍率"}
                 }
             },
             j_kino_nightcrawler = {
@@ -2621,12 +2621,11 @@ return {
             j_kino_oppenheimer = {
                 name = "奥本海默",
                 text = {
-                    "Whenever you solve",
-                    "the {C:attention}Codex{}",
-                    "create a {C:spectral}Spectral Card{}"
+                    "{C:attention}解谜{}后",
+                    "生成一张{C:spectral}幻灵{}牌"
                 },
                 unlock = {
-                    "Discover every {C:spectral}Spectral{} Card"
+                    "发现每张{C:spectral}幻灵{}牌"
                 }
             },
             j_kino_pain_and_gain = {
@@ -2966,13 +2965,12 @@ return {
                 }
             },
             j_kino_ringu = {
-                name = "Ring (1998)",
+                name = "午夜凶铃（1998）",
                 text = {
-                    "{X:mult,C:white}X#1#{} Mult",
-                    "Decreases by {X:mult,C:white}X#2#{} Mult",
-                    "each hand",
-                    "{C:attention}Cannot be sold!{}",
-                    "{C:attention}there are consequences"
+                    "{X:mult,C:white}X#1#{}倍率",
+                    "每次出牌{X:mult,C:white}-X#2#{}倍率",
+                    "{C:attention}无法售出",
+                    "{C:attention}后果自负"
                 }
             },
             j_kino_robocop_1 = {
@@ -3177,12 +3175,11 @@ return {
                 }
             },
             j_kino_sinners = {
-                name = "Sinners",
+                name = "罪人",
                 text = {
-                    "{C:Drain}Drain-Debuff{} first scoring card",
-                    "each round and put {C:Drain}#1# Blood Counters",
-                    "on every card in deck",
-                    "that shares its rank"
+                    "{C:Drain}失效耗竭{}回合首张计分牌",
+                    "并对牌组中的每张同点牌",
+                    "施加{C:attention}#1#{}位{C:Drain}鲜血计数标",
                 },
                 unlock = {
                     "Own a {C:Drain}Vampire{} Joker",
@@ -5696,10 +5693,10 @@ return {
                 }
             },
             bl_kino_dracula = {
-                name = "Count Dracula",
+                name = "德古拉伯爵",
                 text = {
-                    "Debuff each {C:attention}Enhanced",
-                    "card played after scoring"
+                    "出牌计分后",
+                    "使其中所有{C:attention}增强牌{}失效"
                 }
             },
             bl_kino_wickedwitch = {
@@ -5853,17 +5850,17 @@ return {
             bl_kino_dr_evil = {
                 name = "邪恶博士",
                 text = {
-                    "出牌得分必须越来越高"
+                    "出牌总点数必须越来越大"
                 }
             },
             
             bl_kino_godzilla = {
-                name = "Godzilla",
+                name = "哥斯拉",
                 text = {
-                    "Enormously large blind and",
-                    "create a {C:attention}Barrage.",
-                    "Lower blind by {C:attention}#1#%{} when",
-                    "a card is discarded"
+                    "极度庞大盲注",
+                    "生成一张{C:attention}密集火力",
+                    "每弃掉一张牌",
+                    "盲注得分要求削减{C:attention}#1#%"
                 }
             },
             bl_kino_mr_glass = {
@@ -5913,11 +5910,11 @@ return {
                 }
             },
             bl_kino_pearl = {
-                name = "Pearl",
+                name = "珀尔",
                 text = {
-                    "Hand size reduced to {C:attention}1{} and",
-                    "gain {C:attention}2{} hand size when hand is",
-                    "played or discarded"
+                    "手牌上限减至{C:attention}1",
+                    "出牌或弃牌后",
+                    "手牌上限{C:attention}+2"
                 }
             },
 
@@ -6050,10 +6047,10 @@ return {
 
             -- Fire Blinds
             bl_kino_ronald_bartel = {
-                name = "Ronald Bartel",
+                name = "罗纳德·巴特尔",
                 text = {
-                    "Put a {C:Burn}Burn Counter{} on every",
-                    "{C:attention}5th{} card drawn"
+                    "对每第{C:attention}5{}张抽到的牌",
+                    "施加1位{C:Burn}燃烧计数标"
                 }
             },
             bl_kino_varang = {
@@ -6064,10 +6061,10 @@ return {
                 }
             },
             bl_kino_te_ka = {
-                name = "Te Kā",
+                name = "恶卡",
                 text = {
-                    "Set play and discard selection limit to 2 and",
-                    "create an {C:attention}Eruption",
+                    "设出牌及弃牌选牌上限为2张",
+                    "生成一张{C:attention}火山爆发",
                 }
             },
 
@@ -6224,10 +6221,10 @@ return {
                 }
             },
             c_kino_barrage = {
-                name = "Barrage",
+                name = "密集火力",
                 text = {
                     {
-                        "{C:red}Discard{} every card held in hand"
+                        "{C:red}弃掉{}所有手牌"
                     }
                 }
             },
@@ -6486,7 +6483,8 @@ return {
             output_powerchange = {
                 name = "能力抑制",
                 text = {
-                    "本牌最终提供的{C:attention}计分加成",
+                    "本牌最终提供的",
+                    "{C:attention}计分加成",
                     "削减{C:red}X#1#"
                 }
             },
@@ -8054,7 +8052,7 @@ return {
             k_blockbuster_included_cards = "包含卡牌",
             k_playset = "播单",
             k_contentpackage = "内容包",
-            kino_select_playset = "播单",
+            kino_select_playset = "选择播单",
 
 
 
@@ -8196,7 +8194,7 @@ return {
             k_kino_ratatouille = "Delicious Flavours!",
             k_kino_starwars_ii = "Strengthen the Clone Army",
             k_kino_starwars_viii = "See you around, kid",
-            k_kino_ponyo = "Ponyo!",
+            k_kino_ponyo = "波妞！",
             k_kino_evil_dead_1 = "Soon all of you will be like me",
             k_kino_pirates_1 = "Pirate's Gold",
             k_kino_paulblart_1 = "Low Blood Sugar :(",
