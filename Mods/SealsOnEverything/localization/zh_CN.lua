@@ -43,7 +43,7 @@ return {
 			b_cry_sl_deck = {
 				name = "蜡封牌组",
 				text = {
-					"所有卡牌均拥有{C:dark_edition}#1#",
+					"所有卡牌均拥有{V:1}#1#",
 					"卡牌的蜡封无法变更",
 					"{C:inactive}（点击以编辑）",
 				},
@@ -675,11 +675,11 @@ return {
                 }
             },
             c_soe_sourceq = {
-                name = 'Source?',
-                text = {
-                    'Add a {C:cry_code}Green Seal{}',
-                    'to a random joker',
-                }
+                name = "源码？",
+				text = {
+					"为随机一张小丑牌",
+                    '打上{C:cry_code}绿色蜡封'
+				},
             },
             c_soe_eternalq = {
                 name = '永恒？',

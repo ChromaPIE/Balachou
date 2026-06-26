@@ -782,10 +782,11 @@ return {
 			c_cry_declare = {
 				name = "://DECLARE",
 				text = {
-					"Your {C:attention}currently{} selected cards",
-					"become a {C:cry_code}new{} Poker hand which is",
-					"considered to contain a {C:attention}#1#{}",
-					"You may create up to {C:attention}3{} {C:inactive}[#2#]{} Hands",
+					"{C:inactive,s:0.8}-- 声明",
+					"将{C:attention}当前{}的选定牌",
+					"创建为{C:cry_code}新{}牌型",
+					"且视作包含{C:attention}#1#",
+					"至多可创建{C:attention}3{C:inactive}[#2#]{}种牌型",
 				},
 			},
 		},
@@ -1508,28 +1509,27 @@ return {
 				},
 			},
 			j_cry_copypaste = {
-				name = "Copy/Paste",
+				name = "复制/粘贴",
 				text = {
-					"{C:green}#1# in #2#{} chance to duplicate",
-					"used {C:cry_code}Code{} cards",
-					"{C:red}Works once per round{}",
-					"{C:inactive}(Must have room)",
+					"有{C:green}#1#/#2#{}的几率",
+					"复制使用的{C:cry_code}代码卡",
+					"{C:red}每回合一次",
+					"{C:inactive}（必须有空位）",
 				},
 			},
 			j_cry_copypaste_modest = {
-				name = "Copy/Paste",
+				name = "复制/粘贴",
 				text = {
-					"Duplicate pulled",
-					"{C:cry_code}Code{} cards",
-					"{C:inactive}(Must have room)",
+					"复制拉取的{C:cry_code}代码卡",
+					"{C:inactive}（必须有空位）",
 				},
 			},
 			j_cry_copypaste_madness = {
-				name = "Copy/Paste",
+				name = "复制/粘贴",
 				text = {
-					"{C:green}#1# in #2#{} chance to duplicate",
-					"used {C:cry_code}Code{} cards",
-					"{C:inactive}(Must have room)",
+					"有{C:green}#1#/#2#{}的几率",
+					"复制使用的{C:cry_code}代码卡",
+					"{C:inactive}（必须有空位）",
 				},
 			},
 			j_cry_cotton_candy = {
@@ -2176,19 +2176,21 @@ return {
 			j_cry_M = {
 				name = "M",
 				text = {
-					"Create a {C:dark_edition}Negative{}",
-					"{C:attention}Jolly Joker{} when",
-					"{C:attention}Blind{} is selected",
+					"选择{C:attention}盲注{}后",
+					"生成一张",
+					"{C:dark_edition}负片{C:attention}开心小丑"
 				},
 			},
 			j_cry_macabre = {
-				name = "Macabre Joker",
+				name = "骇人小丑",
 				text = {
-					"When {C:attention}Blind{} is selected,",
-					"destroys each {C:attention}Joker{} except",
-					"{C:legendary}M Jokers{} and {C:attention}Jolly Jokers{}",
-					"and create #1# {C:attention}Jolly Joker#<s>1#{}",
-					"for each destroyed card",
+					"选择{C:attention}盲注{}后",
+					"摧毁除{C:legendary}M小丑牌{}和",
+					"{C:attention}开心小丑牌{}之外的",
+					"所有{C:attention}小丑牌",
+					"{s:0.3} ",
+					"每摧毁一张",
+					"生成#1#张{C:attention}开心小丑"
 				},
 			},
 			j_cry_magnet = {
@@ -4435,10 +4437,11 @@ return {
 				},
 			},
 			banana = {
-				name = "Banana",
+				name = "香蕉",
 				text = {
-					"{C:green}#1# in #2#{} chance of being",
-					"destroyed each round",
+					"每回合均有",
+					"{C:green}#1#/#2#{}的几率",
+					"被摧毁",
 				},
 			},
 			cry_absolute = {

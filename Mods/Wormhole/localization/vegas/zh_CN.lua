@@ -47,11 +47,10 @@ return {
 		        }
             },
             j_worm_chthonian = {
-                name = "Chthonian Planet",
+                name = "冥府行星",
 		        text = {
-			        "If {C:attention}first discard{} of",
-			        "round is {C:attention}#1#{} cards, make",
-			        "{C:attention}both{} cards {C:attention}Stone{}"
+			        "若回合{C:attention}首次弃牌{}为{C:attention}#1#{}张",
+					"使其变为{C:attention}石头牌"
 		        }
             },
             j_worm_goldielocks = {
@@ -64,12 +63,12 @@ return {
                 }
             },
             j_worm_vegas = {
-                name = "Space Vegas",
+                name = "空中赌城",
 		        text = {
-			        "At the start of the",
-			        "round, play {C:attention}space roulette",
-			        "If {C:attention}this{} Joker lands face up,",
-			        "gain {C:money}$#1#{} for each {C:attention}Joker{}"
+			        "回合开始时",
+			        "开始一轮{C:attention}太空轮盘赌",
+			        "若最终{C:attention}本牌{}正面朝上",
+			        "每持有一张{C:attention}小丑牌{}，获得{C:money}$#1#"
 		        }
             },
             j_worm_wormhole = {
@@ -172,12 +171,12 @@ return {
         },
 		Other = {
             SpaceRoulette = {
-                name = "Space Roulette",
+                name = "太空轮盘赌",
 		        text = {
-			        "Flips all {C:attention}Jokers{}, then cycles",
-			        "through unflipping your {C:attention}Jokers",
-			        "until {C:attention}one{} is chosen as face up",
-			        "After, turns all {C:attention}Jokers{} face up"
+			        "所有{C:attention}小丑牌{}翻至背面朝上",
+			        "随后轮流亮出，再盖起",
+			        "直至停止在亮出的{C:attention}一张",
+			        "结束时，将{C:attention}小丑牌{}复原为正面朝上"
 		        }
             },
             Inferior = {

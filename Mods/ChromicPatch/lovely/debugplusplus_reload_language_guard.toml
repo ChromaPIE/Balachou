@@ -1,0 +1,83 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 9999
+
+# DebugPlusPlus language reload: do not crash the game if any base/mod
+# localization Lua or post-processing hook errors. Log the traceback through
+# DebugPlus' error logger and abort the reload before keeping
+# partially-mutated localization state.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS dpp "/callback_functions.lua"]'
+match_indent = true
+pattern = '''    if localization ~= nil then
+        G.localization = assert(load(love.filesystem.read('localization/'..G.SETTINGS.language..'.lua')))()
+
+        for _, mod in ipairs(SMODS.mod_list or {}) do
+            if mod.can_load and not mod.lovely_only then
+                SMODS.load_mod_localization(mod.path, mod.id)
+            end
+        end
+
+        for _, mod in ipairs(SMODS.mod_list or {}) do
+            if mod.process_loc_text and type(mod.process_loc_text) == 'function' then
+                mod.process_loc_text()
+            end
+        end
+
+        recur(old_local, G.localization)
+        init_localization()
+
+        for _, card in pairs(G.I.CARD or {}) do
+            card.ability_UIBox_table = nil
+            card.config.h_popup = nil
+            card.config.h_popup_config = nil
+        end
+
+        G.LANG = G.LANGUAGES[G.SETTINGS.real_language or language] or G.LANGUAGES['en-us']
+        G.FUNCS.DPP_main_menu()
+    end'''
+position = "at"
+payload = '''    if localization ~= nil then
+        local chromicpatch_dpp_load_ok, chromicpatch_dpp_loaded_localization = xpcall(function()
+            local chromicpatch_dpp_language_path = 'localization/'..G.SETTINGS.language..'.lua'
+            local chromicpatch_dpp_chunk, chromicpatch_dpp_load_err = load(love.filesystem.read(chromicpatch_dpp_language_path), '@'..chromicpatch_dpp_language_path)
+            if not chromicpatch_dpp_chunk then error(chromicpatch_dpp_load_err, 0) end
+            G.localization = chromicpatch_dpp_chunk()
+
+            for _, mod in ipairs(SMODS.mod_list or {}) do
+                if mod.can_load and not mod.lovely_only then
+                    SMODS.load_mod_localization(mod.path, mod.id)
+                end
+            end
+
+            for _, mod in ipairs(SMODS.mod_list or {}) do
+                if mod.process_loc_text and type(mod.process_loc_text) == 'function' then
+                    mod.process_loc_text()
+                end
+            end
+
+            recur(old_local, G.localization)
+            init_localization()
+
+            for _, card in pairs(G.I.CARD or {}) do
+                card.ability_UIBox_table = nil
+                card.config.h_popup = nil
+                card.config.h_popup_config = nil
+            end
+
+            G.LANG = G.LANGUAGES[G.SETTINGS.real_language or language] or G.LANGUAGES['en-us']
+            G.FUNCS.DPP_main_menu()
+        end, debug.traceback)
+        if not chromicpatch_dpp_load_ok then
+            G.localization = old_local
+            local chromicpatch_dpp_logger_ok, chromicpatch_dpp_logger = pcall(require, 'debugplus.logger')
+            if chromicpatch_dpp_logger_ok and chromicpatch_dpp_logger and chromicpatch_dpp_logger.error then
+                chromicpatch_dpp_logger.error('[ChromicPatch] DebugPlusPlus language reload blocked: '..tostring(chromicpatch_dpp_loaded_localization))
+            else
+                print('ERROR [ChromicPatch] DebugPlusPlus language reload blocked: '..tostring(chromicpatch_dpp_loaded_localization))
+            end
+            return
+        end
+    end'''

@@ -317,12 +317,12 @@ return {
 				},
 			},
 			j_worm_meow_cotobo_box = {
-				name = "Schrödinger's Box",
+				name = "薛定谔的盒子",
 				text = {
-					"When a {C:attention}Blind{} is selected",
-					"create either a {C:worm_meow_spacetart}©Spacetart{}",
-					"or a {C:worm_meow_zodicat}Zodicat{}",
-					"{C:inactive}(Must have room)"
+					"选择{C:attention}盲注{}后",
+					"生成一张{C:worm_meow_spacetart}©太空挞",
+					"或{C:worm_meow_zodicat}十二宫猫咪",
+					"{C:inactive}（必须有空位）"
 				}
 			},
 			j_worm_meow_catelite = {

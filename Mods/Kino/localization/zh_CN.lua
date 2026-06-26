@@ -2843,16 +2843,14 @@ return {
                 }
             },
             j_kino_popeye = {
-                name = "Popeye",
+                name = "大力水手",
                 text = {
-                    "Increase {C:Power}Power",
-                    "of {C:attention}Joker{} to",
-                    "the right by",
-                    "{C:Power}#1#%{}"
+                    "使右侧{C:attention}小丑牌{}的",
+                    "{C:Power}能力{}提升{C:Power}#1#%"
                 },
                 unlock = {
-                    "Win a run with",
-                    "{C:attention}2 or more{} Polychrome Jokers"
+                    "携带{C:attention}至少2张",
+                    "炫彩小丑牌赢下一局"
                 }
             },
             j_kino_predator = {
@@ -6056,7 +6054,7 @@ return {
             bl_kino_varang = {
                 name = "瓦琅",
                 text = {
-                    "对头{C:attention}5{}张打出或弃掉的牌",
+                    "对前{C:attention}5{}张打出或弃掉的牌",
                     "施加{C:Burn}燃烧计数标"
                 }
             },
@@ -7652,7 +7650,7 @@ return {
                 name = "筹码计数标",
                 text = {
                     "{C:attention}步退1位",
-                    "{s:0.6} ",
+                    "{s:0.3} ",
                     "每有1位",
                     "{C:chips}+#1#{}筹码"
                 }

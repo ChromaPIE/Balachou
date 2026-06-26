@@ -83,6 +83,25 @@ return { vars = { card.ability.seal.extra.joker_amt } }
 position = "at"
 payload = "return { vars = { (card.ability.seal and card.ability.seal.extra and card.ability.seal.extra.joker_amt) or self.config.extra.joker_amt } }"
 
+# AIJ credits custom_ui: do not mark Joker display cards as playing cards
+# These cards use Joker centers in the mod description UI. Setting
+# playing_card makes hover UI hooks build playing-card metadata from
+# G.P_CARDS.empty, whose rank/suit are nil.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS allinjest "Utils/ui.lua"]'
+match_indent = true
+pattern = '''
+				bypass_lock = true,
+				playing_card = i,
+				viewing_back = false,
+'''
+position = "at"
+payload = '''
+				bypass_lock = true,
+				viewing_back = false,
+'''
+
 # AIJ unusual_doubled: nil-guard ability[self.key] when SOE calls apply(nil)
 [[patches]]
 [patches.pattern]
@@ -459,7 +478,20 @@ position = 'at'
 line_prepend = '$indent'
 payload = '''elseif not self.naivebulkuse and self.ability.consumeable.hand_type and not (obj.use and type(obj.use) == 'function') then'''
 
-# SOE rustyseal: nil-guard ability.seal on display cards in collection view
+# SOE seal loc_vars: nil-guard ability.seal on display cards
+# SOE can add seal badges to Joker UI, and generate_card_ui then calls the
+# seal's loc_vars with that Joker card. Display/Joker cards do not always have
+# ability.seal, so fall back to the seal center config for tooltip vars.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS SealsOnEverything "main.lua"]'
+match_indent = true
+pattern = '''
+return {vars = {card.ability.seal.extra.downxmult}}
+'''
+position = "at"
+payload = "return {vars = {card.ability.seal and card.ability.seal.extra and card.ability.seal.extra.downxmult or self.config.extra.downxmult}}"
+
 [[patches]]
 [patches.pattern]
 target = '=[SMODS SealsOnEverything "main.lua"]'
@@ -469,6 +501,16 @@ return {vars = {card.ability.seal.extra.xmult}}
 '''
 position = "at"
 payload = "return {vars = {card.ability.seal and card.ability.seal.extra and card.ability.seal.extra.xmult or self.config.extra.xmult}}"
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS SealsOnEverything "main.lua"]'
+match_indent = true
+pattern = '''
+return {vars = {card.ability.seal.extra.xdollars}}
+'''
+position = "at"
+payload = "return {vars = {card.ability.seal and card.ability.seal.extra and card.ability.seal.extra.xdollars or self.config.extra.xdollars}}"
 
 # SOE blue seals: exclude AIJ Moon variants from planet selection
 [[patches]]
@@ -778,6 +820,30 @@ pattern = "local _card = create_card(t.set, t.area, t.legendary, t.rarity, t.ski
 position = "at"
 payload = "local _card = create_card(t.set or t.type, t.area, t.legendary, t.rarity, t.skip_materialize, t.soulable, t.key, t.key_append)"
 
+# SMODS get_current_pool: nil-guard enhancement_gate before deck exists
+# Main-menu menu_cards can create a forced-key Joker before G.playing_cards is
+# initialized. AIJ's create_card/get_current_pool hooks can then scan Joker
+# pools containing enhancement_gate entries and crash on pairs(nil).
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+match_indent = true
+pattern = "for kk, vv in pairs(G.playing_cards) do"
+position = "at"
+payload = "for kk, vv in pairs(G.playing_cards or {}) do"
+
+# Kino get_current_pool: nil-guard legendary_conditions rarity
+# Kino's legendary pool injection assumes every legendary_conditions call returns
+# a numeric second value. Some early-return paths return only quest flags during
+# main-menu forced-card creation, which leaves rarity_test nil.
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+match_indent = true
+pattern = "rarity_test = 6 - rarity_test"
+position = "at"
+payload = 'if type(rarity_test) == "number" then rarity_test = 6 - rarity_test else rarity_test = nil end'
+
 # SMODS create_blind_pool: nil-guard boolean true values from unused boss blinds
 # eligible_bosses entries not in G.GAME.bosses_used stay as `true` (boolean),
 # which crashes the `eligible_bosses[k] > min_use` comparison at line 195
@@ -788,6 +854,45 @@ match_indent = true
 pattern = "if eligible_bosses[k] > min_use and not G.P_BLINDS[k][blind_type].allow_duplicates then"
 position = "at"
 payload = "if type(eligible_bosses[k]) == 'number' and eligible_bosses[k] > min_use and not G.P_BLINDS[k][blind_type].allow_duplicates then"
+
+# SMODS object_weights: boss polling can run before run CardAreas are built.
+# At that point G.jokers may still be a numeric placeholder, so the generic
+# calculate_context area pass crashes on `area.cards`. Keep Back/Blind/Sleeve
+# individual weight hooks active, but skip card-area passes until they exist.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/utils.lua"]'
+match_indent = true
+pattern = '''    local has_area = context.cardarea and true or nil
+    if no_resolve then SMODS.no_resolve = true end
+    local flags = {}
+    context.main_eval = true
+    flags[#flags+1] = SMODS.calculate_card_areas('jokers', context, return_table, { joker_area = true, has_area = has_area })
+    context.main_eval = nil
+
+    flags[#flags+1] = SMODS.calculate_card_areas('playing_cards', context, return_table, { has_area = has_area })
+    context.main_eval = true
+    flags[#flags+1] = SMODS.calculate_card_areas('individual', context, return_table)
+    context.main_eval = nil'''
+position = "at"
+payload = '''    local has_area = context.cardarea and true or nil
+    if no_resolve then SMODS.no_resolve = true end
+    local flags = {}
+    local chromicpatch_cardareas_ready = G.jokers and type(G.jokers) == 'table' and G.jokers.cards and G.hand and type(G.hand) == 'table' and G.hand.cards
+    if context.modify_weights and not chromicpatch_cardareas_ready then
+        context.main_eval = true
+        flags[#flags+1] = SMODS.calculate_card_areas('individual', context, return_table)
+        context.main_eval = nil
+    else
+        context.main_eval = true
+        flags[#flags+1] = SMODS.calculate_card_areas('jokers', context, return_table, { joker_area = true, has_area = has_area })
+        context.main_eval = nil
+
+        flags[#flags+1] = SMODS.calculate_card_areas('playing_cards', context, return_table, { has_area = has_area })
+        context.main_eval = true
+        flags[#flags+1] = SMODS.calculate_card_areas('individual', context, return_table)
+        context.main_eval = nil
+    end'''
 
 # AIJ retrieve_joker_text get_text(): fix operator precedence for Dynatext fallback
 # `text .. chosen_option.string or get_text(...)` parses as `(text .. string) or get_text(...)`
@@ -948,6 +1053,18 @@ position = "at"
 pattern = 'card\.ability\.seal\.destroy_odds'
 payload = "((card.ability.seal or {}).destroy_odds or self.config.destroy_odds)"
 
+# Wormhole JuryRigged Transponder: nil-guard in_pool before run globals
+# Main-menu forced-card creation can poll the Joker pool before JuryRigged's
+# run_start globals have initialized G.GAME.jr. In that state Transponder simply
+# should not be eligible for the pool.
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Wormhole "/content/JuryRigged/2_definitions/4_jokers.lua"]'
+match_indent = true
+pattern = "return G.GAME.jr.transponder_ct > 0"
+position = "at"
+payload = "return (G.GAME.jr and G.GAME.jr.transponder_ct or 0) > 0"
+
 # SOE redfabric: replace triple-click with I hotkey
 # Adds an SMODS.Keybind that opens the copied-jokers view when I is pressed
 # while hovering/focusing redfabric
@@ -994,7 +1111,9 @@ payload = '''SMODS.Keybind{
         for i=1, #card.ability.extra.jokers do
             G.soe_creatingmergedcard = true
             local v = card.ability.extra.jokers[i]
-            G.soe_mergedcardsviewcardarea:emplace(SMODS.create_card({key = v, skip_materialize = true, no_edition = true}))
+            local preview_card = SMODS.create_card({key = v, skip_materialize = true, no_edition = true})
+            preview_card.ability = copy_table(SEALS.copy_card_but_not(card, v).ability)
+            G.soe_mergedcardsviewcardarea:emplace(preview_card)
             G.soe_creatingmergedcard = nil
         end
         G.UIBOXGENERICOPTIONSMERGEDCARDSVIEW = create_UIBox_generic_options({
@@ -1012,6 +1131,17 @@ payload = '''SMODS.Keybind{
         })
     end
 }'''
+
+# SOE redfabric: make copied-joker preview tooltips use saved ability state
+[[patches]]
+[patches.pattern]
+target = '=[SMODS SealsOnEverything "main.lua"]'
+match_indent = true
+position = "at"
+pattern = "G.soe_mergedcardsviewcardarea:emplace(SMODS.create_card({key = v, skip_materialize = true, no_edition = true}))"
+payload = '''local preview_card = SMODS.create_card({key = v, skip_materialize = true, no_edition = true})
+preview_card.ability = copy_table(SEALS.copy_card_but_not(self, v).ability)
+G.soe_mergedcardsviewcardarea:emplace(preview_card)'''
 
 # Kino Zeus: use paralysis counter when selecting targets
 # Upstream fixed the listener scope in 0.14.1; this preserves the remaining counter mismatch fix.

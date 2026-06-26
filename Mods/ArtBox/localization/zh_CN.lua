@@ -75,7 +75,7 @@ return {
             },
 
             j_artb_rubberhose = {
-                name = '橡胶软管',
+                name = '橡皮管动画',
                 text = { {
                     "打出的{C:clubs}梅花{}牌",
                     "在计分时给予{C:mult}+#2#{}倍率",

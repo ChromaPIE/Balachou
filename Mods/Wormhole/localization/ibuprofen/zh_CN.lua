@@ -149,11 +149,11 @@ return {
                 },
             },
             j_worm_ibu_brood = {
-                name = 'Brood Mother',
+                name = '育母蜘蛛',
                 text = {
-                    "Destroy a random card in hand",
-                    "and create a {C:attention}Jack{} whenever",
-                    " a {C:attention}Queen{} is played"
+                    "打出{C:attention}Q{}时",
+                    "随机摧毁一张手牌",
+                    "并生成一张{C:attention}J"
                 }
             },
             j_worm_ibu_warpgate = {
